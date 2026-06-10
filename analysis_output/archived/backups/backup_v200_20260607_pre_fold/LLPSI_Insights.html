@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLPSI · FR + RA 数据洞察 + 扩展读物路由 v2.0</title>
+<meta name="description" content="A visual analysis of vocabulary density and reader routing across Familia Romana and Roma Aeterna, the two core books of Lingua Latina per se Illustrata.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap">
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:       #f4ecd8;
+  --parchment-deep:  #ebe0c4;
+  --parchment-edge:  #d9c89c;
+  --marble:          #e8dfc4;
+  --marble-light:    #f0e9d2;
+  --ink:             #1c1612;
+  --ink-soft:        #3a2f25;
+  --ink-faded:       #5a4a38;
+  --pompeii-red:     #a8392e;
+  --pompeii-deep:    #7a2820;
+  --imperial-gold:   #b08d2b;
+  --imperial-gold-l: #d4b14a;
+  --roman-green:     #2c3e3a;
+  --roman-green-d:   #1a2823;
+  --tyrian-purple:   #5a3e5c;
+  --tyrian-purple-d: #3a2640;
+  --shadow:          rgba(28, 22, 18, 0.12);
+  --shadow-deep:     rgba(28, 22, 18, 0.25);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--parchment);
+  padding: 32px 24px;
+}
+
+.container { max-width: 1280px; margin: 0 auto; }
+
+.hero {
+  text-align: center;
+  padding: 64px 32px;
+  background: linear-gradient(135deg, var(--parchment-deep), var(--marble));
+  border: 3px double var(--imperial-gold);
+  border-radius: 8px;
+  margin-bottom: 48px;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--pompeii-deep);
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.hero .subtitle {
+  font-size: 18px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.version-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--pompeii-red);
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 12px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--pompeii-deep);
+  text-align: center;
+  margin: 48px 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--imperial-gold);
+}
+
+.chart-card {
+  background: var(--marble-light);
+  border: 1px solid var(--parchment-edge);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.chart {
+  width: 100%;
+  height: 420px;
+}
+
+.chart-desc {
+  text-align: center;
+  font-size: 14px;
+  color: var(--ink-faded);
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.summary-card {
+  background: var(--marble-light);
+  border: 1px solid var(--parchment-edge);
+  border-left: 4px solid var(--pompeii-red);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+
+.summary-card .label {
+  font-size: 12px;
+  color: var(--ink-faded);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.summary-card .value {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--pompeii-deep);
+}
+
+.summary-card .desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+/* Routing grid */
+.routing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.route-card {
+  background: var(--marble-light);
+  border: 1px solid var(--parchment-edge);
+  border-radius: 6px;
+  padding: 14px;
+  transition: all 0.2s;
+}
+
+.route-card:hover {
+  box-shadow: 0 4px 12px var(--shadow);
+  transform: translateY(-2px);
+}
+
+.route-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--parchment-edge);
+}
+
+.route-ch {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--pompeii-deep);
+}
+
+.route-book {
+  font-size: 11px;
+  color: var(--ink-faded);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.route-stats {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--ink-faded);
+}
+
+.route-section {
+  margin: 6px 0;
+  padding: 4px 0;
+}
+
+.route-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-right: 4px;
+  min-width: 56px;
+  text-align: center;
+}
+
+.tag-reward    { background: #f4d35e; color: var(--ink); }
+.tag-challenge { background: #ee964b; color: white; }
+.tag-selected  { background: #5a8bb0; color: white; }
+.tag-review    { background: #9bc4e2; color: var(--ink); }
+.tag-seg       { background: #c5a880; color: var(--ink); }
+
+.route-item {
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding: 2px 0 2px 8px;
+  border-left: 2px solid var(--parchment-edge);
+  margin: 2px 0 2px 6px;
+}
+
+.route-item code {
+  font-family: 'SF Mono', 'Monaco', monospace;
+  font-size: 12px;
+  background: var(--parchment);
+  padding: 1px 4px;
+  border-radius: 2px;
+  color: var(--pompeii-red);
+}
+
+.route-more {
+  font-size: 11px;
+  color: var(--ink-faded);
+  font-style: italic;
+  padding-left: 8px;
+}
+
+.route-empty {
+  font-size: 12px;
+  color: var(--ink-faded);
+  font-style: italic;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Filter bar */
+.filter-bar {
+  background: var(--marble);
+  border: 1px solid var(--parchment-edge);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin: 16px 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-bar label {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.filter-bar select {
+  padding: 4px 8px;
+  border: 1px solid var(--parchment-edge);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--parchment);
+}
+
+.footnote {
+  font-size: 13px;
+  color: var(--ink-faded);
+  font-style: italic;
+  margin: 16px 0;
+  padding: 8px 12px;
+  background: var(--marble);
+  border-left: 3px solid var(--imperial-gold);
+  border-radius: 2px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0;
+  padding: 12px;
+  background: var(--marble);
+  border-radius: 4px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+  <h1>FAMILIA ROMANA<br>+<br>ROMA AETERNA
+    <span class="version-badge">v2.0</span>
+  </h1>
+  <div class="subtitle">A visual analysis of vocabulary density and reader routing across the 56 chapters of LLPSI</div>
+  <div class="subtitle" style="margin-top:8px;font-size:14px;">
+    数据修正: FR 末章 <b>9,417 词形 / 10,674 词族</b> ·
+    RA 末章 <b>33,770 词形 / 35,027 词族</b>
+  </div>
+</div>
+
+<!-- 修正说明 -->
+<div class="footnote">
+  <b>数据修正说明 (v1.0 → v2.0)</b>:
+  旧 HTML 报告存在以下问题, 已在 v2.0 修正:
+  <ul style="margin: 8px 0 0 20px; padding: 0;">
+    <li>旧"FR完成 ≈ 1,800 词族" — <b>错误</b>. 实际 FR 末章累计 10,674 词族 / 9,417 词形 (DB)</li>
+    <li>旧"RA完成 ≈ 3,500 词族" — <b>错误</b>. 实际 RA 末章累计 35,027 词族 / 33,770 词形</li>
+    <li>旧"RA Cap. 37 甜蜜点" — <b>需要重新计算</b>. 见下 §"FR→RA 难度跃迁"与 §"ROI 甜蜜点"</li>
+    <li><b>词族 vs 词形概念</b>: CSV 统计 unique word family (含变体), DB 统计 unique word form (去重). 两套数据都正确, 粒度不同. 路由表(reader_routing)使用 DB 词形 (与 reader analysis 一致).</li>
+  </ul>
+</div>
+
+<!-- 整体概览 -->
+<h2 class="section-title">整体概览</h2>
+
+<div class="summary-grid">
+  <div class="summary-card">
+    <div class="label">FR 平均新词密度</div>
+    <div class="value">21.31%</div>
+    <div class="desc">35 章 · 49,196 总词</div>
+  </div>
+  <div class="summary-card">
+    <div class="label">RA 平均新词密度</div>
+    <div class="value">28.5%</div>
+    <div class="desc">21 章 · 89,839 总词</div>
+  </div>
+  <div class="summary-card">
+    <div class="label">FR 末章累计词形 (DB)</div>
+    <div class="value">9,417</div>
+    <div class="desc">10,674 词族 (CSV)</div>
+  </div>
+  <div class="summary-card">
+    <div class="label">RA 末章累计词形</div>
+    <div class="value">33,770</div>
+    <div class="desc">RA 21 章增量 +24,353</div>
+  </div>
+  <div class="summary-card">
+    <div class="label">FR 最难章</div>
+    <div class="value">Cap.25</div>
+    <div class="desc">新词密度 27.4%</div>
+  </div>
+  <div class="summary-card">
+    <div class="label">RA 最难章</div>
+    <div class="value">Cap.36</div>
+    <div class="desc">新词密度 48.8%</div>
+  </div>
+</div>
+
+<!-- FR → RA 难度跃迁 -->
+<h2 class="section-title">FR → RA 难度跃迁</h2>
+<div class="chart-card">
+  <div id="chart-jump" class="chart"></div>
+  <div class="chart-desc">
+    Cap.35 (FR 末章) 新词密度 20.9% · 累计 9,417 词形 →
+    Cap.36 (RA 起始) 新词密度 <b style="color: var(--pompeii-red)">48.8%</b> ·
+    Cap.36 是 RA 最难章 (FR→RA 鸿沟)
+  </div>
+</div>
+
+<!-- 一、词汇增长曲线 -->
+<h2 class="section-title">一、词汇增长曲线 (累计词形)</h2>
+<div class="chart-card">
+  <div id="chart-cum-vocab" class="chart"></div>
+  <div class="chart-desc">绿线为 FR (35 章), 紫线为 RA (21 章), 整体呈 S 形上升</div>
+</div>
+
+<!-- 二、新词密度曲线 -->
+<h2 class="section-title">二、新词密度曲线</h2>
+<div class="chart-card">
+  <div id="chart-new-density" class="chart"></div>
+  <div class="chart-desc">FR 平均 21.31%, RA 平均 28.5% — 难度跃升</div>
+</div>
+
+<!-- 三、章节体量对比 -->
+<h2 class="section-title">三、章节体量对比</h2>
+<div class="chart-card">
+  <div id="chart-volume" class="chart"></div>
+  <div class="chart-desc">柱状图为各章总词数, 红线为移动平均</div>
+</div>
+
+<!-- 四、章节新增词数 -->
+<h2 class="section-title">四、章节新增词数</h2>
+<div class="chart-card">
+  <div id="chart-new-words" class="chart"></div>
+  <div class="chart-desc">绿柱为 FR, 紫柱为 RA, 紫柱明显高 (RA 难度更大)</div>
+</div>
+
+<!-- 五、ROI 甜蜜点 -->
+<h2 class="section-title">五、ROI 甜蜜点 (基于密度/累计比)</h2>
+<div class="chart-card">
+  <div id="chart-roi" class="chart"></div>
+  <div class="chart-desc">RA 阶段新词密度反而上升, RA 是"高投入"阶段</div>
+</div>
+
+<!-- 六、逐章数据表 -->
+<h2 class="section-title">六、逐章核心数据 (前 10 章 + 末 5 章)</h2>
+<div class="chart-card">
+  <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+      <thead>
+        <tr style="background:var(--pompeii-red);color:white;">
+          <th style="padding:8px;text-align:left;">章节</th>
+          <th style="padding:8px;text-align:right;">总词数</th>
+          <th style="padding:8px;text-align:right;">新词数</th>
+          <th style="padding:8px;text-align:right;">新词密度</th>
+          <th style="padding:8px;text-align:right;">累计词形 (DB)</th>
+          <th style="padding:8px;text-align:right;">累计词族 (CSV)</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.1</td><td style="padding:6px;text-align:right;">863</td><td style="padding:6px;text-align:right;">204</td><td style="padding:6px;text-align:right;">23.6%</td><td style="padding:6px;text-align:right;">163</td><td style="padding:6px;text-align:right;">204</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.2</td><td style="padding:6px;text-align:right;">860</td><td style="padding:6px;text-align:right;">182</td><td style="padding:6px;text-align:right;">21.2%</td><td style="padding:6px;text-align:right;">326</td><td style="padding:6px;text-align:right;">386</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.3</td><td style="padding:6px;text-align:right;">599</td><td style="padding:6px;text-align:right;">96</td><td style="padding:6px;text-align:right;">16.0%</td><td style="padding:6px;text-align:right;">416</td><td style="padding:6px;text-align:right;">482</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.4</td><td style="padding:6px;text-align:right;">730</td><td style="padding:6px;text-align:right;">139</td><td style="padding:6px;text-align:right;">19.0%</td><td style="padding:6px;text-align:right;">542</td><td style="padding:6px;text-align:right;">621</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.5</td><td style="padding:6px;text-align:right;">919</td><td style="padding:6px;text-align:right;">187</td><td style="padding:6px;text-align:right;">20.3%</td><td style="padding:6px;text-align:right;">717</td><td style="padding:6px;text-align:right;">808</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.6</td><td style="padding:6px;text-align:right;">1,038</td><td style="padding:6px;text-align:right;">189</td><td style="padding:6px;text-align:right;">18.2%</td><td style="padding:6px;text-align:right;">883</td><td style="padding:6px;text-align:right;">997</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.7</td><td style="padding:6px;text-align:right;">984</td><td style="padding:6px;text-align:right;">127</td><td style="padding:6px;text-align:right;">12.9%</td><td style="padding:6px;text-align:right;">993</td><td style="padding:6px;text-align:right;">1,124</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.8</td><td style="padding:6px;text-align:right;">1,093</td><td style="padding:6px;text-align:right;">216</td><td style="padding:6px;text-align:right;">19.8%</td><td style="padding:6px;text-align:right;">1,187</td><td style="padding:6px;text-align:right;">1,340</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.9</td><td style="padding:6px;text-align:right;">935</td><td style="padding:6px;text-align:right;">187</td><td style="padding:6px;text-align:right;">20.0%</td><td style="padding:6px;text-align:right;">1,355</td><td style="padding:6px;text-align:right;">1,527</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.10</td><td style="padding:6px;text-align:right;">1,292</td><td style="padding:6px;text-align:right;">264</td><td style="padding:6px;text-align:right;">20.4%</td><td style="padding:6px;text-align:right;">1,602</td><td style="padding:6px;text-align:right;">1,791</td></tr><tr><td colspan="6" style="padding:8px;text-align:center;color:var(--ink-faded);">... (中间 Cap.11-33 省略) ...</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.33</td><td style="padding:6px;text-align:right;">1,999</td><td style="padding:6px;text-align:right;">476</td><td style="padding:6px;text-align:right;">23.8%</td><td style="padding:6px;text-align:right;">8,654</td><td style="padding:6px;text-align:right;">9,818</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.34</td><td style="padding:6px;text-align:right;">2,199</td><td style="padding:6px;text-align:right;">520</td><td style="padding:6px;text-align:right;">23.6%</td><td style="padding:6px;text-align:right;">9,124</td><td style="padding:6px;text-align:right;">10,338</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">FR Cap.35</td><td style="padding:6px;text-align:right;">1,604</td><td style="padding:6px;text-align:right;">336</td><td style="padding:6px;text-align:right;">20.9%</td><td style="padding:6px;text-align:right;">9,417</td><td style="padding:6px;text-align:right;">10,674</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">RA Cap.36</td><td style="padding:6px;text-align:right;">3,983</td><td style="padding:6px;text-align:right;">1943</td><td style="padding:6px;text-align:right;">48.8%</td><td style="padding:6px;text-align:right;">11,360</td><td style="padding:6px;text-align:right;">12,617</td></tr><tr style="border-bottom:1px solid var(--parchment-edge);"><td style="padding:6px;">RA Cap.37</td><td style="padding:6px;text-align:right;">3,068</td><td style="padding:6px;text-align:right;">1391</td><td style="padding:6px;text-align:right;">45.3%</td><td style="padding:6px;text-align:right;">12,751</td><td style="padding:6px;text-align:right;">14,008</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 七、扩展读物路由表 (新增) -->
+<h2 class="section-title">七、扩展读物路由表 (LLPSI 56 章 × 5 维度)</h2>
+
+<div class="legend">
+  <div class="legend-item"><span class="route-tag tag-reward">🎯 奖励</span> 学完本章后 fluent 可读 (≥60% 覆盖)</div>
+  <div class="legend-item"><span class="route-tag tag-challenge">💪 挑战</span> 学完本章后 challenging 可读 (40-60%)</div>
+  <div class="legend-item"><span class="route-tag tag-selected">📚 节选</span> 学完本章后 selected 可读 (20-40%)</div>
+  <div class="legend-item"><span class="route-tag tag-review">📖 复习</span> 本书覆盖本章新词最多 (教学价值)</div>
+  <div class="legend-item"><span class="route-tag tag-seg">🧩 段</span> D类教材拉语段 (段落级匹配)</div>
+</div>
+
+<div class="footnote">
+  <b>关键洞察</b>:
+  <ul style="margin:8px 0 0 20px;padding:0;">
+    <li><b>每章都有推荐</b> — 学完任意章节后, 至少有 📚 节选 或 🧩 段 可读</li>
+    <li><b>🎯 奖励仅 2 本</b> — <code>pugio_bruti</code> (学完 Cap.48) 和 <code>via_latina_romanorum</code> (学完 Cap.52)</li>
+    <li><b>📖 复习 54 次</b> — 几乎每章都有 1+ 本"教学价值最高"的书</li>
+    <li><b>详细路由</b>: 见 <code>analysis_output/llpsi_reader_routing.md</code></li>
+    <li><b>抽出的拉语段</b>: 见 <code>analysis_output/extracted/</code> (D类35段 + 教材55段)</li>
+  </ul>
+</div>
+
+<div class="filter-bar">
+  <label>筛选章节范围:</label>
+  <select id="filter-range" onchange="filterCards()">
+    <option value="all">全部 (56章)</option>
+    <option value="fr">FR Cap.1-35</option>
+    <option value="ra">RA Cap.36-56</option>
+    <option value="1-10">Cap.1-10 (入门)</option>
+    <option value="11-20">Cap.11-20 (初级)</option>
+    <option value="21-30">Cap.21-30 (FR中级)</option>
+    <option value="31-45">Cap.31-45 (FR→RA)</option>
+    <option value="46-56">Cap.46-56 (RA完成)</option>
+  </select>
+  <label>显示:</label>
+  <select id="filter-tag" onchange="filterCards()">
+    <option value="all">全部</option>
+    <option value="reward">仅 🎯 奖励</option>
+    <option value="challenge">仅 💪 挑战</option>
+    <option value="seg">仅 🧩 段</option>
+  </select>
+</div>
+
+<div class="routing-grid">
+<div class="route-card" data-ch="1">
+<div class="route-header">
+<span class="route-ch">Cap.1</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 23.6% · 累计 163</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-review">📖 复习</span>
+<div class="route-item"><code>chickering</code> Cap.1(55%)</div>
+<div class="route-item"><code>via_latina_romanorum</code> Cap.1(55%)</div>
+<div class="route-more">+30 更多</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_natural_method</code> p.103-109 教学 Cap.1(17%)</div>
+<div class="route-item"><code>dooge_beginners</code> p.214-219 教学 Cap.1(16%)</div>
+<div class="route-more">+16 更多</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="2">
+<div class="route-header">
+<span class="route-ch">Cap.2</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 21.2% · 累计 326</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>reading_latin_text</code> p.315-318 教学 Cap.2(5%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="3">
+<div class="route-header">
+<span class="route-ch">Cap.3</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 16.0% · 累计 416</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-review">📖 复习</span>
+<div class="route-item"><code>latin_first_year_magoffin</code> Cap.3(42%)</div>
+<div class="route-item"><code>new_latin_primer</code> Cap.3(36%)</div>
+<div class="route-more">+7 更多</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>cambridge_1</code> p.54-57 教学 Cap.3(1%)</div>
+<div class="route-item"><code>dooge_beginners_2</code> p.221-223 教学 Cap.3(11%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="4">
+<div class="route-header">
+<span class="route-ch">Cap.4</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 19.0% · 累计 542</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-review">📖 复习</span>
+<div class="route-item"><code>forum_lectiones</code> Cap.4(55%)</div>
+<div class="route-item"><code>latin_lower_forms</code> Cap.4(45%)</div>
+<div class="route-more">+11 更多</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_natural_method</code> p.153-166 教学 Cap.4(21%)</div>
+<div class="route-item"><code>latin_natural_method</code> p.128-140 教学 Cap.4(23%)</div>
+<div class="route-more">+8 更多</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="5">
+<div class="route-header">
+<span class="route-ch">Cap.5</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 20.3% · 累计 717</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>cambridge_1</code> p.4-7 教学 Cap.5(2%)</div>
+<div class="route-item"><code>wileys_real_latin</code> p.366-368 教学 Cap.5(6%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="6">
+<div class="route-header">
+<span class="route-ch">Cap.6</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 18.2% · 累计 883</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>dooge_beginners</code> p.221-223 教学 Cap.6(10%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="7">
+<div class="route-header">
+<span class="route-ch">Cap.7</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 12.9% · 累计 993</span>
+</div>
+<div class="route-body">
+<div class="route-empty">本章暂无推荐 (早期章节词汇量少)</div>
+</div>
+</div>
+<div class="route-card" data-ch="8">
+<div class="route-header">
+<span class="route-ch">Cap.8</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 19.8% · 累计 1187</span>
+</div>
+<div class="route-body">
+<div class="route-empty">本章暂无推荐 (早期章节词汇量少)</div>
+</div>
+</div>
+<div class="route-card" data-ch="9">
+<div class="route-header">
+<span class="route-ch">Cap.9</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 20.0% · 累计 1355</span>
+</div>
+<div class="route-body">
+<div class="route-empty">本章暂无推荐 (早期章节词汇量少)</div>
+</div>
+</div>
+<div class="route-card" data-ch="10">
+<div class="route-header">
+<span class="route-ch">Cap.10</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 20.4% · 累计 1602</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>cambridge_2</code> p.82-84 教学 Cap.10(6%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="11">
+<div class="route-header">
+<span class="route-ch">Cap.11</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 19.4% · 累计 1798</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>pugio_bruti</code> 20%起点 Cap.11, 1,205独词, 英20%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="12">
+<div class="route-header">
+<span class="route-ch">Cap.12</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 22.7% · 累计 2057</span>
+</div>
+<div class="route-body">
+<div class="route-empty">本章暂无推荐 (早期章节词汇量少)</div>
+</div>
+</div>
+<div class="route-card" data-ch="13">
+<div class="route-header">
+<span class="route-ch">Cap.13</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 26.2% · 累计 2375</span>
+</div>
+<div class="route-body">
+<div class="route-empty">本章暂无推荐 (早期章节词汇量少)</div>
+</div>
+</div>
+<div class="route-card" data-ch="14">
+<div class="route-header">
+<span class="route-ch">Cap.14</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 19.5% · 累计 2605</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>via_latina_romanorum</code> 20%起点 Cap.14, 4,148独词, 英25%</div>
+<div class="route-item"><code>dooge_beginners_key</code> 20%起点 Cap.14, 1,927独词, 英58%</div>
+<div class="route-item"><code>olimpia_nicholas</code> 20%起点 Cap.14, 857独词, 英40%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="15">
+<div class="route-header">
+<span class="route-ch">Cap.15</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 20.2% · 累计 2786</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>diocles_flora</code> 20%起点 Cap.15, 2,649独词, 英35%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="16">
+<div class="route-header">
+<span class="route-ch">Cap.16</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 23.3% · 累计 3121</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>unus_duo_tres</code> 20%起点 Cap.16, 2,939独词, 英36%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="17">
+<div class="route-header">
+<span class="route-ch">Cap.17</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 20.7% · 累计 3368</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>olimpia_pyramus</code> 20%起点 Cap.17, 1,831独词, 英40%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="18">
+<div class="route-header">
+<span class="route-ch">Cap.18</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 21.7% · 累计 3690</span>
+</div>
+<div class="route-body">
+<div class="route-empty">本章暂无推荐 (早期章节词汇量少)</div>
+</div>
+</div>
+<div class="route-card" data-ch="19">
+<div class="route-header">
+<span class="route-ch">Cap.19</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 21.7% · 累计 3981</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>olimpia_daedalus</code> 20%起点 Cap.19, 1,696独词, 英44%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="20">
+<div class="route-header">
+<span class="route-ch">Cap.20</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 22.1% · 累计 4285</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>oxford_1</code> 20%起点 Cap.20, 4,033独词, 英57%</div>
+<div class="route-item"><code>regulus</code> 20%起点 Cap.20, 3,269独词, 英23%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="21">
+<div class="route-header">
+<span class="route-ch">Cap.21</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 19.4% · 累计 4507</span>
+</div>
+<div class="route-body">
+<div class="route-empty">本章暂无推荐 (早期章节词汇量少)</div>
+</div>
+</div>
+<div class="route-card" data-ch="22">
+<div class="route-header">
+<span class="route-ch">Cap.22</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 26.0% · 累计 4786</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>forum_lectiones</code> 20%起点 Cap.22, 6,479独词, 英31%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="23">
+<div class="route-header">
+<span class="route-ch">Cap.23</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 18.2% · 累计 5025</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_natural_method</code> p.70-72 教学 Cap.1(12%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="24">
+<div class="route-header">
+<span class="route-ch">Cap.24</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 21.5% · 累计 5247</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>latin_natural_method</code> 20%起点 Cap.24, 4,548独词, 英46%</div>
+<div class="route-item"><code>latin_stories_wheelock</code> 20%起点 Cap.24, 3,905独词, 英43%</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>cambridge_2</code> p.77-79 教学 Cap.4(8%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="25">
+<div class="route-header">
+<span class="route-ch">Cap.25</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 27.4% · 累计 5637</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>pugio_bruti</code> 40%起点 Cap.25 (教学 Cap.3, 21%)</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>oxford_2</code> 20%起点 Cap.25, 6,541独词, 英50%</div>
+<div class="route-item"><code>wheelock_answer_key</code> 20%起点 Cap.25, 5,784独词, 英62%</div>
+<div class="route-item"><code>septimus</code> 20%起点 Cap.25, 5,673独词, 英49%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="26">
+<div class="route-header">
+<span class="route-ch">Cap.26</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 22.7% · 累计 5957</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>intermediate_oral_cicero</code> 20%起点 Cap.26, 5,731独词, 英35%</div>
+<div class="route-item"><code>gwynne</code> 20%起点 Cap.26, 4,488独词, 英66%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="27">
+<div class="route-header">
+<span class="route-ch">Cap.27</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 23.4% · 累计 6355</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>cambridge_2</code> 20%起点 Cap.27, 5,407独词, 英51%</div>
+<div class="route-item"><code>second_year_latin</code> 20%起点 Cap.27, 4,954独词, 英51%</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>cambridge_2</code> p.2-6 教学 Cap.4(6%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="28">
+<div class="route-header">
+<span class="route-ch">Cap.28</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 22.8% · 累计 6772</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>chickering</code> 20%起点 Cap.28, 9,673独词, 英28%</div>
+<div class="route-item"><code>oxford_3</code> 20%起点 Cap.28, 7,976独词, 英51%</div>
+<div class="route-item"><code>latin_made_simple</code> 20%起点 Cap.28, 7,870独词, 英57%</div>
+<div class="route-more">+2 更多</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_natural_method</code> p.111-114 教学 Cap.1(10%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="29">
+<div class="route-header">
+<span class="route-ch">Cap.29</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 22.7% · 累计 7157</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>cambridge_1</code> 20%起点 Cap.29, 3,397独词, 英57%</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>ecce_romani</code> p.33-35 教学 Cap.1(9%)</div>
+<div class="route-item"><code>ecce_romani</code> p.205-207 教学 Cap.4(7%)</div>
+<div class="route-more">+1 更多</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="30">
+<div class="route-header">
+<span class="route-ch">Cap.30</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 22.2% · 累计 7463</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>cambridge_3</code> 20%起点 Cap.30, 8,738独词, 英52%</div>
+<div class="route-item"><code>reynolds_reader</code> 20%起点 Cap.30, 8,541独词, 英52%</div>
+<div class="route-item"><code>ecce_romani_2a</code> 20%起点 Cap.30, 7,069独词, 英52%</div>
+<div class="route-more">+1 更多</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>dooge_beginners</code> p.214-219 教学 Cap.1(16%)</div>
+<div class="route-item"><code>dooge_beginners_2</code> p.221-223 教学 Cap.3(11%)</div>
+<div class="route-more">+1 更多</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="31">
+<div class="route-header">
+<span class="route-ch">Cap.31</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 21.8% · 累计 7815</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>wileys_real_latin</code> 20%起点 Cap.31, 7,735独词, 英53%</div>
+<div class="route-item"><code>pro_patria</code> 20%起点 Cap.31, 6,471独词, 英51%</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>dooge_beginners_2</code> p.214-219 教学 Cap.1(15%)</div>
+<div class="route-item"><code>dooge_beginners</code> p.221-223 教学 Cap.6(10%)</div>
+<div class="route-more">+1 更多</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="32">
+<div class="route-header">
+<span class="route-ch">Cap.32</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 20.6% · 累计 8237</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>dooge_beginners_key</code> p.29-31 教学 Cap.1(9%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="33">
+<div class="route-header">
+<span class="route-ch">Cap.33</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 23.8% · 累计 8654</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>cambridge_4</code> 20%起点 Cap.33, 10,671独词, 英53%</div>
+<div class="route-item"><code>ecce_romani</code> 20%起点 Cap.33, 7,022独词, 英56%</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_first_year_magoffin</code> p.185-188 教学 Cap.1(10%)</div>
+<div class="route-item"><code>oxford_2</code> p.72-75 教学 Cap.1(8%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="34">
+<div class="route-header">
+<span class="route-ch">Cap.34</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 23.6% · 累计 9124</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>via_latina_romanorum</code> 40%起点 Cap.34 (教学 Cap.1, 55%)</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_natural_method</code> p.103-109 教学 Cap.1(17%)</div>
+<div class="route-item"><code>latin_made_simple</code> p.83-85 教学 Cap.1(10%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="35">
+<div class="route-header">
+<span class="route-ch">Cap.35</span>
+<span class="route-book">FR</span>
+<span class="route-stats">新词密度 20.9% · 累计 9417</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>dooge_beginners_key</code> 40%起点 Cap.35 (教学 Cap.1, 30%)</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>beginners_latin_book</code> 20%起点 Cap.35, 9,020独词, 英50%</div>
+<div class="route-item"><code>ecce_romani_3</code> 20%起点 Cap.35, 8,671独词, 英51%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="36">
+<div class="route-header">
+<span class="route-ch">Cap.36</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 48.8% · 累计 11360</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>diocles_flora</code> 40%起点 Cap.36 (教学 Cap.3, 28%)</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>latin_lower_forms</code> 20%起点 Cap.36, 12,218独词, 英27%</div>
+<div class="route-item"><code>dooge_beginners_2</code> 20%起点 Cap.36, 9,957独词, 英50%</div>
+<div class="route-item"><code>nutting_reader</code> 20%起点 Cap.36, 9,284独词, 英39%</div>
+<div class="route-more">+3 更多</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>cambridge_2</code> p.82-84 教学 Cap.10(6%)</div>
+<div class="route-item"><code>dooge_beginners</code> p.226-228 教学 Cap.1(8%)</div>
+<div class="route-more">+1 更多</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="37">
+<div class="route-header">
+<span class="route-ch">Cap.37</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 45.3% · 累计 12751</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>hobbitus</code> 20%起点 Cap.37, 10,662独词, 英27%</div>
+<div class="route-item"><code>dooge_beginners</code> 20%起点 Cap.37, 10,001独词, 英50%</div>
+<div class="route-item"><code>reading_latin_grammar</code> 20%起点 Cap.37, 9,134独词, 英54%</div>
+<div class="route-more">+2 更多</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_natural_method</code> p.117-126 教学 Cap.4(19%)</div>
+<div class="route-item"><code>latin_natural_method</code> p.96-101 教学 Cap.1(13%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="38">
+<div class="route-header">
+<span class="route-ch">Cap.38</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 37.7% · 累计 13562</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>wheelock_reader</code> 20%起点 Cap.38, 15,154独词, 英46%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="39">
+<div class="route-header">
+<span class="route-ch">Cap.39</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 37.5% · 累计 14803</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_natural_method</code> p.79-84 教学 Cap.1(13%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="40">
+<div class="route-header">
+<span class="route-ch">Cap.40</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 32.9% · 累计 15831</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>wheelock_7e</code> 20%起点 Cap.40, 14,864独词, 英53%</div>
+<div class="route-item"><code>reading_latin_text</code> 20%起点 Cap.40, 11,800独词, 英51%</div>
+<div class="route-item"><code>via_latina_easy</code> 20%起点 Cap.40, 10,078独词, 英40%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="41">
+<div class="route-header">
+<span class="route-ch">Cap.41</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 33.7% · 累计 16673</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>regulus</code> 40%起点 Cap.41 (教学 Cap.4, 32%)</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>cambridge_1</code> p.4-7 教学 Cap.5(2%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="42">
+<div class="route-header">
+<span class="route-ch">Cap.42</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 30.9% · 累计 17931</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>unus_duo_tres</code> 40%起点 Cap.42 (教学 Cap.4, 32%)</div>
+<div class="route-item"><code>olimpia_nicholas</code> 40%起点 Cap.42 (教学 Cap.3, 17%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="43">
+<div class="route-header">
+<span class="route-ch">Cap.43</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 28.8% · 累计 18986</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>illiterati_2</code> 20%起点 Cap.43, 8,955独词, 英52%</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_natural_method</code> p.36-40 教学 Cap.1(8%)</div>
+<div class="route-item"><code>latin_natural_method</code> p.88-91 教学 Cap.1(11%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="44">
+<div class="route-header">
+<span class="route-ch">Cap.44</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 27.6% · 累计 20405</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>oxford_3</code> p.117-119 教学 Cap.4(8%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="45">
+<div class="route-header">
+<span class="route-ch">Cap.45</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 27.5% · 累计 21627</span>
+</div>
+<div class="route-body">
+<div class="route-empty">本章暂无推荐 (早期章节词汇量少)</div>
+</div>
+</div>
+<div class="route-card" data-ch="46">
+<div class="route-header">
+<span class="route-ch">Cap.46</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 25.6% · 累计 22878</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>olimpia_pyramus</code> 40%起点 Cap.46 (教学 Cap.1, 20%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="47">
+<div class="route-header">
+<span class="route-ch">Cap.47</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 26.5% · 累计 23473</span>
+</div>
+<div class="route-body">
+<div class="route-empty">本章暂无推荐 (早期章节词汇量少)</div>
+</div>
+</div>
+<div class="route-card" data-ch="48">
+<div class="route-header">
+<span class="route-ch">Cap.48</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 24.9% · 累计 25558</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-reward">🎯 奖励</span>
+<div class="route-item"><code>pugio_bruti</code> (Pugio Bruti (Polis))</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-selected">📚 节选</span>
+<div class="route-item"><code>conversational_latin</code> 20%起点 Cap.48, 9,165独词, 英44%</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="49">
+<div class="route-header">
+<span class="route-ch">Cap.49</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 23.5% · 累计 26228</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>chickering</code> 40%起点 Cap.49 (教学 Cap.1, 55%)</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>cambridge_4</code> p.107-109 教学 Cap.1(6%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="50">
+<div class="route-header">
+<span class="route-ch">Cap.50</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 22.6% · 累计 27751</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>wheelock_answer_key</code> 40%起点 Cap.50 (教学 Cap.1, 41%)</div>
+<div class="route-item"><code>septimus</code> 40%起点 Cap.50 (教学 Cap.4, 36%)</div>
+</div>
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>latin_natural_method</code> p.128-140 教学 Cap.4(23%)</div>
+<div class="route-item"><code>wheelock_7e</code> p.417-420 教学 Cap.1(10%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="51">
+<div class="route-header">
+<span class="route-ch">Cap.51</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 23.1% · 累计 28563</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>olimpia_daedalus</code> 40%起点 Cap.51 (教学 Cap.3, 19%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="52">
+<div class="route-header">
+<span class="route-ch">Cap.52</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 20.2% · 累计 30021</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-reward">🎯 奖励</span>
+<div class="route-item"><code>via_latina_romanorum</code> (Via Latina: De Lingua et Vita Romanorum)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="53">
+<div class="route-header">
+<span class="route-ch">Cap.53</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 20.2% · 累计 30853</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-seg">🧩 段</span>
+<div class="route-item"><code>cambridge_1</code> p.54-57 教学 Cap.3(1%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="54">
+<div class="route-header">
+<span class="route-ch">Cap.54</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 18.8% · 累计 32023</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>second_year_latin</code> 40%起点 Cap.54 (教学 Cap.1, 35%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="55">
+<div class="route-header">
+<span class="route-ch">Cap.55</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 20.3% · 累计 32992</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>latin_stories_wheelock</code> 40%起点 Cap.55 (教学 Cap.1, 33%)</div>
+</div>
+</div>
+</div>
+<div class="route-card" data-ch="56">
+<div class="route-header">
+<span class="route-ch">Cap.56</span>
+<span class="route-book">RA</span>
+<span class="route-stats">新词密度 22.2% · 累计 33770</span>
+</div>
+<div class="route-body">
+<div class="route-section">
+<span class="route-tag tag-challenge">💪 挑战</span>
+<div class="route-item"><code>intermediate_oral_cicero</code> 40%起点 Cap.56 (教学 Cap.1, 39%)</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 附录: 数据来源 -->
+<h2 class="section-title">附录: 数据来源与方法</h2>
+
+<div class="chart-card">
+  <h3 style="font-family:'Cinzel',serif;color:var(--pompeii-deep);margin-bottom:12px;">数据源</h3>
+  <ul style="line-height:1.8;padding-left:20px;">
+    <li><b>FR Cap.1-35</b>: <code>analysis_output/chapter_stats.csv</code> (35 行)</li>
+    <li><b>RA Cap.36-56</b>: <code>analysis_output/roma_aeterna_chapter_stats.csv</code> (21 行)</li>
+    <li><b>LLPSI 词形表</b>: <code>data/llpsi_corpus.db</code> 的 <code>fr_vocab</code> 表 (按词形存储, 累计 9,417 unique word forms)</li>
+    <li><b>55本扩展读物分析</b>: <code>analysis_output/reader_vocab_stats_v4.json</code></li>
+    <li><b>35段D类拉语段</b>: <code>analysis_output/d_segments_vocab.json</code></li>
+    <li><b>路由表</b>: <code>analysis_output/llpsi_reader_routing.json</code> (191 条推荐)</li>
+  </ul>
+
+  <h3 style="font-family:'Cinzel',serif;color:var(--pompeii-deep);margin:24px 0 12px;">算法</h3>
+  <ol style="line-height:1.8;padding-left:20px;">
+    <li>对每本书 / 段, 计算其 unique latin word forms (去重拉语词形)</li>
+    <li>对每章 (1-56), 计算 FR 已知词累计 (chapter_known = 1..N-1 章的 word forms)</li>
+    <li>覆盖率 cov(N) = len(book_unique ∩ chapter_known) / len(book_unique)</li>
+    <li>对每本书找最早达到 20%/40%/50%/60% 阈值的章节 → 4档可读性</li>
+    <li>教学价值 best_teach_chapter = max(len(new_set ∩ book_unique) / len(new_set))</li>
+  </ol>
+
+  <h3 style="font-family:'Cinzel',serif;color:var(--pompeii-deep);margin:24px 0 12px;">版本历史</h3>
+  <ul style="line-height:1.8;padding-left:20px;">
+    <li><b>v1.0</b> (2026-05): 首次生成, 含 1,800词族 / 3,500词族等错误数据</li>
+    <li><b>v2.0</b> (2026-06-06): 全面修正数据 + 加入 5 维度扩展读物路由 (191 条推荐)</li>
+  </ul>
+</div>
+
+</div> <!-- /container -->
+
+<script>
+const FR_LEN = 35;
+const CHAPTERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56];
+const CUM_VOCAB = [163, 326, 416, 542, 717, 883, 993, 1187, 1355, 1602, 1798, 2057, 2375, 2605, 2786, 3121, 3368, 3690, 3981, 4285, 4507, 4786, 5025, 5247, 5637, 5957, 6355, 6772, 7157, 7463, 7815, 8237, 8654, 9124, 9417, 11360, 12751, 13562, 14803, 15831, 16673, 17931, 18986, 20405, 21627, 22878, 23473, 25558, 26228, 27751, 28563, 30021, 30853, 32023, 32992, 33770];
+const NEW_WORDS = [204, 182, 96, 139, 187, 189, 127, 216, 187, 264, 224, 305, 382, 255, 207, 375, 274, 406, 336, 355, 252, 312, 270, 245, 427, 360, 433, 440, 434, 366, 423, 470, 476, 520, 336, 1943, 1391, 811, 1241, 1028, 842, 1258, 1055, 1419, 1222, 1251, 595, 2085, 670, 1523, 812, 1458, 832, 1170, 969, 778];
+const NEW_DENSITY = [23.6, 21.2, 16.0, 19.0, 20.3, 18.2, 12.9, 19.8, 20.0, 20.4, 19.4, 22.7, 26.2, 19.5, 20.2, 23.3, 20.7, 21.7, 21.7, 22.1, 19.4, 26.0, 18.2, 21.5, 27.4, 22.7, 23.4, 22.8, 22.7, 22.2, 21.8, 20.6, 23.8, 23.6, 20.9, 48.8, 45.3, 37.7, 37.5, 32.9, 33.7, 30.9, 28.8, 27.6, 27.5, 25.6, 26.5, 24.9, 23.5, 22.6, 23.1, 20.2, 20.2, 18.8, 20.3, 22.2];
+
+// FR→RA 难度跃迁图
+new echarts.init(document.getElementById('chart-jump')).setOption({
+  title: { text: 'FR→RA 难度跃迁', left: 'center', textStyle: { color: '#7a2820' } },
+  tooltip: { trigger: 'axis' },
+  xAxis: { type: 'category', data: CHAPTERS.map(c => 'Cap.' + c) },
+  yAxis: { type: 'value', name: '新词密度 %', nameTextStyle: { color: '#5a4a38' } },
+  series: [{
+    name: '新词密度',
+    type: 'line',
+    data: NEW_DENSITY,
+    smooth: true,
+    lineStyle: { width: 3, color: '#a8392e' },
+    areaStyle: { color: 'rgba(168, 57, 46, 0.2)' },
+    markLine: {
+      symbol: 'none',
+      data: [
+        { xAxis: FR_LEN - 1, name: 'FR 末章' },
+        { xAxis: FR_LEN, name: 'RA 起始' }
+      ],
+      label: { fontSize: 12, color: '#7a2820' }
+    },
+    markArea: {
+      itemStyle: { color: 'rgba(176, 141, 43, 0.1)' },
+      data: [[{ xAxis: 0, name: 'FR' }, { xAxis: FR_LEN - 1 }],
+             [{ xAxis: FR_LEN, name: 'RA' }, { xAxis: CHAPTERS.length - 1 }]]
+    }
+  }]
+});
+
+// 词汇增长曲线
+new echarts.init(document.getElementById('chart-cum-vocab')).setOption({
+  title: { text: '累计词汇增长 (DB 词形)', left: 'center', textStyle: { color: '#7a2820' } },
+  tooltip: { trigger: 'axis' },
+  xAxis: { type: 'category', data: CHAPTERS.map(c => 'Cap.' + c) },
+  yAxis: { type: 'value', name: '词形数' },
+  series: [
+    {
+      name: 'FR', type: 'line', data: CUM_VOCAB.slice(0, FR_LEN),
+      smooth: true, lineStyle: { color: '#2c3e3a', width: 3 },
+      areaStyle: { color: 'rgba(44, 62, 58, 0.15)' }
+    },
+    {
+      name: 'RA', type: 'line', data: CUM_VOCAB.slice(FR_LEN - 1),
+      smooth: true, lineStyle: { color: '#5a3e5c', width: 3 },
+      areaStyle: { color: 'rgba(90, 62, 92, 0.15)' }
+    }
+  ]
+});
+
+// 新词密度曲线
+new echarts.init(document.getElementById('chart-new-density')).setOption({
+  title: { text: '新词密度曲线', left: 'center', textStyle: { color: '#7a2820' } },
+  tooltip: { trigger: 'axis' },
+  xAxis: { type: 'category', data: CHAPTERS.map(c => 'Cap.' + c) },
+  yAxis: { type: 'value', name: '密度 %' },
+  series: [{
+    name: '新词密度',
+    type: 'bar',
+    data: NEW_DENSITY.map((v, i) => ({
+      value: v,
+      itemStyle: { color: i < FR_LEN ? '#2c3e3a' : '#5a3e5c' }
+    }))
+  }]
+});
+
+// 章节体量
+new echarts.init(document.getElementById('chart-volume')).setOption({
+  title: { text: '章节体量 (总词数)', left: 'center', textStyle: { color: '#7a2820' } },
+  tooltip: { trigger: 'axis' },
+  xAxis: { type: 'category', data: CHAPTERS.map(c => 'Cap.' + c) },
+  yAxis: { type: 'value', name: '总词数' },
+  series: [{
+    name: '总词数', type: 'bar',
+    data: [863, 860, 599, 730, 919, 1038, 984, 1093, 935, 1292, 1155, 1345, 1457, 1306, 1023, 1609, 1326, 1870, 1551, 1607, 1297, 1198, 1483, 1139, 1558, 1585, 1851, 1933, 1910, 1651, 1941, 2286, 1999, 2199, 1604, 3983, 3068, 2154, 3307, 3127, 2502, 4073, 3666, 5140, 4437, 4879, 2246, 8382, 2852, 6725, 3513, 7201, 4110, 6214, 4762, 3498],
+    itemStyle: { color: '#b08d2b', opacity: 0.7 }
+  }]
+});
+
+// 新增词数
+new echarts.init(document.getElementById('chart-new-words')).setOption({
+  title: { text: '章节新增词数', left: 'center', textStyle: { color: '#7a2820' } },
+  tooltip: { trigger: 'axis' },
+  xAxis: { type: 'category', data: CHAPTERS.map(c => 'Cap.' + c) },
+  yAxis: { type: 'value', name: '新词数' },
+  series: [{
+    name: '新词数', type: 'bar',
+    data: NEW_WORDS.map((v, i) => ({
+      value: v,
+      itemStyle: { color: i < FR_LEN ? '#2c3e3a' : '#5a3e5c' }
+    }))
+  }]
+});
+
+// ROI
+new echarts.init(document.getElementById('chart-roi')).setOption({
+  title: { text: 'ROI 甜蜜点 (新词密度 vs 累计词)', left: 'center', textStyle: { color: '#7a2820' } },
+  tooltip: { trigger: 'axis' },
+  xAxis: { type: 'value', name: '累计词形', nameLocation: 'middle', nameGap: 30 },
+  yAxis: { type: 'value', name: '新词密度 %' },
+  series: [{
+    name: '章节',
+    type: 'scatter',
+    data: CUM_VOCAB.map((cum, i) => [cum, NEW_DENSITY[i]]),
+    symbolSize: 8,
+    itemStyle: {
+      color: function(params) {
+        return params.dataIndex < FR_LEN ? '#2c3e3a' : '#5a3e5c';
+      }
+    }
+  }]
+});
+
+// 路由卡片筛选
+function filterCards() {
+  const range = document.getElementById('filter-range').value;
+  const tag = document.getElementById('filter-tag').value;
+  const cards = document.querySelectorAll('.route-card');
+  cards.forEach(card => {
+    const ch = parseInt(card.dataset.ch);
+    let inRange = true;
+    if (range === 'fr') inRange = ch <= 35;
+    else if (range === 'ra') inRange = ch >= 36;
+    else if (range === '1-10') inRange = ch >= 1 && ch <= 10;
+    else if (range === '11-20') inRange = ch >= 11 && ch <= 20;
+    else if (range === '21-30') inRange = ch >= 21 && ch <= 30;
+    else if (range === '31-45') inRange = ch >= 31 && ch <= 45;
+    else if (range === '46-56') inRange = ch >= 46 && ch <= 56;
+    card.style.display = inRange ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

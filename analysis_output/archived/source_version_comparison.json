@@ -1,0 +1,279 @@
+{
+  "core_familia_romana": [
+    {
+      "filename": "LLPSI_core_familia_romana.pdf",
+      "size_mb": 19.8,
+      "pages": 331,
+      "text_chars": 1357,
+      "avg_word_len": 5.48,
+      "latin_word_ratio": 0.061,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 70,
+      "text_chars_extracted": 1357,
+      "extraction_rate": "可复制"
+    },
+    {
+      "filename": "LLPSI_core_familia_romana_hd_2nd_color_text_selectable.pdf",
+      "size_mb": 143.7,
+      "pages": 332,
+      "text_chars": 1821,
+      "avg_word_len": 5.84,
+      "latin_word_ratio": 0.074,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 70,
+      "text_chars_extracted": 1821,
+      "extraction_rate": "可复制"
+    },
+    {
+      "filename": "LLPSI_core_familia_romana_hd_color_small.pdf",
+      "size_mb": 52.4,
+      "pages": 332,
+      "text_chars": 1821,
+      "avg_word_len": 5.84,
+      "latin_word_ratio": 0.074,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 70,
+      "text_chars_extracted": 1821,
+      "extraction_rate": "可复制"
+    },
+    {
+      "filename": "LLPSI_core_familia_romana_v1_scan.pdf",
+      "size_mb": 7.0,
+      "pages": 335,
+      "text_chars": 5,
+      "avg_word_len": 0,
+      "latin_word_ratio": 0,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 0
+    }
+  ],
+  "core_indices": [
+    {
+      "filename": "LLPSI_core_indices.pdf",
+      "size_mb": 3.7,
+      "pages": 68,
+      "text_chars": 214,
+      "avg_word_len": 4.57,
+      "latin_word_ratio": 0.1,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 6,
+      "quality_score": 40,
+      "text_chars_extracted": 214,
+      "extraction_rate": "需OCR"
+    },
+    {
+      "filename": "LLPSI_core_indices_v1.pdf",
+      "size_mb": 3.3,
+      "pages": 68,
+      "text_chars": 5,
+      "avg_word_len": 0,
+      "latin_word_ratio": 0,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 0
+    }
+  ],
+  "core_roma_aeterna": [
+    {
+      "filename": "LLPSI_core_roma_aeterna.pdf",
+      "size_mb": 16.4,
+      "pages": 426,
+      "text_chars": 167,
+      "avg_word_len": 4.11,
+      "latin_word_ratio": 0.071,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 3,
+      "quality_score": 40,
+      "text_chars_extracted": 167,
+      "extraction_rate": "需OCR"
+    },
+    {
+      "filename": "LLPSI_core_roma_aeterna_hd_2nd_color.pdf",
+      "size_mb": 174.9,
+      "pages": 429,
+      "text_chars": 451,
+      "avg_word_len": 4.0,
+      "latin_word_ratio": 0.042,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 30,
+      "text_chars_extracted": 451,
+      "extraction_rate": "需OCR"
+    },
+    {
+      "filename": "LLPSI_core_roma_aeterna_hd_2nd_color_alt.pdf",
+      "size_mb": 172.7,
+      "pages": 429,
+      "text_chars": 92,
+      "avg_word_len": 4.79,
+      "latin_word_ratio": 0.071,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 60,
+      "text_chars_extracted": 92,
+      "extraction_rate": "需OCR"
+    },
+    {
+      "filename": "LLPSI_core_roma_aeterna_v1_scan.pdf",
+      "size_mb": 14.6,
+      "pages": 426,
+      "text_chars": 5,
+      "avg_word_len": 0,
+      "latin_word_ratio": 0,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 0
+    }
+  ],
+  "grammar_grammatica_latina": [
+    {
+      "filename": "LLPSI_grammar_grammatica_latina.pdf",
+      "size_mb": 1.5,
+      "pages": 36,
+      "text_chars": 3725,
+      "avg_word_len": 5.39,
+      "latin_word_ratio": 0.019,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 242,
+      "quality_score": 20,
+      "text_chars_extracted": 3725,
+      "extraction_rate": "可复制"
+    },
+    {
+      "filename": "LLPSI_grammar_grammatica_latina_v1.pdf",
+      "size_mb": 1.2,
+      "pages": 32,
+      "text_chars": 5,
+      "avg_word_len": 0,
+      "latin_word_ratio": 0,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 0
+    }
+  ],
+  "grammar_instructions": [
+    {
+      "filename": "LLPSI_grammar_instructions.pdf",
+      "size_mb": 2.8,
+      "pages": 40,
+      "text_chars": 4106,
+      "avg_word_len": 5.21,
+      "latin_word_ratio": 0.022,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 40,
+      "quality_score": 20,
+      "text_chars_extracted": 4106,
+      "extraction_rate": "可复制"
+    },
+    {
+      "filename": "LLPSI_grammar_instructions_v1.pdf",
+      "size_mb": 4.0,
+      "pages": 40,
+      "text_chars": 5,
+      "avg_word_len": 0,
+      "latin_word_ratio": 0,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 0
+    }
+  ],
+  "reader_colloquia_personarum": [
+    {
+      "filename": "LLPSI_reader_colloquia_personarum.pdf",
+      "size_mb": 10.2,
+      "pages": 98,
+      "text_chars": 2547,
+      "avg_word_len": 5.98,
+      "latin_word_ratio": 0.065,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 70,
+      "text_chars_extracted": 2547,
+      "extraction_rate": "可复制"
+    },
+    {
+      "filename": "LLPSI_reader_colloquia_personarum_v1_scan.pdf",
+      "size_mb": 1.4,
+      "pages": 79,
+      "text_chars": 2413,
+      "avg_word_len": 6.15,
+      "latin_word_ratio": 0.056,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 70,
+      "text_chars_extracted": 2413,
+      "extraction_rate": "可复制"
+    }
+  ],
+  "reader_fabulae_syrae": [
+    {
+      "filename": "LLPSI_reader_fabulae_syrae.pdf",
+      "size_mb": 4.5,
+      "pages": 148,
+      "text_chars": 2732,
+      "avg_word_len": 5.99,
+      "latin_word_ratio": 0.091,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 70,
+      "text_chars_extracted": 2732,
+      "extraction_rate": "可复制"
+    },
+    {
+      "filename": "LLPSI_reader_fabulae_syrae_1st_ed.pdf",
+      "size_mb": 9.7,
+      "pages": 148,
+      "text_chars": 5,
+      "avg_word_len": 0,
+      "latin_word_ratio": 0,
+      "macron_count": 0,
+      "has_macrons": false,
+      "mojibake_count": 0,
+      "quality_score": 0
+    }
+  ],
+  "vocab_multilingue": [
+    {
+      "filename": "LLPSI_vocab_multilingue.pdf",
+      "size_mb": 0.4,
+      "pages": 48,
+      "text_chars": 12296,
+      "avg_word_len": 5.3,
+      "latin_word_ratio": 0.017,
+      "macron_count": 99,
+      "has_macrons": true,
+      "mojibake_count": 0,
+      "quality_score": 70,
+      "text_chars_extracted": 12296,
+      "extraction_rate": "可复制"
+    },
+    {
+      "filename": "LLPSI_vocab_multilingue.xlsx",
+      "size_mb": 0.1,
+      "pages": 0,
+      "text_chars": 0,
+      "quality_score": -1
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# Supplementum Cap. X
+## Cap. X     · 关系从句扩展
+## 脚手架类型: 句法脚手架
+
+**本章新词** (前 10): potest(26次), possunt(17次), enim(14次), homines(13次), homo(12次), pisces(11次), mortuus(8次), necesse(7次), avēs(6次), avis(6次)
+
+**使用建议**:
+- 推荐在读完《Familia Romana》Cap. X **之后** 立即阅读
+- 重点关注脚手架目标: 句法模式 / 关键词复现
+- 遇到生词请回到原章节对应位置重读上下文
+
+---
+
+Mārcus hodiē in macellum cum mātre iit. In viā Mārcus dīxit: "Māter, cūr hodiē in macellum īmus?" Māter respondit: "Eō, ut piscem optimum, quem coquāmus, emāmus. Pater noster crās ad cēnam multōs virōs vocāvit, quī nōbīscum cēnam edent."
+
+In macellō Mārcus multa animālia, quae in tabernīs iacebant, vīdit. Mārcus mātrem suam rogāvit: "Māter, quae sunt haec animālia, quae hīc iacent?" Māter respondit: "Sunt piscēs, quī in aquā vīvunt, et avēs, quae in caelō volāre solent." Mārcus attonitus erat et rogāvit: "Quid est animal, quod in aquā habitat et nōn volat?" Māter dīxit: "Piscis est animal, quod in aquā habitat et nāre scit. Piscis, quī mortuus est, ēmitur. Piscis, quī vīvit, in aquā natat."
+
+Mārcus dīxit: "Cūr hīc tot piscēs mortuī iacent?" Māter respondit: "Mercātor piscēs, quī mortuī sunt, vēndit. Eōs, quī recentissimī sunt, emere volumus." Mārcus intellexit et mercātōrem rogāvit: "Quis est piscis, quem optimissimum habēs?" Mercātor dīxit: "Hic piscis, quem ostendō, recentissimus est. Hunc eme, fīlī!"
+
+Mārcus avem, quae in caveā pendēbat, audiit. Avis cantābat "Tū, tū, tū!" Mārcus rogāvit: "Cūr avis haec, quae cantat, in caveā est?" Māter respondit: "Avis, quae in caveā vīvit, ā mercātōre vēnditur. Avis, quae in silvā habitat, libera est et in caelō volāre potest. Avis, quae libera est, melius cantat. Avis, quae clausa est, misera esse vidētur."
+
+Mārcus attonitus dīxit: "Eheu! Avēs, quae in silvīs vīvunt, meliōrem vītam habent! Avēs, quae in caveīs clauduntur, dolent!" Māter dīxit: "Vērum dīcis, fīlī mī. Sed hominēs, quī in urbe vīvunt, avēs capere volunt, quia cibus delīcātus sunt. Est trīste."
+
+Mārcus tunc aquilam, quae in tabulā picta erat, vīdit. Mārcus dīxit: "Māter, quae est illa avis magna, quae in tabulā pingitur?" Māter respondit: "Aquila est fera, quae in altissimīs montibus habitat. Aquila, quae regīna avium appellātur, in caelō altissimō volat." Mārcus dīxit: "Aquila, quae in montibus habitat, pulcherrima esse vidētur!"
+
+Mārcus piscem optimum, quem mercātor dedit, ēmit. Māter, quae laeta erat, dīxit: "Fīlī mī, hodiē multa dīdicistī! Piscem, quem ēmistī, crās in cēnā coquēmus. Pater noster, quī multōs virōs vocāvit, piscem optimum habēbit." Sīc Mārcus, quī multa didicit, cum mātre domum revertit.

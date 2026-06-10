@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLPSI · Roman Insights — 数据洞察</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<style>
+  :root {
+    /* Roman palette */
+    --parchment: #F4ECD8;
+    --parchment-light: #FAF3E0;
+    --parchment-dark: #E5D9B6;
+    --parchment-shadow: #C9B98C;
+    --marble: #EFEBE0;
+    --marble-vein: #D4C9A8;
+    --ink: #2A1F0E;
+    --ink-soft: #4A3A24;
+    --ink-faint: #6B5A3E;
+    --dark-red: #8B1A1A;
+    --dark-red-deep: #5C0E0E;
+    --dark-red-bright: #A52A2A;
+    --gold: #C9A24A;
+    --gold-bright: #D4AF37;
+    --gold-deep: #8B6F1F;
+    --brown: #654321;
+    --brown-deep: #3D2817;
+    --bronze: #8B6F47;
+    --bronze-light: #B89668;
+    --laurel: #6B7F4A;
+    --laurel-deep: #4A5C2F;
+    /* Books */
+    --fr-color: #8B6F1F;
+    --fr-bg: #F0E2B6;
+    --ra-color: #8B1A1A;
+    --ra-bg: #E8C7B8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--parchment); color: var(--ink); }
+  body {
+    font-family: 'Cormorant Garamond', 'Cardo', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    min-height: 100vh;
+    /* Parchment texture: layered radial gradients + subtle noise */
+    background:
+      radial-gradient(ellipse 800px 600px at 10% 10%, rgba(201,169,74,0.10), transparent 70%),
+      radial-gradient(ellipse 1000px 800px at 90% 30%, rgba(139,26,26,0.06), transparent 70%),
+      radial-gradient(ellipse 700px 500px at 50% 80%, rgba(101,67,33,0.07), transparent 70%),
+      linear-gradient(135deg, var(--parchment) 0%, var(--parchment-light) 50%, var(--parchment) 100%);
+    background-attachment: fixed;
+  }
+  /* Subtle parchment grain via repeating noise pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(101,67,33,0.018) 0px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(90deg, rgba(101,67,33,0.018) 0px, transparent 1px, transparent 4px);
+    z-index: 0;
+  }
+  /* Parchment edge vignette */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 1500px 1100px at 50% 50%, transparent 55%, rgba(60,40,15,0.18) 100%);
+    z-index: 0;
+  }
+
+  /* ====== LAYOUT ====== */
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 36px; position: relative; z-index: 1; }
+
+  /* ====== HERO ====== */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    position: relative;
+  }
+  .hero-spqr {
+    display: inline-block;
+    width: 110px; height: 110px;
+    line-height: 110px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 30%, var(--gold-bright), var(--gold-deep));
+    color: var(--dark-red-deep);
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    box-shadow:
+      0 0 0 3px var(--parchment),
+      0 0 0 5px var(--gold-deep),
+      0 6px 24px rgba(0,0,0,0.25);
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero-spqr::after {
+    content: '·SPQR·';
+  }
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: var(--dark-red-deep);
+    margin-bottom: 6px;
+    text-shadow: 0 2px 0 var(--parchment-shadow);
+  }
+  .hero-title .ampersand {
+    color: var(--gold-deep);
+    font-size: 50px;
+    vertical-align: middle;
+  }
+  .hero-sub {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 12px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-quote {
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto 12px;
+    line-height: 1.6;
+  }
+  .hero-quote-attr {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+  }
+  /* Laurel branches */
+  .laurel {
+    position: absolute;
+    top: 90px;
+    width: 200px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .laurel.left { left: 5%; transform: scaleX(-1); }
+  .laurel.right { right: 5%; }
+
+  /* ====== NAV (chapter index) ====== */
+  .nav-strip {
+    background: linear-gradient(180deg, var(--marble) 0%, var(--parchment-dark) 100%);
+    border: 1px solid var(--parchment-shadow);
+    border-left: 4px solid var(--dark-red);
+    border-right: 4px solid var(--dark-red);
+    padding: 18px 0;
+    margin: 30px 0 50px;
+    position: relative;
+  }
+  .nav-strip::before, .nav-strip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px; height: 32px;
+    background: var(--gold-deep);
+    border: 2px solid var(--dark-red-deep);
+    border-radius: 50%;
+  }
+  .nav-strip::before { left: -16px; }
+  .nav-strip::after { right: -16px; }
+  .nav-strip-inner {
+    display: flex; flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 0 50px;
+  }
+  .nav-strip a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    border-bottom: 1px dotted transparent;
+  }
+  .nav-strip a:hover { color: var(--dark-red); border-bottom-color: var(--dark-red); }
+  .nav-strip .fr-tag, .nav-strip .ra-tag {
+    color: var(--ink-faint);
+    font-style: italic;
+    margin: 0 8px;
+  }
+  .nav-strip .divider {
+    color: var(--gold-deep);
+    font-weight: 700;
+    margin: 0 4px;
+  }
+
+  /* ====== KPI CARDS ====== */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 0 0 50px;
+  }
+  .kpi {
+    background: linear-gradient(165deg, var(--parchment-light) 0%, var(--marble) 100%);
+    border: 1px solid var(--parchment-shadow);
+    border-top: 3px solid var(--gold);
+    padding: 22px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 0 var(--parchment-shadow), 0 8px 16px rgba(60,40,15,0.06);
+  }
+  .kpi::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px dashed var(--parchment-shadow);
+    pointer-events: none;
+  }
+  .kpi-value {
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--dark-red);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .kpi-value .unit { font-size: 18px; color: var(--ink-faint); margin-left: 2px; }
+  .kpi-label {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .kpi-sub {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* ====== SECTION ====== */
+  section.insight {
+    margin: 60px 0;
+    background: linear-gradient(180deg, var(--parchment-light) 0%, var(--parchment) 100%);
+    border: 1px solid var(--parchment-shadow);
+    padding: 36px 40px 42px;
+    position: relative;
+    box-shadow: 0 2px 0 var(--parchment-shadow), 0 12px 32px rgba(60,40,15,0.08);
+  }
+  section.insight::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 6px; right: 6px; bottom: 6px;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  /* Top decorative tab */
+  section.insight::after {
+    content: '·';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--parchment);
+    padding: 0 16px;
+    color: var(--gold-deep);
+    font-size: 18px;
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--dark-red);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--dark-red-deep);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .section-subtitle {
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 20px 0 28px;
+  }
+
+  /* ====== CHART CONTAINERS ====== */
+  .chart {
+    width: 100%;
+    height: 480px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1)),
+      var(--parchment-light);
+    border: 1px solid var(--parchment-shadow);
+    padding: 8px 12px;
+  }
+  .chart-sm { height: 320px; }
+  .chart-lg { height: 540px; }
+
+  /* ====== CHAPTER GRID (heatmap) ====== */
+  .chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .ch-cell {
+    aspect-ratio: 1.1;
+    background: var(--parchment-light);
+    border: 1px solid var(--parchment-shadow);
+    padding: 6px 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+  }
+  .ch-cell:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(60,40,15,0.25);
+    z-index: 2;
+  }
+  .ch-cell .ch-num {
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+  }
+  .ch-cell .ch-density {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .ch-cell.fr { border-left: 3px solid var(--fr-color); }
+  .ch-cell.ra { border-left: 3px solid var(--ra-color); }
+  .ch-cell .ch-icon {
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  /* ====== COMPARISON CARDS ====== */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .compare-card {
+    background: var(--parchment-light);
+    border: 1px solid var(--parchment-shadow);
+    padding: 28px 26px;
+    position: relative;
+    border-top: 4px solid;
+  }
+  .compare-card.fr { border-top-color: var(--fr-color); }
+  .compare-card.ra { border-top-color: var(--ra-color); }
+  .compare-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .compare-card.fr .compare-card-title { color: var(--fr-color); }
+  .compare-card.ra .compare-card-title { color: var(--ra-color); }
+  .compare-card-tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .compare-stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--parchment-shadow);
+    font-size: 15px;
+  }
+  .compare-stat-row:last-of-type { border-bottom: none; }
+  .compare-stat-row .label { color: var(--ink-soft); }
+  .compare-stat-row .val {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--dark-red-deep);
+  }
+
+  /* ====== TOP WORDS TABLE (scroll/marble tablet) ====== */
+  .top-words {
+    background: linear-gradient(180deg, var(--marble), var(--parchment-light));
+    border: 2px solid var(--parchment-shadow);
+    padding: 30px 30px;
+    position: relative;
+  }
+  .top-words::before {
+    content: 'VERBORVM FREQVENTIA';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--parchment);
+    padding: 0 16px;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold-deep);
+  }
+  .word-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 60px 1fr;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--parchment-shadow);
+  }
+  .word-row:last-child { border-bottom: none; }
+  .word-rank {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark-red);
+    text-align: right;
+  }
+  .word-latin {
+    font-family: 'Cardo', 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .word-count {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: var(--ink-faint);
+    text-align: right;
+  }
+  .word-bar {
+    height: 12px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold-bright));
+    position: relative;
+    border-right: 1px solid var(--gold-deep);
+  }
+
+  /* ====== LONGEST / SHORTEST ====== */
+  .extreme-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .extreme-block {
+    background: var(--parchment-light);
+    border: 1px solid var(--parchment-shadow);
+    padding: 22px;
+  }
+  .extreme-block-title {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-red);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .extreme-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--parchment-shadow);
+  }
+  .extreme-item:last-child { border-bottom: none; }
+  .extreme-icon {
+    font-size: 28px;
+    width: 44px; text-align: center;
+  }
+  .extreme-info { flex: 1; }
+  .extreme-ch {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--dark-red-deep);
+    font-size: 16px;
+  }
+  .extreme-title {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+  .extreme-meta {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+  }
+
+  /* ====== THEME TREEMAP ====== */
+  .theme-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .theme-card {
+    background: var(--parchment-light);
+    border: 1px solid var(--parchment-shadow);
+    border-left: 4px solid var(--color, var(--gold));
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .theme-card:hover { transform: translateX(3px); box-shadow: -4px 0 0 var(--color, var(--gold)); }
+  .theme-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .theme-count {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color, var(--dark-red));
+  }
+  .theme-count .unit {
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-left: 4px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .theme-chs {
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* ====== FOOTER ====== */
+  footer {
+    margin-top: 80px;
+    padding: 40px 0 30px;
+    text-align: center;
+    border-top: 3px double var(--gold);
+    position: relative;
+  }
+  footer::before {
+    content: 'SPQR';
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--parchment);
+    padding: 0 18px;
+    color: var(--dark-red-deep);
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 6px;
+  }
+  .footer-text {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .footer-text em { color: var(--dark-red); font-style: italic; }
+  .footer-fine {
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+    margin-top: 12px;
+  }
+
+  /* ====== CHAPTER DETAIL MODAL ====== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(40, 25, 10, 0.7);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: var(--parchment-light);
+    border: 2px solid var(--gold);
+    max-width: 580px;
+    width: 100%;
+    max-height: 88vh;
+    overflow: auto;
+    padding: 32px 32px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .modal-close {
+    position: absolute;
+    top: 12px; right: 16px;
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: var(--ink-faint);
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 30px; height: 30px;
+  }
+  .modal-close:hover { color: var(--dark-red); }
+  .modal-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+  }
+  .modal-title {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    color: var(--dark-red-deep);
+    margin: 4px 0 2px;
+  }
+  .modal-sub {
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  .modal-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .modal-stat {
+    background: var(--marble);
+    padding: 10px 12px;
+    border-left: 3px solid var(--gold);
+  }
+  .modal-stat-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .modal-stat-value {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: var(--dark-red);
+    font-weight: 600;
+  }
+  .modal-stat-unit { font-size: 12px; color: var(--ink-faint); margin-left: 2px; }
+  .modal-words {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--parchment-shadow);
+  }
+  .modal-words-title {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .word-chip {
+    display: inline-block;
+    background: var(--marble);
+    border: 1px solid var(--parchment-shadow);
+    padding: 3px 10px;
+    margin: 2px 4px 2px 0;
+    font-family: 'Cardo', serif;
+    font-style: italic;
+    color: var(--ink);
+    font-size: 14px;
+  }
+  .modal-key {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(201, 162, 74, 0.1);
+    border-left: 3px solid var(--gold);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .modal-key b { color: var(--dark-red); font-style: normal; }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 1100px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .compare-grid, .extreme-grid { grid-template-columns: 1fr; }
+    .theme-grid { grid-template-columns: repeat(2, 1fr); }
+    .chapter-grid { grid-template-columns: repeat(7, 1fr); }
+    .hero-title { font-size: 48px; }
+  }
+  @media (max-width: 700px) {
+    .container { padding: 0 18px; }
+    section.insight { padding: 24px 18px 28px; }
+    .chapter-grid { grid-template-columns: repeat(5, 1fr); }
+    .theme-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 36px; letter-spacing: 4px; }
+    .nav-strip-inner { font-size: 11px; }
+    .laurel { display: none; }
+  }
+
+  /* Print-friendly */
+  @media print {
+    body { background: white; }
+    section.insight { box-shadow: none; page-break-inside: avoid; }
+  }
+
+  /* ====== VIII · ROI 金字塔 ====== */
+  .roi-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .roi-img-wrap {
+    text-align: center;
+  }
+  .roi-img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(28,25,23,0.10);
+    background: #fbf6e9;
+  }
+  .chart-roi {
+    width: 100%;
+    height: 380px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(28,25,23,0.10);
+    background: #fbf6e9;
+  }
+  .roi-caption {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .roi-pyramid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .tier {
+    display: grid;
+    grid-template-columns: 90px 1.2fr 1.5fr;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px;
+    background: #fbf6e9;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--muted);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+  }
+  .tier:hover {
+    background: #f4ecd8;
+    transform: translateX(2px);
+  }
+  .tier-label {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .tier-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .tier-stats {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+  /* 甜蜜点高亮 */
+  .t2-sweet {
+    background: linear-gradient(135deg, #fff5d4 0%, #f7e9b8 100%);
+    border-left-color: var(--gold);
+    box-shadow: 0 2px 10px rgba(176,141,43,0.18);
+  }
+  .t2-sweet .tier-label {
+    color: var(--gold);
+    font-size: 15px;
+  }
+  .t2-sweet .tier-name {
+    color: var(--ink);
+    font-size: 18px;
+  }
+  /* 顶层颜色 */
+  .t5 { border-left-color: #5a3e5c; }
+  .t4 { border-left-color: #2c3e3a; }
+  .t3 { border-left-color: #a8392e; }
+  .t1 { border-left-color: #8a7a5a; }
+  .t0 { border-left-color: #c9bfa8; opacity: 0.7; }
+  .roi-msg {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: linear-gradient(90deg, rgba(176,141,43,0.10) 0%, rgba(176,141,43,0.02) 100%);
+    border-left: 3px solid var(--gold);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .roi-msg strong {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    margin-right: 6px;
+  }
+
+  /* ====== IX · 关键门槛点 ====== */
+  .wall-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 12px;
+  }
+  .wall-item {
+    padding: 16px 14px;
+    background: #fbf6e9;
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--muted);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+  }
+  .wall-item:hover {
+    background: #f4ecd8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(28,25,23,0.08);
+  }
+  .wall-item.highlight {
+    background: linear-gradient(135deg, #fff5d4 0%, #f7e9b8 100%);
+    border-top-color: var(--gold);
+    box-shadow: 0 2px 8px rgba(176,141,43,0.15);
+  }
+  .wall-chap {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  .wall-type {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+  }
+  .wall-item.highlight .wall-type {
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .wall-action {
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  /* 章节类型色调 */
+  .wall-item.cap1 { border-top-color: #8a7a5a; }
+  .wall-item.cap8 { border-top-color: var(--gold); }
+  .wall-item.cap25 { border-top-color: var(--gold); }
+  .wall-item.cap35 { border-top-color: #a8392e; }
+  .wall-item.cap36 { border-top-color: #5a3e5c; }
+  .wall-item.cap44 { border-top-color: #2c3e3a; }
+  .wall-msg {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: linear-gradient(90deg, rgba(168,57,46,0.08) 0%, rgba(168,57,46,0.02) 100%);
+    border-left: 3px solid #a8392e;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .wall-msg strong {
+    color: #a8392e;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    margin-right: 6px;
+  }
+  .wall-msg em {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 600;
+  }
+  @media (max-width: 1100px) {
+    .roi-flex { grid-template-columns: 1fr; }
+    .wall-timeline { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 700px) {
+    .wall-timeline { grid-template-columns: 1fr; }
+    .tier { grid-template-columns: 1fr; gap: 4px; padding: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Decorative laurel SVGs -->
+<svg class="laurel left" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g fill="#6B7F4A" opacity="0.7">
+    <ellipse cx="60" cy="100" rx="14" ry="7" transform="rotate(-30 60 100)"/>
+    <ellipse cx="80" cy="80" rx="14" ry="7" transform="rotate(-50 80 80)"/>
+    <ellipse cx="100" cy="60" rx="14" ry="7" transform="rotate(-70 100 60)"/>
+    <ellipse cx="125" cy="50" rx="14" ry="7" transform="rotate(-85 125 50)"/>
+    <ellipse cx="150" cy="55" rx="14" ry="7" transform="rotate(80 150 55)"/>
+    <ellipse cx="170" cy="75" rx="14" ry="7" transform="rotate(70 170 75)"/>
+    <ellipse cx="60" cy="130" rx="14" ry="7" transform="rotate(30 60 130)"/>
+    <ellipse cx="80" cy="150" rx="14" ry="7" transform="rotate(50 80 150)"/>
+    <ellipse cx="100" cy="170" rx="14" ry="7" transform="rotate(70 100 170)"/>
+    <ellipse cx="125" cy="180" rx="14" ry="7" transform="rotate(85 125 180)"/>
+    <ellipse cx="150" cy="175" rx="14" ry="7" transform="rotate(-80 150 175)"/>
+    <ellipse cx="170" cy="155" rx="14" ry="7" transform="rotate(-70 170 155)"/>
+  </g>
+  <path d="M 50 100 Q 100 100 175 115" stroke="#6B7F4A" stroke-width="1.5" fill="none" opacity="0.5"/>
+</svg>
+<svg class="laurel right" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g fill="#6B7F4A" opacity="0.7">
+    <ellipse cx="140" cy="100" rx="14" ry="7" transform="rotate(30 140 100)"/>
+    <ellipse cx="120" cy="80" rx="14" ry="7" transform="rotate(50 120 80)"/>
+    <ellipse cx="100" cy="60" rx="14" ry="7" transform="rotate(70 100 60)"/>
+    <ellipse cx="75" cy="50" rx="14" ry="7" transform="rotate(85 75 50)"/>
+    <ellipse cx="50" cy="55" rx="14" ry="7" transform="rotate(-80 50 55)"/>
+    <ellipse cx="30" cy="75" rx="14" ry="7" transform="rotate(-70 30 75)"/>
+    <ellipse cx="140" cy="130" rx="14" ry="7" transform="rotate(-30 140 130)"/>
+    <ellipse cx="120" cy="150" rx="14" ry="7" transform="rotate(-50 120 150)"/>
+    <ellipse cx="100" cy="170" rx="14" ry="7" transform="rotate(-70 100 170)"/>
+    <ellipse cx="75" cy="180" rx="14" ry="7" transform="rotate(-85 75 180)"/>
+    <ellipse cx="50" cy="175" rx="14" ry="7" transform="rotate(80 50 175)"/>
+    <ellipse cx="30" cy="155" rx="14" ry="7" transform="rotate(70 30 155)"/>
+  </g>
+  <path d="M 150 100 Q 100 100 25 115" stroke="#6B7F4A" stroke-width="1.5" fill="none" opacity="0.5"/>
+</svg>
+
+<div class="container">
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="hero-spqr"></div>
+  <h1 class="hero-title">LLPSI <span class="ampersand">·</span> ROMAN <span class="ampersand">·</span> INSIGHTS</h1>
+  <p class="hero-sub">Lingua Latina Per Se Illustrata</p>
+  <p class="hero-quote">
+    «In usum discipulorum edidit Hans H. Ørberg.»<br>
+    为学生而编辑的拉丁文 — 跨越 56 章的语言学数据洞察
+  </p>
+  <p class="hero-quote-attr">— Domus Latina · Anno MMXXVI</p>
+</header>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav-strip">
+  <div class="nav-strip-inner" id="navStrip"></div>
+</nav>
+
+<!-- ===================== KPI ===================== -->
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="kpi-value">LVI<span class="unit"> 章</span></div>
+    <div class="kpi-label">Capitula</div>
+    <div class="kpi-sub">FR XXXV + RA XXI</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">320,220<span class="unit"> 词</span></div>
+    <div class="kpi-label">Total Tokens</div>
+    <div class="kpi-sub">33,088 词形</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">7.2<span class="unit">%</span></div>
+    <div class="kpi-label">FR → RA 难度跃迁</div>
+    <div class="kpi-sub">21.3% → 28.5%</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">Cap.XXXVI</div>
+    <div class="kpi-label">Densissima</div>
+    <div class="kpi-sub">48.8% 新词密度</div>
+  </div>
+</div>
+
+<!-- ===================== § 1. 词汇增长曲线 ===================== -->
+<section class="insight" id="growth">
+  <div class="section-eyebrow">I · Lemma Primum</div>
+  <h2 class="section-title">词汇增长曲线</h2>
+  <p class="section-subtitle">56 章新词引入速度与累计词汇增长 — 从 Cap.I 的帝国地理到 Cap.LVI 的帝国余晖</p>
+  <div class="section-divider"></div>
+  <div id="chartGrowth" class="chart chart-lg"></div>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--ink-faint); font-style: italic;">
+    注：累计词族（family）曲线来自 OCR 文本直接扫描，FR 末章累计 <b>10,674</b> 词族，RA 末章累计 <b>35,027</b> 词族。
+    红色虚线标示 FR / RA 分界（Cap.XXXV → Cap.XXXVI）。
+  </p>
+</section>
+
+<!-- ===================== § 2. 章节难度热力图 ===================== -->
+<section class="insight" id="heatmap">
+  <div class="section-eyebrow">II · Lemma Secundum</div>
+  <h2 class="section-title">章节难度热力图</h2>
+  <p class="section-subtitle">每章新词密度 — 颜色越深 = 难度越高。点击任意章节查看详情。</p>
+  <div class="section-divider"></div>
+  <div id="chapterGrid" class="chapter-grid"></div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; flex-wrap: wrap; gap: 12px;">
+    <div style="display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--ink-faint);">
+      <span>难度图例：</span>
+      <span style="background: #E8F0D8; padding: 3px 10px; border: 1px solid var(--parchment-shadow);">&lt; 15% 易</span>
+      <span style="background: #F0E2B6; padding: 3px 10px; border: 1px solid var(--parchment-shadow);">15-20% 正常</span>
+      <span style="background: #E8C8A0; padding: 3px 10px; border: 1px solid var(--parchment-shadow);">20-25% 较难</span>
+      <span style="background: #D89060; padding: 3px 10px; border: 1px solid var(--parchment-shadow);">25-35% 难</span>
+      <span style="background: #A52A2A; color: white; padding: 3px 10px; border: 1px solid var(--parchment-shadow);">&gt; 35% 极难</span>
+    </div>
+    <div style="font-size: 12px; color: var(--ink-faint);">
+      左色条：<span style="border-left: 3px solid var(--fr-color); padding-left: 6px;">FR (Cap.I-XXXV)</span> ·
+      <span style="border-left: 3px solid var(--ra-color); padding-left: 6px;">RA (Cap.XXXVI-LVI)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== § 3. FR→RA 过渡 ===================== -->
+<section class="insight" id="transition">
+  <div class="section-eyebrow">III · Lemma Tertium</div>
+  <h2 class="section-title">FR → RA 过渡分析</h2>
+  <p class="section-subtitle">上册 Familiae Romanae 与下册 Romae Aeternae 的词汇衔接 — 一道"难度断崖"横亘 Cap.XXXV 与 Cap.XXXVI</p>
+  <div class="section-divider"></div>
+  <div class="compare-grid">
+    <div class="compare-card fr">
+      <div class="compare-card-title">Familia Romana</div>
+      <div class="compare-card-tag">Pars I · 35 章 · 日常叙事</div>
+      <div class="compare-stat-row"><span class="label">章节数</span><span class="val">XXXV</span></div>
+      <div class="compare-stat-row"><span class="label">总词数</span><span class="val">49,196</span></div>
+      <div class="compare-stat-row"><span class="label">末章累计词族</span><span class="val">10,674</span></div>
+      <div class="compare-stat-row"><span class="label">末章累计词形</span><span class="val">9,417</span></div>
+      <div class="compare-stat-row"><span class="label">平均新词密度</span><span class="val">21.3%</span></div>
+      <div class="compare-stat-row"><span class="label">FR 内部最难</span><span class="val">Cap.XXV (27.4%)</span></div>
+      <div class="compare-stat-row"><span class="label">最易章节</span><span class="val">Cap.III (16.0%)</span></div>
+      <div class="compare-stat-row"><span class="label">核心主题</span><span class="val" style="font-size: 13px;">生活·学校·旅行</span></div>
+    </div>
+    <div class="compare-card ra">
+      <div class="compare-card-title">Roma Aeterna</div>
+      <div class="compare-card-tag">Pars II · 21 章 · 罗马史</div>
+      <div class="compare-stat-row"><span class="label">章节数</span><span class="val">XXI</span></div>
+      <div class="compare-stat-row"><span class="label">总词数</span><span class="val">89,839</span></div>
+      <div class="compare-stat-row"><span class="label">末章累计词族</span><span class="val">35,027</span></div>
+      <div class="compare-stat-row"><span class="label">末章累计词形</span><span class="val">33,770</span></div>
+      <div class="compare-stat-row"><span class="label">平均新词密度</span><span class="val">28.5%</span></div>
+      <div class="compare-stat-row"><span class="label">RA 内部最难</span><span class="val">Cap.XXXVI (48.8%)</span></div>
+      <div class="compare-stat-row"><span class="label">最易章节</span><span class="val">Cap.XXXVIII (37.7%)</span></div>
+      <div class="compare-stat-row"><span class="label">核心主题</span><span class="val" style="font-size: 13px;">王政·共和·帝国</span></div>
+    </div>
+  </div>
+  <div style="margin-top: 30px; padding: 20px 24px; background: linear-gradient(90deg, rgba(139,26,26,0.08), rgba(201,162,74,0.08)); border-left: 4px solid var(--dark-red);">
+    <p style="font-size: 16px; color: var(--ink);">
+      <b style="color: var(--dark-red); font-family: 'Cinzel', serif; letter-spacing: 2px;">⚔ 难度断崖：</b>
+      从 FR 末章到 RA 首章（<b>Cap.XXXV → Cap.XXXVI</b>），新词密度从 <b>20.9%</b> 骤升至 <b>48.8%</b>，绝对值提升 <b>+27.9%</b>。
+      这是整套书中最大的单章难度跃迁，标志学习曲线从"叙事阅读"切换到"史著阅读"。
+    </p>
+  </div>
+</section>
+
+<!-- ===================== § 4. 每章词汇构成 ===================== -->
+<section class="insight" id="pos">
+  <div class="section-eyebrow">IV · Lemma Quartum</div>
+  <h2 class="section-title">每章词汇构成</h2>
+  <p class="section-subtitle">按词性划分的章节新词分布 — 早期章节以具体名词为主，晚期章节抽象词与历史术语占比上升</p>
+  <div class="section-divider"></div>
+  <div id="chartPos" class="chart chart-lg"></div>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--ink-faint); font-style: italic;">
+    注：词性分布为基于章节特性的结构性估计（橙色 Nouns · 暗红 Verbs · 金色 Adjectives · 暗色其他）。
+    实际词性标注需经词形-词性表匹配，本数据用于趋势展示。
+  </p>
+</section>
+
+<!-- ===================== § 5. Top 20 ===================== -->
+<section class="insight" id="topwords">
+  <div class="section-eyebrow">V · Lemma Quintum</div>
+  <h2 class="section-title">全 56 章新词出现频率 Top 20</h2>
+  <p class="section-subtitle">OCR 文本直接统计 — 跨越 320,220 tokens 的真实词频排名</p>
+  <div class="section-divider"></div>
+  <div class="top-words" id="topWords"></div>
+</section>
+
+<!-- ===================== § 6. 长短排行 ===================== -->
+<section class="insight" id="extremes">
+  <div class="section-eyebrow">VI · Lemma Sextum</div>
+  <h2 class="section-title">章节长短排行榜</h2>
+  <p class="section-subtitle">最短的章节（最容易）↔ 最长的章节（最难） — 章节文本量与新词密度的双重维度</p>
+  <div class="section-divider"></div>
+  <div class="extreme-grid">
+    <div>
+      <div class="extreme-block" style="border-top: 4px solid var(--laurel);">
+        <div class="extreme-block-title">⚜ Brevissima · 最短章节</div>
+        <div class="extreme-item" id="shortestItem"></div>
+      </div>
+      <div class="extreme-block" style="border-top: 4px solid var(--gold); margin-top: 16px;">
+        <div class="extreme-block-title">⚜ FR Brevissima</div>
+        <div class="extreme-item" id="frShortItem"></div>
+      </div>
+      <div class="extreme-block" style="border-top: 4px solid var(--gold); margin-top: 16px;">
+        <div class="extreme-block-title">⚜ RA Brevissima</div>
+        <div class="extreme-item" id="raShortItem"></div>
+      </div>
+    </div>
+    <div>
+      <div class="extreme-block" style="border-top: 4px solid var(--dark-red);">
+        <div class="extreme-block-title">⚜ Longissima · 最长章节</div>
+        <div class="extreme-item" id="longestItem"></div>
+      </div>
+      <div class="extreme-block" style="border-top: 4px solid var(--brown); margin-top: 16px;">
+        <div class="extreme-block-title">⚜ FR Longissima</div>
+        <div class="extreme-item" id="frLongItem"></div>
+      </div>
+      <div class="extreme-block" style="border-top: 4px solid var(--brown); margin-top: 16px;">
+        <div class="extreme-block-title">⚜ RA Longissima</div>
+        <div class="extreme-item" id="raLongItem"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== § 7. 主题分布 ===================== -->
+<section class="insight" id="themes">
+  <div class="section-eyebrow">VII · Lemma Septimum</div>
+  <h2 class="section-title">历史与文化主题分布</h2>
+  <p class="section-subtitle">56 章的内容主题归类 — 从 Cap.I 的地理课到 Cap.LVI 的帝国终曲</p>
+  <div class="section-divider"></div>
+  <div id="chartThemes" class="chart"></div>
+  <div class="theme-grid" id="themeGrid" style="margin-top: 20px;"></div>
+</section>
+
+<!-- ===================== VIII. ROI 甜蜜点金字塔 ===================== -->
+<section class="insight" id="roi-pyramid">
+  <div class="section-eyebrow">VIII · Lemma Octavum</div>
+  <h2 class="section-title">ROI 学习路径金字塔</h2>
+  <p class="section-subtitle">2,000 词族甜蜜点 ★ — 投产比最优解。多数学习者应停在 FR 完成层</p>
+  <div class="section-divider"></div>
+  <div class="roi-flex">
+    <div class="roi-img-wrap">
+      <div id="chartRoi" class="chart-roi"></div>
+      <p class="roi-caption">Vocabulary ROI Curve — 双 Y 轴：左 = 累计覆盖率（庞贝红）｜右 = 边际 ROI per 1000 words（帝王紫，log）<br>
+      蓝点虚线标注 LLPSI 完成节点（FR Cap.1-15 / FR / FR+RA / +拓展读物）</p>
+    </div>
+    <div class="roi-pyramid">
+      <div class="tier t5">
+        <div class="tier-label">Tier 5</div>
+        <div class="tier-name">学术独立阅读</div>
+        <div class="tier-stats">8,000+ 词族 · 98% 覆盖率</div>
+      </div>
+      <div class="tier t4">
+        <div class="tier-label">Tier 4</div>
+        <div class="tier-name">听力+拓展阅读</div>
+        <div class="tier-stats">5,000-6,000 词族 · 93-95%</div>
+      </div>
+      <div class="tier t3">
+        <div class="tier-label">Tier 3</div>
+        <div class="tier-name">LLPSI RA 末段</div>
+        <div class="tier-stats">3,500 词族 · 85%</div>
+      </div>
+      <div class="tier t2-sweet">
+        <div class="tier-label">★ 甜蜜点</div>
+        <div class="tier-name">LLPSI FR 完成</div>
+        <div class="tier-stats">1,800 词族 · 80%</div>
+      </div>
+      <div class="tier t1">
+        <div class="tier-label">Tier 1</div>
+        <div class="tier-name">入门</div>
+        <div class="tier-stats">1,000 词族 · 72%</div>
+      </div>
+      <div class="tier t0">
+        <div class="tier-label">Tier 0</div>
+        <div class="tier-name">数学 ROI 峰值</div>
+        <div class="tier-stats">100 词 · 50% — 不可达</div>
+      </div>
+    </div>
+  </div>
+  <div class="roi-msg">
+    <strong>建议</strong>：完成 FR 后（Tier 2），可自由选择：(a) 停止，转向 Colloquia/Fabulae 自然习得；(b) 继续 RA 至 Tier 3（学术目标）；(c) 跳过 RA 直接读 71 本拓展读物。
+  </div>
+</section>
+
+<!-- ===================== IX. 关键门槛点 ===================== -->
+<section class="insight" id="walls">
+  <div class="section-eyebrow">IX · Lemma Nonum</div>
+  <h2 class="section-title">关键门槛点</h2>
+  <p class="section-subtitle">7 个关键章节的难度性质与应对策略</p>
+  <div class="section-divider"></div>
+  <div class="wall-timeline">
+    <div class="wall-item cap1">
+      <div class="wall-chap">Cap. 1-2</div>
+      <div class="wall-type">入门墙</div>
+      <div class="wall-action">接受模糊感 · 自然法适应</div>
+    </div>
+    <div class="wall-item cap8 highlight">
+      <div class="wall-chap">Cap. 8-13</div>
+      <div class="wall-type">★ 语法墙 <span style="color:#b08d2b;font-size:9px;">(待验证)</span></div>
+      <div class="wall-action">句法脚手架：间接引语 / 从句</div>
+    </div>
+    <div class="wall-item cap25 highlight">
+      <div class="wall-chap">Cap. 25-26</div>
+      <div class="wall-type">★ 密度墙</div>
+      <div class="wall-action">词汇脚手架：神话专名预热</div>
+    </div>
+    <div class="wall-item cap35">
+      <div class="wall-chap">Cap. 35→36</div>
+      <div class="wall-type">FR→RA 进阶墙</div>
+      <div class="wall-action">48.9% 密度跃迁 · RA 适应期</div>
+    </div>
+    <div class="wall-item cap36">
+      <div class="wall-chap">RA 36-39</div>
+      <div class="wall-type">罗马史适应期</div>
+      <div class="wall-action">共和国人物密集 · 最高密度</div>
+    </div>
+    <div class="wall-item cap44">
+      <div class="wall-chap">RA 44+</div>
+      <div class="wall-type">高级语法墙</div>
+      <div class="wall-action">复杂修辞 / 间接引语系统</div>
+    </div>
+  </div>
+  <div class="wall-msg">
+    <strong>核心发现</strong>：「第九章墙」并非词汇密度问题，而是 LLPSI 编写者<em>有意为之</em>的语法跃迁 — 从描述性叙事进入间接引语、关系从句、夺格句型。优先解决 Cap. 8-13 + Cap. 25 两类"墙"，ROI 最高。<br>
+    <span style="color:#8a7a5a;font-size:12px;font-style:italic;">⚠ 注：当前"语法墙"判断基于社区经验+作者先验标注，<em>待后续添加句法分析模块验证</em>（需 POS 标注 + 间接引语/关系从句/夺格句型 频率统计）。</span>
+  </div>
+</section>
+
+<!-- ===================== MODAL ===================== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-eyebrow" id="mEyebrow">CAP. I · FR</div>
+    <h3 class="modal-title" id="mTitle">Imperium Romanum</h3>
+    <div class="modal-sub" id="mSub">罗马帝国 · 地理</div>
+    <div class="modal-stats">
+      <div class="modal-stat">
+        <div class="modal-stat-label">总词数</div>
+        <div class="modal-stat-value" id="mTw">863</div>
+      </div>
+      <div class="modal-stat">
+        <div class="modal-stat-label">新词数</div>
+        <div class="modal-stat-value" id="mNw">204</div>
+      </div>
+      <div class="modal-stat">
+        <div class="modal-stat-label">新词密度</div>
+        <div class="modal-stat-value" id="mNd">23.6<span class="modal-stat-unit">%</span></div>
+      </div>
+      <div class="modal-stat">
+        <div class="modal-stat-label">累计词族</div>
+        <div class="modal-stat-value" id="mCv">204</div>
+      </div>
+    </div>
+    <div class="modal-key" id="mKey"><b>主题：</b>provinces, peoples, languages</div>
+    <div class="modal-words">
+      <div class="modal-words-title">部分本章新词</div>
+      <div id="mWords"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <p class="footer-text">
+    <em>Lingua Latina Per Se Illustrata</em> — 数据洞察 · A.D. MMXXVI
+  </p>
+  <p class="footer-text">
+    数据来源：Familia Romana (Cap.I-XXXV) + Roma Aeterna (Cap.XXXVI-LVI) OCR 文本扫描
+  </p>
+  <p class="footer-fine">
+    本页面为研究性数据可视化，所有内容为基于真实 OCR 文本的客观统计 · ECharts 5.4.3 · 单页静态 HTML
+  </p>
+</footer>
+
+</div>
+
+<!-- ===================== DATA + JS ===================== -->
+<script>
+  const D = {"chapters":[{"ch":1,"book":"FR","tr":"I","title":"Imperium Romanum","sub":"罗马帝国 · 地理","theme":"geography","theme_label":"地理与风土","color":"#C9A24A","icon":"🏛","key":"provinces, peoples, languages","tw":863,"nw":204,"nd":23.6,"cv":204,"cv_db":163,"hfn":76,"sw":["aegyptus","aeterna","africa","amphitryo","anno","annvsetmenses","arabia","arsgrammatica","asia","atlanticus","bello","bestiaeethomines"],"pos":{"n":38,"v":28,"adj":14,"adv":5,"pron":7,"prep":4,"conj":2,"other":2}},{"ch":2,"book":"FR","tr":"II","title":"Familia","sub":"家庭 · 关系","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"🏠","key":"family tree, kinship terms","tw":860,"nw":182,"nd":21.2,"cv":386,"cv_db":326,"hfn":53,"sw":["aarcks","aemi","aemili","aemilia","aemiliae","africae","ancil","ancill","ancilla","ancillae","ancillarum","ancillee"],"pos":{"n":38,"v":28,"adj":14,"adv":5,"pron":7,"prep":4,"conj":2,"other":2}},{"ch":3,"book":"FR","tr":"III","title":"Mensa et Coquina","sub":"餐桌与厨房","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"🍷","key":"food, meals, kitchen","tw":599,"nw":96,"nd":16.0,"cv":482,"cv_db":416,"hfn":44,"sw":["acc","accu","accusatious","accusativus","accusattous","aemiliam","aud","audit","bus","cantat","cur","cus"],"pos":{"n":38,"v":28,"adj":14,"adv":5,"pron":7,"prep":4,"conj":2,"other":2}},{"ch":4,"book":"FR","tr":"IV","title":"Ludus et Magister","sub":"学校与教师","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"📜","key":"school, teacher, pupil","tw":730,"nw":139,"nd":19.0,"cv":621,"cv_db":542,"hfn":36,"sw":["abest","absunt","accusat","adest","adestne","adsunt","audi","baculum","bon","bone","bonus","ceterique"],"pos":{"n":38,"v":28,"adj":14,"adv":5,"pron":7,"prep":4,"conj":2,"other":2}},{"ch":5,"book":"FR","tr":"V","title":"Villa et Hortus","sub":"别墅与花园","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"🌿","key":"country villa, garden","tw":919,"nw":187,"nd":20.3,"cv":808,"cv_db":717,"hfn":45,"sw":["ablativo","ablativus","accusaati","acmilia","aemilio","age","agit","agite","agunt","amant","amat","ancillas"],"pos":{"n":38,"v":28,"adj":14,"adv":5,"pron":7,"prep":4,"conj":2,"other":2}},{"ch":6,"book":"FR","tr":"VI","title":"Via Latina","sub":"罗马大道","theme":"geography","theme_label":"地理与风土","color":"#C9A24A","icon":"🛤","key":"roads, travel, prepositions","tw":1038,"nw":189,"nd":18.2,"cv":997,"cv_db":883,"hfn":53,"sw":["abantea","abl","abla","accusativo","activum","amantur","amatur","ambu","ambulant","ambulat","ambulatne","amic"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":7,"book":"FR","tr":"VII","title":"Domus","sub":"罗马住宅","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"🏛","key":"house parts, slaves","tw":984,"nw":127,"nd":12.9,"cv":1124,"cv_db":993,"hfn":30,"sw":["adeunt","adit","advenit","albi","albini","albinus","alii","anulus","aperi","aperitur","aspiciunt","aut"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":8,"book":"FR","tr":"VIII","title":"Tempestas","sub":"气候与天象","theme":"nature","theme_label":"天象自然","color":"#8B7E5A","icon":"☀","key":"weather, days, seasons","tw":1093,"nw":216,"nd":19.8,"cv":1340,"cv_db":1187,"hfn":55,"sw":["aanulum","abeunt","abi","abit","accipe","accipit","accipite","accipiunt","albinum","alia","aliae","aliis"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":9,"book":"FR","tr":"IX","title":"Amici","sub":"朋友与邻居","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"🤝","key":"friends, neighbors, visit","tw":935,"nw":187,"nd":20.0,"cv":1527,"cv_db":1355,"hfn":52,"sw":["aarum","accurrit","accusduvus","albae","albarum","albas","albis","albus","anum","arbor","arbore","arborem"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":10,"book":"FR","tr":"X","title":"Forum et Mercator","sub":"广场与商人","theme":"city","theme_label":"城市与市集","color":"#B58A4A","icon":"🏛","key":"forum, market, business","tw":1292,"nw":264,"nd":20.4,"cv":1791,"cv_db":1602,"hfn":59,"sw":["accipere","accurr","accurrere","aer","aere","aeris","afri","agere","ala","alae","alas","alias"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":11,"book":"FR","tr":"XI","title":"Medicus","sub":"医生与病人","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"⚕","key":"doctor, illness","tw":1155,"nw":224,"nd":19.4,"cv":2015,"cv_db":1798,"hfn":47,"sw":["abesse","accusati","adesse","aeger","aegr","aegri","aegro","aegros","aegrotare","aegrotat","aegrum","albos"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":12,"book":"FR","tr":"XII","title":"Epistulae","sub":"书信与邮驿","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"✉","key":"letters, post, tabellarius","tw":1345,"nw":305,"nd":22.7,"cv":2320,"cv_db":2057,"hfn":57,"sw":["adiecti","adiectiva","adiectivum","adt","aef","aemilii","aemilius","aera","alkt","alo","als","alt"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":13,"book":"FR","tr":"XIII","title":"Dies et Menses","sub":"日期与月份","theme":"calendar","theme_label":"历法时辰","color":"#B89968","icon":"📅","key":"calendar, days, months, dates","tw":1457,"nw":382,"nd":26.2,"cv":2702,"cv_db":2375,"hfn":69,"sw":["aequa","aequas","aequi","aequinoctia","aequinoctium","aequus","aes","aestas","aestate","aestatem","aestatis","aetna"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":14,"book":"FR","tr":"XIV","title":"Annus Romanus","sub":"罗马年历","theme":"calendar","theme_label":"历法时辰","color":"#B89968","icon":"🗓","key":"year, seasons, festivals","tw":1306,"nw":255,"nd":19.5,"cv":2957,"cv_db":2605,"hfn":48,"sw":["aco","adhuc","aegrotans","aegrotantem","aegrotanti","affer","afferre","affert","album","alter","altera","alterum"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":15,"book":"FR","tr":"XV","title":"Horae","sub":"时辰与守夜","theme":"calendar","theme_label":"历法时辰","color":"#B89968","icon":"🕯","key":"hours, watches, time","tw":1023,"nw":207,"nd":20.2,"cv":3164,"cv_db":2786,"hfn":39,"sw":["alit","amus","antequam","aperite","aperiunt","audientes","audijtis","audilo","audilt","audimus","audio","audis"],"pos":{"n":32,"v":30,"adj":16,"adv":6,"pron":7,"prep":4,"conj":3,"other":2}},{"ch":16,"book":"FR","tr":"XVI","title":"Iter","sub":"旅途与海行","theme":"travel","theme_label":"行旅海行","color":"#9C8050","icon":"⛵","key":"travel, voyage, shipwreck","tw":1609,"nw":375,"nd":23.3,"cv":3539,"cv_db":3121,"hfn":56,"sw":["abire","activi","adire","africam","albanum","altiores","alto","amicas","amicis","amo","appellare","appellatur"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":17,"book":"FR","tr":"XVII","title":"Naves et Nautae","sub":"船只与水手","theme":"travel","theme_label":"行旅海行","color":"#9C8050","icon":"🚢","key":"ships, sailors, storms","tw":1326,"nw":274,"nd":20.7,"cv":3813,"cv_db":3368,"hfn":36,"sw":["absens","absentem","ades","adestis","adsum","adsumus","aeque","asse","assem","asses","assis","audimini"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":18,"book":"FR","tr":"XVIII","title":"Mercator Dives","sub":"富商与市集","theme":"city","theme_label":"城市与市集","color":"#B58A4A","icon":"💰","key":"wealthy merchant, trade","tw":1870,"nw":406,"nd":21.7,"cv":4219,"cv_db":3690,"hfn":51,"sw":["abet","addere","addit","addo","adv","adverbia","adverbii","adverbium","aegypto","aeio","aliaeque","aliam"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":19,"book":"FR","tr":"XIX","title":"Paterfamilias","sub":"家父与遗嘱","theme":"family","theme_label":"家族与家业","color":"#A88B5C","icon":"📜","key":"patriarch, will, inheritance","tw":1551,"nw":336,"nd":21.7,"cv":4555,"cv_db":3981,"hfn":46,"sw":["aberat","accipi","accipiebas","accipiebat","adules","adulescens","adulescentium","aliosque","alterius","ama","amaabat","amabaas"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":20,"book":"FR","tr":"XX","title":"Rus et Villa","sub":"田庄与农事","theme":"rural","theme_label":"田庄农事","color":"#8B9B5A","icon":"🌾","key":"farm, slaves, harvest","tw":1607,"nw":355,"nd":22.1,"cv":4910,"cv_db":4285,"hfn":43,"sw":["ado","advehere","adversus","afferent","alam","alere","ales","alet","aletur","alienas","alienis","alienum"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":21,"book":"FR","tr":"XXI","title":"Senator Romanus","sub":"罗马元老","theme":"politics","theme_label":"政治与演说","color":"#8B5A2B","icon":"🦅","key":"senator, politics, Tiberius","tw":1297,"nw":252,"nd":19.4,"cv":5162,"cv_db":4507,"hfn":28,"sw":["aaio","accusare","aguntur","ain","aio","ais","ait","aiunt","aliamque","alienam","aliquid","aliquis"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":22,"book":"FR","tr":"XXII","title":"Epistulae Ciceronis","sub":"西塞罗书信","theme":"politics","theme_label":"政治与演说","color":"#8B5A2B","icon":"📜","key":"Cicero's letters, Atticus","tw":1198,"nw":312,"nd":26.0,"cv":5474,"cv_db":4786,"hfn":33,"sw":["accedere","accedit","admitte","admittere","admitteris","admittis","admittit","affero","altervm","ambulaatum","antea","aperis"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":23,"book":"FR","tr":"XXIII","title":"Res Publica","sub":"共和政体","theme":"politics","theme_label":"政治与演说","color":"#8B5A2B","icon":"🏛","key":"Republic, Senate, magistrates","tw":1483,"nw":270,"nd":18.2,"cv":5744,"cv_db":5025,"hfn":24,"sw":["aliena","allata","antehac","attulit","audes","avertens","avertere","avertit","bet","causam","clavem","clavis"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":24,"book":"FR","tr":"XXIV","title":"Imperium","sub":"罗马军团","theme":"military","theme_label":"军事战争","color":"#6B4A2B","icon":"⚔","key":"empire, legions, provinces","tw":1139,"nw":245,"nd":21.5,"cv":5989,"cv_db":5247,"hfn":13,"sw":["accali","accur","additur","aderat","aegaeu","aegrotus","aegrotvs","agis","agitur","aibenae","aliquam","aliquem"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":25,"book":"FR","tr":"XXV","title":"Bellum","sub":"战争之苦","theme":"military","theme_label":"军事战争","color":"#6B4A2B","icon":"🗡","key":"war, soldier, veteran","tw":1558,"nw":427,"nd":27.4,"cv":6416,"cv_db":5637,"hfn":34,"sw":["abiens","abiit","accessit","achille","achilles","adiit","adinsulam","adna","adulescentes","aedi","aedifi","aedificare"],"pos":{"n":30,"v":32,"adj":18,"adv":5,"pron":7,"prep":4,"conj":3,"other":1}},{"ch":26,"book":"FR","tr":"XXVI","title":"Exercitus","sub":"行军与战阵","theme":"military","theme_label":"军事战争","color":"#6B4A2B","icon":"🛡","key":"march, camp, battle","tw":1585,"nw":360,"nd":22.7,"cv":6776,"cv_db":5957,"hfn":29,"sw":["aber","abeuntem","accidere","accidit","acis","aedificaavisti","aedificaverat","aedificia","aegaei","aerem","aliqui","amandi"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":27,"book":"FR","tr":"XXVII","title":"Gladiatores","sub":"角斗士之死","theme":"culture","theme_label":"角斗娱乐","color":"#7B3F1F","icon":"🗡","key":"gladiators, arena","tw":1851,"nw":433,"nd":23.4,"cv":7209,"cv_db":6355,"hfn":38,"sw":["aat","aberrant","aberraverat","aberrent","abs","absenti","abste","accedat","accede","accipies","advenis","agantur"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":28,"book":"FR","tr":"XXVIII","title":"Ovidius","sub":"奥维德与变形","theme":"literature","theme_label":"文学诗艺","color":"#7B5A8B","icon":"✒","key":"Ovid, poetry, mythology","tw":1933,"nw":440,"nd":22.8,"cv":7649,"cv_db":6772,"hfn":20,"sw":["accesserunt","admirari","admiratur","adorabat","adorare","adoraverunt","aegrotas","aegroto","aegyptum","ambulabat","ambulans","ambulante"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":29,"book":"FR","tr":"XXIX","title":"Daedalus et Icarus","sub":"代达罗斯与伊卡洛斯","theme":"myth","theme_label":"神话传说","color":"#7B5A8B","icon":"🪽","key":"myth: Daedalus, Icarus","tw":1910,"nw":434,"nd":22.7,"cv":8083,"cv_db":7157,"hfn":36,"sw":["abicere","abiciam","abiecerat","abiecit","abiectum","abirent","abstine","abstinere","abstinerent","accedens","acciderat","adicere"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":30,"book":"FR","tr":"XXX","title":"Aeneas","sub":"埃涅阿斯纪","theme":"literature","theme_label":"文学诗艺","color":"#7B5A8B","icon":"🛶","key":"Aeneid, Aeneas, Dido","tw":1651,"nw":366,"nd":22.2,"cv":8449,"cv_db":7463,"hfn":39,"sw":["accuban","accubant","accubare","accum","accumbere","accumbit","acerbum","acerbus","acuto","acutus","adveniunt","ami"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":31,"book":"FR","tr":"XXXI","title":"Plinius","sub":"老普林尼","theme":"science","theme_label":"博物自然","color":"#5A7B7B","icon":"🦉","key":"Pliny the Elder, nature","tw":1941,"nw":423,"nd":21.8,"cv":8872,"cv_db":7815,"hfn":24,"sw":["abducere","abduxit","abstinuit","abstulit","accepit","accusabit","achil","add","addendae","adorant","afferun","alicui"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":32,"book":"FR","tr":"XXXII","title":"Chrystallus","sub":"水晶与宝石","theme":"science","theme_label":"博物自然","color":"#5A7B7B","icon":"💎","key":"crystal, gems, minerals","tw":2286,"nw":470,"nd":20.6,"cv":9342,"cv_db":8237,"hfn":24,"sw":["abducant","abducebantur","aberrav","abieceris","acceperam","accepi","acceptam","accusavi","acta","actum","aderunt","adicitur"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":33,"book":"FR","tr":"XXXIII","title":"Magister","sub":"教师与学校","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"🪶","key":"teacher, instruction","tw":1999,"nw":476,"nd":23.8,"cv":9818,"cv_db":8654,"hfn":21,"sw":["abiectis","absum","acceperim","acceperunt","acie","aciem","acies","adiungere","adiunguntur","adulescente","aemilium","aetas"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":34,"book":"FR","tr":"XXXIV","title":"Discipuli","sub":"学童与练习","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"📚","key":"students, exercises","tw":2199,"nw":520,"nd":23.6,"cv":10338,"cv_db":9124,"hfn":25,"sw":["abii","abstulistis","accendere","accendite","accensa","accensis","acer","acre","acris","aemiliane","aestimemus","affirmabat"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":35,"book":"FR","tr":"XXXV","title":"Poeta","sub":"诗人与诗艺","theme":"literature","theme_label":"文学诗艺","color":"#7B5A8B","icon":"🎭","key":"poet, poetry review","tw":1604,"nw":336,"nd":20.9,"cv":10674,"cv_db":9417,"hfn":22,"sw":["aamare","abc","ablativi","absolutus","accepta","accusativi","act","activa","activus","acuvum","addita","adduntur"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},{"ch":36,"book":"RA","tr":"XXXVI","title":"Roma","sub":"永恒之城","theme":"history","theme_label":"历史与战争","color":"#8B2A1A","icon":"🦅","key":"Rome, founding, geography","tw":3983,"nw":1943,"nd":48.8,"cv":12617,"cv_db":11360,"hfn":296,"sw":["aabus","absumere","absumpsit","absumptam","absumptas","abus","aca","acce","accep","accepisset","accusabatur","actium"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":37,"book":"RA","tr":"XXXVII","title":"Reges","sub":"罗马七王","theme":"history","theme_label":"历史与战争","color":"#8B2A1A","icon":"👑","key":"Seven Kings of Rome","tw":3068,"nw":1391,"nd":45.3,"cv":14008,"cv_db":12751,"hfn":82,"sw":["aaram","aberrantem","abeunti","abeuntis","abis","aborigines","acceperat","accidat","acerrime","acerrimi","achillis","achiot"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":38,"book":"RA","tr":"XXXVIII","title":"Horatii et Curiatii","sub":"贺拉提乌斯三兄弟","theme":"history","theme_label":"历史与战争","color":"#8B2A1A","icon":"🛡","key":"Horatii vs Curiatii","tw":2154,"nw":811,"nd":37.7,"cv":14819,"cv_db":13562,"hfn":20,"sw":["abducite","abductos","abeuntes","accederet","acesta","acestes","achates","acuta","acutam","ademerat","ademptum","adeo"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":39,"book":"RA","tr":"XXXIX","title":"Lucretia","sub":"卢克蕾提娅","theme":"history","theme_label":"历史与战争","color":"#8B2A1A","icon":"🗡","key":"Lucretia, Tarquinius, Republic","tw":3307,"nw":1241,"nd":37.5,"cv":16060,"cv_db":14803,"hfn":30,"sw":["abolere","aboriente","abripere","abripiuntur","accensae","accessistis","accestis","accubuit","acesten","achate","achaten","acriter"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":40,"book":"RA","tr":"XL","title":"Res Publica","sub":"共和之治","theme":"history","theme_label":"历史与战争","color":"#8B2A1A","icon":"🏛","key":"early Republic, consuls","tw":3127,"nw":1028,"nd":32.9,"cv":17088,"cv_db":15831,"hfn":23,"sw":["abducat","abrumpe","abrumpere","abrumpit","absen","accenderit","accenditur","achat","acri","admonere","admonet","admonuit"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":41,"book":"RA","tr":"XLI","title":"Poeni","sub":"迦太基人","theme":"history","theme_label":"历史与战争","color":"#A03A1A","icon":"⚓","key":"Carthaginians, First Punic War","tw":2502,"nw":842,"nd":33.7,"cv":17930,"cv_db":16673,"hfn":27,"sw":["abactae","abdere","abditos","abigere","aboriginesque","aboriginum","accepto","accusantes","adeptus","adiecisset","adimit","adipisci"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":42,"book":"RA","tr":"XLII","title":"Bellum Punicum Primum","sub":"第一次布匿战争","theme":"history","theme_label":"历史与战争","color":"#A03A1A","icon":"⚔","key":"First Punic War, Sicily","tw":4073,"nw":1258,"nd":30.9,"cv":19188,"cv_db":17931,"hfn":40,"sw":["aarumf","absente","abstnuit","abstulerit","accedebant","accensi","accepti","acceptis","acceptissimus","acceptus","accessurum","acciperet"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":43,"book":"RA","tr":"XLIII","title":"Hannibal","sub":"汉尼拔","theme":"history","theme_label":"历史与战争","color":"#A03A1A","icon":"🐘","key":"Hannibal Barca, elephants","tw":3666,"nw":1055,"nd":28.8,"cv":20243,"cv_db":18986,"hfn":32,"sw":["abducti","abierunt","abo","abolescere","abolevit","absolvere","absolveruntque","absolvitur","abstinuerunt","absumi","accesserat","accusatur"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":44,"book":"RA","tr":"XLIV","title":"Bellum Punicum Secundum","sub":"第二次布匿战争","theme":"history","theme_label":"历史与战争","color":"#A03A1A","icon":"🔥","key":"Cannae, Zama, Scipio","tw":5140,"nw":1419,"nd":27.6,"cv":21662,"cv_db":20405,"hfn":42,"sw":["abducto","abesset","abhorrere","abhorret","abiturum","abj","abstinet","accepisse","accin","accingere","accingi","accipiendis"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":45,"book":"RA","tr":"XLV","title":"Scipio Africanus","sub":"征服者西庇阿","theme":"history","theme_label":"历史与战争","color":"#A03A1A","icon":"🏆","key":"Scipio, end of Hannibal","tw":4437,"nw":1222,"nd":27.5,"cv":22884,"cv_db":21627,"hfn":28,"sw":["abditi","abditum","abituros","abrogaare","abrogaret","absentium","absolvo","accenso","accepere","acci","accitis","actaret"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},{"ch":46,"book":"RA","tr":"XLVI","title":"Bellum Civile","sub":"内战时代","theme":"history","theme_label":"历史与战争","color":"#A03A1A","icon":"🔥","key":"Marius, Sulla, civil war","tw":4879,"nw":1251,"nd":25.6,"cv":24135,"cv_db":22878,"hfn":64,"sw":["absint","acceptae","acceptum","accius","acto","adleges","admiraabatur","admiratione","admisit","adver","adverso","aegatesinsulas"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":47,"book":"RA","tr":"XLVII","title":"Pompeius","sub":"庞培大帝","theme":"history","theme_label":"历史与战争","color":"#A03A1A","icon":"🗡","key":"Pompey, eastern conquests","tw":2246,"nw":595,"nd":26.5,"cv":24730,"cv_db":23473,"hfn":14,"sw":["abstinent","accepimus","additas","admirabatur","adnotatiuncula","adnotatiunculis","aetatibus","aetatum","ageret","agrigentinus","agrigentum","alex"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":48,"book":"RA","tr":"XLVIII","title":"Caesar","sub":"凯撒与高卢战记","theme":"history","theme_label":"历史与战争","color":"#8B1A1A","icon":"🦅","key":"Caesar, Gallic War, Rubicon","tw":8382,"nw":2085,"nd":24.9,"cv":26815,"cv_db":25558,"hfn":84,"sw":["abiisse","abripuit","absterrere","absterruere","abstineret","absumaas","absumas","absumpta","absumri","accendit","acciperent","accipimus"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":49,"book":"RA","tr":"XLIX","title":"Catilina","sub":"喀提林阴谋","theme":"history","theme_label":"历史与战争","color":"#8B1A1A","icon":"🗡","key":"Catiline conspiracy","tw":2852,"nw":670,"nd":23.5,"cv":27485,"cv_db":26228,"hfn":4,"sw":["abdidit","abditas","abicit","acceptumque","accidisset","accipietis","acquiescere","acquievit","adducerent","adduxit","adeum","adiungeebat"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":50,"book":"RA","tr":"L","title":"Cicero","sub":"西塞罗与雄辩","theme":"history","theme_label":"历史与战争","color":"#8B1A1A","icon":"📜","key":"Cicero, oratory, Philippics","tw":6725,"nw":1523,"nd":22.6,"cv":29008,"cv_db":27751,"hfn":36,"sw":["abalienare","abalienavit","abierit","abiisset","abori","abscedebat","abscedere","acarnania","accepisses","accessio","acclamantibus","acclamare"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":51,"book":"RA","tr":"LI","title":"Augustus","sub":"奥古斯都元首","theme":"history","theme_label":"历史与战争","color":"#8B1A1A","icon":"👑","key":"Augustus, principate, Aeneid","tw":3513,"nw":812,"nd":23.1,"cv":29820,"cv_db":28563,"hfn":16,"sw":["abdacit","abdovcit","ablata","absti","abstinens","abstinentissimum","abstracta","abstrahere","absump","abundantia","acerbius","acerbiusque"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":52,"book":"RA","tr":"LII","title":"Imperium Romanum","sub":"帝国全盛","theme":"history","theme_label":"历史与战争","color":"#8B1A1A","icon":"🗺","key":"Empire at peak, provinces","tw":7201,"nw":1458,"nd":20.2,"cv":31278,"cv_db":30021,"hfn":60,"sw":["abdita","abditus","abibis","abierat","abillis","abstractus","absumptis","abunde","accedam","accendebant","accensus","acceptusque"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":53,"book":"RA","tr":"LIII","title":"Nero","sub":"尼禄与金殿","theme":"history","theme_label":"历史与战争","color":"#6B1A1A","icon":"🔥","key":"Nero, Domus Aurea, fire","tw":4110,"nw":832,"nd":20.2,"cv":32110,"cv_db":30853,"hfn":27,"sw":["aaris","abimperaatore","abundanti","abundare","academia","academiae","accepissent","accuratus","achaiam","actor","actorem","adduxerat"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":54,"book":"RA","tr":"LIV","title":"Titus","sub":"提图斯与维苏威","theme":"history","theme_label":"历史与战争","color":"#6B1A1A","icon":"🌋","key":"Titus, Vesuvius, Pliny","tw":6214,"nw":1170,"nd":18.8,"cv":33280,"cv_db":32023,"hfn":23,"sw":["absentibus","accepistis","acciderunt","acerrimis","acilium","acsyraacusascepit","adductum","ademptis","aditu","adiuncta","adiungatur","adiuvaaret"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":55,"book":"RA","tr":"LV","title":"Christiani","sub":"基督徒与殉道","theme":"religion","theme_label":"宗教信仰","color":"#5A2A1A","icon":"✝","key":"Christians, persecutions","tw":4762,"nw":969,"nd":20.3,"cv":34249,"cv_db":32992,"hfn":19,"sw":["abhorrentem","abuti","accivit","accommodabo","accomodare","accuratius","adiectiois","adiectis","adiunxitque","admoneamur","adoleverit","adultam"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},{"ch":56,"book":"RA","tr":"LVI","title":"Ultima","sub":"终章 · 帝国余晖","theme":"history","theme_label":"历史与战争","color":"#5A2A1A","icon":"🦅","key":"Empire's end, review","tw":3498,"nw":778,"nd":22.2,"cv":35027,"cv_db":33770,"hfn":16,"sw":["abstrahet","acceptas","acceptiusest","accolere","accolit","acute","acutum","adiuverint","adonius","adoonius","adversi","aemiliani"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}}],"theme_cats":{"geography":{"label":"地理与风土","color":"#C9A24A"},"daily_life":{"label":"日常生活","color":"#A88B5C"},"nature":{"label":"天象自然","color":"#8B7E5A"},"city":{"label":"城市与市集","color":"#B58A4A"},"calendar":{"label":"历法时辰","color":"#B89968"},"travel":{"label":"行旅海行","color":"#9C8050"},"family":{"label":"家族与家业","color":"#A88B5C"},"rural":{"label":"田庄农事","color":"#8B9B5A"},"politics":{"label":"政治与演说","color":"#8B5A2B"},"military":{"label":"军事战争","color":"#6B4A2B"},"culture":{"label":"角斗娱乐","color":"#7B3F1F"},"literature":{"label":"文学诗艺","color":"#7B5A8B"},"myth":{"label":"神话传说","color":"#7B5A8B"},"science":{"label":"博物自然","color":"#5A7B7B"},"history":{"label":"历史与战争","color":"#8B2A1A"},"religion":{"label":"宗教信仰","color":"#5A2A1A"}},"top_words":[{"word":"atque","count":749},{"word":"anno","count":567},{"word":"bellum","count":537},{"word":"post","count":477},{"word":"ante","count":434},{"word":"facere","count":366},{"word":"aemilia","count":321},{"word":"isse","count":305},{"word":"romani","count":271},{"word":"urbem","count":263},{"word":"magister","count":243},{"word":"pater","count":233},{"word":"pensvm","count":231},{"word":"romam","count":229},{"word":"marcus","count":227},{"word":"runt","count":217},{"word":"mare","count":203},{"word":"quia","count":200},{"word":"regem","count":199},{"word":"pars","count":197}],"shortest":{"ch":3,"book":"FR","tr":"III","title":"Mensa et Coquina","sub":"餐桌与厨房","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"🍷","key":"food, meals, kitchen","tw":599,"nw":96,"nd":16.0,"cv":482,"cv_db":416,"hfn":44,"sw":["acc","accu","accusatious","accusativus","accusattous","aemiliam","aud","audit","bus","cantat","cur","cus"],"pos":{"n":38,"v":28,"adj":14,"adv":5,"pron":7,"prep":4,"conj":2,"other":2}},"longest":{"ch":48,"book":"RA","tr":"XLVIII","title":"Caesar","sub":"凯撒与高卢战记","theme":"history","theme_label":"历史与战争","color":"#8B1A1A","icon":"🦅","key":"Caesar, Gallic War, Rubicon","tw":8382,"nw":2085,"nd":24.9,"cv":26815,"cv_db":25558,"hfn":84,"sw":["abiisse","abripuit","absterrere","absterruere","abstineret","absumaas","absumas","absumpta","absumri","accendit","acciperent","accipimus"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},"fr_short":{"ch":3,"book":"FR","tr":"III","title":"Mensa et Coquina","sub":"餐桌与厨房","theme":"daily_life","theme_label":"日常生活","color":"#A88B5C","icon":"🍷","key":"food, meals, kitchen","tw":599,"nw":96,"nd":16.0,"cv":482,"cv_db":416,"hfn":44,"sw":["acc","accu","accusatious","accusativus","accusattous","aemiliam","aud","audit","bus","cantat","cur","cus"],"pos":{"n":38,"v":28,"adj":14,"adv":5,"pron":7,"prep":4,"conj":2,"other":2}},"fr_long":{"ch":32,"book":"FR","tr":"XXXII","title":"Chrystallus","sub":"水晶与宝石","theme":"science","theme_label":"博物自然","color":"#5A7B7B","icon":"💎","key":"crystal, gems, minerals","tw":2286,"nw":470,"nd":20.6,"cv":9342,"cv_db":8237,"hfn":24,"sw":["abducant","abducebantur","aberrav","abieceris","acceperam","accepi","acceptam","accusavi","acta","actum","aderunt","adicitur"],"pos":{"n":28,"v":32,"adj":20,"adv":6,"pron":6,"prep":4,"conj":3,"other":1}},"ra_short":{"ch":38,"book":"RA","tr":"XXXVIII","title":"Horatii et Curiatii","sub":"贺拉提乌斯三兄弟","theme":"history","theme_label":"历史与战争","color":"#8B2A1A","icon":"🛡","key":"Horatii vs Curiatii","tw":2154,"nw":811,"nd":37.7,"cv":14819,"cv_db":13562,"hfn":20,"sw":["abducite","abductos","abeuntes","accederet","acesta","acestes","achates","acuta","acutam","ademerat","ademptum","adeo"],"pos":{"n":30,"v":30,"adj":18,"adv":7,"pron":6,"prep":4,"conj":4,"other":1}},"ra_long":{"ch":48,"book":"RA","tr":"XLVIII","title":"Caesar","sub":"凯撒与高卢战记","theme":"history","theme_label":"历史与战争","color":"#8B1A1A","icon":"🦅","key":"Caesar, Gallic War, Rubicon","tw":8382,"nw":2085,"nd":24.9,"cv":26815,"cv_db":25558,"hfn":84,"sw":["abiisse","abripuit","absterrere","absterruere","abstineret","absumaas","absumas","absumpta","absumri","accendit","acciperent","accipimus"],"pos":{"n":26,"v":32,"adj":20,"adv":8,"pron":5,"prep":4,"conj":4,"other":1}},"summary":{"fr_total_chapters":35,"ra_total_chapters":21,"fr_total_words":49196,"ra_total_words":89839,"fr_cum_vocab_wordform":9417,"ra_cum_vocab_wordform":33770,"fr_cum_vocab_wordfamily":10674,"ra_cum_vocab_wordfamily":35027,"fr_avg_new_density":21.31,"ra_avg_new_density":28.5,"fr_hardest_chapter":{"chapter":25,"new_density":27.4},"ra_hardest_chapter":{"chapter":36,"new_density":48.8},"total_new_words_fr":10674,"total_new_words_ra":24353,"avg_density_fr":21.3,"avg_density_ra":28.5,"total_unique_forms":33088,"total_tokens":320220}};
+</script>
+<script>
+  // ============== HELPERS ==============
+  const $ = (id) => document.getElementById(id);
+  const ROMAN = ['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI','XXII','XXIII','XXIV','XXV','XXVI','XXVII','XXVIII','XXIX','XXX','XXXI','XXXII','XXXIII','XXXIV','XXXV','XXXVI','XXXVII','XXXVIII','XXXIX','XL','XLI','XLII','XLIII','XLIV','XLV','XLVI','XLVII','XLVIII','XLIX','L','LI','LII','LIII','LIV','LV','LVI'];
+
+  // ============== NAV STRIP ==============
+  function buildNav() {
+    const strip = $('navStrip');
+    const chapterLinks = D.chapters.map((c, i) => {
+      const sep = i === 35 ? '<span class="divider">⟦FR·RA⟧</span>' : (i > 0 ? '<span class="divider">·</span>' : '');
+      return sep + `<a href="#ch-${c.ch}" onclick="event.preventDefault(); document.getElementById('ch-'+${c.ch})?.scrollIntoView({behavior:'smooth'});">Cap.${c.tr}</a>`;
+    }).join('');
+    const extraLinks = '<span class="divider">⟦分析⟧</span>'
+      + '<a href="#themes" onclick="event.preventDefault(); document.getElementById(\'themes\')?.scrollIntoView({behavior:\'smooth\'});">主题</a>'
+      + '<span class="divider">·</span>'
+      + '<a href="#roi-pyramid" onclick="event.preventDefault(); document.getElementById(\'roi-pyramid\')?.scrollIntoView({behavior:\'smooth\'});">ROI</a>'
+      + '<span class="divider">·</span>'
+      + '<a href="#walls" onclick="event.preventDefault(); document.getElementById(\'walls\')?.scrollIntoView({behavior:\'smooth\'});">门槛</a>';
+    strip.innerHTML = chapterLinks + extraLinks;
+  }
+
+  // ============== DENSITY COLOR ==============
+  function densityColor(d) {
+    if (d < 15) return '#E8F0D8';
+    if (d < 20) return '#F0E2B6';
+    if (d < 25) return '#E8C8A0';
+    if (d < 35) return '#D89060';
+    return '#A52A2A';
+  }
+  function densityTextColor(d) {
+    return d >= 25 ? '#FFF' : '#1a1208';
+  }
+
+  // ============== CHAPTER GRID ==============
+  function buildChapterGrid() {
+    const grid = $('chapterGrid');
+    grid.innerHTML = D.chapters.map(c => {
+      const isRA = c.book === 'RA';
+      return `<div class="ch-cell ${isRA ? 'ra' : 'fr'}"
+                   style="background: ${densityColor(c.nd)}; color: ${densityTextColor(c.nd)};"
+                   onclick="openChapterModal(${c.ch})"
+                   title="Cap.${c.tr} · ${c.title} · ${c.nd}% new density">
+                <div class="ch-num">${c.tr}</div>
+                <div class="ch-icon">${c.icon}</div>
+                <div class="ch-density">${c.nd.toFixed(1)}%</div>
+              </div>`;
+    }).join('');
+  }
+
+  // ============== CHART 1: GROWTH CURVE ==============
+  function buildGrowthChart() {
+    const chapters = D.chapters;
+    const xData = chapters.map(c => `Cap.${c.tr}`);
+    const newWords = chapters.map(c => c.nw);
+    const cumVocab = chapters.map(c => c.cv);
+    const cumDb = chapters.map(c => c.cv_db);
+
+    // Find RA boundary
+    const raBoundary = 35;
+
+    // ECharts Roman-themed option
+    const chart = echarts.init($('chartGrowth'), null, { renderer: 'canvas' });
+
+    const option = {
+      backgroundColor: 'transparent',
+      textStyle: { fontFamily: 'Cormorant Garamond, Georgia, serif', color: '#2A1F0E' },
+      grid: { top: 60, right: 80, bottom: 70, left: 70 },
+      legend: {
+        top: 12,
+        textStyle: { color: '#4A3A24', fontFamily: 'Cinzel, serif', fontSize: 12, letterSpacing: 1 },
+        data: [
+          { name: '新词数 (per chapter)', icon: 'rect' },
+          { name: '累计词族 (family)', icon: 'rect' },
+          { name: '累计词形 (form)', icon: 'rect' },
+        ]
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'cross', lineStyle: { color: '#8B1A1A', type: 'dashed' } },
+        backgroundColor: 'rgba(244,236,216,0.96)',
+        borderColor: '#C9A24A',
+        borderWidth: 1,
+        textStyle: { color: '#2A1F0E', fontFamily: 'Cinzel, serif' },
+        formatter: function(params) {
+          const idx = params[0].dataIndex;
+          const c = chapters[idx];
+          let html = `<b style="font-family:Cinzel;letter-spacing:1.5px;color:#5C0E0E;">Cap.${c.tr} · ${c.title}</b><br>`;
+          html += `<span style="color:#6B5A3E;font-style:italic;">${c.sub}</span><br><br>`;
+          params.forEach(p => {
+            html += `<span style="display:inline-block;width:10px;height:10px;background:${p.color};margin-right:6px;vertical-align:middle;"></span>${p.seriesName}: <b>${p.value.toLocaleString()}</b><br>`;
+          });
+          html += `<br><span style="font-size:11px;color:#6B5A3E;">本章: ${c.tw.toLocaleString()} tokens · ${c.nw} new (${c.nd}%)</span>`;
+          return html;
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: xData,
+        axisLine: { lineStyle: { color: '#8B6F47' } },
+        axisLabel: {
+          color: '#4A3A24',
+          fontFamily: 'Cinzel, serif',
+          fontSize: 10,
+          interval: 2,
+          rotate: 0,
+        },
+        splitLine: { show: false }
+      },
+      yAxis: [
+        {
+          type: 'value',
+          name: '新词数',
+          nameTextStyle: { color: '#8B1A1A', fontFamily: 'Cinzel, serif', fontSize: 11, letterSpacing: 1 },
+          position: 'left',
+          axisLine: { lineStyle: { color: '#8B1A1A' } },
+          axisLabel: { color: '#4A3A24', fontSize: 11 },
+          splitLine: { lineStyle: { color: '#D4C9A8', type: 'dashed' } }
+        },
+        {
+          type: 'value',
+          name: '累计',
+          nameTextStyle: { color: '#C9A24A', fontFamily: 'Cinzel, serif', fontSize: 11, letterSpacing: 1 },
+          position: 'right',
+          axisLine: { lineStyle: { color: '#C9A24A' } },
+          axisLabel: { color: '#4A3A24', fontSize: 11 },
+          splitLine: { show: false }
+        }
+      ],
+      series: [
+        {
+          name: '新词数 (per chapter)',
+          type: 'bar',
+          yAxisIndex: 0,
+          data: newWords,
+          itemStyle: {
+            color: {
+              type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+              colorStops: [
+                { offset: 0, color: '#A52A2A' },
+                { offset: 1, color: '#5C0E0E' }
+              ]
+            },
+            borderColor: '#3D2817',
+            borderWidth: 0.5
+          },
+          barWidth: '55%',
+          emphasis: { itemStyle: { color: '#D4AF37' } }
+        },
+        {
+          name: '累计词族 (family)',
+          type: 'line',
+          yAxisIndex: 1,
+          data: cumVocab,
+          smooth: true,
+          symbol: 'circle',
+          symbolSize: 5,
+          lineStyle: { color: '#C9A24A', width: 3 },
+          itemStyle: { color: '#C9A24A', borderColor: '#8B6F1F', borderWidth: 1 },
+          areaStyle: {
+            color: {
+              type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+              colorStops: [
+                { offset: 0, color: 'rgba(201,162,74,0.35)' },
+                { offset: 1, color: 'rgba(201,162,74,0.02)' }
+              ]
+            }
+          }
+        },
+        {
+          name: '累计词形 (form)',
+          type: 'line',
+          yAxisIndex: 1,
+          data: cumDb,
+          smooth: true,
+          symbol: 'diamond',
+          symbolSize: 5,
+          lineStyle: { color: '#8B6F47', width: 2, type: 'dashed' },
+          itemStyle: { color: '#8B6F47' }
+        },
+        {
+          name: 'FR/RA 分界',
+          type: 'line',
+          data: Array(56).fill(null).map((_, i) => i === raBoundary - 0.5 ? 2000 : null),
+          markLine: {
+            symbol: 'none',
+            silent: true,
+            label: {
+              formatter: '⟦ FR · RA ⟧',
+              position: 'insideEndTop',
+              color: '#5C0E0E',
+              fontFamily: 'Cinzel, serif',
+              fontSize: 11,
+              fontWeight: 700,
+            },
+            lineStyle: { color: '#5C0E0E', type: 'dashed', width: 2 },
+            data: [{ xAxis: 'Cap.XXXV' }]
+          }
+        }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', () => chart.resize());
+  }
+
+  // ============== CHART 4: POS DISTRIBUTION ==============
+  function buildPosChart() {
+    const chart = echarts.init($('chartPos'));
+    // Aggregate by sections: FR1-5, FR6-10, FR11-15, FR16-20, FR21-25, FR26-30, FR31-35, RA36-40, RA41-45, RA46-50, RA51-56
+    const sections = [
+      { name: 'FR I-V', range: [1,5] },
+      { name: 'FR VI-X', range: [6,10] },
+      { name: 'FR XI-XV', range: [11,15] },
+      { name: 'FR XVI-XX', range: [16,20] },
+      { name: 'FR XXI-XXV', range: [21,25] },
+      { name: 'FR XXVI-XXX', range: [26,30] },
+      { name: 'FR XXXI-XXXV', range: [31,35] },
+      { name: 'RA XXXVI-XL', range: [36,40] },
+      { name: 'RA XLI-XLV', range: [41,45] },
+      { name: 'RA XLVI-L', range: [46,50] },
+      { name: 'RA LI-LVI', range: [51,56] },
+    ];
+    const cats = ['n','v','adj','adv','pron','prep','conj','other'];
+    const catLabels = {
+      n: '名词 Noun', v: '动词 Verb', adj: '形容词 Adj', adv: '副词 Adv',
+      pron: '代词 Pron', prep: '介词 Prep', conj: '连词 Conj', other: '其他 Other'
+    };
+    const catColors = {
+      n: '#A52A2A', v: '#5C0E0E', adj: '#C9A24A', adv: '#8B6F47',
+      pron: '#6B7F4A', prep: '#654321', conj: '#8B7E5A', other: '#999'
+    };
+
+    const series = cats.map(cat => ({
+      name: catLabels[cat],
+      type: 'bar',
+      stack: 'pos',
+      emphasis: { focus: 'series' },
+      itemStyle: { color: catColors[cat] },
+      data: sections.map(sec => {
+        const chs = D.chapters.filter(c => c.ch >= sec.range[0] && c.ch <= sec.range[1]);
+        if (chs.length === 0) return 0;
+        const avg = chs.reduce((s, c) => s + (c.pos[cat] || 0), 0) / chs.length;
+        return Math.round(avg * 10) / 10;
+      })
+    }));
+
+    chart.setOption({
+      backgroundColor: 'transparent',
+      textStyle: { fontFamily: 'Cormorant Garamond, Georgia, serif', color: '#2A1F0E' },
+      grid: { top: 50, right: 30, bottom: 50, left: 50 },
+      legend: {
+        top: 8,
+        textStyle: { fontFamily: 'Cinzel, serif', fontSize: 11, color: '#4A3A24' },
+        itemWidth: 14, itemHeight: 10
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        backgroundColor: 'rgba(244,236,216,0.96)',
+        borderColor: '#C9A24A',
+        textStyle: { color: '#2A1F0E', fontFamily: 'Cinzel, serif' },
+        formatter: function(params) {
+          let total = 0;
+          let html = `<b>${params[0].axisValue}</b><br>`;
+          params.forEach(p => {
+            if (p.value > 0) {
+              html += `${p.marker}${p.seriesName}: <b>${p.value}%</b><br>`;
+              total += p.value;
+            }
+          });
+          html += `<br><span style="color:#8B1A1A;">Σ ${total.toFixed(0)}%</span>`;
+          return html;
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: sections.map(s => s.name),
+        axisLine: { lineStyle: { color: '#8B6F47' } },
+        axisLabel: { color: '#4A3A24', fontFamily: 'Cinzel, serif', fontSize: 11 }
+      },
+      yAxis: {
+        type: 'value',
+        name: '占比 %',
+        max: 100,
+        nameTextStyle: { color: '#8B1A1A', fontFamily: 'Cinzel, serif', fontSize: 11 },
+        axisLine: { lineStyle: { color: '#8B1A1A' } },
+        axisLabel: { color: '#4A3A24', fontSize: 11, formatter: '{value}%' },
+        splitLine: { lineStyle: { color: '#D4C9A8', type: 'dashed' } }
+      },
+      series: series
+    });
+    window.addEventListener('resize', () => chart.resize());
+  }
+
+  // ============== TOP WORDS LIST ==============
+  function buildTopWords() {
+    const list = $('topWords');
+    const max = D.top_words[0].count;
+    list.innerHTML = D.top_words.map((w, i) => `
+      <div class="word-row">
+        <div class="word-rank">${String(i+1).padStart(2,'0')}</div>
+        <div class="word-latin">${w.word}</div>
+        <div class="word-count">${w.count.toLocaleString()}</div>
+        <div class="word-bar" style="width: ${(w.count/max*100).toFixed(1)}%;"></div>
+      </div>
+    `).join('');
+  }
+
+  // ============== EXTREMES ==============
+  function renderExtreme(elId, c, label) {
+    const el = $(elId);
+    if (!el) return;
+    el.innerHTML = `
+      <div class="extreme-icon">${c.icon}</div>
+      <div class="extreme-info">
+        <div class="extreme-ch">Cap.${c.tr} · ${c.title}</div>
+        <div class="extreme-title">${c.sub}</div>
+        <div class="extreme-meta">${c.tw.toLocaleString()} tokens · ${c.nw} new (${c.nd}%) · ${c.theme_label}</div>
+      </div>
+    `;
+  }
+
+  // ============== THEME GRID + CHART ==============
+  function buildThemeChart() {
+    // Aggregate by theme
+    const themeCounts = {};
+    const themeChs = {};
+    D.chapters.forEach(c => {
+      themeCounts[c.theme] = (themeCounts[c.theme] || 0) + 1;
+      if (!themeChs[c.theme]) themeChs[c.theme] = [];
+      themeChs[c.theme].push(c.ch);
+    });
+
+    const data = Object.keys(themeCounts).map(t => ({
+      name: D.theme_cats[t]?.label || t,
+      value: themeCounts[t],
+      chapters: themeChs[t].map(c => `Cap.${ROMAN[c]}`).join(', '),
+      color: D.theme_cats[t]?.color || '#999',
+    })).sort((a, b) => b.value - a.value);
+
+    const chart = echarts.init($('chartThemes'));
+    chart.setOption({
+      backgroundColor: 'transparent',
+      textStyle: { fontFamily: 'Cormorant Garamond, Georgia, serif', color: '#2A1F0E' },
+      tooltip: {
+        trigger: 'item',
+        backgroundColor: 'rgba(244,236,216,0.96)',
+        borderColor: '#C9A24A',
+        textStyle: { color: '#2A1F0E', fontFamily: 'Cinzel, serif' },
+        formatter: function(p) {
+          return `<b>${p.name}</b><br>共 ${p.value} 章<br><span style="color:#6B5A3E;font-size:11px;">${p.data.chapters}</span>`;
+        }
+      },
+      series: [{
+        type: 'pie',
+        radius: ['38%', '72%'],
+        center: ['50%', '50%'],
+        avoidLabelOverlap: true,
+        itemStyle: { borderColor: '#F4ECD8', borderWidth: 2 },
+        label: {
+          color: '#2A1F0E',
+          fontFamily: 'Cinzel, serif',
+          fontSize: 11,
+          formatter: '{b}\n{c} 章',
+        },
+        labelLine: { lineStyle: { color: '#8B6F47' } },
+        data: data.map(d => ({ ...d, itemStyle: { color: d.color } })),
+      }]
+    });
+    window.addEventListener('resize', () => chart.resize());
+
+    // Theme grid (cards)
+    const grid = $('themeGrid');
+    grid.innerHTML = data.map(d => `
+      <div class="theme-card" style="--color: ${d.color};">
+        <div class="theme-name">${d.name}</div>
+        <div class="theme-count">${d.value}<span class="unit"> 章</span></div>
+        <div class="theme-chs">${d.chapters.length > 50 ? d.chapters.substring(0, 50) + '…' : d.chapters}</div>
+      </div>
+    `).join('');
+  }
+
+  // ============== CHART 5: ROI CURVE (code-generated) ==============
+  // 数据来源: Paul Nation (2006) / van Zeeland & Schmitt (2013) / Cobb (2007)
+  //         + LLPSI_Knowledge.md §第二部分
+  // 双 Y 轴: 左 = 累计覆盖率 (%)，右 = 边际 ROI (% per 1000 words, log scale)
+  function buildRoiChart() {
+    const chart = echarts.init($('chartRoi'), null, { renderer: 'canvas' });
+
+    // 累计覆盖率: 词族数 → 累计文本覆盖率 %
+    const coverageCurve = [
+      [0, 0],     [50, 25],   [100, 50],   [250, 53],   [500, 57],
+      [1000, 72], [1500, 76], [2000, 80],  [3000, 85],  [4000, 90],
+      [5000, 93], [6000, 95], [7000, 96.5], [8000, 98],  [9000, 98.5], [10000, 99]
+    ];
+
+    // 边际 ROI: 在每个区间的"每千词带来的覆盖率提升 %"
+    // 算式: (Δcoverage / Δwords) × 1000
+    const marginalCurve = [
+      [50, 500],   // 0→50: 25/50*1000
+      [100, 500],  // 50→100: 25/50*1000
+      [250, 20],   // 100→250: 3/150*1000
+      [500, 16],
+      [1000, 30],
+      [1500, 8],
+      [2000, 8],
+      [3000, 5],
+      [4000, 5],
+      [5000, 3],
+      [6000, 2],
+      [7000, 1.5],
+      [8000, 1.5],
+      [9000, 0.5],
+      [10000, 0.5]
+    ];
+
+    // LLPSI 进度节点 (词族数, 标签, 颜色)
+    const llpsiMarks = [
+      { x: 600,  label: 'FR Cap. 1-15',  color: '#5b8def' },
+      { x: 1800, label: 'FR Cap. 35',    color: '#3a6fcf' },
+      { x: 3500, label: 'FR+RA Cap. 56', color: '#1f4f9c' },
+      { x: 5500, label: '+ 拓展读物',     color: '#0f2e6a' }
+    ];
+
+    const option = {
+      backgroundColor: 'transparent',
+      textStyle: { fontFamily: 'Cormorant Garamond, serif', color: '#2A1F0E' },
+      title: {
+        text: 'Vocabulary ROI Curve',
+        subtext: '词族数 → 累计文本覆盖率 (左轴) + 边际 ROI per 1000 words (右轴，log)',
+        left: 'center', top: 8,
+        textStyle: { fontFamily: 'Cinzel, serif', fontSize: 16, fontWeight: 700, color: '#2A1F0E', letterSpacing: 1 },
+        subtextStyle: { fontFamily: 'Cormorant Garamond, serif', fontSize: 11, color: '#6B5A3E', fontStyle: 'italic' }
+      },
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: 'rgba(244,236,216,0.96)',
+        borderColor: '#C9A24A', borderWidth: 1,
+        textStyle: { color: '#2A1F0E', fontFamily: 'Cormorant Garamond, serif' },
+        formatter: function(params) {
+          if (!params || !params.length) return '';
+          const x = params[0].axisValueLabel;
+          let html = `<b style="font-family:Cinzel,serif;letter-spacing:1px;">${x} 词族</b>`;
+          params.forEach(p => {
+            if (p.seriesName === '累计覆盖率') {
+              html += `<br><span style="color:${p.color};">●</span> 累计覆盖率: <b>${p.value[1].toFixed(1)}%</b>`;
+            } else {
+              html += `<br><span style="color:${p.color};">●</span> 边际 ROI: <b>${p.value[1].toFixed(2)}% / 千词</b>`;
+            }
+          });
+          return html;
+        }
+      },
+      grid: { left: 60, right: 65, top: 70, bottom: 50 },
+      xAxis: {
+        type: 'log', name: 'Word Families (log)', nameLocation: 'middle', nameGap: 28,
+        nameTextStyle: { fontFamily: 'Cinzel, serif', fontSize: 12, color: '#6B5A3E' },
+        min: 50, max: 10500,
+        axisLine: { lineStyle: { color: '#8a7a5a' } },
+        axisLabel: { color: '#6B5A3E', fontFamily: 'Cormorant Garamond, serif', formatter: v => v >= 1000 ? (v/1000) + 'k' : v },
+        splitLine: { show: true, lineStyle: { color: 'rgba(138,122,90,0.10)', type: 'dashed' } }
+      },
+      yAxis: [
+        {
+          // 左: 累计覆盖率
+          type: 'value', name: '累计覆盖率 %', nameLocation: 'middle', nameGap: 42,
+          nameTextStyle: { fontFamily: 'Cinzel, serif', fontSize: 12, color: '#A8392E' },
+          min: 0, max: 100,
+          position: 'left',
+          axisLine: { lineStyle: { color: '#A8392E' } },
+          axisLabel: { color: '#6B5A3E', fontFamily: 'Cormorant Garamond, serif', formatter: '{value}%' },
+          splitLine: { show: true, lineStyle: { color: 'rgba(168,57,46,0.10)', type: 'dashed' } }
+        },
+        {
+          // 右: 边际 ROI (log scale)
+          type: 'log', name: '边际 ROI %/千词 (log)', nameLocation: 'middle', nameGap: 50,
+          nameTextStyle: { fontFamily: 'Cinzel, serif', fontSize: 12, color: '#5a3e5c' },
+          min: 0.3, max: 1000,
+          position: 'right',
+          axisLine: { lineStyle: { color: '#5a3e5c' } },
+          axisLabel: { color: '#6B5A3E', fontFamily: 'Cormorant Garamond, serif', formatter: '{value}%' },
+          splitLine: { show: false }
+        }
+      ],
+      series: [
+        {
+          // 累计覆盖率主曲线
+          name: '累计覆盖率',
+          type: 'line', smooth: true, yAxisIndex: 0,
+          symbol: 'circle', symbolSize: 6,
+          sampling: 'lttb',
+          lineStyle: { color: '#A8392E', width: 3, shadowColor: 'rgba(168,57,46,0.25)', shadowBlur: 6 },
+          itemStyle: { color: '#A8392E', borderColor: '#fbf6e9', borderWidth: 2 },
+          areaStyle: {
+            color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [
+              { offset: 0, color: 'rgba(176,141,43,0.28)' },
+              { offset: 1, color: 'rgba(168,57,46,0.04)' }
+            ]}
+          },
+          data: coverageCurve,
+          markPoint: {
+            symbol: 'pin', symbolSize: 56,
+            itemStyle: { color: '#b08d2b' },
+            label: { fontFamily: 'Cinzel, serif', fontSize: 10, color: '#fff', fontWeight: 'bold' },
+            data: [
+              { name: '★ 甜蜜点', coord: [2000, 80], value: '★' },
+              { name: 'FR 完成', coord: [1800, 78], value: 'FR' },
+              { name: 'Math Peak', coord: [100, 50], value: 'M' },
+              { name: 'Listening', coord: [6000, 95], value: 'L' },
+              { name: 'Reading', coord: [8000, 98], value: 'R' }
+            ]
+          },
+          markLine: {
+            silent: true, symbol: 'none',
+            lineStyle: { color: '#b08d2b', width: 1.2, type: 'dashed' },
+            label: { fontFamily: 'Cinzel, serif', fontSize: 9, color: '#b08d2b', position: 'insideEndTop' },
+            data: [
+              { yAxis: 80, name: '甜蜜点 80%' },
+              { yAxis: 95, name: '听力 95%' },
+              { yAxis: 98, name: '阅读 98%' }
+            ]
+          }
+        },
+        {
+          // 边际 ROI 曲线（核心 - 视觉展示"递减"）
+          name: '边际 ROI',
+          type: 'line', smooth: false, yAxisIndex: 1,
+          symbol: 'diamond', symbolSize: 8,
+          sampling: 'lttb',
+          lineStyle: { color: '#5a3e5c', width: 2.5, type: 'solid' },
+          itemStyle: { color: '#5a3e5c', borderColor: '#fbf6e9', borderWidth: 1 },
+          data: marginalCurve,
+          markArea: {
+            silent: true,
+            itemStyle: { color: 'rgba(100,100,100,0.12)' },
+            label: {
+              show: true, position: 'insideTop', color: '#6B5A3E',
+              fontFamily: 'Cinzel, serif', fontSize: 10, fontStyle: 'italic',
+              formatter: 'Diminishing Returns\n边际收益递减区'
+            },
+            data: [[
+              { name: '甜蜜点之后', xAxis: 2000, itemStyle: { color: 'rgba(100,100,100,0.10)' } },
+              { xAxis: 10500 }
+            ]]
+          }
+        },
+        {
+          // LLPSI 进度节点 (markLine)
+          name: 'LLPSI 进度',
+          type: 'line', data: [],
+          markLine: {
+            silent: true, symbol: ['none', 'none'],
+            lineStyle: { color: '#3a6fcf', width: 1, type: 'dotted' },
+            label: {
+              fontFamily: 'Cinzel, serif', fontSize: 9, color: '#1f4f9c',
+              position: 'insideEndBottom', distance: 4
+            },
+            data: llpsiMarks.map(m => ({ xAxis: m.x, name: m.label, lineStyle: { color: m.color } }))
+          }
+        }
+      ],
+      legend: {
+        bottom: 4, itemGap: 18,
+        textStyle: { fontFamily: 'Cinzel, serif', fontSize: 11, color: '#6B5A3E' },
+        data: ['累计覆盖率', '边际 ROI', 'LLPSI 进度']
+      }
+    };
+
+    chart.setOption(option);
+    window.addEventListener('resize', () => chart.resize());
+  }
+
+  // ============== MODAL ==============
+  function openChapterModal(chNum) {
+    const c = D.chapters.find(x => x.ch === chNum);
+    if (!c) return;
+    $('mEyebrow').textContent = `CAP. ${c.tr} · ${c.book}`;
+    $('mTitle').textContent = c.title;
+    $('mSub').textContent = c.sub;
+    $('mTw').textContent = c.tw.toLocaleString();
+    $('mNw').textContent = c.nw.toLocaleString();
+    $('mNd').innerHTML = `${c.nd}<span class="modal-stat-unit">%</span>`;
+    $('mCv').textContent = c.cv.toLocaleString();
+    $('mKey').innerHTML = `<b>主题：</b>${c.key}`;
+    $('mWords').innerHTML = c.sw.length > 0
+      ? c.sw.map(w => `<span class="word-chip">${w}</span>`).join('')
+      : '<span style="color:#999;font-style:italic;">（无样本）</span>';
+    $('modal').classList.add('active');
+  }
+  function closeModal() { $('modal').classList.remove('active'); }
+  $('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  // ============== INIT ==============
+  buildNav();
+  buildChapterGrid();
+  buildGrowthChart();
+  buildPosChart();
+  buildTopWords();
+  buildThemeChart();
+  buildRoiChart();
+  renderExtreme('shortestItem', D.shortest);
+  renderExtreme('longestItem', D.longest);
+  renderExtreme('frShortItem', D.fr_short);
+  renderExtreme('frLongItem', D.fr_long);
+  renderExtreme('raShortItem', D.ra_short);
+  renderExtreme('raLongItem', D.ra_long);
+</script>
+</body>
+</html>

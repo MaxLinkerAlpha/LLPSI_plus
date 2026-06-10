@@ -1,0 +1,28 @@
+# 原始教材 PDF / OCR 输出（不上传）
+source/
+source.zip
+ocr_output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv
+venv/
+
+# macOS
+.DS_Store
+*.swp
+*.swo
+
+# IDE
+.idea/
+.vscode/
+
+# 数据库（若需要上传数据库则注释）
+# data/llpsi_corpus.db
+
+# 临时文件
+tmp/
+temp/

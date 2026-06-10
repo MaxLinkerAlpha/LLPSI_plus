@@ -1,0 +1,71 @@
+{
+  "LLPSI_core_familia_romana.pdf": {
+    "30": {
+      "ocr_chars": 1738,
+      "pypdf_chars": 1541,
+      "overlap_pct": 58.94736842105262,
+      "ocr_text_sample": "CAP. IV\n\nvocütivus (voc) « vocat\n\nDàve\n\nE\n\nvocád            vocat\n\ntacé             tacet\n\ndiscéde        discédit\n\naudi            audit\n\nimperat «€» pàret\n\nimperátivus (imp)\n« imperat\n\n(1) -à       ",
+      "pypdf_text_sample": "CAP. IV \nvocativus (tIOC) < vocat \nDave \n-e \nvocd \ntace \ndiscede \naudi \nVocal \ntacet \ndiscedit \naudit \nimperat - paret \nimperitivus (imp) \n<i mperat \n[1] -12 -at \n[2] -e -et \n[3] -e -it \n[4] -i -it \n3"
+    },
+    "80": {
+      "ocr_chars": 1178,
+      "pypdf_chars": 1168,
+      "overlap_pct": 90.0,
+      "ocr_text_sample": "CAP. XI\n\nad-esse\n\n]\n\nverbum facere — verbum\ndicere\n\ne\n\n2\"\n\n\"eo\nOEQAM\n\nspectáre — aspicere\n\nap-pónere « ad-ponere\n\nsentire\n\n80\n\nQuintus oculos aperit atque medicum adesse videt.\nPuer, qui medicum timet",
+      "pypdf_text_sample": "CAP. XI \nad-esse \nverbum facere = verbum \ndicere \nspectire = aspicere \nap-pOnere < ad-pOnere \nsentire \n80 \nQuintus oculos aperit atque medicum adesse videt. 65 \nPuer, qui medicum timet, nullum verbum "
+    },
+    "150": {
+      "ocr_chars": 1543,
+      "pypdf_chars": 1558,
+      "overlap_pct": 68.67469879518072,
+      "ocr_text_sample": "CAP. XIX\n\nhaec (n pl) — haeres\n\nx annis (abl) ante\n- ante X annós\n\npauper, com -erior,\nsup -errimus\n\ndives, comp divitior,\nsup divitissimus\n\nminus pulcher (—» pul-\nchrior) — nón tam\npulcher\n\ngracilis ",
+      "pypdf_text_sample": "CAP. XIX \nhaec (n pt) = hae res \nx annis (ab/) ante \n= ante x annos \npauper, romp -erior, \nsup -errimus \ndives, romp divitior, \nsup divitissimus \nminus pulcher (++ pul­\nchrior) = non tam \npulcher \ngra"
+    }
+  },
+  "LLPSI_core_familia_romana_hd_2nd_color_text_selectable.pdf": {
+    "30": {
+      "ocr_chars": 1332,
+      "pypdf_chars": 1331,
+      "overlap_pct": 73.5632183908046,
+      "ocr_text_sample": "CAP. IV\n\nnüllum : nón ünum\nverbum — vocàábulum\n\nmensa ponit\n\necce sacculus — vidé: hic\nest sacculus\n\nM\n\neius : Dàvz\n\nbaculum et sacculus\nin ménsà\n\nbonus -a -um — probus\n\n28\n\nIülius Médum interrogat: ^",
+      "pypdf_text_sample": "CAP. IV \nnullum : non unum \nverbum = vocabulum \nmensa ponit \necce sacculus = vide: hie \nest sacculus \neius : Diivf \nbaculum et sacculus \nin mensa \nbonus -a -urn = probus \n28 \nHilius Medum interrogat: "
+    },
+    "80": {
+      "ocr_chars": 1243,
+      "pypdf_chars": 1265,
+      "overlap_pct": 85.83333333333333,
+      "ocr_text_sample": "CAP. XI\n\npectus -oris n\n\ncor cordis n\nsanguis -inis m\nfluere\n\ncolor -óris »m\njecur -oris\nventer -tris »\nviscera -um n pl\n\ncibum sümere — ésse\n\nsànus -a -um €» aeger\n-gra -grum\n\nsànàre — sanum facere\n\n",
+      "pypdf_text_sample": "CAP. XI \npectus -oris n \ncor cordis n \nsanguis -inis m \nflu ere \ncolor -oris m \niecur -oris n \nventer -tris m \nviscera -urn n pl \ncibum siimere = esse \nsanus -a -urn <--+ aeger \n-gra -grum \nsanare = s"
+    },
+    "150": {
+      "ocr_chars": 1262,
+      "pypdf_chars": 1240,
+      "overlap_pct": 77.61194029850746,
+      "ocr_text_sample": "CAP. XIX\n\ncotidié — omni die,\nquoque die\n\nflos floris m: rosa flos\nest; rosae et lilia\nflorés sunt\n\nre-mittere\n\nanno (abl) post — post\nannum\n\nconiuges -um m pl —\nmaritus et uxor\n\nbeàtus -a -um «» mise",
+      "pypdf_text_sample": "CAP. XIX \ncoHdie = omni die , \nquoque die \nflos floris m: rosa flos \nest; rosae et lilia \nflores sunt \nre-mittere \nanno (abl) post= post \nannum \nconiuges -urn m pl = \nmaritu s et uxor \nbelitus -a -urn"
+    }
+  },
+  "LLPSI_core_familia_romana_hd_color_small.pdf": {
+    "30": {
+      "ocr_chars": 1361,
+      "pypdf_chars": 1331,
+      "overlap_pct": 74.71264367816092,
+      "ocr_text_sample": "CAP. IV\n\nnüllum : nón ünum\nverbum — vocábulum\n\nDàvus sacculum in\nmensa ponit\n\necce sacculus — vidé: hic\nest sacculus\n\npen. LEN\n\neius : Dàvi\n\n*  -  d\nbaculum et sacculus\nin ménsà\n\nbonus -a -um — probus",
+      "pypdf_text_sample": "CAP. IV \nnullum : non unum \nverbum = vocabulum \nmensa ponit \necce sacculus = vide: hie \nest sacculus \neius : Diivf \nbaculum et sacculus \nin mensa \nbonus -a -urn = probus \n28 \nHilius Medum interrogat: "
+    },
+    "80": {
+      "ocr_chars": 1242,
+      "pypdf_chars": 1265,
+      "overlap_pct": 86.66666666666667,
+      "ocr_text_sample": "CAP. XI\n\npectus -oris n\n\ncor cordis n\nsanguis -inis m\nfluere\n\ncolor -óris m\njecur -oris\nventer -tris ?\nviscera -um n pl\n\ncibum sümere — ésse\n\nsànus -a -um e» aeger\n-gra -grum\n\nsànàre — sanum facere\n\nv",
+      "pypdf_text_sample": "CAP. XI \npectus -oris n \ncor cordis n \nsanguis -inis m \nflu ere \ncolor -oris m \niecur -oris n \nventer -tris m \nviscera -urn n pl \ncibum siimere = esse \nsanus -a -urn <--+ aeger \n-gra -grum \nsanare = s"
+    },
+    "150": {
+      "ocr_chars": 1262,
+      "pypdf_chars": 1240,
+      "overlap_pct": 74.6268656716418,
+      "ocr_text_sample": "CAP. XIX\n\ncotidié — omni die,\nquoque die\n\nflos floris m: rosa flos\nest; rosae et lilia\nflorés sunt\n\nre-mittere\n\nanno (abl) post — post\nannum\n\nconiuges -um m pl —\nmaritus et uxor\n\nbeàtus -a -um «» mise",
+      "pypdf_text_sample": "CAP. XIX \ncoHdie = omni die , \nquoque die \nflos floris m: rosa flos \nest; rosae et lilia \nflores sunt \nre-mittere \nanno (abl) post= post \nannum \nconiuges -urn m pl = \nmaritu s et uxor \nbelitus -a -urn"
+    }
+  }
+}

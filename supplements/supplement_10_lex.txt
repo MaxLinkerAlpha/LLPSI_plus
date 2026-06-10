@@ -1,0 +1,28 @@
+# Supplementum Cap. X
+## Cap. X     · 关系从句扩展
+## 脚手架类型: 词汇脚手架
+
+**本章新词** (前 10): potest(26次), possunt(17次), enim(14次), homines(13次), homo(12次), pisces(11次), mortuus(8次), necesse(7次), avēs(6次), avis(6次)
+
+**使用建议**:
+- 推荐在读完《Familia Romana》Cap. X **之后** 立即阅读
+- 重点关注脚手架目标: 句法模式 / 关键词复现
+- 遇到生词请回到原章节对应位置重读上下文
+
+---
+
+Hodiē Mārcus in macellum iit. Mārcus, quī multa vidēre amat, in macellō piscēs, avēs et bestiās cōnspexit. Piscis est animal, quod in aquā habitat. Piscis in aquā nāre potest. Avēs in caelō volāre possunt. Avis in caelō volat. Bestia in silvā ambulat. Mēns Mārcī excitāta est.
+
+Mārcus mercātōrem rogāvit: "Cūr piscēs, quī mortuī sunt, hīc iacent?" Mercātor respondet: "Piscis, quī mortuus est, emī nōn potest. Enim necesse est, ut piscēs, quī vīvunt, emās." Mārcus intellexit et rogāvit: "Estne avis mortua etiam ēsse nōn potest?" Mercātor dīxit: "Eadem ratiō est! Avis mortua etiam emī nōn potest."
+
+Mārcus, quī erat puer cupidus, avem, quae cantat, in caveā audiit. Avis haec cantat: "Tū, tū, tū!" Mārcus dīxit: "Avis, quae cantat, laeta esse vidētur!" Mercātor dīxit: "Avēs, quae in caveīs vīvunt, cantant, sed avēs, quae in silvīs vīvunt, melius cantant. Avēs, quae liberae sunt, in caelō volāre possunt; avēs, quae in caveīs clausae sunt, volāre nōn possunt."
+
+Mārcus dīxit: "Tum avēs, quae in silvīs vīvunt, meliōrem vītam habent!" Mercātor respondit: "Vērum dīcis! Sed hominēs, quī in urbe Rōmae vīvunt, avēs capere volunt, nam avēs cibus bonus sunt." Mārcus putāvit et dīxit: "Hominēs avēs, quae vīvunt, in caveīs claudunt, ut eās edere possint. Estne hoc iūstum?"
+
+Mercātor dīxit: "Fīlī, nōn omnia, quae hominēs faciunt, iūsta sunt, sed necesse est, ut hominēs edant. Enim sine cibō hominēs vīvere nōn possunt. Bestiae quoque edere necesse habent. Bestia, quae nōn edit, mortua fit."
+
+Tum Mārcus bestiam, quae in macellō iacebat, vīdit. Bestia haec mortua erat. Mārcus dīxit: "Haec bestia mortua est; emī nōn potest." Mercātor respondit: "Vērum dīcis! Bestia, quae vīvit, emī potest. Enim bestiam, quae mortua est, edere nōn possumus. Sed feram, quae vīvit, necāre necesse est, ut eam edere possīmus." Mārcus intellexit.
+
+Mārcus dīxit: "Avēs, quae in caelō volāre possunt, pulcherrimae sunt. Piscēs, quī in aquā nāre possunt, taciti sunt. Sed bestia, quae in silvā ambulat, fera est et hominem, quem cōnspicit, necāre potest." Mercātor subrīsit et dīxit: "Bene dīcis, fīlī mī!"
+
+Mārcus domum revertit et mātrī suae omnia nārrāvit. Māter dīxit: "Fīlī mī, hodiē multa dīdicistī! Piscis, quem emimus, in cēnā edēmus. Avis, quae vīvit, crās emēmus. Nunc necesse est, ut piscem coquāmus." Mārcus laetē mātrem adiuvit et cēnam parāvērunt. Familia tota piscem optimum in cēnā ēdit et laeta erat.

@@ -1,0 +1,126 @@
+
+======================================================================
+  匹配: Familia Romana Cap. 8
+  权重: known_cov=0.4, new_hits=0.4, new_density=0.2
+======================================================================
+  [输入] 已知词 (Cap. 1-7): 1343 个
+  [输入] 新词 (Cap. 8 引入):  279 个
+  [输入] 新词样本: *Accipe, *Amica, *Aspi, *Aspice, *Cōnsiste, *Dā, *Id, *Ille, *Numeriā, *Ornāmenta, *Pretium, *Quae, *Qui, *Sacculus, *Satisne...
+  [候选] 候选段落总数: 105
+
+  Top 5 推荐段落:
+  排名   分数     已知覆盖       新词命中       新词密度       书名                        段名
+  ---- ------ ---------- ---------- ---------- ------------------------- --------------------
+  1    0.764   32.6%    439/279    1.9%    Sermones Romani           Sermo 11: IVDICIVM
+  2    0.383   61.5%     79/279   12.0%    Fabellae Latinae          Fabula 8: Speculum Aemiliae
+  3    0.344   85.4%      1/279    0.3%    Fabellae Latinae          Fabula 6: Puella in horto
+  4    0.330   82.5%      0/279    0.0%    Fabellae Latinae          Fabula 3: Pater dormit
+  5    0.328   58.0%     54/279    9.3%    Colloquia Personarum      Colloquium 5
+
+======================================================================
+  匹配: Familia Romana Cap. 9
+  权重: known_cov=0.4, new_hits=0.4, new_density=0.2
+======================================================================
+  [输入] 已知词 (Cap. 1-8): 1622 个
+  [输入] 新词 (Cap. 9 引入):  231 个
+  [输入] 新词样本: *Baubau, *Bāba, *Pete, *Uhū, *abl, *j, *Ūna, 1c, Arbor, Ca, Caelum, Canes, Canis, Cibus, Collis...
+  [候选] 候选段落总数: 105
+
+  Top 5 推荐段落:
+  排名   分数     已知覆盖       新词命中       新词密度       书名                        段名
+  ---- ------ ---------- ---------- ---------- ------------------------- --------------------
+  1    0.888   34.5%    431/231    1.9%    Sermones Romani           Sermo 11: IVDICIVM
+  2    0.429   45.5%    128/231   12.9%    Colloquia Personarum      Colloquium 6
+  3    0.371   60.9%     64/231    8.5%    Fabellae Latinae          Fabula 10: Domini et equi
+  4    0.350   30.2%    129/231    2.8%    Fabulae Syrae             Fabula Syra 5: Adonis
+  5    0.343   85.7%      0/231    0.0%    Fabellae Latinae          Fabula 6: Puella in horto
+
+======================================================================
+  匹配: Familia Romana Cap. 10
+  权重: known_cov=0.4, new_hits=0.4, new_density=0.2
+======================================================================
+  [输入] 已知词 (Cap. 1-9): 1853 个
+  [输入] 新词 (Cap. 10 引入):  327 个
+  [输入] 新词样本: *Audt, *Vox, Accurrit, Afri, Alia, Anima, Aquila, Aquilae, Ascende, Aves, Avis, Avēs, BESTIAE, Cape, DECIMVM...
+  [候选] 候选段落总数: 105
+
+  Top 5 推荐段落:
+  排名   分数     已知覆盖       新词命中       新词密度       书名                        段名
+  ---- ------ ---------- ---------- ---------- ------------------------- --------------------
+  1    0.966   36.4%    666/327    2.9%    Sermones Romani           Sermo 11: IVDICIVM
+  2    0.403   58.4%    119/327   12.0%    Colloquia Personarum      Colloquium 6
+  3    0.356   33.0%    178/327    3.0%    Colloquia Personarum      Colloquium 24
+  4    0.346   85.7%      2/327    0.6%    Fabellae Latinae          Fabula 6: Puella in horto
+  5    0.335   82.5%      2/327    1.1%    Fabellae Latinae          Fabula 3: Pater dormit
+
+======================================================================
+  匹配: Familia Romana Cap. 11
+  权重: known_cov=0.4, new_hits=0.4, new_density=0.2
+======================================================================
+  [输入] 已知词 (Cap. 1-10): 2180 个
+  [输入] 新词 (Cap. 11 引入):  279 个
+  [输入] 新词样本: 'puerum, *Bibe, *Claude, *Dicit, *Domina, *Ei, *Iam, *Lingua, *Medicus, *Meus, *Non, *Os, *Puer, *Tene, *Tenē...
+  [候选] 候选段落总数: 105
+
+  Top 5 推荐段落:
+  排名   分数     已知覆盖       新词命中       新词密度       书名                        段名
+  ---- ------ ---------- ---------- ---------- ------------------------- --------------------
+  1    0.877   39.3%    499/279    2.2%    Sermones Romani           Sermo 11: IVDICIVM
+  2    0.379   36.3%    158/279    3.4%    Fabulae Syrae             Fabula Syra 5: Adonis
+  3    0.366   50.6%     91/279   16.7%    Colloquia Personarum      Colloquium 7
+  4    0.347   86.3%      1/279    0.3%    Fabellae Latinae          Fabula 6: Puella in horto
+  5    0.342   81.6%      7/279    2.9%    Fabellae Latinae          Fabula 12: Pater abest, adest mater
+
+======================================================================
+  匹配: Familia Romana Cap. 12
+  权重: known_cov=0.4, new_hits=0.4, new_density=0.2
+======================================================================
+  [输入] 已知词 (Cap. 1-11): 2459 个
+  [输入] 新词 (Cap. 12 引入):  376 个
+  [输入] 新词样本: 'Aemilia', 'Aulus', 'Iūlia', 'Iūlius', *Aemilius, *Balbus', *Circum, *Duōs, *Exercitus, *Fortes, *Germāni, *Germānia, *Gāius', *Meti, *Miles...
+  [候选] 候选段落总数: 105
+
+  Top 5 推荐段落:
+  排名   分数     已知覆盖       新词命中       新词密度       书名                        段名
+  ---- ------ ---------- ---------- ---------- ------------------------- --------------------
+  1    0.394   41.5%    213/376    0.9%    Sermones Romani           Sermo 11: IVDICIVM
+  2    0.348   86.6%      1/376    0.3%    Fabellae Latinae          Fabula 6: Puella in horto
+  3    0.341   84.4%      2/376    0.8%    Fabellae Latinae          Fabula 12: Pater abest, adest mater
+  4    0.334   83.6%      0/376    0.0%    Fabellae Latinae          Fabula 3: Pater dormit
+  5    0.327   81.7%      0/376    0.0%    Fabellae Latinae          Fabula 4: Nummus Davi
+
+======================================================================
+  匹配: Familia Romana Cap. 13
+  权重: known_cov=0.4, new_hits=0.4, new_density=0.2
+======================================================================
+  [输入] 已知词 (Cap. 1-12): 2835 个
+  [输入] 新词 (Cap. 13 引入):  447 个
+  [输入] 新词样本: &', &i, '1dūs', *1dūs, *Antiquis, *Cum, *Hora, *Horā, *Iamne, *Idūs, *Maius, *Mense, *Mensis, *Quando, *Quintilis...
+  [候选] 候选段落总数: 105
+
+  Top 5 推荐段落:
+  排名   分数     已知覆盖       新词命中       新词密度       书名                        段名
+  ---- ------ ---------- ---------- ---------- ------------------------- --------------------
+  1    0.385   42.4%    238/447    1.0%    Sermones Romani           Sermo 11: IVDICIVM
+  2    0.360   62.7%    100/447    9.7%    Fabellae Latinae          Fabula 13: Servi dormiunt
+  3    0.349   86.9%      1/447    0.3%    Fabellae Latinae          Fabula 6: Puella in horto
+  4    0.341   85.2%      0/447    0.0%    Fabellae Latinae          Fabula 12: Pater abest, adest mater
+  5    0.334   83.6%      0/447    0.0%    Fabellae Latinae          Fabula 3: Pater dormit
+
+======================================================================
+  匹配: Familia Romana Cap. 25
+  权重: known_cov=0.4, new_hits=0.4, new_density=0.2
+======================================================================
+  [输入] 已知词 (Cap. 1-24): 6927 个
+  [输入] 新词 (Cap. 25 引入):  443 个
+  [输入] 新词样本: *Ariadna, *Contrā, *De1, *Eo, *Minos, *Minotaurus, *Minōotaurus, *Narrābo, *Obliviscere, *Parāta, *Post, *Rex, *Theseu, *Thēseus, *Tum...
+  [候选] 候选段落总数: 105
+
+  Top 5 推荐段落:
+  排名   分数     已知覆盖       新词命中       新词密度       书名                        段名
+  ---- ------ ---------- ---------- ---------- ------------------------- --------------------
+  1    0.410   54.9%    209/443    0.9%    Sermones Romani           Sermo 11: IVDICIVM
+  2    0.364   90.7%      1/443    0.3%    Fabellae Latinae          Fabula 6: Puella in horto
+  3    0.352   88.0%      0/443    0.0%    Fabellae Latinae          Fabula 17: Puer aeger et medicus
+  4    0.351   87.7%      0/443    0.0%    Fabellae Latinae          Fabula 12: Pater abest, adest mater
+  5    0.343   85.8%      0/443    0.0%    Fabellae Latinae          Fabula 4: Nummus Davi

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLPSI+++ · 当拉丁语学习者遇上数据</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parchment: #F4ECD8;
+  --parchment-light: #FBF5E6;
+  --ink: #2A1F14;
+  --ink-soft: #4A3826;
+  --roman-red: #8B0000;
+  --roman-red-dark: #5C0000;
+  --roman-gold: #B8860B;
+  --roman-gold-bright: #D4AF37;
+  --roman-bronze: #8B6F47;
+  --bronze: #654321;
+  --fr-color: #B8860B;  /* Familia Romana - 金棕 */
+  --ra-color: #8B0000;  /* Roma Aeterna - 暗红 */
+  --shadow: 0 4px 20px rgba(60, 30, 0, 0.15);
+  --shadow-strong: 0 8px 30px rgba(60, 30, 0, 0.25);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Cormorant Garamond', 'Cardo', Georgia, serif;
+  background: var(--parchment);
+  background-image:
+    radial-gradient(ellipse at top left, rgba(212, 175, 55, 0.08), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(139, 0, 0, 0.06), transparent 50%),
+    repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(139, 111, 71, 0.02) 40px, rgba(139, 111, 71, 0.02) 41px);
+  color: var(--ink);
+  line-height: 1.7;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before, .hero::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  top: 0;
+  background:
+    repeating-linear-gradient(90deg,
+      var(--bronze) 0px, var(--bronze) 8px,
+      var(--roman-gold-bright) 8px, var(--roman-gold-bright) 12px,
+      var(--bronze) 12px, var(--bronze) 20px,
+      transparent 20px, transparent 32px);
+  opacity: 0.25;
+}
+.hero::before { left: 0; }
+.hero::after { right: 0; }
+
+.hero-content { max-width: 900px; z-index: 1; }
+
+.roman-numeral {
+  font-family: 'Cinzel', serif;
+  font-size: 6em;
+  color: var(--roman-red);
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 4.5em;
+  color: var(--ink);
+  margin-bottom: 30px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.hero .tagline {
+  font-family: 'Cardo', serif;
+  font-size: 1.6em;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 50px;
+  line-height: 1.5;
+}
+
+.hero .meta {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95em;
+  color: var(--roman-bronze);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 2px solid var(--bronze);
+  display: inline-block;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cinzel', serif;
+  font-size: 0.9em;
+  color: var(--roman-bronze);
+  letter-spacing: 0.2em;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+section {
+  margin: 80px 0;
+  padding: 50px 40px;
+  background: var(--parchment-light);
+  border-left: 6px solid var(--roman-gold);
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  position: relative;
+}
+
+section::before {
+  content: attr(data-numeral);
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  background: var(--parchment);
+  padding: 0 15px;
+  font-family: 'Cinzel', serif;
+  color: var(--roman-red);
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4em;
+  color: var(--ink);
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--bronze);
+  padding-bottom: 15px;
+  font-weight: 600;
+}
+
+section h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4em;
+  color: var(--roman-red-dark);
+  margin: 25px 0 12px;
+  font-weight: 600;
+}
+
+section p {
+  font-size: 1.15em;
+  margin-bottom: 16px;
+  color: var(--ink-soft);
+}
+
+section ul, section ol {
+  margin: 15px 0 15px 25px;
+  font-size: 1.1em;
+  color: var(--ink-soft);
+}
+
+section li {
+  margin-bottom: 8px;
+  padding-left: 5px;
+}
+
+.latin-quote {
+  font-family: 'Cardo', serif;
+  font-style: italic;
+  font-size: 1.3em;
+  text-align: center;
+  color: var(--ink);
+  margin: 30px 0;
+  padding: 20px;
+  border-top: 1px solid var(--bronze);
+  border-bottom: 1px solid var(--bronze);
+  letter-spacing: 0.05em;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.feature {
+  background: white;
+  padding: 25px;
+  border-radius: 4px;
+  border-top: 4px solid var(--roman-gold);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+}
+
+.feature h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--roman-red);
+  margin-bottom: 12px;
+  font-size: 1.3em;
+}
+
+.feature p {
+  font-size: 1em;
+  color: var(--ink-soft);
+}
+
+.feature a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 18px;
+  background: var(--roman-red);
+  color: var(--parchment-light);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.feature a:hover {
+  background: var(--roman-red-dark);
+}
+
+.algorithm {
+  background: linear-gradient(135deg, #FBF5E6 0%, #F4ECD8 100%);
+  border-left-color: var(--roman-red);
+  border-left-width: 8px;
+}
+
+.formula {
+  background: var(--ink);
+  color: var(--roman-gold-bright);
+  padding: 25px 30px;
+  border-radius: 4px;
+  font-family: 'Cardo', monospace;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 20px 0;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--roman-gold);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: white;
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+th {
+  background: var(--ink);
+  color: var(--parchment-light);
+  padding: 12px 15px;
+  text-align: left;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+td {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(139, 111, 71, 0.2);
+  color: var(--ink-soft);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.workflow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.workflow .step {
+  background: var(--parchment-light);
+  border: 2px solid var(--bronze);
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.95em;
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.workflow .step small {
+  font-family: 'Cardo', serif;
+  font-size: 0.75em;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.workflow .arrow {
+  font-family: 'Cinzel', serif;
+  color: var(--roman-red);
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.readers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.reader {
+  background: white;
+  padding: 15px;
+  border-left: 3px solid var(--roman-gold);
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.reader:hover {
+  transform: translateX(3px);
+  border-left-color: var(--roman-red);
+}
+
+.reader .name {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 1.05em;
+}
+
+.reader .meta {
+  font-size: 0.85em;
+  color: var(--roman-bronze);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.fr-badge { background: var(--fr-color); color: white; padding: 2px 8px; border-radius: 2px; font-size: 0.75em; font-family: 'Cinzel', serif; }
+.ra-badge { background: var(--ra-color); color: white; padding: 2px 8px; border-radius: 2px; font-size: 0.75em; font-family: 'Cinzel', serif; }
+
+.commands {
+  background: var(--ink);
+  color: var(--parchment-light);
+  padding: 20px 25px;
+  border-radius: 4px;
+  font-family: 'Cardo', monospace;
+  font-size: 1em;
+  margin: 15px 0;
+  border-left: 4px solid var(--roman-gold);
+  overflow-x: auto;
+}
+
+.commands .comment { color: var(--roman-bronze); font-style: italic; }
+.commands .cmd { color: var(--roman-gold-bright); }
+
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--roman-bronze);
+  border-top: 2px solid var(--bronze);
+  margin-top: 80px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.2em;
+}
+
+footer .spqr {
+  font-size: 1.5em;
+  color: var(--roman-red);
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  margin-bottom: 10px;
+}
+
+a { color: var(--roman-red); text-decoration: none; border-bottom: 1px dashed var(--roman-red); }
+a:hover { color: var(--roman-red-dark); border-bottom-style: solid; }
+
+@media (max-width: 768px) {
+  .roman-numeral { font-size: 4em; }
+  .hero h1 { font-size: 2.5em; }
+  .hero .tagline { font-size: 1.2em; }
+  section { padding: 30px 20px; }
+  section h2 { font-size: 1.8em; }
+  .hero::before, .hero::after { width: 50px; }
+  .workflow { flex-direction: column; }
+  .workflow .arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="roman-numeral">L L P S I</div>
+    <h1>LLPSI+++</h1>
+    <p class="tagline">"当拉丁语学习者遇上数据分析"<br>
+       <em>让每章 Ørberg 学习者都找到「现在能读懂的」拓展读物</em></p>
+    <div class="meta">Lingua Latina Per Se Illustrata · Companion Analytics</div>
+  </div>
+  <div class="scroll-cue">▼ 滚 动 至 正 文 ▼</div>
+</header>
+
+<main>
+
+<section data-numeral="I. DE ORIGINE" id="origin">
+  <h2>项目缘起</h2>
+  <div class="latin-quote">
+    "Quid legam hodie?" — "我今天该读什么？"<br>
+    这个问题困扰着每一位 LLPSI 学习者
+  </div>
+  <p>
+    <strong>LLPSI</strong>（<em>Lingua Latina Per Se Illustrata</em>，俗称"Ørberg 教材"）是全球最广泛使用的纯拉丁语沉浸式教材。
+    从 <span class="fr-badge">FR</span> Cap.1 的罗马家庭，到 <span class="ra-badge">RA</span> Cap.56 的罗马史，56 章构成完整的古典拉丁语旅程。
+  </p>
+  <p>
+    但学习过程中始终存在一个问题：<strong>"我现在能读懂哪本补充读物？"</strong>
+    Cambridge 拉丁、Oxford 拉丁、Ecce Romani、Fabulae Faciles、Hobbitus、Pugio Bruti……
+    20+ 本读物，数百个章节，上万段文本——传统方式（手翻、问老师、查附录）效率极低。
+  </p>
+  <h3>LLPSI+++ 给出的答案</h3>
+  <p>
+    通过<strong>已学词汇库</strong> × <strong>段落可读性分析</strong> × <strong>56 章推荐</strong>，
+    自动回答"我现在应该读什么"——让学习者从第一章开始，就能"读得懂"地进入古典拉丁语的真实世界。
+  </p>
+</section>
+
+<section data-numeral="II. TRES PARTES" id="features">
+  <h2>三大核心产出</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>📊 数据洞察看板</h3>
+      <p>
+        56 章难度曲线、段落可读性推荐、点击即可在模态窗口中阅读原文。
+        9.1MB 自包含，浏览器离线可用。
+      </p>
+      <a href="analysis_output/LLPSI_Insights.html" target="_blank">打开看板 →</a>
+    </div>
+    <div class="feature">
+      <h3>🏛️ 古罗马调性看板</h3>
+      <p>
+        FR/RA 整体走向、词性分层、主题分布（战争/政治/宗教/家庭）。
+        79KB 沉浸式罗马风视觉体验。
+      </p>
+      <a href="analysis_output/LLPSI_Roman_Insights.html" target="_blank">进入罗马 →</a>
+    </div>
+    <div class="feature">
+      <h3>📜 路由数据 + 报告</h3>
+      <p>
+        JSON + Markdown 两种格式的段级路由表。
+        适合二次开发、CI/CD 集成、自动化测试。
+      </p>
+      <a href="analysis_output/llpsi_reader_routing_v2.md" target="_blank">查看路由 →</a>
+    </div>
+  </div>
+</section>
+
+<section data-numeral="III. RATIO" class="algorithm" id="algorithm">
+  <h2>v3.1 可读性评分 极简版</h2>
+  
+  <p style="font-size: 1.15rem; text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+    <strong>核心思路很简单</strong>：一段拉丁语课文，你学过的单词占多少比例？
+    这段课文对你来说就有多容易读。
+  </p>
+  <p>
+    对每段拓展读物（如 Cambridge Latin Stage 1），逐章（第 1~56 章）计算可读性分数：
+  </p>
+
+  <div class="formula">
+    可读性分数(第N章) = (已学词数 + 0.5 × 未来词数 + 0.7 × 专有名词数) ÷ 总拉丁语单词数
+  </div>
+
+  <h3>单词类别</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>类别</th>
+        <th>含义</th>
+        <th>权重</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>✅ 已学词</td>
+        <td>这个词在 LLPSI 第 1~第 N 章里出现过</td>
+        <td><strong>1.0</strong></td>
+      </tr>
+      <tr>
+        <td>⚠️ 未来词</td>
+        <td>这个词在 LLPSI 全书里有，但第 N 章你还没学到</td>
+        <td><strong>0.5</strong></td>
+      </tr>
+      <tr>
+        <td>⭐ 专有名词</td>
+        <td>人名、地名，在本书中出现 ≥5 次</td>
+        <td><strong>0.7</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>三档推荐</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>难度档</th>
+        <th>可读性分数门槛</th>
+        <th>最少拉丁语单词数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>🟢 流畅阅读</td><td>≥ 80%</td><td>≥ 15 个</td></tr>
+      <tr><td>🟡 挑战阅读</td><td>≥ 70%</td><td>≥ 20 个</td></tr>
+      <tr><td>🔵 选读</td><td>≥ 50%</td><td>≥ 30 个</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 20px;">
+    详细设计、决策记录、已知问题见 <a href="HANDOFF.md">HANDOFF.md</a>。
+  </p>
+</section>
+
+<section data-numeral="IV. FLUMEN DATAE" id="workflow">
+  <h2>数据流</h2>
+  <div class="workflow">
+    <div class="step">LLPSI 56章<small>课文原文</small></div>
+    <div class="arrow">→</div>
+    <div class="step">已学词集<small>build_learned</small></div>
+    <div class="arrow">→</div>
+    <div class="step">70+ 拓展读物<small>按段落拆开</small></div>
+    <div class="arrow">→</div>
+    <div class="step">可读性评分<small>analyze_v6</small></div>
+    <div class="arrow">→</div>
+    <div class="step">56章推荐<small>routing_v2</small></div>
+    <div class="arrow">→</div>
+    <div class="step">HTML 看板<small>insights_v2</small></div>
+  </div>
+  <p style="text-align: center; font-style: italic; color: var(--roman-bronze);">
+    单次全量重跑 ≈ 3-5 分钟 · 覆盖 71 种 OCR 读物
+  </p>
+</section>
+
+<section data-numeral="V. LIBRI COOPERTI" id="readers">
+  <h2>已覆盖的拓展读物（71 种）</h2>
+  <p>以下为部分代表读物：</p>
+  <div class="readers-grid">
+    <div class="reader">
+      <div class="name">Fabellae Latinae</div>
+      <div class="meta">Ørberg 配套 · <span class="fr-badge">FR Cap.1+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Colloquia Personarum</div>
+      <div class="meta">Ørberg 配套 · <span class="fr-badge">FR Cap.8+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Fabulae Syrae</div>
+      <div class="meta">Ørberg 配套 · <span class="fr-badge">FR Cap.10+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Cambridge Latin Stage 1-2</div>
+      <div class="meta">· <span class="fr-badge">FR Cap.5+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Oxford Latin Course Cap.1-3</div>
+      <div class="meta">· <span class="fr-badge">FR Cap.6+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Ecce Romani I-II</div>
+      <div class="meta">· <span class="fr-badge">FR Cap.2+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Fabulae Faciles</div>
+      <div class="meta">LLVM 简写 · <span class="fr-badge">FR Cap.15+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Hobbitus Ille</div>
+      <div class="meta">LLPSI 改编 · <span class="ra-badge">RA Cap.30+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Pugio Bruti</div>
+      <div class="meta">LLPSI 高级 · <span class="ra-badge">RA Cap.40+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Via Latina Romanorum</div>
+      <div class="meta">· <span class="ra-badge">RA Cap.20+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Sermones Romani</div>
+      <div class="meta">· <span class="ra-badge">RA Cap.36+</span></div>
+    </div>
+    <div class="reader">
+      <div class="name">Aeneis (LLPSI 改编)</div>
+      <div class="meta">· <span class="ra-badge">RA Cap.50+</span></div>
+    </div>
+  </div>
+  <p style="text-align: center;">
+    完整 71 种读物的章节分布见
+    <a href="analysis_output/llpsi_reader_routing_v2.md" target="_blank">llpsi_reader_routing_v2.md</a>
+  </p>
+</section>
+
+<section data-numeral="VI. USUS" id="usage">
+  <h2>快速使用</h2>
+
+  <h3>本地浏览（推荐）</h3>
+  <div class="commands">
+    <span class="comment"># 启动本地服务器</span><br>
+    <span class="cmd">cd</span> /Users/max/Downloads/Projects/LLPSI+++<br>
+    <span class="cmd">python3 -m http.server 8000</span><br>
+    <br>
+    <span class="comment"># 浏览器打开:</span><br>
+    <span class="cmd"># http://localhost:8000/README.html</span>                           &lt;- 项目介绍<br>
+    <span class="cmd"># http://localhost:8000/analysis_output/LLPSI_Insights.html</span>     &lt;- 数据洞察看板 (9.1MB)<br>
+    <span class="cmd"># http://localhost:8000/analysis_output/LLPSI_Roman_Insights.html</span> &lt;- 古罗马调性看板 (79KB)
+  </div>
+
+  <h3>全量重跑</h3>
+  <div class="commands">
+    <span class="cmd">python3</span> scripts/v2/build_learned_words.py<br>
+    <span class="cmd">python3</span> scripts/v2/analyze_readers_v6.py<br>
+    <span class="cmd">python3</span> scripts/v2/build_reader_routing_v2.py<br>
+    <span class="cmd">python3</span> scripts/v2/build_llpsi_insights_html_v2.py
+  </div>
+
+  <h3>验证某段是否可读</h3>
+  <div class="commands">
+    <span class="cmd">python3</span> scripts/v2/find_early_readable.py
+  </div>
+</section>
+
+<section data-numeral="VII. ORDO" id="structure">
+  <h2>项目文件组织</h2>
+  <div class="commands">
+    <span class="comment"># 核心产出 (125MB)</span><br>
+    analysis_output/<br>
+    ├── LLPSI_Insights.html          <span class="comment">9.1MB  · v3 数据看板</span><br>
+    ├── LLPSI_Roman_Insights.html    <span class="comment">79KB   · 古罗马洞察</span><br>
+    ├── reader_vocab_stats_v6.json   <span class="comment">6.2MB  · v3 可读性评分</span><br>
+    ├── learned_words_v2.json        <span class="comment">11MB   · 已学词汇库</span><br>
+    ├── llpsi_reader_routing_v2.json <span class="comment">1.4MB  · 56 章推荐表</span><br>
+    ├── reader_metadata*.json        <span class="comment">~500KB (3 份)</span><br>
+    ├── reader_report_data.json      <span class="comment">43KB</span><br>
+    └── reader_vocab_stats.csv       <span class="comment">73KB</span><br>
+    <br>
+    <span class="comment"># 旧版产出已归档 (96MB)</span><br>
+    analysis_output/archived/<br>
+    ├── pre_v3_baseline/             <span class="comment">91MB   · 算法对比基线</span><br>
+    ├── extracted/                   <span class="comment">1.9MB  · 历史抽取片段</span><br>
+    └── backups/                     <span class="comment">212KB  · 版本备份</span><br>
+    <br>
+    <span class="comment"># 流水线脚本</span><br>
+    scripts/<br>
+    ├── v2/                          <span class="comment">11 脚本 · 当前流水线</span><br>
+    └── archived/                    <span class="comment">47 脚本 · 旧版 v1-v5</span><br>
+    <br>
+    <span class="comment"># 数据</span><br>
+    data/<br>
+    ├── llpsi_corpus.db              <span class="comment">25MB   · 主数据库</span><br>
+    └── archived/                    <span class="comment">27MB   · 旧版备份</span><br>
+    <br>
+    <span class="comment"># 其他</span><br>
+    ocr_output/                      <span class="comment">71 本读物 OCR</span><br>
+    source/                          <span class="comment">原始 PDF (230MB)</span><br>
+    docs/                            <span class="comment">9 份技术文档</span><br>
+    supplements/                     <span class="comment">5 份补充材料</span>
+  </div>
+</section>
+
+<section data-numeral="VIII. TECH" id="tech">
+  <h2>技术栈</h2>
+  <ul>
+    <li><strong>Python 3.11+</strong> — 唯一编程语言</li>
+    <li><strong>ECharts 5.4.3</strong> (jsDelivr CDN) — 看板可视化</li>
+    <li><strong>SQLite</strong> — 词表持久化</li>
+    <li><strong>纯 UTF-8</strong> — 全部源文件</li>
+  </ul>
+  <p style="font-style: italic; color: var(--roman-bronze);">
+    无 npm / 无 virtualenv / 无 Docker —— 开箱即用。
+  </p>
+</section>
+
+<section data-numeral="IX. AUCTOR" id="author">
+  <h2>维护与文档</h2>
+  <p>本项目由 <strong>Solo + 制度性 Agent 流水线</strong>协作开发：</p>
+  <p style="text-align: center; font-family: 'Cinzel', serif; color: var(--roman-bronze); letter-spacing: 0.15em; margin: 20px 0;">
+    planner → reviewer → dispatcher → executor
+  </p>
+  <ul>
+    <li><a href="HANDOFF.md">HANDOFF.md</a> — 算法详细交接文档（v3 可读性评分）</li>
+    <li><a href="docs/Technical_Architecture_VISIO_ROMANA.md">Technical_Architecture_VISIO_ROMANA.md</a> — 长期架构目标</li>
+    <li><a href="docs/Project_Plan.md">Project_Plan.md</a> — 项目计划</li>
+    <li><a href="docs/LLPSI_Research.md">LLPSI_Research.md</a> — LLPSI 教材研判</li>
+  </ul>
+  <p style="margin-top: 30px; text-align: center; color: var(--roman-bronze);">
+    文档版本 v1.2 · 最近更新 2026-06-10<br>
+    项目目录 263 文件 · 3.0GB · 71 本 OCR 读物
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <div class="spqr">S P Q R</div>
+  <div>Senatus Populusque Romanus</div>
+  <div style="margin-top: 8px; font-size: 0.85em;">LLPSI+++ · 2026</div>
+</footer>
+
+</body>
+</html>

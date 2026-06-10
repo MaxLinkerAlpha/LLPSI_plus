@@ -1,0 +1,598 @@
+{
+  "total_d_class_books": 33,
+  "books_with_latin_stories": 7,
+  "total_latin_pages": 204,
+  "total_mixed_pages": 564,
+  "total_latin_story_pages": 162,
+  "books": [
+    {
+      "slug": "beginners_latin_book",
+      "status": "ok",
+      "total_pages": 294,
+      "latin_pages": 0,
+      "mixed_pages": 12,
+      "english_pages": 191,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "cambridge_1",
+      "status": "ok",
+      "total_pages": 210,
+      "latin_pages": 17,
+      "mixed_pages": 21,
+      "english_pages": 91,
+      "latin_story_count": 2,
+      "latin_story_pages": 8,
+      "stories": [
+        {
+          "start_page": 4,
+          "end_page": 7,
+          "page_count": 4,
+          "content_chars": 2262
+        },
+        {
+          "start_page": 54,
+          "end_page": 57,
+          "page_count": 4,
+          "content_chars": 729
+        }
+      ]
+    },
+    {
+      "slug": "cambridge_2",
+      "status": "ok",
+      "total_pages": 204,
+      "latin_pages": 13,
+      "mixed_pages": 16,
+      "english_pages": 102,
+      "latin_story_count": 3,
+      "latin_story_pages": 11,
+      "stories": [
+        {
+          "start_page": 2,
+          "end_page": 6,
+          "page_count": 5,
+          "content_chars": 2668
+        },
+        {
+          "start_page": 77,
+          "end_page": 79,
+          "page_count": 3,
+          "content_chars": 3291
+        },
+        {
+          "start_page": 82,
+          "end_page": 84,
+          "page_count": 3,
+          "content_chars": 5530
+        }
+      ]
+    },
+    {
+      "slug": "cambridge_3",
+      "status": "ok",
+      "total_pages": 334,
+      "latin_pages": 5,
+      "mixed_pages": 14,
+      "english_pages": 173,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "cambridge_4",
+      "status": "ok",
+      "total_pages": 364,
+      "latin_pages": 0,
+      "mixed_pages": 13,
+      "english_pages": 220,
+      "latin_story_count": 1,
+      "latin_story_pages": 3,
+      "stories": [
+        {
+          "start_page": 107,
+          "end_page": 109,
+          "page_count": 3,
+          "content_chars": 5164
+        }
+      ]
+    },
+    {
+      "slug": "conversational_latin",
+      "status": "ok",
+      "total_pages": 413,
+      "latin_pages": 2,
+      "mixed_pages": 1,
+      "english_pages": 272,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "dooge_beginners",
+      "status": "ok",
+      "total_pages": 359,
+      "latin_pages": 3,
+      "mixed_pages": 30,
+      "english_pages": 218,
+      "latin_story_count": 3,
+      "latin_story_pages": 12,
+      "stories": [
+        {
+          "start_page": 214,
+          "end_page": 219,
+          "page_count": 6,
+          "content_chars": 13294
+        },
+        {
+          "start_page": 221,
+          "end_page": 223,
+          "page_count": 3,
+          "content_chars": 7253
+        },
+        {
+          "start_page": 226,
+          "end_page": 228,
+          "page_count": 3,
+          "content_chars": 7013
+        }
+      ]
+    },
+    {
+      "slug": "dooge_beginners_2",
+      "status": "ok",
+      "total_pages": 359,
+      "latin_pages": 3,
+      "mixed_pages": 28,
+      "english_pages": 222,
+      "latin_story_count": 2,
+      "latin_story_pages": 9,
+      "stories": [
+        {
+          "start_page": 214,
+          "end_page": 219,
+          "page_count": 6,
+          "content_chars": 13254
+        },
+        {
+          "start_page": 221,
+          "end_page": 223,
+          "page_count": 3,
+          "content_chars": 7239
+        }
+      ]
+    },
+    {
+      "slug": "dooge_beginners_key",
+      "status": "ok",
+      "total_pages": 32,
+      "latin_pages": 4,
+      "mixed_pages": 1,
+      "english_pages": 24,
+      "latin_story_count": 1,
+      "latin_story_pages": 3,
+      "stories": [
+        {
+          "start_page": 29,
+          "end_page": 31,
+          "page_count": 3,
+          "content_chars": 6219
+        }
+      ]
+    },
+    {
+      "slug": "ecce_romani",
+      "status": "ok",
+      "total_pages": 344,
+      "latin_pages": 14,
+      "mixed_pages": 26,
+      "english_pages": 213,
+      "latin_story_count": 2,
+      "latin_story_pages": 6,
+      "stories": [
+        {
+          "start_page": 33,
+          "end_page": 35,
+          "page_count": 3,
+          "content_chars": 3948
+        },
+        {
+          "start_page": 205,
+          "end_page": 207,
+          "page_count": 3,
+          "content_chars": 6557
+        }
+      ]
+    },
+    {
+      "slug": "ecce_romani_2a",
+      "status": "ok",
+      "total_pages": 261,
+      "latin_pages": 1,
+      "mixed_pages": 22,
+      "english_pages": 148,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "ecce_romani_2b",
+      "status": "ok",
+      "total_pages": 293,
+      "latin_pages": 0,
+      "mixed_pages": 12,
+      "english_pages": 176,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "ecce_romani_3",
+      "status": "ok",
+      "total_pages": 233,
+      "latin_pages": 0,
+      "mixed_pages": 6,
+      "english_pages": 181,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "ecce_romani_combined",
+      "status": "ok",
+      "total_pages": 1,
+      "latin_pages": 0,
+      "mixed_pages": 0,
+      "english_pages": 1,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "gwynne",
+      "status": "ok",
+      "total_pages": 276,
+      "latin_pages": 0,
+      "mixed_pages": 2,
+      "english_pages": 223,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "illiterati_1",
+      "status": "ok",
+      "total_pages": 352,
+      "latin_pages": 1,
+      "mixed_pages": 7,
+      "english_pages": 321,
+      "latin_story_count": 1,
+      "latin_story_pages": 4,
+      "stories": [
+        {
+          "start_page": 318,
+          "end_page": 321,
+          "page_count": 4,
+          "content_chars": 6037
+        }
+      ]
+    },
+    {
+      "slug": "illiterati_2",
+      "status": "ok",
+      "total_pages": 397,
+      "latin_pages": 1,
+      "mixed_pages": 11,
+      "english_pages": 322,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "latin_first_year_magoffin",
+      "status": "ok",
+      "total_pages": 227,
+      "latin_pages": 0,
+      "mixed_pages": 17,
+      "english_pages": 185,
+      "latin_story_count": 1,
+      "latin_story_pages": 4,
+      "stories": [
+        {
+          "start_page": 185,
+          "end_page": 188,
+          "page_count": 4,
+          "content_chars": 8917
+        }
+      ]
+    },
+    {
+      "slug": "latin_made_simple",
+      "status": "ok",
+      "total_pages": 288,
+      "latin_pages": 12,
+      "mixed_pages": 12,
+      "english_pages": 216,
+      "latin_story_count": 1,
+      "latin_story_pages": 3,
+      "stories": [
+        {
+          "start_page": 83,
+          "end_page": 85,
+          "page_count": 3,
+          "content_chars": 5688
+        }
+      ]
+    },
+    {
+      "slug": "latin_natural_method",
+      "status": "ok",
+      "total_pages": 192,
+      "latin_pages": 19,
+      "mixed_pages": 86,
+      "english_pages": 69,
+      "latin_story_count": 12,
+      "latin_story_pages": 78,
+      "stories": [
+        {
+          "start_page": 36,
+          "end_page": 40,
+          "page_count": 5,
+          "content_chars": 10610
+        },
+        {
+          "start_page": 70,
+          "end_page": 72,
+          "page_count": 3,
+          "content_chars": 8164
+        },
+        {
+          "start_page": 79,
+          "end_page": 84,
+          "page_count": 6,
+          "content_chars": 17453
+        },
+        {
+          "start_page": 88,
+          "end_page": 91,
+          "page_count": 4,
+          "content_chars": 13639
+        },
+        {
+          "start_page": 96,
+          "end_page": 101,
+          "page_count": 6,
+          "content_chars": 19167
+        },
+        {
+          "start_page": 103,
+          "end_page": 109,
+          "page_count": 7,
+          "content_chars": 21400
+        },
+        {
+          "start_page": 111,
+          "end_page": 114,
+          "page_count": 4,
+          "content_chars": 11156
+        },
+        {
+          "start_page": 117,
+          "end_page": 126,
+          "page_count": 10,
+          "content_chars": 31080
+        },
+        {
+          "start_page": 128,
+          "end_page": 140,
+          "page_count": 13,
+          "content_chars": 42458
+        },
+        {
+          "start_page": 147,
+          "end_page": 149,
+          "page_count": 3,
+          "content_chars": 9362
+        },
+        {
+          "start_page": 153,
+          "end_page": 166,
+          "page_count": 14,
+          "content_chars": 40281
+        },
+        {
+          "start_page": 168,
+          "end_page": 170,
+          "page_count": 3,
+          "content_chars": 8675
+        }
+      ]
+    },
+    {
+      "slug": "new_latin_primer",
+      "status": "ok",
+      "total_pages": 694,
+      "latin_pages": 0,
+      "mixed_pages": 2,
+      "english_pages": 222,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "oxford_1",
+      "status": "ok",
+      "total_pages": 161,
+      "latin_pages": 7,
+      "mixed_pages": 20,
+      "english_pages": 104,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "oxford_2",
+      "status": "ok",
+      "total_pages": 179,
+      "latin_pages": 2,
+      "mixed_pages": 26,
+      "english_pages": 108,
+      "latin_story_count": 2,
+      "latin_story_pages": 7,
+      "stories": [
+        {
+          "start_page": 72,
+          "end_page": 75,
+          "page_count": 4,
+          "content_chars": 7942
+        },
+        {
+          "start_page": 149,
+          "end_page": 151,
+          "page_count": 3,
+          "content_chars": 10664
+        }
+      ]
+    },
+    {
+      "slug": "oxford_3",
+      "status": "ok",
+      "total_pages": 226,
+      "latin_pages": 3,
+      "mixed_pages": 25,
+      "english_pages": 130,
+      "latin_story_count": 1,
+      "latin_story_pages": 3,
+      "stories": [
+        {
+          "start_page": 117,
+          "end_page": 119,
+          "page_count": 3,
+          "content_chars": 5946
+        }
+      ]
+    },
+    {
+      "slug": "reading_latin_grammar",
+      "status": "ok",
+      "total_pages": 485,
+      "latin_pages": 0,
+      "mixed_pages": 9,
+      "english_pages": 405,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "reading_latin_study_guide",
+      "status": "ok",
+      "total_pages": 145,
+      "latin_pages": 0,
+      "mixed_pages": 1,
+      "english_pages": 141,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "reading_latin_text",
+      "status": "ok",
+      "total_pages": 369,
+      "latin_pages": 8,
+      "mixed_pages": 34,
+      "english_pages": 303,
+      "latin_story_count": 1,
+      "latin_story_pages": 4,
+      "stories": [
+        {
+          "start_page": 315,
+          "end_page": 318,
+          "page_count": 4,
+          "content_chars": 6752
+        }
+      ]
+    },
+    {
+      "slug": "revised_latin_primer",
+      "status": "ok",
+      "total_pages": 241,
+      "latin_pages": 0,
+      "mixed_pages": 3,
+      "english_pages": 194,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "teach_yourself",
+      "status": "ok",
+      "total_pages": 243,
+      "latin_pages": 13,
+      "mixed_pages": 16,
+      "english_pages": 181,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "wheelock_7e",
+      "status": "ok",
+      "total_pages": 606,
+      "latin_pages": 0,
+      "mixed_pages": 45,
+      "english_pages": 440,
+      "latin_story_count": 1,
+      "latin_story_pages": 4,
+      "stories": [
+        {
+          "start_page": 417,
+          "end_page": 420,
+          "page_count": 4,
+          "content_chars": 12728
+        }
+      ]
+    },
+    {
+      "slug": "wheelock_answer_key",
+      "status": "ok",
+      "total_pages": 238,
+      "latin_pages": 0,
+      "mixed_pages": 0,
+      "english_pages": 236,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "wheelock_reader",
+      "status": "ok",
+      "total_pages": 438,
+      "latin_pages": 63,
+      "mixed_pages": 34,
+      "english_pages": 247,
+      "latin_story_count": 0,
+      "latin_story_pages": 0,
+      "stories": []
+    },
+    {
+      "slug": "wileys_real_latin",
+      "status": "ok",
+      "total_pages": 473,
+      "latin_pages": 13,
+      "mixed_pages": 12,
+      "english_pages": 320,
+      "latin_story_count": 1,
+      "latin_story_pages": 3,
+      "stories": [
+        {
+          "start_page": 366,
+          "end_page": 368,
+          "page_count": 3,
+          "content_chars": 2943
+        }
+      ]
+    }
+  ]
+}

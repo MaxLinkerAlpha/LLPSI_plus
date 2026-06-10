@@ -1,0 +1,38 @@
+{
+  "started_at": "2026-06-06 23:41:30",
+  "results": [
+    {
+      "slug": "ecce_romani_2a",
+      "kind": "pdf_ocr",
+      "pages": 260,
+      "elapsed_s": 664.3528110980988,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "slug": "ecce_romani_3",
+      "kind": "pdf_ocr",
+      "pages": 232,
+      "elapsed_s": 679.8938798904419,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "slug": "ecce_romani_2b",
+      "kind": "pdf_ocr",
+      "pages": 292,
+      "elapsed_s": 716.6954350471497,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "slug": "ecce_romani_combined",
+      "kind": "epub_extract",
+      "pages": 3,
+      "elapsed_s": 0.03987693786621094,
+      "status": "ok",
+      "error": null,
+      "char_count": 276596
+    }
+  ]
+}

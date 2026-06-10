@@ -1,0 +1,426 @@
+{
+  "started_at": 1780749322.796076,
+  "finished_at": 1780755541.490143,
+  "dpi": 250,
+  "workers": 4,
+  "total_books": 52,
+  "pending_count": 52,
+  "results": [
+    {
+      "slug": "diocles_flora",
+      "pages": 47,
+      "elapsed_s": 106.97825002670288,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "ora_maritima",
+      "pages": 174,
+      "elapsed_s": 241.5994312763214,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "fabulae_faciles",
+      "pages": 154,
+      "elapsed_s": 354.06628704071045,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "pugio_bruti",
+      "pages": 38,
+      "elapsed_s": 69.33948922157288,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "regulus",
+      "pages": 49,
+      "elapsed_s": 107.66960096359253,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "nutting_reader",
+      "pages": 268,
+      "elapsed_s": 615.2448358535767,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "forum_lectiones",
+      "pages": 364,
+      "elapsed_s": 734.6133110523224,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "pro_patria",
+      "pages": 208,
+      "elapsed_s": 480.3267447948456,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "septimus",
+      "pages": 179,
+      "elapsed_s": 298.0978410243988,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "olimpia_daedalus",
+      "pages": 132,
+      "elapsed_s": 156.96091103553772,
+      "status": "ok",
+      "error": null,
+      "tier": "A2_初级_推荐"
+    },
+    {
+      "slug": "unus_duo_tres",
+      "pages": 295,
+      "elapsed_s": 391.96151781082153,
+      "status": "ok",
+      "error": null,
+      "tier": "A1_入门_强烈推荐"
+    },
+    {
+      "slug": "olimpia_nicholas",
+      "pages": 79,
+      "elapsed_s": 99.71599102020264,
+      "status": "ok",
+      "error": null,
+      "tier": "A2_初级_推荐"
+    },
+    {
+      "slug": "olimpia_pyramus",
+      "pages": 124,
+      "elapsed_s": 158.4388461112976,
+      "status": "ok",
+      "error": null,
+      "tier": "A2_初级_推荐"
+    },
+    {
+      "slug": "latin_lower_forms",
+      "pages": 208,
+      "elapsed_s": 391.4312379360199,
+      "status": "ok",
+      "error": null,
+      "tier": "A2_初级_推荐"
+    },
+    {
+      "slug": "chickering",
+      "pages": 312,
+      "elapsed_s": 526.659175157547,
+      "status": "ok",
+      "error": null,
+      "tier": "A2_初级_推荐"
+    },
+    {
+      "slug": "via_latina_romanorum",
+      "pages": 239,
+      "elapsed_s": 349.482381105423,
+      "status": "ok",
+      "error": null,
+      "tier": "A2_初级_推荐"
+    },
+    {
+      "slug": "nunc_loquamur",
+      "pages": 113,
+      "elapsed_s": 196.29720997810364,
+      "status": "ok",
+      "error": null,
+      "tier": "B1_中级_可考虑"
+    },
+    {
+      "slug": "intermediate_oral_cicero",
+      "pages": 145,
+      "elapsed_s": 246.75736713409424,
+      "status": "ok",
+      "error": null,
+      "tier": "B1_中级_可考虑"
+    },
+    {
+      "slug": "conversational_latin",
+      "pages": 412,
+      "elapsed_s": 700.8467209339142,
+      "status": "ok",
+      "error": null,
+      "tier": "B1_中级_可考虑"
+    },
+    {
+      "slug": "hobbitus",
+      "pages": 424,
+      "elapsed_s": 496.0873820781708,
+      "status": "ok",
+      "error": null,
+      "tier": "B2_中高级_谨慎"
+    },
+    {
+      "slug": "reynolds_reader",
+      "pages": 399,
+      "elapsed_s": 532.3116779327393,
+      "status": "ok",
+      "error": null,
+      "tier": "B1_中级_可考虑"
+    },
+    {
+      "slug": "via_latina_easy",
+      "pages": 238,
+      "elapsed_s": 533.4301512241364,
+      "status": "ok",
+      "error": null,
+      "tier": "B1_中级_可考虑"
+    },
+    {
+      "slug": "second_year_latin",
+      "pages": 65,
+      "elapsed_s": 193.97535920143127,
+      "status": "ok",
+      "error": null,
+      "tier": "B2_中高级_谨慎"
+    },
+    {
+      "slug": "cambridge_2",
+      "pages": 203,
+      "elapsed_s": 339.2066102027893,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "cambridge_1",
+      "pages": 209,
+      "elapsed_s": 373.58972692489624,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "beginners_latin_book",
+      "pages": 293,
+      "elapsed_s": 434.73306822776794,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "cambridge_3",
+      "pages": 333,
+      "elapsed_s": 557.7479269504547,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "dooge_beginners_key",
+      "pages": 31,
+      "elapsed_s": 100.04109597206116,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "dooge_beginners",
+      "pages": 358,
+      "elapsed_s": 535.2988138198853,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "dooge_beginners_2",
+      "pages": 358,
+      "elapsed_s": 549.6754198074341,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "cambridge_4",
+      "pages": 363,
+      "elapsed_s": 619.0131719112396,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "gwynne",
+      "pages": 275,
+      "elapsed_s": 396.25450325012207,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "illiterati_1",
+      "pages": 351,
+      "elapsed_s": 419.16549706459045,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "illiterati_2",
+      "pages": 396,
+      "elapsed_s": 454.1235828399658,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "ecce_romani",
+      "pages": 343,
+      "elapsed_s": 763.7611808776855,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "latin_stories_wheelock",
+      "pages": 114,
+      "elapsed_s": 148.54754400253296,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "latin_first_year_magoffin",
+      "pages": 226,
+      "elapsed_s": 587.9992504119873,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "latin_natural_method",
+      "pages": 191,
+      "elapsed_s": 538.6374859809875,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "latin_made_simple",
+      "pages": 287,
+      "elapsed_s": 672.4837648868561,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "oxford_1",
+      "pages": 160,
+      "elapsed_s": 437.2837700843811,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "oxford_2",
+      "pages": 178,
+      "elapsed_s": 499.35263991355896,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "oxford_3",
+      "pages": 225,
+      "elapsed_s": 539.4785830974579,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "reading_latin_study_guide",
+      "pages": 144,
+      "elapsed_s": 407.00576519966125,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "new_latin_primer",
+      "pages": 693,
+      "elapsed_s": 1346.5125029087067,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "reading_latin_grammar",
+      "pages": 484,
+      "elapsed_s": 749.1108012199402,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "teach_yourself",
+      "pages": 242,
+      "elapsed_s": 298.5433621406555,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "revised_latin_primer",
+      "pages": 240,
+      "elapsed_s": 432.47333908081055,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "reading_latin_text",
+      "pages": 368,
+      "elapsed_s": 716.9130041599274,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "wheelock_answer_key",
+      "pages": 237,
+      "elapsed_s": 417.32348895072937,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "wileys_real_latin",
+      "pages": 472,
+      "elapsed_s": 543.5712518692017,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "wheelock_reader",
+      "pages": 437,
+      "elapsed_s": 865.682028055191,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    },
+    {
+      "slug": "wheelock_7e",
+      "pages": 605,
+      "elapsed_s": 1171.1778440475464,
+      "status": "ok",
+      "error": null,
+      "tier": "D_教材_不推荐入库"
+    }
+  ]
+}

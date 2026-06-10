@@ -1,0 +1,113 @@
+# LLPSI 切段规则 (v2)
+# 每本书的 (slug, 起始正则, 标题模式)
+#
+# segment_pattern 是 Python 正则,匹配行级标记。捕获组含义:
+#   单 group  → 直接作为"序数词" (罗马数或单词)
+#   两 group  → (序号, 标题) 或 (上册号, 标题)
+#   三 group  → (序号, 标题, 章节提示)
+#
+# 注意: YAML 单引号字符串中,反斜杠不会被转义
+#   '\s+' → Python re 看到 \s+ (匹配空白)   ✓
+#   '\\s+' → Python re 看到 \\s+ (字面反斜杠 + s+) ✗
+
+books:
+  # ----- Colloquia Personarum -----
+  colloquia_personarum:
+    segment_pattern: '^COLLOQVIVM\s+(.+?)\s*$'
+    title_template: 'Colloquium {n}'
+    skip_pages: 5
+
+  # ----- Fabellae Latinae -----
+  # 模式: "1. Provinciae Romanae (cap. I)"
+  #       "8. Speculum Aemiliae (cap. I-VII)"
+  #       "11. Tabernae Iulii (I-X)"  (OCR 缺失 cap.)
+  #       "9. Ornamenta dominae (cap. I-VIIT)"  (OCR 噪声: T)
+  #       "23. De novo infante (cap. I-X X)"  (OCR 噪声: 空格)
+  # 三组捕获: (序号, 标题, 章节范围)
+  # 注意: cap_str 中的 OCR 噪声由 parse_cap_range() 内部修复
+  fabellae_latinae:
+    segment_pattern: '^(\d+)\.\s+(.+?)\s+\((?:cap\.\s+)?([IVXLC\-T ]+)\)\s*$'
+    title_template: 'Fabula {n}: {t}'
+    title_with_cap: true
+    skip_pages: 2
+
+  # ----- Fabulae Syrae -----
+  # 模式 1: "1. Pygmalion" / "2. VIRGINIA" 等
+  # 附加: "AD CAPITVLVM XXVI" 标记当前 FR 章节
+  # 策略: 在匹配 "N. NAME" 时,记录最近的 AD CAPITVLVM 章节
+  fabulae_syrae:
+    segment_pattern: '^(\d+)\.\s+([A-Z][A-Za-z\u00C0-\u017F]+)\s*$'
+    title_template: 'Fabula Syra {n}: {t}'
+    chapter_marker: '^AD\s+CAPITVLVM\s+([IVXLC]+)\s*$'
+    chapter_title_template: 'Cap. {ch}'
+    skip_pages: 7
+
+  # ----- Sermones Romani -----
+  # 模式: "I. DISCIPVLVS" / "I. DISCIPVLVS (1)" / "VI. CONVIVIVM" 等
+  sermones_romani:
+    segment_pattern: '^([IVXLC]+)\.\s+([A-Z]+)(\s*\([^)]+\))?\s*$'
+    title_template: 'Sermo {n}: {t}'
+    skip_pages: 2
+
+  # ----- Roma Aeterna (Pars II) -----
+  # 模式: 只匹配长格式"CAPITVLVM [ORDINAL]" (Cap. 36-56)
+  # 短格式"CAP. X"作为页眉每页都出现,只作定位参考
+  # 长格式只在每章首页出现一次,避免重复切段
+  # 注: parse_ordinal 必须支持 ORDINAL→数字映射,见 scripts/segment_book.py 的 LATIN_ORDINALS
+  roma_aeterna:
+    segment_pattern: '^CAPITVLVM\s+([A-Z][A-Z\s]+?)(?:\s+CAP\.[^\n]*|\s*)$'
+    title_template: 'Cap. {n}'
+    skip_pages: 6  # 跳过扉页 + 目录
+
+  # ----- 章节切分模式 (按 LIBER / ACTVS / CAPVT 切分) -----
+  de_bello_gallico:
+    segment_pattern: '^LIBER\s+([^\s)]+)'
+    title_template: 'Liber {n}'
+
+  aeneis:
+    segment_pattern: '^LIBER\s+(.+?)\s*$'
+    title_template: 'Liber {n}'
+
+  ars_amatoria:
+    segment_pattern: '^LIBER\s+(.+?)\s*$'
+    title_template: 'Liber {n}'
+
+  amphitryo:
+    segment_pattern: '^ACTVS\s+([^\s)]+)'
+    title_template: 'Actus {n}'
+
+  # ----- 整段入库模式 (segment_whole: true) -----
+  # De Rerum Natura 主体中 LIBER 标头在每节重复出现 (e.g. 每个 SECTION 都标 LIBER I),
+  # 无法靠 LIBER 罗马数字精确切段. 整段入库 (1 段).
+  de_rerum_natura:
+    segment_pattern: '^T\.\s*LVCRETII'
+    title_template: 'De Rerum Natura'
+    skip_pages: 3  # 跳过扉页 + 版权 + 目录
+    no_ignorecase: true
+    segment_whole: true  # 整段 1 段 (只切 1 段)
+
+  # Cena Trimalchionis 没有明显的章节切分标记,
+  # 整段入库 (fr_range 45-47 与 RA 衔接)
+  cena_trimalchionis:
+    segment_pattern: '^CENA\s+TRIMALCHIONIS\s*$'
+    title_template: 'Cena Trimalchionis'
+    skip_pages: 6  # 跳过扉页 + 版权 + 序言 + 缩略语 + PERSONAE 人物表
+    segment_whole: true  # 仅作为锚点, 实际只切 1 段 (整段)
+
+  # Catilina 没有 CAPVT 等标准章节标记,
+  # 仅靠 [De ...] 主题标题 (e.g. [De fama quaerenda]) 切段, 6 个主题
+  # 用 [主题] 开头 + 闭合方括号匹配, 不依赖序数词
+  catilina:
+    segment_pattern: '^\[([A-Z][A-Za-zÀ-ſ\s]+)\]\s*$'
+    title_template: 'Catilina - {t}'
+    skip_pages: 6  # 跳过扉页 + 版权 + 目录 + 词汇表
+    segment_whole: true  # 锚点模式, 整段 1 段
+
+  # Epitome Historiae Sacrae 内容按 AETAS 1-6 + PARS I/II 组织,
+  # 因 AETAS 内部子标号复杂, 整段入库 (1 段).
+  epitome_historiae_sacrae:
+    segment_pattern: '^VETVS\s+TESTAMENTVM'
+    title_template: 'Epitome Historiae Sacrae'
+    skip_pages: 6  # 跳过扉页 + 版权 + 目录
+    no_ignorecase: true
+    segment_whole: true

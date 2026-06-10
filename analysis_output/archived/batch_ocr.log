@@ -1,0 +1,57 @@
+[信息] 待处理: 52 本非 C 类书籍
+[信息] DPI=250, 并行=4, 重试=1
+[信息] 待执行: 52 本
+  [  1/52] ✓ diocles_flora                       页=  47 用时=107s ETA=5463s
+  [  2/52] ✓ ora_maritima                        页= 174 用时=242s ETA=8719s
+  [  3/52] ✓ fabulae_faciles                     页= 154 用时=354s ETA=5786s
+  [  4/52] ✓ pugio_bruti                         页=  38 用时=69s ETA=5083s
+  [  5/52] ✓ regulus                             页=  49 用时=108s ETA=4994s
+  [  6/52] ✓ nutting_reader                      页= 268 用时=615s ETA=4718s
+  [  7/52] ✓ forum_lectiones                     页= 364 用时=735s ETA=4724s
+  [  8/52] ✓ pro_patria                          页= 208 用时=480s ETA=4560s
+  [  9/52] ✓ septimus                            页= 179 用时=298s ETA=3962s
+  [ 10/52] ✓ olimpia_daedalus                    页= 132 用时=157s ETA=4143s
+  [ 11/52] ✓ unus_duo_tres                       页= 295 用时=392s ETA=3755s
+  [ 12/52] ✓ olimpia_nicholas                    页=  79 用时=100s ETA=3620s
+  [ 13/52] ✓ olimpia_pyramus                     页= 124 用时=158s ETA=3497s
+  [ 14/52] ✓ latin_lower_forms                   页= 208 用时=391s ETA=3313s
+  [ 15/52] ✓ chickering                          页= 312 用时=527s ETA=3112s
+  [ 16/52] ✓ via_latina_romanorum                页= 239 用时=349s ETA=3230s
+  [ 17/52] ✓ nunc_loquamur                       页= 113 用时=196s ETA=3001s
+  [ 18/52] ✓ intermediate_oral_cicero            页= 145 用时=247s ETA=2772s
+  [ 19/52] ✓ conversational_latin                页= 412 用时=701s ETA=3242s
+  [ 20/52] ✓ hobbitus                            页= 424 用时=496s ETA=3141s
+  [ 21/52] ✓ reynolds_reader                     页= 399 用时=532s ETA=2905s
+  [ 22/52] ✓ via_latina_easy                     页= 238 用时=533s ETA=2715s
+  [ 23/52] ✓ second_year_latin                   页=  65 用时=194s ETA=2598s
+  [ 24/52] ✓ cambridge_2                         页= 203 用时=339s ETA=2719s
+  [ 25/52] ✓ cambridge_1                         页= 209 用时=374s ETA=2529s
+  [ 26/52] ✓ beginners_latin_book                页= 293 用时=435s ETA=2398s
+  [ 27/52] ✓ cambridge_3                         页= 333 用时=558s ETA=2424s
+  [ 28/52] ✓ dooge_beginners_key                 页=  31 用时=100s ETA=2330s
+  [ 29/52] ✓ dooge_beginners                     页= 358 用时=535s ETA=2282s
+  [ 30/52] ✓ dooge_beginners_2                   页= 358 用时=550s ETA=2162s
+  [ 31/52] ✓ cambridge_4                         页= 363 用时=619s ETA=1998s
+  [ 32/52] ✓ gwynne                              页= 275 用时=396s ETA=2046s
+  [ 33/52] ✓ illiterati_1                        页= 351 用时=419s ETA=1939s
+  [ 34/52] ✓ illiterati_2                        页= 396 用时=454s ETA=1802s
+  [ 35/52] ✓ ecce_romani                         页= 343 用时=764s ETA=1691s
+  [ 36/52] ✓ latin_stories_wheelock              页= 114 用时=149s ETA=1614s
+  [ 37/52] ✓ latin_first_year_magoffin           页= 226 用时=588s ETA=1565s
+  [ 38/52] ✓ latin_natural_method                页= 191 用时=539s ETA=1452s
+  [ 39/52] ✓ latin_made_simple                   页= 287 用时=672s ETA=1346s
+  [ 40/52] ✓ oxford_1                            页= 160 用时=437s ETA=1289s
+  [ 41/52] ✓ oxford_2                            页= 178 用时=499s ETA=1192s
+  [ 42/52] ✓ oxford_3                            页= 225 用时=539s ETA=1090s
+  [ 43/52] ✓ reading_latin_study_guide           页= 144 用时=407s ETA=1015s
+  [ 44/52] ✓ new_latin_primer                    页= 693 用时=1347s ETA=905s
+  [ 45/52] ✓ reading_latin_grammar               页= 484 用时=749s ETA=785s
+  [ 46/52] ✓ teach_yourself                      页= 242 用时=299s ETA=688s
+  [ 47/52] ✓ revised_latin_primer                页= 240 用时=432s ETA=562s
+  [ 48/52] ✓ reading_latin_text                  页= 368 用时=717s ETA=441s
+  [ 49/52] ✓ wheelock_answer_key                 页= 237 用时=417s ETA=349s
+  [ 50/52] ✓ wileys_real_latin                   页= 472 用时=544s ETA=234s
+  [ 51/52] ✓ wheelock_reader                     页= 437 用时=866s ETA=121s
+  [ 52/52] ✓ wheelock_7e                         页= 605 用时=1171s ETA=0s
+
+[汇总] 成功 52/52, 失败 0, 总页数 13482, 总耗时 6219s
