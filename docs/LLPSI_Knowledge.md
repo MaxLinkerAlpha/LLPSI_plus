@@ -478,3 +478,14 @@ python3 scripts/v2/build_llpsi_insights_html_v2.py
   - reader_audit_report.md（读物审计）— 已被 v3.1 段级评分取代，仅保留"四档可读性分布"框架
 
 > **备份**: 全部原 6 份文档 + 2 张 PNG 备份至 [archived_pre_merge_20260610/](archived_pre_merge_20260610/)
+
+---
+
+## Git 分支约定
+
+| 分支 | 用途 | 说明 |
+|:----|:-----|:-----|
+| `main` | 稳定发布 | 仅存放可面向用户的稳定版本。初始自动生成（占位）|
+| `dev` | 日常开发 | 所有开发工作推送至此。当前活跃分支 |
+
+> **同步规则**: `dev` 达到可发布状态 → PR 合并至 `main`。**禁止**直接 `force push` 到 `main`。

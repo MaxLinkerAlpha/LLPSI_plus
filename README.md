@@ -208,3 +208,12 @@ LLPSI+++/
 - 项目由 Solo + 制度性 Agent 流水线（planner → reviewer → dispatcher → executor）协作开发
 - 文档版本：v1.2（与 v3.1 算法同步 + 71 本读物 + 清理后目录）
 - 最近更新：2026-06-10
+
+## Git 分支
+
+| 分支 | 用途 | 说明 |
+|:----|:-----|:-----|
+| `main` | 稳定发布 | 仅存放可面向用户的稳定版本 |
+| `dev` | 日常开发 | 所有开发工作推送至此（当前活跃） |
+
+> 远程仓库: `git@github.com:MaxLinkerAlpha/LLPSI_plus.git`
