@@ -1,0 +1,396 @@
+/* ============================================================
+   LLPSI+++ M2 · product 版样式 v3.2 (2026-06-11)
+   母版: HTML/Themes_AcademicJournal.html (Caesar DBG 注释版)
+   ============================================================
+   v3.2 vs v3.1 关键变化:
+   - 实体标注: 完全去除视觉标注 (无下划线/角标/fl.)
+   - 边注标注: 用 1px dashed underline 标记 (与实体不同)
+   - 主题切换: 加 fade 动画 (0.4s)
+   - 拓展卡: 大量卡片 (37条) 改用 2 列网格 + 紧凑样式
+   - 导航控件: 上下页 + 章节下拉
+   - Grammatica 板块: 独立于正文与拓展卡
+   - Apparatus / Biblio 融入卡片或 tooltip
+   - 深夜模式: 酒红 (#E85D5D) 不用橙
+   ============================================================ */
+
+/* === 主题变量 === */
+:root {
+  --bg:          #FFFFFF;
+  --fg:          #111111;
+  --fg-soft:     #444444;
+  --fg-mute:     #888888;
+  --accent:      #B22A2A;          /* 酒红 (light) */
+  --accent-2:    #8B1F1F;          /* 暗酒红 */
+  --accent-soft: #FFF8E1;
+  --rule:        #000000;
+  --rule-soft:   #DDDDDD;
+  --bg-soft:     #FAFAF6;
+  --bg-card:     #FFFFFF;
+  --border-soft: #D4C5A0;
+  --tip-bg:      #1A1A1A;
+  --tip-fg:      #F5F5F5;
+  --shadow:      0 2px 8px rgba(0,0,0,0.25);
+  --nav-bg:      #F4F0E8;
+  --nav-active:  #B22A2A;
+  --margin-line: #888888;          /* 边注虚线色 */
+}
+
+[data-theme="dark"] {
+  --bg:          #1A0E0E;          /* 深酒红黑 */
+  --fg:          #F5E8E8;          /* 微酒米白 */
+  --fg-soft:     #C9B0B0;
+  --fg-mute:     #8A7070;
+  --accent:      #E85D5D;          /* 深夜酒红 (主色) */
+  --accent-2:    #C44848;
+  --accent-soft: #2A1414;          /* 暗酒红 hover */
+  --rule:        #E8D0D0;
+  --rule-soft:   #4A3030;
+  --bg-soft:     #251818;
+  --bg-card:     #2A1818;
+  --border-soft: #5A3838;
+  --tip-bg:      #0F0606;
+  --tip-fg:      #F5E8E8;
+  --shadow:      0 2px 8px rgba(0,0,0,0.7);
+  --nav-bg:      #2A1818;
+  --nav-active:  #E85D5D;
+  --margin-line: #6A5050;
+}
+
+/* === 基础 === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, "Times New Roman", "Iowan Old Style", "Source Han Serif SC", "Noto Serif CJK SC", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* 主题切换 fade 动画 */
+  transition: background 0.4s ease, color 0.4s ease;
+}
+body { padding: 36px 20px 48px; }
+.page { max-width: 800px; margin: 0 auto; background: var(--bg); }
+
+/* 全局切换动画 (对所有元素) */
+body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
+.colophon, .nav-controls, .theme-toggle, .ent, .margin {
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ============= 主题切换按钮 ============= */
+.theme-toggle {
+  position: fixed; top: 16px; right: 16px; z-index: 200;
+  background: var(--bg-card); color: var(--fg);
+  border: 1px solid var(--border-soft);
+  padding: 6px 10px; border-radius: 2px; cursor: pointer;
+  font-family: inherit; font-size: 8.5pt;
+  font-variant: small-caps; letter-spacing: 0.1em;
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.15s;
+}
+.theme-toggle:hover { background: var(--accent-soft); border-color: var(--accent); }
+.theme-toggle:active { transform: scale(0.96); }
+.theme-toggle::before { content: ""; display: inline-block; width: 10px; height: 10px;
+  border-radius: 50%; background: var(--accent);
+  margin-right: 6px; vertical-align: middle;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+[data-theme="dark"] .theme-toggle::before {
+  box-shadow: 0 0 6px var(--accent);
+}
+
+/* ============= 导航控件 (上下页 + 章节选择) ============= */
+.nav-controls {
+  max-width: 800px; margin: 0 auto 18px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 14px; background: var(--nav-bg);
+  border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent);
+  font-size: 9pt; gap: 12px;
+}
+.nav-controls a, .nav-controls select {
+  color: var(--fg); text-decoration: none;
+  font-family: inherit; font-size: 9pt;
+  padding: 4px 10px; border: 1px solid var(--border-soft);
+  background: var(--bg-card); border-radius: 2px;
+  cursor: pointer; transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.nav-controls a:hover, .nav-controls select:hover {
+  background: var(--accent); color: var(--bg);
+  border-color: var(--accent);
+}
+.nav-controls .nav-prev, .nav-controls .nav-next {
+  font-variant: small-caps; letter-spacing: 0.08em;
+  min-width: 100px; text-align: center;
+}
+.nav-controls .nav-prev::before { content: "← "; opacity: 0.6; }
+.nav-controls .nav-next::after { content: " →"; opacity: 0.6; }
+.nav-controls .nav-chapter {
+  flex: 1; min-width: 0;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.nav-controls .nav-chapter select {
+  width: 100%; padding: 4px 6px;
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.nav-controls .nav-chapter label {
+  display: block; font-size: 7.5pt; color: var(--fg-mute);
+  letter-spacing: 0.12em; margin-bottom: 2px;
+}
+
+/* ============= 报头 ============= */
+.masthead { text-align: center; padding-bottom: 10px; margin-top: 12px; }
+.masthead .journal-name {
+  font-size: 8pt; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--fg); font-variant: small-caps; font-weight: 600;
+}
+.masthead .rule-black { height: 1px; background: var(--rule); margin: 8px 0 3px; }
+.masthead .rule-red { height: 1px; background: var(--accent); margin: 0 0 14px; }
+.masthead h1.title {
+  font-size: 22pt; font-weight: 700; line-height: 1.18;
+  letter-spacing: 0.005em; margin: 0 0 4px;
+}
+.masthead .doi {
+  font-size: 8pt; color: var(--fg-mute);
+  font-family: "SF Mono", "Courier New", monospace; margin-bottom: 8px;
+}
+.masthead .rule-bottom { height: 1px; background: var(--rule); margin-top: 8px; }
+
+/* ============= 章节标题 ============= */
+.section-heading { max-width: 700px; margin: 0 auto 8px; text-align: center; }
+.section-heading h2 {
+  font-size: 11.5pt; font-variant: small-caps; letter-spacing: 0.16em;
+  font-weight: 700; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  padding: 5px 0; margin: 0;
+}
+
+/* ============= 单列正文 ============= */
+.two-col {
+  max-width: 660px; margin: 0 auto; text-align: justify;
+  hyphens: auto; -webkit-hyphens: auto; margin-top: 18px;
+  font-size: 12pt; line-height: 1.85;
+}
+.two-col p {
+  position: relative;
+  margin: 0 0 0.85em; text-indent: 1.5em;
+  font-size: 12pt; line-height: 1.85;
+}
+.two-col p.no-indent { text-indent: 0; }
+.sec-num {
+  position: absolute; top: 0.2em; right: 100%; margin-right: 0.6em;
+  font-weight: 700; color: var(--accent); font-size: 7.5pt; vertical-align: super;
+  font-variant: small-caps; letter-spacing: 0.04em;
+}
+
+/* ============= 实体标注 (v3.2 完全去视觉化) =============
+   v3.1 → v3.2 关键变化:
+   - 完全无下划线/角标/fl./虚线
+   - 只有 hover/focus 时显示 tooltip
+   - 仅靠 cursor: help 提示可交互
+   ============= */
+.ent {
+  position: relative; cursor: help;
+  /* 完全无视觉标注 */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.ent:hover, .ent:focus, .ent.tapped {
+  background: var(--accent-soft);
+  border-radius: 2px;
+}
+
+/* 实体下方的 tooltip 卡片 */
+.ent .tip {
+  visibility: hidden; opacity: 0; transition: opacity 0.2s ease;
+  position: absolute; bottom: 130%; left: 0;
+  background: var(--tip-bg); color: var(--tip-fg);
+  font-family: Georgia, serif; font-style: normal; font-variant: normal;
+  font-size: 9pt; line-height: 1.4; padding: 6px 10px; border-radius: 2px;
+  z-index: 100; pointer-events: none;
+  box-shadow: var(--shadow);
+  min-width: 180px; max-width: 280px; white-space: normal;
+}
+.ent .tip::after {
+  content: ""; position: absolute; top: 100%; left: 12px;
+  border: 4px solid transparent; border-top-color: var(--tip-bg);
+}
+.ent:hover .tip, .ent:focus .tip, .ent.tapped .tip { visibility: visible; opacity: 1; }
+
+@media (max-width: 720px) {
+  .ent .tip { display: none; }
+  .ent.tapped .tip { display: block; visibility: visible; opacity: 1; }
+}
+
+.tip .tip-key {
+  font-variant: small-caps; letter-spacing: 0.1em;
+  color: var(--accent); font-weight: 700; font-size: 8pt;
+  display: block; margin-bottom: 2px;
+}
+.tip .tip-zh { display: block; }
+
+/* ============= 边注标注 (.margin) =============
+   与实体 .ent 的区别:
+   - 用 1px dashed 下划线 (更轻, 不如实线醒目)
+   - underline-color 用 var(--margin-line) 灰色而非 accent
+   - hover tooltip 内容更详细 (拉丁语法+释义)
+   ============= */
+.margin {
+  position: relative; cursor: help;
+  border-bottom: 1px dashed var(--margin-line);
+  padding-bottom: 1px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.margin:hover, .margin:focus, .margin.tapped {
+  background: var(--accent-soft);
+  border-bottom-color: var(--accent);
+  border-radius: 2px;
+}
+.margin .tip {
+  visibility: hidden; opacity: 0; transition: opacity 0.2s ease;
+  position: absolute; bottom: 130%; left: 0;
+  background: var(--tip-bg); color: var(--tip-fg);
+  font-family: Georgia, serif; font-style: normal; font-variant: normal;
+  font-size: 8.5pt; line-height: 1.4; padding: 6px 10px; border-radius: 2px;
+  z-index: 100; pointer-events: none;
+  box-shadow: var(--shadow);
+  min-width: 240px; max-width: 340px; white-space: normal;
+}
+.margin .tip::after {
+  content: ""; position: absolute; top: 100%; left: 12px;
+  border: 4px solid transparent; border-top-color: var(--tip-bg);
+}
+.margin:hover .tip, .margin:focus .tip, .margin.tapped .tip { visibility: visible; opacity: 1; }
+@media (max-width: 720px) {
+  .margin .tip { display: none; }
+  .margin.tapped .tip { display: block; visibility: visible; opacity: 1; }
+}
+.margin .tip-key {
+  font-variant: small-caps; letter-spacing: 0.1em;
+  color: var(--fg-mute); font-weight: 700; font-size: 8pt;
+  display: block; margin-bottom: 2px;
+}
+
+/* ============= Grammatica 板块 ============= */
+.grammatica {
+  max-width: 700px; margin: 28px auto; padding: 20px 24px;
+  background: var(--bg-soft); border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  transition: background 0.4s ease;
+}
+.grammatica .gram-heading {
+  font-size: 10pt; font-variant: small-caps; letter-spacing: 0.2em;
+  font-weight: 700; color: var(--fg); margin-bottom: 14px;
+  text-align: center; padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.grammatica .gram-rule {
+  margin-bottom: 16px;
+}
+.grammatica .gram-rule-title {
+  font-size: 9.5pt; font-weight: 700; font-variant: small-caps;
+  letter-spacing: 0.08em; color: var(--accent); margin-bottom: 4px;
+}
+.grammatica .gram-rule-body {
+  font-size: 9.5pt; line-height: 1.55; color: var(--fg-soft);
+  text-align: justify;
+}
+.grammatica .gram-rule-body code {
+  background: var(--bg-card); padding: 1px 4px; border-radius: 2px;
+  font-family: Georgia, serif; font-style: italic;
+}
+
+/* 边注 inline 列表 (在 grammatica 内) */
+.grammatica .gram-margin-list {
+  list-style: none; padding: 0; margin: 8px 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px;
+}
+.grammatica .gram-margin-list li {
+  font-size: 8.5pt; color: var(--fg-soft);
+  padding: 2px 0;
+}
+.grammatica .gram-margin-list li strong {
+  color: var(--accent); font-weight: 600; font-variant: small-caps;
+  margin-right: 4px;
+}
+
+/* ============= 拓展卡 (.ll-ext-block) - v3.2 大量卡片优化 ============= */
+.ll-ext-block {
+  padding: 14px 18px; background: var(--bg-soft);
+  max-width: 700px; margin: 24px auto;
+  border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent);
+}
+.ll-ext-heading {
+  font-size: 10pt; font-variant: small-caps; letter-spacing: 0.2em;
+  color: var(--accent); font-weight: 700; margin-bottom: 12px;
+  text-align: center;
+}
+.ll-ext-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 6px; text-align: left; font-style: normal;
+}
+.ll-ext-card {
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-left: 2px solid var(--accent);
+  padding: 6px 8px; font-size: 8pt; line-height: 1.4;
+  display: flex; flex-direction: column; gap: 2px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.ll-ext-card:hover { background: var(--accent-soft); border-color: var(--accent); }
+.ll-ext-head { display: flex; justify-content: space-between; gap: 4px; align-items: baseline; }
+.ll-ext-score {
+  background: var(--accent); color: var(--bg);
+  font-size: 6.5pt; padding: 1px 4px; font-variant: small-caps; flex-shrink: 0;
+}
+.ll-ext-book {
+  font-weight: 700; font-size: 8pt; line-height: 1.2;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ll-ext-preview {
+  color: var(--fg-soft); line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden; font-size: 7.5pt;
+}
+.ll-ext-meta { color: var(--fg-mute); font-size: 7pt; font-variant: small-caps; }
+.ll-ext-meta code { background: var(--bg-soft); padding: 0 3px; border-radius: 2px; font-size: 7pt; }
+.ll-ext-toggle { margin-top: 2px; }
+.ll-ext-toggle summary {
+  cursor: pointer; font-size: 7pt; color: var(--accent);
+  font-variant: small-caps; letter-spacing: 0.04em;
+}
+.ll-ext-full-body {
+  margin-top: 4px; padding: 6px 8px; background: var(--accent-soft);
+  font-style: normal; font-size: 8pt; line-height: 1.5;
+  max-height: 200px; overflow-y: auto;
+}
+
+/* ============= 底部 Colophon ============= */
+.colophon { margin-top: 28px; padding-top: 6px; border-top: 1px solid var(--rule); }
+.colophon .rule-red { height: 1px; background: var(--accent); margin-top: 2px; }
+.colophon p {
+  text-align: center; font-size: 7.5pt; color: var(--fg-mute);
+  letter-spacing: 0.06em; font-variant: small-caps; padding-top: 6px;
+}
+
+/* ============= 响应式 ============= */
+@media (max-width: 720px) {
+  .masthead h1.title { font-size: 17pt; }
+  .two-col { font-size: 11pt; }
+  .two-col p { font-size: 11pt; }
+  .theme-toggle { font-size: 7.5pt; padding: 4px 8px; }
+  .nav-controls { flex-wrap: wrap; font-size: 8pt; padding: 6px 10px; }
+  .nav-controls .nav-chapter { flex: 1 1 100%; order: 3; }
+  .ll-ext-grid { grid-template-columns: 1fr; }
+  .grammatica .gram-margin-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  body { padding: 18px 12px 28px; }
+  .masthead h1.title { font-size: 15pt; }
+}
+
+/* ============= 打印 ============= */
+@media print {
+  .theme-toggle, .nav-controls { display: none; }
+  .ent .tip, .margin .tip { display: none !important; }
+  .ll-ext-block, .grammatica { page-break-before: always; }
+  body { background: #fff; color: #000; }
+  .ll-ext-block, .grammatica, .colophon { page-break-inside: avoid; }
+}
