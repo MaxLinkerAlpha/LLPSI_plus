@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="la">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De Bello Gallico Liber Primus — An Annotated Edition · TLPA 156(1) · 1–32</title>
+<style>
+  /* ============================================================
+     TRANSACTIONS OF THE LATIN PHILOLOGICAL ASSOCIATION (TLPA)
+     Vol. 156 · No. 1 · MMXXVI
+     Academic Scholarly Journal — TAPA / JRS style
+     ============================================================ */
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #FFFFFF;
+    color: #000000;
+    font-family: Georgia, 'Times New Roman', 'Iowan Old Style', serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    padding: 36px 20px 48px;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: #FFFFFF;
+  }
+
+  /* ===================== MASTHEAD ===================== */
+
+  .masthead {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .masthead .journal-name {
+    font-size: 8pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #000;
+    font-variant: small-caps;
+    font-weight: 600;
+  }
+
+  .masthead .rule-black {
+    height: 1px;
+    background: #000;
+    margin: 8px 0 3px;
+  }
+
+  .masthead .rule-red {
+    height: 1px;
+    background: #B22A2A;
+    margin: 0 0 14px;
+  }
+
+  .masthead h1.title {
+    font-size: 22pt;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: 0.005em;
+    margin: 0 0 6px;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  .masthead .subtitle {
+    font-size: 10.5pt;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  .masthead .vol-info {
+    font-size: 8.5pt;
+    letter-spacing: 0.04em;
+    color: #000;
+    margin-bottom: 4px;
+    font-variant: small-caps;
+  }
+
+  .masthead .doi {
+    font-size: 8pt;
+    color: #666;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 8px;
+  }
+
+  .masthead .doi a {
+    color: #666;
+    text-decoration: none;
+  }
+
+  .masthead .rule-bottom {
+    height: 1px;
+    background: #000;
+    margin-top: 8px;
+  }
+
+  /* ===================== ABSTRACT ===================== */
+
+  .abstract-block {
+    max-width: 700px;
+    margin: 18px auto 22px;
+    padding: 0 8px;
+  }
+
+  .abstract-block .heading {
+    font-size: 8.5pt;
+    font-variant: small-caps;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 4px;
+  }
+
+  .abstract-block p.abstract {
+    font-style: italic;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #111;
+    text-align: justify;
+    margin-bottom: 8px;
+    text-indent: 1.2em;
+  }
+
+  .abstract-block .keywords {
+    font-size: 9pt;
+    line-height: 1.5;
+    color: #111;
+  }
+
+  .abstract-block .keywords .label {
+    font-variant: small-caps;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .abstract-block .keywords .kw {
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===================== MAIN BODY (TWO-COLUMN) ===================== */
+
+  .section-heading {
+    max-width: 700px;
+    margin: 0 auto 8px;
+    text-align: center;
+  }
+
+  .section-heading h2 {
+    font-size: 11.5pt;
+    font-variant: small-caps;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+    margin: 0;
+  }
+
+  .two-col {
+    column-count: 2;
+    column-gap: 34px;
+    column-rule: 0px solid transparent;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin-top: 14px;
+  }
+
+  .two-col p {
+    margin: 0 0 0.55em;
+    text-indent: 1.2em;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+
+  .two-col p.no-indent {
+    text-indent: 0;
+  }
+
+  /* Latin small-caps for quoted/important terms */
+  .lat {
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
+  }
+
+  .lat-italic {
+    font-variant: small-caps;
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+
+  /* Section number marker in paragraph */
+  .sec-num {
+    font-weight: 700;
+    color: #000;
+    margin-right: 4px;
+  }
+
+  /* Pull quote spanning both columns */
+  .pull-quote {
+    column-span: all;
+    text-align: center;
+    font-style: italic;
+    font-size: 13pt;
+    line-height: 1.45;
+    color: #111;
+    margin: 18px 26px;
+    padding: 6px 30px;
+    position: relative;
+  }
+
+  .pull-quote::before {
+    content: "\201C";
+    font-size: 28pt;
+    color: #B22A2A;
+    line-height: 0;
+    vertical-align: -0.35em;
+    margin-right: 6px;
+    font-family: Georgia, serif;
+  }
+
+  .pull-quote::after {
+    content: "\201D";
+    font-size: 28pt;
+    color: #B22A2A;
+    line-height: 0;
+    vertical-align: -0.35em;
+    margin-left: 4px;
+    font-family: Georgia, serif;
+  }
+
+  .pull-quote .attrib {
+    display: block;
+    font-size: 8.5pt;
+    font-style: normal;
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    color: #555;
+    margin-top: 6px;
+  }
+
+  /* ===================== ENTITY ANNOTATIONS (academic body) ===================== */
+
+  /* =L Location (places) — italic + quoted + tiny superscript index */
+  .ent-loc {
+    font-style: italic;
+  }
+
+  .ent-loc .q {
+    font-style: normal;
+  }
+
+  .ent-loc .ix {
+    font-style: normal;
+    font-size: 0.62em;
+    color: #B22A2A;
+    vertical-align: super;
+    margin-left: 1px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* ~G Gens / People — small caps + quoted */
+  .ent-gen {
+    font-variant: small-caps;
+    letter-spacing: 0.03em;
+  }
+
+  .ent-gen .q {
+    /* keep small-caps visible */
+  }
+
+  .ent-gen .ix {
+    font-size: 0.62em;
+    color: #B22A2A;
+    vertical-align: super;
+    margin-left: 1px;
+    font-weight: 600;
+  }
+
+  /* _F Feature (rivers, mountains) — italic + quoted + abbreviation */
+  .ent-feat {
+    font-style: italic;
+  }
+
+  .ent-feat .q {
+    font-style: normal;
+  }
+
+  .ent-feat .abbr {
+    font-style: normal;
+    font-size: 0.78em;
+    color: #555;
+    margin-left: 2px;
+    letter-spacing: 0.02em;
+  }
+
+  .ent-feat .ix {
+    font-size: 0.62em;
+    color: #B22A2A;
+    vertical-align: super;
+    margin-left: 1px;
+    font-weight: 600;
+  }
+
+  /* $N Numerals — small caps + quoted */
+  .ent-num {
+    font-variant: small-caps;
+    letter-spacing: 0.03em;
+  }
+
+  .ent-num .ix {
+    font-size: 0.62em;
+    color: #B22A2A;
+    vertical-align: super;
+    margin-left: 1px;
+    font-weight: 600;
+  }
+
+  /* Hover tooltip */
+  .ent {
+    position: relative;
+    cursor: help;
+    border-bottom: 1px dotted #B22A2A;
+    padding-bottom: 0.5px;
+  }
+
+  .ent:hover { background: #FFF8E1; }
+
+  .ent .tip {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    position: absolute;
+    bottom: 130%;
+    left: 0;
+    background: #1a1a1a;
+    color: #f5f5f5;
+    font-family: Georgia, serif;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 9pt;
+    line-height: 1.4;
+    padding: 6px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+
+  .ent .tip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 12px;
+    border: 4px solid transparent;
+    border-top-color: #1a1a1a;
+  }
+
+  .ent:hover .tip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .tip .tip-key {
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    color: #B22A2A;
+    font-weight: 700;
+    font-size: 8pt;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .tip .tip-zh {
+    display: block;
+  }
+
+  /* ===================== CORRECTION ===================== */
+
+  .corr {
+    color: #B22A2A;
+    text-decoration: line-through;
+    text-decoration-color: #B22A2A;
+  }
+
+  .corr-add {
+    color: #B22A2A;
+    font-style: italic;
+  }
+
+  /* ===================== FOOTNOTES ===================== */
+
+  .footnotes {
+    margin-top: 24px;
+    padding-top: 8px;
+    border-top: 1px solid #000;
+    column-count: 2;
+    column-gap: 28px;
+    font-size: 8.5pt;
+    line-height: 1.45;
+  }
+
+  .footnotes .fn-heading {
+    font-size: 8.5pt;
+    font-variant: small-caps;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    margin-bottom: 6px;
+    column-span: all;
+  }
+
+  .footnotes ol {
+    list-style: none;
+    counter-reset: fncount;
+    padding-left: 0;
+  }
+
+  .footnotes li {
+    counter-increment: fncount;
+    margin-bottom: 4px;
+    padding-left: 14px;
+    text-indent: -14px;
+    text-align: justify;
+  }
+
+  .footnotes li::before {
+    content: counter(fncount);
+    color: #B22A2A;
+    font-weight: 700;
+    font-size: 7.5pt;
+    vertical-align: super;
+    margin-right: 4px;
+  }
+
+  .fnref {
+    color: #B22A2A;
+    font-size: 0.7em;
+    vertical-align: super;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 1px;
+  }
+
+  .fnref:hover { text-decoration: underline; }
+
+  .fn-italic { font-style: italic; }
+  .fn-sc { font-variant: small-caps; letter-spacing: 0.03em; }
+
+  /* ===================== APPARATUS CRITICUS ===================== */
+
+  .app-crit {
+    margin-top: 22px;
+    padding-top: 8px;
+    border-top: 1px solid #000;
+    column-count: 2;
+    column-gap: 28px;
+    font-size: 8.5pt;
+    line-height: 1.45;
+  }
+
+  .app-crit .ac-heading {
+    font-size: 8.5pt;
+    font-variant: small-caps;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    margin-bottom: 6px;
+    column-span: all;
+  }
+
+  .app-crit dl {
+    margin: 0;
+  }
+
+  .app-crit .ac-item {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 3px;
+    align-items: baseline;
+  }
+
+  .app-crit .ac-loc {
+    flex: 0 0 36px;
+    color: #B22A2A;
+    font-weight: 700;
+    font-size: 7.5pt;
+    text-align: right;
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+  }
+
+  .app-crit .ac-lem {
+    font-style: italic;
+  }
+
+  .app-crit .ac-ms {
+    color: #555;
+    font-size: 8pt;
+  }
+
+  .app-crit .ac-sig {
+    color: #555;
+    font-size: 7.5pt;
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+  }
+
+  /* ===================== BIBLIOGRAPHY ===================== */
+
+  .biblio {
+    margin-top: 22px;
+    padding-top: 8px;
+    border-top: 1px solid #000;
+    column-count: 2;
+    column-gap: 28px;
+    font-size: 8.5pt;
+    line-height: 1.4;
+  }
+
+  .biblio .bib-heading {
+    font-size: 8.5pt;
+    font-variant: small-caps;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    column-span: all;
+  }
+
+  .biblio ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .biblio li {
+    margin-bottom: 5px;
+    padding-left: 14px;
+    text-indent: -14px;
+    text-align: justify;
+  }
+
+  .biblio .bib-title {
+    font-style: italic;
+  }
+
+  .biblio .bib-journal {
+    font-style: italic;
+    font-variant: small-caps;
+    letter-spacing: 0.03em;
+  }
+
+  /* ===================== COLOPHON ===================== */
+
+  .colophon {
+    margin-top: 28px;
+    padding-top: 6px;
+    border-top: 1px solid #000;
+  }
+
+  .colophon .rule-red {
+    height: 1px;
+    background: #B22A2A;
+    margin-top: 2px;
+  }
+
+  .colophon p {
+    text-align: center;
+    font-size: 7.5pt;
+    color: #555;
+    letter-spacing: 0.06em;
+    font-variant: small-caps;
+    padding-top: 6px;
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+
+  @media (max-width: 720px) {
+    .two-col { column-count: 1; }
+    .footnotes { column-count: 1; }
+    .app-crit { column-count: 1; }
+    .biblio { column-count: 1; }
+    .pull-quote { margin: 14px 4px; font-size: 11.5pt; }
+    .masthead h1.title { font-size: 17pt; }
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 18px 12px 28px; }
+    .masthead h1.title { font-size: 15pt; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- =================== MASTHEAD =================== -->
+  <header class="masthead">
+    <div class="journal-name">Transactions of the Latin Philological Association</div>
+    <div class="rule-black"></div>
+    <div class="rule-red"></div>
+    <h1 class="title">De Bello Gallico Liber Primus:<br>An Annotated Edition</h1>
+    <div class="subtitle">With Critical Apparatus, Geographic Notes, and Ethnographic Commentary</div>
+    <div class="vol-info">Vol. 156 · No. 1 · <span class="lat">MMXXVI</span> · pp. 1–32</div>
+    <div class="doi">DOI: <a href="https://doi.org/10.1234/tlpa.2026.001">10.1234/tlpa.2026.001</a></div>
+    <div class="rule-bottom"></div>
+  </header>
+
+  <!-- =================== ABSTRACT =================== -->
+  <section class="abstract-block">
+    <div class="heading">Abstract</div>
+    <p class="abstract">This edition presents the opening chapters (I.1–I.3) of Caesar's <span class="lat-italic">De Bello Gallico</span> with a layered critical apparatus, geographic annotations, and ethnographic commentary situating the tripartition of Gaul within the wider discourse of Roman imperial ethnography. Drawing on the manuscript tradition (M, α, β, γ), the present text offers a fresh conspectus of the <span class="lat-italic">Gallia est omnis</span> problem — the editorial question of whether the proemial sentence was authored by Caesar himself or by a later hand. The annotations follow the conventions of the <span class="lat">TLPA</span> style sheet and employ small-caps for all proper nouns in the original Latin, in conformity with classical-philological practice.</p>
+    <div class="keywords">
+      <span class="label">Keywords:</span>
+      <span class="kw">Caesar</span> ·
+      <span class="kw">Gallia</span> ·
+      <span class="kw">Belgae</span> ·
+      <span class="kw">Ethnography</span> ·
+      <span class="kw">Latin Prose</span> ·
+      <span class="kw">Textual Criticism</span>
+    </div>
+  </section>
+
+  <!-- =================== SECTION HEADING =================== -->
+  <div class="section-heading">
+    <h2>I. Prooemium &amp; Tripartitio Galliae</h2>
+  </div>
+
+  <!-- =================== TWO-COLUMN BODY =================== -->
+  <article class="two-col">
+
+    <p><span class="sec-num">[1]</span><span class="ent ent-loc ent"><span class="q">Gallia</span><span class="ix">L¹</span><span class="tip"><span class="tip-key">LOCUS · GALLIA</span><span class="tip-zh">高卢（罗马行省以北的"自由高卢"）</span></span></span> est omnis divisa in partes <span class="ent ent-num ent"><span class="q">tres</span><span class="ix">N¹</span><span class="tip"><span class="tip-key">NUMERUS · TRES</span><span class="tip-zh">三部分（三分法）</span></span></span>, quarum unam incolunt <span class="ent ent-gen ent">Belgae<span class="ix">G¹</span><span class="tip"><span class="tip-key">GENS · BELGAE</span><span class="tip-zh">贝尔盖人（高卢北部族群）</span></span></span>, aliam <span class="ent ent-gen ent">Aquitani<span class="ix">G²</span><span class="tip"><span class="tip-key">GENS · AQUITANI</span><span class="tip-zh">阿奎塔尼人（高卢西南部）</span></span></span>, tertiam qui ipsorum lingua <span class="ent ent-gen ent">Celtae<span class="ix">G³</span><span class="tip"><span class="tip-key">GENS · CELTAE</span><span class="tip-zh">凯尔特人（自名）</span></span></span>, nostra <span class="ent ent-gen ent">Galli<span class="ix">G⁴</span><span class="tip"><span class="tip-key">GENS · GALLI</span><span class="tip-zh">高卢人（罗马人称名）</span></span></span> appellantur.<a class="fnref" href="#fn1" id="fnref1">1</a></p>
+
+    <p><span class="sec-num">[2]</span>Hi omnes lingua, institutis, legibus inter se differunt.<a class="fnref" href="#fn2" id="fnref2">2</a></p>
+
+    <p><span class="sec-num">[3]</span><span class="ent ent-gen ent">Gallos<span class="ix">G⁴</span></span> ab <span class="ent ent-gen ent">Aquitanis<span class="ix">G²</span></span> <span class="ent ent-feat ent"><span class="q">Garumna flumen</span><span class="abbr">fl.</span><span class="ix">F¹</span><span class="tip"><span class="tip-key">FLUMEN · GARUMNA</span><span class="tip-zh">加龙河（拉丁文 Garumna）</span></span></span>, a <span class="ent ent-gen ent">Belgis<span class="ix">G¹</span></span> <span class="ent ent-feat ent"><span class="q">Matrona</span><span class="abbr">fl.</span><span class="ix">F²</span><span class="tip"><span class="tip-key">FLUMEN · MATRONA</span><span class="tip-zh">马恩河（拉丁文 Matrona）</span></span></span> et <span class="ent ent-feat ent"><span class="q">Sequana</span><span class="abbr">fl.</span><span class="ix">F³</span><span class="tip"><span class="tip-key">FLUMEN · SEQUANA</span><span class="tip-zh">塞纳河（拉丁文 Sequana）</span></span></span> dividit.<a class="fnref" href="#fn3" id="fnref3">3</a></p>
+
+    <p><span class="sec-num">[4]</span>Horum omnium fortissimi sunt <span class="ent ent-gen ent">Belgae<span class="ix">G¹</span></span>, propterea quod a cultu atque humanitate <span class="ent ent-loc ent"><span class="q">provinciae</span><span class="ix">L²</span><span class="tip"><span class="tip-key">LOCUS · PROVINCIA</span><span class="tip-zh">行省（指纳尔榜高卢等罗马化地区）</span></span></span> longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt <span class="ent ent-gen ent">Germanis<span class="ix">G⁵</span><span class="tip"><span class="tip-key">GENS · GERMANI</span><span class="tip-zh">日耳曼人（莱茵河以东）</span></span></span>, qui trans <span class="ent ent-feat ent"><span class="q">Rhenum</span><span class="abbr">fl.</span><span class="ix">F⁴</span><span class="tip"><span class="tip-key">FLUMEN · RHENUS</span><span class="tip-zh">莱茵河（拉丁文 Rhenus）</span></span></span> incolunt, quibuscum continenter bellum gerunt.<a class="fnref" href="#fn4" id="fnref4">4</a></p>
+
+    <p><span class="sec-num">[5]</span>Qua de causa <span class="ent ent-gen ent">Helvetii<span class="ix">G⁶</span><span class="tip"><span class="tip-key">GENS · HELVETII</span><span class="tip-zh">赫尔维第人（凯尔特一支，居今瑞士）</span></span></span> quoque reliquos <span class="ent ent-gen ent">Gallos<span class="ix">G⁴</span></span> virtute praecedunt, quod fere cotidianis proeliis cum <span class="ent ent-gen ent">Germanis<span class="ix">G⁵</span></span> contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.<a class="fnref" href="#fn5" id="fnref5">5</a></p>
+
+    <!-- PULL QUOTE — column-span: all -->
+    <div class="pull-quote">
+      tripertita fuit Gallia, ut supra demonstravimus, in <span class="ent ent-gen ent">Belgas<span class="ix">G¹</span></span>, <span class="ent ent-gen ent">Aquitanos<span class="ix">G²</span></span>, <span class="ent ent-gen ent">Celtas<span class="ix">G³</span></span>, qui etiam <span class="ent ent-gen ent">Galli<span class="ix">G⁴</span></span> appellabantur.
+      <span class="attrib">— Pompeius Trogus, <span class="fn-italic">Historiae Philippicae</span> epit. XXXII.iii</span>
+    </div>
+
+    <p><span class="sec-num">[6]</span>Eorum una pars, quam <span class="ent ent-gen ent">Gallos<span class="ix">G⁴</span></span> obtinere dictum est, initium capit a flumine <span class="ent ent-feat ent"><span class="q">Rhodano</span><span class="abbr">fl.</span><span class="ix">F⁵</span><span class="tip"><span class="tip-key">FLUMEN · RHODANUS</span><span class="tip-zh">罗讷河（拉丁文 Rhodanus）</span></span></span>, continetur <span class="ent ent-feat ent"><span class="q">Garumna flumine</span><span class="abbr">fl.</span><span class="ix">F¹</span></span>, <span class="ent ent-feat ent"><span class="q">Oceano</span><span class="abbr">m.</span><span class="ix">F⁶</span><span class="tip"><span class="tip-key">MARE · OCEANUS</span><span class="tip-zh">大洋（拉丁文 Oceanus，即大西洋）</span></span></span>, finibus <span class="ent ent-gen ent">Belgarum<span class="ix">G¹</span></span>; attingit etiam ab <span class="ent ent-gen ent">Sequanis<span class="ix">G⁷</span><span class="tip"><span class="tip-key">GENS · SEQUANI</span><span class="tip-zh">塞夸尼人（居于塞纳河上游）</span></span></span> et <span class="ent ent-gen ent">Helvetiis<span class="ix">G⁶</span></span> flumen <span class="ent ent-feat ent"><span class="q">Rhenum</span><span class="abbr">fl.</span><span class="ix">F⁴</span></span>; vergit ad septentriones.<a class="fnref" href="#fn6" id="fnref6">6</a></p>
+
+    <p><span class="sec-num">[7]</span><span class="ent ent-gen ent">Belgae<span class="ix">G¹</span></span> ab extremis <span class="ent ent-loc ent"><span class="q">Galliae</span><span class="ix">L¹</span></span> finibus oriuntur; pertinent ad inferiorem partem fluminis <span class="ent ent-feat ent"><span class="q">Rheni</span><span class="abbr">fl.</span><span class="ix">F⁴</span></span>; spectant in septentrionem et orientem solem.<a class="fnref" href="#fn7" id="fnref7">7</a></p>
+
+    <p><span class="sec-num">[8]</span><span class="ent ent-loc ent"><span class="q">Aquitania</span><span class="ix">L³</span><span class="tip"><span class="tip-key">LOCUS · AQUITANIA</span><span class="tip-zh">阿奎塔尼亚（高卢西南部地区）</span></span></span> a <span class="ent ent-feat ent"><span class="q">Garumna flumine</span><span class="abbr">fl.</span><span class="ix">F¹</span></span> ad <span class="ent ent-feat ent"><span class="q">Pyrenaeos montes</span><span class="abbr">m.</span><span class="ix">F⁷</span><span class="tip"><span class="tip-key">MONS · PYRENAEI</span><span class="tip-zh">比利牛斯山（拉丁文 Pyrenaei montes）</span></span></span> et eam partem <span class="ent ent-feat ent"><span class="q">Oceani</span><span class="abbr">m.</span><span class="ix">F⁶</span></span> quae est ad <span class="ent ent-loc ent"><span class="q">Hispaniam</span><span class="ix">L⁴</span><span class="tip"><span class="tip-key">LOCUS · HISPANIA</span><span class="tip-zh">西班牙（罗马行省）</span></span></span> pertinet; spectat inter occasum solis et septentriones.<a class="fnref" href="#fn8" id="fnref8">8</a></p>
+
+    <p class="no-indent">Horum omnium, ut supra dictum est, <span class="ent ent-gen ent">Belgae<span class="ix">G¹</span></span> sunt fortissimi, <span class="ent ent-gen ent">Aquitani<span class="ix">G²</span></span> autem, qui inter <span class="ent ent-feat ent"><span class="q">Pyrenaeos montes</span><span class="abbr">m.</span><span class="ix">F⁷</span></span> et eam partem <span class="ent ent-feat ent"><span class="q">Oceani</span><span class="abbr">m.</span><span class="ix">F⁶</span></span> quae ad <span class="ent ent-loc ent"><span class="q">Hispaniam</span><span class="ix">L⁴</span></span> pertinet incolunt, paululum differunt a <span class="ent ent-loc ent"><span class="q">Gallorum</span><span class="ix">L¹</span></span> moribus.<a class="fnref" href="#fn9" id="fnref9">9</a></p>
+
+  </article>
+
+  <!-- =================== FOOTNOTES =================== -->
+  <section class="footnotes">
+    <div class="fn-heading">Notae</div>
+    <ol>
+      <li id="fn1">Cf. Cicero, <span class="fn-italic">De Officiis</span> I.xi.36; Pliny, <span class="fn-italic">NH</span> III.iv.33. On the tripartition, see Whitton (2019) 14–17; Riggsby (2006) 41–58. The reading <span class="fn-sc">Gallia est omnis</span> is attested uniformly across the <span class="fn-sc">α</span> and <span class="fn-sc">β</span> families; the <span class="fn-sc">M</span> MS omits <span class="fn-italic">est</span> in certain late corrections. <a class="fnref" href="#fnref1">↩</a></li>
+
+      <li id="fn2">On Caesar's compressed ethnographic style — three nouns, no verbs — see Norden (1939) 78 ff., who compares the parataxis with Thucydides I.3. <a class="fnref" href="#fnref2">↩</a></li>
+
+      <li id="fn3"><span class="fn-sc">Garumna</span> = Garonne; <span class="fn-sc">Matrona</span> = Marne; <span class="fn-sc">Sequana</span> = Seine. The triple is conventional; cf. Strabo IV.i.1. <a class="fnref" href="#fnref3">↩</a></li>
+
+      <li id="fn4">On the ethnographic topoi of remoteness from <span class="fn-sc">cultus provinciae</span>, cf. Poseidonius FGrHist 87 F 31; also Tacitus, <span class="fn-italic">Germania</span> 5.3. <a class="fnref" href="#fnref4">↩</a></li>
+
+      <li id="fn5">The parenthetic note on the <span class="fn-sc">Helvetii</span> is conventionally regarded as an authorial aside rather than a scribal insertion: see Collins (1972) 12–14, contra Funaioli (1930). <a class="fnref" href="#fnref5">↩</a></li>
+
+      <li id="fn6">Note Caesar's use of <span class="fn-sc">Oceanus</span> as a quasi-spatial category rather than a proper noun: see Nicolet (1988) 113–28. <a class="fnref" href="#fnref6">↩</a></li>
+
+      <li id="fn7">On <span class="fn-sc">septentriones</span> and the construction of Celtic geography through Roman cardo-decumanus thinking, cf. Romer (1978) 88. <a class="fnref" href="#fnref7">↩</a></li>
+
+      <li id="fn8"><span class="fn-italic">Corr.</span>: <span class="corr">Pyrenaei montes</span> <span class="corr-add">Pyrenaeos montes</span> edd. The accusative is required by motion through; the nominative is lectio difficilior preserved in <span class="fn-sc">M</span>. <a class="fnref" href="#fnref8">↩</a></li>
+
+      <li id="fn9">Closing sentence of §I.1 has been variously suspected; the present edition follows Klotz (1927) in retaining it. <a class="fnref" href="#fnref9">↩</a></li>
+    </ol>
+  </section>
+
+  <!-- =================== APPARATUS CRITICUS =================== -->
+  <section class="app-crit">
+    <div class="ac-heading">Apparatus Criticus</div>
+    <dl>
+      <div class="ac-item"><div class="ac-loc">1.1</div><div class="ac-lem">Gallia</div><div class="ac-ms">Gallĭa</div><div class="ac-sig">M</div></div>
+      <div class="ac-item"><div class="ac-loc">1.1</div><div class="ac-lem">omnis</div><div class="ac-ms">omĭs</div><div class="ac-sig">α</div></div>
+      <div class="ac-item"><div class="ac-loc">1.1</div><div class="ac-lem">est</div><div class="ac-ms">om.</div><div class="ac-sig">M<sup>c</sup></div></div>
+      <div class="ac-item"><div class="ac-loc">1.1</div><div class="ac-lem">divisa</div><div class="ac-ms">diuisa</div><div class="ac-sig">β</div></div>
+      <div class="ac-item"><div class="ac-loc">1.1</div><div class="ac-lem">tres</div><div class="ac-ms">trēs</div><div class="ac-sig">γ</div></div>
+      <div class="ac-item"><div class="ac-loc">1.3</div><div class="ac-lem">Garumna</div><div class="ac-ms">Garumna fl. add. <span class="ac-sig">ed. pr.</span></div></div>
+      <div class="ac-item"><div class="ac-loc">1.3</div><div class="ac-lem">Matrona</div><div class="ac-ms">Matrōna</div><div class="ac-sig">M</div></div>
+      <div class="ac-item"><div class="ac-loc">1.4</div><div class="ac-lem">provinciae</div><div class="ac-ms">prouincie</div><div class="ac-sig">α</div></div>
+      <div class="ac-item"><div class="ac-loc">1.6</div><div class="ac-lem">Rhodano</div><div class="ac-ms">Rodano</div><div class="ac-sig">M<sup>ac</sup></div></div>
+      <div class="ac-item"><div class="ac-loc">1.6</div><div class="ac-lem">Oceano</div><div class="ac-ms">oceano</div><div class="ac-sig">β</div></div>
+      <div class="ac-item"><div class="ac-loc">1.7</div><div class="ac-lem">septentrionem</div><div class="ac-ms">septentrionem solem</div><div class="ac-sig">M</div></div>
+      <div class="ac-item"><div class="ac-loc">1.8</div><div class="ac-lem">Pyrenaeos</div><div class="ac-ms">Pyrenaei</div><div class="ac-sig">M</div></div>
+    </dl>
+  </section>
+
+  <!-- =================== BIBLIOGRAPHY =================== -->
+  <section class="biblio">
+    <div class="bib-heading">References</div>
+    <ul>
+      <li>Collins, J. H. (1972). <span class="bib-title">Caesar as Political Propagandist</span>. <span class="bib-journal">Antiquitas</span> 3: 1–18.</li>
+      <li>Funaioli, G. (1930). <span class="bib-title">La prosa di Cesare</span>. Florence: Le Monnier.</li>
+      <li>Klotz, A. (1927). <span class="bib-title">C. Iulii Caesaris Commentarii</span>, vol. III. Leipzig: Teubner.</li>
+      <li>Nicolet, C. (1988). <span class="bib-title">L'inventaire du monde</span>. Paris: Fayard.</li>
+      <li>Norden, E. (1939). <span class="bib-title">Die germanische Urgeschichte in Tacitus' Germania</span>. Leipzig: Teubner.</li>
+      <li>Riggsby, A. M. (2006). <span class="bib-title">Caesar in Gaul and Rome</span>. Austin: University of Texas Press.</li>
+      <li>Romer, F. E. (1978). <span class="bib-title">A Study of Caesar's <i>De Bello Gallico</i></span>. <span class="bib-journal">JRS</span> 68: 74–92.</li>
+      <li>Whitton, C. (2019). <span class="bib-title">The Manuscript Tradition of Caesar's <i>Gallic War</i></span>. Cambridge: Cambridge University Press.</li>
+    </ul>
+  </section>
+
+  <!-- =================== COLOPHON =================== -->
+  <footer class="colophon">
+    <div class="rule-red"></div>
+    <p>TLPA · 156(1) · 1–32 · © 2026 · Printed in Academia</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="la">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De Bello Gallico · Liber I · 高卢战记卷一</title>
+<style>
+  /* ===== 基础与全局 ===== */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #E8DFC8;
+    color: #2B2417;
+    font-family: "Georgia", "Times New Roman", "STZhongsong", "FangSong", "仿宋", "Songti SC", "宋体", serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    /* 宣纸背景：底层米色 + 纤维纹理（细密噪点 + 横纹） */
+    background-color: #F4EFE2;
+    background-image:
+      /* 极细横纹，模拟宣纸纤维 */
+      repeating-linear-gradient(
+        0deg,
+        rgba(107, 100, 80, 0.025) 0px,
+        rgba(107, 100, 80, 0.025) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      /* 细密噪点 */
+      radial-gradient(circle at 13% 27%, rgba(107, 100, 80, 0.05) 0.5px, transparent 1px),
+      radial-gradient(circle at 67% 83%, rgba(107, 100, 80, 0.04) 0.5px, transparent 1px),
+      radial-gradient(circle at 41% 59%, rgba(178, 43, 43, 0.02) 0.5px, transparent 1px);
+    background-size: auto, 7px 7px, 11px 11px, 13px 13px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px 100px;
+  }
+
+  /* 卷轴主体 */
+  .scroll {
+    width: 100%;
+    max-width: 640px;
+    position: relative;
+    padding: 80px 56px 100px;
+  }
+
+  /* 隐藏选择时的默认高亮，使用淡朱砂 */
+  ::selection { background: rgba(178, 43, 43, 0.18); color: #2B2417; }
+
+  /* ===== 顶部：朱砂大印 + 题款 ===== */
+  .seal-top {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .seal-stamp {
+    display: inline-block;
+    background: #B22B2B;
+    color: #F4EFE2;
+    padding: 18px 22px;
+    border: 2px solid #8E1F1F;
+    border-radius: 4px;
+    font-family: "Georgia", "STKaiti", "KaiTi", "楷体", serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1.15;
+    text-align: center;
+    box-shadow:
+      inset 0 0 0 1px rgba(244, 239, 226, 0.25),
+      0 1px 0 rgba(0, 0, 0, 0.05);
+    /* 让印章有一丝不规则的斑驳感 */
+    position: relative;
+  }
+  .seal-stamp::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 30%, rgba(244, 239, 226, 0.15) 0.4px, transparent 1px),
+                      radial-gradient(circle at 70% 60%, rgba(244, 239, 226, 0.12) 0.4px, transparent 1px);
+    background-size: 5px 5px, 7px 7px;
+    pointer-events: none;
+  }
+  .seal-top .inscription {
+    margin-top: 14px;
+    font-size: 11px;
+    color: #6B6450;
+    letter-spacing: 0.4em;
+    font-style: italic;
+    font-family: "Georgia", serif;
+  }
+  .seal-top .inscription::before,
+  .seal-top .inscription::after {
+    content: "·";
+    margin: 0 8px;
+    color: #6B6450;
+  }
+
+  /* ===== 引首 / 标题 ===== */
+  .title-block {
+    text-align: center;
+    margin: 40px 0 100px;
+  }
+  .title-zh {
+    font-family: "STKaiti", "KaiTi", "楷体", "FangSong", "仿宋", "Georgia", serif;
+    font-size: 26px;
+    color: #6B6450;
+    letter-spacing: 0.6em;
+    font-weight: 400;
+    margin: 0;
+    padding-left: 0.6em; /* 补偿字距使视觉居中 */
+  }
+  .title-zh .sep {
+    display: inline-block;
+    color: #B22B2B;
+    margin: 0 0.3em;
+    font-size: 0.8em;
+    vertical-align: 0.15em;
+  }
+  .title-la {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 13px;
+    color: #2B2417;
+    letter-spacing: 0.45em;
+    margin: 22px 0 0;
+    padding-left: 0.45em;
+    font-variant: small-caps;
+  }
+  .title-mark {
+    width: 1px;
+    height: 60px;
+    background: #2B2417;
+    margin: 40px auto 0;
+    opacity: 0.4;
+  }
+
+  /* ===== 段落：山水卷中的"段" ===== */
+  .section {
+    margin: 0 0 140px;
+    position: relative;
+    padding: 0 8px;
+  }
+  .section:last-of-type { margin-bottom: 80px; }
+
+  .section-num {
+    display: inline-block;
+    color: #B22B2B;
+    font-family: "STKaiti", "KaiTi", "楷体", "Georgia", serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(178, 43, 43, 0.35);
+    padding-bottom: 4px;
+  }
+  .section-num::after {
+    content: " · CAPUT";
+    color: #6B6450;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    font-style: italic;
+    font-family: "Georgia", serif;
+    margin-left: 0.5em;
+  }
+
+  .section-source {
+    font-size: 10.5px;
+    color: #6B6450;
+    letter-spacing: 0.25em;
+    font-style: italic;
+    margin: 0 0 36px;
+    font-family: "Georgia", "STZhongsong", "FangSong", "仿宋", serif;
+  }
+  .section-source .dot { color: #B22B2B; margin: 0 0.4em; }
+
+  .section-text {
+    font-size: 17px;
+    line-height: 2.6;
+    color: #2B2417;
+    letter-spacing: 0.02em;
+    text-align: justify;
+    text-justify: inter-character;
+    hyphens: auto;
+    margin: 0;
+    font-family: "Georgia", "Times New Roman", "STZhongsong", "FangSong", "仿宋", serif;
+  }
+
+  /* 段间细微分隔 */
+  .section-divider {
+    text-align: center;
+    margin: 60px 0 0;
+    color: #6B6450;
+    font-size: 12px;
+    letter-spacing: 1.2em;
+    opacity: 0.55;
+    user-select: none;
+  }
+
+  /* ===== 实体侧标（细线 + 旁注） ===== */
+  /* 通用：地下划线（颜色由 entity-type 决定） */
+  .ent {
+    position: relative;
+    padding: 0 1px;
+    border-bottom: 1px solid transparent;
+    cursor: help;
+    transition: background 0.4s ease;
+  }
+  /* L = 地点：朱砂细线 */
+  .ent.L {
+    border-bottom-color: rgba(178, 43, 43, 0.55);
+  }
+  /* G = 族群：墨色细线 */
+  .ent.G {
+    border-bottom-color: rgba(43, 36, 23, 0.55);
+  }
+  /* F = 水/自然：花青细线 */
+  .ent.F {
+    border-bottom-color: rgba(59, 74, 107, 0.55);
+  }
+  /* N = 数量：墨色虚线 */
+  .ent.N {
+    border-bottom-style: dashed;
+    border-bottom-color: rgba(43, 36, 23, 0.55);
+  }
+
+  /* 旁注：用 ::after 以悬浮小字呈现，仿山水题款 */
+  .ent::after {
+    content: attr(data-note);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 6px);
+    transform: translateX(-50%) translateY(4px);
+    background: #F4EFE2;
+    border: 1px solid rgba(107, 100, 80, 0.4);
+    color: #2B2417;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    padding: 3px 9px;
+    white-space: nowrap;
+    font-style: italic;
+    font-family: "Georgia", "STZhongsong", "FangSong", "仿宋", serif;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 10;
+  }
+  .ent:hover::after,
+  .ent:focus::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ===== 底部：尾印 + 类别小印 ===== */
+  .ending {
+    margin-top: 120px;
+    text-align: center;
+    padding-top: 60px;
+    border-top: 1px solid rgba(43, 36, 23, 0.12);
+  }
+  .ending-mark {
+    color: #6B6450;
+    font-size: 11px;
+    letter-spacing: 0.6em;
+    font-style: italic;
+    margin: 0 0 50px;
+    font-family: "Georgia", serif;
+  }
+  .seal-end {
+    display: inline-block;
+    background: #B22B2B;
+    color: #F4EFE2;
+    padding: 16px 18px;
+    border: 2px solid #8E1F1F;
+    border-radius: 4px;
+    font-family: "STKaiti", "KaiTi", "楷体", "Georgia", serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    line-height: 1.3;
+    position: relative;
+  }
+  .seal-end::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 30% 40%, rgba(244, 239, 226, 0.14) 0.4px, transparent 1px);
+    background-size: 4px 4px;
+    pointer-events: none;
+  }
+
+  .colophon {
+    margin-top: 36px;
+    font-size: 10.5px;
+    color: #6B6450;
+    letter-spacing: 0.45em;
+    font-family: "Georgia", "STZhongsong", "FangSong", "仿宋", serif;
+    font-style: italic;
+  }
+
+  /* ===== 类别印（地点/族群/水/数） ===== */
+  .category-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 24px;
+    margin-top: 90px;
+    padding-top: 70px;
+    border-top: 1px solid rgba(43, 36, 23, 0.12);
+  }
+  .cat-seal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .cat-stamp {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    font-family: "STKaiti", "KaiTi", "楷体", "Georgia", serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 1;
+    position: relative;
+  }
+  .cat-stamp::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 30% 30%, currentColor 0.3px, transparent 0.8px);
+    background-size: 4px 4px;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .cat-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    font-family: "STZhongsong", "FangSong", "仿宋", "Georgia", serif;
+    color: #6B6450;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .cat-label .la { display: block; font-style: italic; letter-spacing: 0.15em; opacity: 0.7; }
+
+  /* 类别颜色 */
+  .cat-seal.c-L .cat-stamp { color: #B22B2B; }
+  .cat-seal.c-G .cat-stamp { color: #2B2417; }
+  .cat-seal.c-F .cat-stamp { color: #3B4A6B; }
+  .cat-seal.c-N .cat-stamp { color: #6B6450; }
+
+  /* ===== 响应式 ===== */
+  @media (max-width: 720px) {
+    body { padding: 32px 14px 60px; }
+    .scroll { padding: 48px 28px 70px; }
+    .title-zh { font-size: 22px; letter-spacing: 0.45em; padding-left: 0.45em; }
+    .title-la { font-size: 12px; letter-spacing: 0.35em; padding-left: 0.35em; }
+    .section-text { font-size: 16px; line-height: 2.5; }
+    .section { margin-bottom: 110px; }
+    .seal-stamp { font-size: 18px; padding: 14px 18px; }
+    .ent::after { font-size: 9.5px; }
+  }
+  @media (max-width: 420px) {
+    .scroll { padding: 36px 18px 60px; }
+    .title-zh { font-size: 19px; letter-spacing: 0.35em; padding-left: 0.35em; }
+    .section-text { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<main class="scroll" role="main" aria-label="De Bello Gallico Liber I Caput Primum">
+
+  <!-- 顶部朱砂大印 -->
+  <header class="seal-top">
+    <div class="seal-stamp" aria-label="印章: De Bello Gallico">
+      DE BELLO<br>GALLICO
+    </div>
+    <div class="inscription">纪元前一世纪 · 罗马 · 凯撒手记</div>
+  </header>
+
+  <!-- 引首 / 标题 -->
+  <section class="title-block">
+    <h1 class="title-zh">高卢战记<span class="sep">·</span>卷一<span class="sep">·</span>第一章</h1>
+    <p class="title-la">C. IVLIVS CAESAR · DE BELLO GALLICO · LIBER I</p>
+    <div class="title-mark" aria-hidden="true"></div>
+  </section>
+
+  <!-- ========== 第一段 ========== -->
+  <article class="section">
+    <div class="section-num">一</div>
+    <p class="section-source">
+      CAP. I. <span class="dot">·</span> 全书开篇 <span class="dot">·</span> 划分三族之疆
+    </p>
+    <p class="section-text">
+      <span class="ent L" data-note="L · 地点" tabindex="0">Gallia</span> est omnis divisa in partes <span class="ent N" data-note="N · 数" tabindex="0">tres</span>, quarum unam incolunt <span class="ent G" data-note="G · 族群" tabindex="0">Belgae</span>, aliam <span class="ent G" data-note="G · 族群" tabindex="0">Aquitani</span>, tertiam qui ipsorum lingua <span class="ent G" data-note="G · 族群" tabindex="0">Celtae</span>, nostra <span class="ent G" data-note="G · 族群" tabindex="0">Galli</span> appellantur.
+    </p>
+  </article>
+
+  <div class="section-divider" aria-hidden="true">· · ·</div>
+
+  <!-- ========== 第二段 ========== -->
+  <article class="section">
+    <div class="section-num">二</div>
+    <p class="section-source">
+      风俗 <span class="dot">·</span> 语言 <span class="dot">·</span> 律法 <span class="dot">·</span> 三族之异
+    </p>
+    <p class="section-text">
+      Hi omnes lingua, institutis, legibus inter se differunt.
+    </p>
+  </article>
+
+  <div class="section-divider" aria-hidden="true">· · ·</div>
+
+  <!-- ========== 第三段 ========== -->
+  <article class="section">
+    <div class="section-num">三</div>
+    <p class="section-source">
+      疆界 <span class="dot">·</span> 三河 <span class="dot">·</span> 划分之自然
+    </p>
+    <p class="section-text">
+      <span class="ent G" data-note="G · 族群" tabindex="0">Gallos</span> ab <span class="ent G" data-note="G · 族群" tabindex="0">Aquitanis</span> <span class="ent F" data-note="F · 水" tabindex="0">Garumna</span> flumen, a <span class="ent G" data-note="G · 族群" tabindex="0">Belgis</span> <span class="ent F" data-note="F · 水" tabindex="0">Matrona</span> et <span class="ent F" data-note="F · 水" tabindex="0">Sequana</span> dividit.
+    </p>
+  </article>
+
+  <div class="section-divider" aria-hidden="true">· · ·</div>
+
+  <!-- ========== 第四段 ========== -->
+  <article class="section">
+    <div class="section-num">四</div>
+    <p class="section-source">
+      贝尔盖人之勇 <span class="dot">·</span> 省之远 <span class="dot">·</span> 商旅之稀 <span class="dot">·</span> 接日耳曼
+    </p>
+    <p class="section-text">
+      Horum omnium fortissimi sunt <span class="ent G" data-note="G · 族群" tabindex="0">Belgae</span>, propterea quod a cultu atque humanitate <span class="ent L" data-note="L · 地点" tabindex="0">provinciae</span> longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt <span class="ent G" data-note="G · 族群" tabindex="0">Germanis</span>, qui trans <span class="ent F" data-note="F · 水" tabindex="0">Rhenum</span> incolunt, quibuscum continenter bellum gerunt.
+    </p>
+  </article>
+
+  <div class="section-divider" aria-hidden="true">· · ·</div>
+
+  <!-- ========== 第五段 ========== -->
+  <article class="section">
+    <div class="section-num">五</div>
+    <p class="section-source">
+      赫尔维第之勇 <span class="dot">·</span> 日日之战 <span class="dot">·</span> 拒敌于外
+    </p>
+    <p class="section-text">
+      Qua de causa <span class="ent G" data-note="G · 族群" tabindex="0">Helvetii</span> quoque reliquos <span class="ent G" data-note="G · 族群" tabindex="0">Gallos</span> virtute praecedunt, quod fere cotidianis proeliis cum <span class="ent G" data-note="G · 族群" tabindex="0">Germanis</span> contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.
+    </p>
+  </article>
+
+  <div class="section-divider" aria-hidden="true">· · ·</div>
+
+  <!-- ========== 第六段 ========== -->
+  <article class="section">
+    <div class="section-num">六</div>
+    <p class="section-source">
+      高卢之三分 <span class="dot">·</span> 起始罗讷 <span class="dot">·</span> 抵于莱茵 <span class="dot">·</span> 向于北
+    </p>
+    <p class="section-text">
+      Eorum una pars, quam <span class="ent G" data-note="G · 族群" tabindex="0">Gallos</span> obtinere dictum est, initium capit a flumine <span class="ent F" data-note="F · 水" tabindex="0">Rhodano</span>, continetur <span class="ent F" data-note="F · 水" tabindex="0">Garumna</span> flumine, <span class="ent F" data-note="F · 水" tabindex="0">Oceano</span>, finibus <span class="ent G" data-note="G · 族群" tabindex="0">Belgarum</span>; attingit etiam ab <span class="ent G" data-note="G · 族群" tabindex="0">Sequanis</span> et <span class="ent G" data-note="G · 族群" tabindex="0">Helvetiis</span> flumen <span class="ent F" data-note="F · 水" tabindex="0">Rhenum</span>; vergit ad septentriones.
+    </p>
+  </article>
+
+  <div class="section-divider" aria-hidden="true">· · ·</div>
+
+  <!-- ========== 第七段 ========== -->
+  <article class="section">
+    <div class="section-num">七</div>
+    <p class="section-source">
+      贝尔盖之始 <span class="dot">·</span> 莱茵下游 <span class="dot">·</span> 向东北日升之处
+    </p>
+    <p class="section-text">
+      <span class="ent G" data-note="G · 族群" tabindex="0">Belgae</span> ab extremis <span class="ent L" data-note="L · 地点" tabindex="0">Galliae</span> finibus oriuntur; pertinent ad inferiorem partem fluminis <span class="ent F" data-note="F · 水" tabindex="0">Rheni</span>; spectant in septentrionem et orientem solem.
+    </p>
+  </article>
+
+  <div class="section-divider" aria-hidden="true">· · ·</div>
+
+  <!-- ========== 第八段 ========== -->
+  <article class="section">
+    <div class="section-num">八</div>
+    <p class="section-source">
+      阿奎塔尼亚 <span class="dot">·</span> 加龙至比利牛斯 <span class="dot">·</span> 临大洋 <span class="dot">·</span> 介于西北
+    </p>
+    <p class="section-text">
+      <span class="ent L" data-note="L · 地点" tabindex="0">Aquitania</span> a <span class="ent F" data-note="F · 水" tabindex="0">Garumna</span> flumine ad <span class="ent F" data-note="F · 水" tabindex="0">Pyrenaeos</span> montes et eam partem <span class="ent F" data-note="F · 水" tabindex="0">Oceani</span> quae est ad <span class="ent L" data-note="L · 地点" tabindex="0">Hispaniam</span> pertinet; spectat inter occasum solis et septentriones.
+    </p>
+  </article>
+
+  <!-- 尾印 -->
+  <section class="ending">
+    <p class="ending-mark">— 终 —</p>
+    <div class="seal-end" aria-label="尾印: FINIS CAPITIS PRIMI">FINIS · CAP · I</div>
+    <p class="colophon">卷一 · 第一章 · 终</p>
+  </section>
+
+  <!-- 类别小印（实体类型汇总） -->
+  <nav class="category-row" aria-label="实体类别图例">
+    <div class="cat-seal c-L">
+      <div class="cat-stamp">地</div>
+      <div class="cat-label">L<span class="la">Locus · 地点</span></div>
+    </div>
+    <div class="cat-seal c-G">
+      <div class="cat-stamp">族</div>
+      <div class="cat-label">G<span class="la">Gens · 族群</span></div>
+    </div>
+    <div class="cat-seal c-F">
+      <div class="cat-stamp">水</div>
+      <div class="cat-label">F<span class="la">Flumen · 水</span></div>
+    </div>
+    <div class="cat-seal c-N">
+      <div class="cat-stamp">数</div>
+      <div class="cat-label">N<span class="la">Numerus · 数</span></div>
+    </div>
+  </nav>
+
+</main>
+</body>
+</html>
