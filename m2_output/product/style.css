@@ -1,16 +1,20 @@
 /* ============================================================
-   LLPSI+++ M2 · product 版样式 v3.2 (2026-06-11)
+   LLPSI+++ M2 · product 版样式 v3.7 (2026-06-12)
    母版: HTML/Themes_AcademicJournal.html (Caesar DBG 注释版)
+   设计规范: CRAP (Contrast/Repetition/Alignment/Proximity) @design-crap SKILL
    ============================================================
-   v3.2 vs v3.1 关键变化:
-   - 实体标注: 完全去除视觉标注 (无下划线/角标/fl.)
-   - 边注标注: 用 1px dashed underline 标记 (与实体不同)
-   - 主题切换: 加 fade 动画 (0.4s)
-   - 拓展卡: 大量卡片 (37条) 改用 2 列网格 + 紧凑样式
-   - 导航控件: 上下页 + 章节下拉
-   - Grammatica 板块: 独立于正文与拓展卡
-   - Apparatus / Biblio 融入卡片或 tooltip
-   - 深夜模式: 酒红 (#E85D5D) 不用橙
+   v3.7 关键变化:
+   - tooltip 根绝泄漏 (HTML5 解析铁律): <div class="tip-grid"> → <span class="tip-grid">
+     + display: grid → display: inline-grid (HTML5 解析强制闭合 inline
+     元素含 block 元素, 改为 span+inline-grid 后, grid 容器不再逃出 .tip)
+   - 边注触发器改 † 脚注符号 (用户决策): 不再用 1px dashed 下划线,
+     改为 ::before 伪元素渲染 † (小字上标, 酒红色).
+     根除 .q 与 .ent 的 .q 重复显示同一词 (如 Itālia) 的问题
+   - 栏宽统一: grammatica/ll-ext-block 去左右 padding, 与正文 edge-to-edge
+   - 语法正文: 10pt→12pt (与主阅读区一致)
+   - 底部翻页控件: nav-bottom
+   - doi 合并: FR · Cap. I · pp. 9–14 内联到 Capitulum Primum
+   - 卡片精简: 隐藏预览/元信息, 仅留书名+匹配度
    ============================================================ */
 
 /* === 主题变量 === */
@@ -29,6 +33,8 @@
   --border-soft: #D4C5A0;
   --tip-bg:      #1A1A1A;
   --tip-fg:      #F5F5F5;
+  --tip-bg-light: #FBF7EC;         /* 日间 tooltip 背景: 米黄/纸色 */
+  --tip-fg-light: #1A1A1A;         /* 日间 tooltip 前景: 深色 */
   --shadow:      0 2px 8px rgba(0,0,0,0.25);
   --nav-bg:      #F4F0E8;
   --nav-active:  #B22A2A;
@@ -66,75 +72,60 @@ html, body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* 主题切换 fade 动画 */
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: background 0.35s ease, color 0.35s ease;
 }
 body { padding: 36px 20px 48px; }
 .page { max-width: 800px; margin: 0 auto; background: var(--bg); }
 
-/* 全局切换动画 (对所有元素) */
+/* 全局切换动画 */
 body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
 .colophon, .nav-controls, .theme-toggle, .ent, .margin {
-  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }
 
-/* ============= 主题切换按钮 ============= */
+/* ============= 主题切换按钮 (v3.6: 去边框/去圆点, 仅文字) ============= */
 .theme-toggle {
   position: fixed; top: 16px; right: 16px; z-index: 200;
-  background: var(--bg-card); color: var(--fg);
-  border: 1px solid var(--border-soft);
-  padding: 6px 10px; border-radius: 2px; cursor: pointer;
-  font-family: inherit; font-size: 8.5pt;
-  font-variant: small-caps; letter-spacing: 0.1em;
-  transition: background 0.4s ease, border-color 0.4s ease, transform 0.15s;
+  background: transparent; color: var(--fg-mute);
+  border: none;
+  padding: 4px 8px; cursor: pointer;
+  font-family: inherit; font-size: 8pt;
+  font-variant: small-caps; letter-spacing: 0.12em;
+  transition: color 0.35s ease;
 }
-.theme-toggle:hover { background: var(--accent-soft); border-color: var(--accent); }
+.theme-toggle:hover { color: var(--accent); }
 .theme-toggle:active { transform: scale(0.96); }
-.theme-toggle::before { content: ""; display: inline-block; width: 10px; height: 10px;
-  border-radius: 50%; background: var(--accent);
-  margin-right: 6px; vertical-align: middle;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-[data-theme="dark"] .theme-toggle::before {
-  box-shadow: 0 0 6px var(--accent);
-}
 
-/* ============= 导航控件 (上下页 + 章节选择) ============= */
+/* ============= 导航控件 (v3.6: 居中 + 无边框 + 无标签) ============= */
 .nav-controls {
   max-width: 800px; margin: 0 auto 18px;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 8px 14px; background: var(--nav-bg);
-  border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent);
-  font-size: 9pt; gap: 12px;
+  display: flex; justify-content: center; align-items: center;
+  padding: 4px 10px; background: transparent;
+  border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 8pt; gap: 24px;
 }
 .nav-controls a, .nav-controls select {
-  color: var(--fg); text-decoration: none;
-  font-family: inherit; font-size: 9pt;
-  padding: 4px 10px; border: 1px solid var(--border-soft);
-  background: var(--bg-card); border-radius: 2px;
-  cursor: pointer; transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  color: var(--fg-mute); text-decoration: none;
+  font-family: inherit; font-size: 8pt;
+  padding: 2px 6px; border: none;
+  background: transparent;
+  cursor: pointer; transition: color 0.3s ease;
 }
 .nav-controls a:hover, .nav-controls select:hover {
-  background: var(--accent); color: var(--bg);
-  border-color: var(--accent);
+  color: var(--accent);
 }
 .nav-controls .nav-prev, .nav-controls .nav-next {
   font-variant: small-caps; letter-spacing: 0.08em;
-  min-width: 100px; text-align: center;
+  text-align: center;
 }
 .nav-controls .nav-prev::before { content: "← "; opacity: 0.6; }
 .nav-controls .nav-next::after { content: " →"; opacity: 0.6; }
 .nav-controls .nav-chapter {
-  flex: 1; min-width: 0;
   font-variant: small-caps; letter-spacing: 0.06em;
 }
 .nav-controls .nav-chapter select {
-  width: 100%; padding: 4px 6px;
-  font-variant: small-caps; letter-spacing: 0.06em;
-}
-.nav-controls .nav-chapter label {
-  display: block; font-size: 7.5pt; color: var(--fg-mute);
-  letter-spacing: 0.12em; margin-bottom: 2px;
+  color: var(--fg-mute); font-variant: small-caps; letter-spacing: 0.06em;
 }
 
 /* ============= 报头 ============= */
@@ -155,12 +146,21 @@ body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
 }
 .masthead .rule-bottom { height: 1px; background: var(--rule); margin-top: 8px; }
 
-/* ============= 章节标题 ============= */
+/* 底部导航 */
+.nav-bottom { margin-top: 28px; }
+
+/* ============= 章节标题 (v3.7: 统一 H2 + doi 内联) ============= */
 .section-heading { max-width: 700px; margin: 0 auto 8px; text-align: center; }
 .section-heading h2 {
-  font-size: 11.5pt; font-variant: small-caps; letter-spacing: 0.16em;
-  font-weight: 700; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
-  padding: 5px 0; margin: 0;
+  font-size: 11pt; font-variant: small-caps; letter-spacing: 0.18em;
+  font-weight: 700; border-bottom: 1px solid var(--rule-soft);
+  padding: 0 0 6px; margin: 0;
+}
+.section-heading .doi {
+  font-size: 7.5pt; font-variant: normal; letter-spacing: 0.04em;
+  font-weight: 400; color: var(--fg-mute);
+  font-family: "SF Mono", "Courier New", monospace;
+  margin-left: 12px;
 }
 
 /* ============= 单列正文 ============= */
@@ -181,15 +181,14 @@ body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
   font-variant: small-caps; letter-spacing: 0.04em;
 }
 
-/* ============= 实体标注 (v3.2 完全去视觉化) =============
-   v3.1 → v3.2 关键变化:
-   - 完全无下划线/角标/fl./虚线
-   - 只有 hover/focus 时显示 tooltip
+/* ============= 实体标注 (v3.3: 极轻标记) =============
+   v3.3 变化:
+   - 无视觉标记 (无异色下划线/角标)
+   - hover 时显示 tooltip
    - 仅靠 cursor: help 提示可交互
    ============= */
 .ent {
   position: relative; cursor: help;
-  /* 完全无视觉标注 */
   transition: background 0.3s ease, color 0.3s ease;
 }
 .ent:hover, .ent:focus, .ent.tapped {
@@ -197,11 +196,11 @@ body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
   border-radius: 2px;
 }
 
-/* 实体下方的 tooltip 卡片 */
+/* 实体 tooltip 卡片 (v3.7: display:none 根绝泄漏) */
 .ent .tip {
-  visibility: hidden; opacity: 0; transition: opacity 0.2s ease;
+  display: none;
   position: absolute; bottom: 130%; left: 0;
-  background: var(--tip-bg); color: var(--tip-fg);
+  background: var(--tip-bg-light); color: var(--tip-fg-light);
   font-family: Georgia, serif; font-style: normal; font-variant: normal;
   font-size: 9pt; line-height: 1.4; padding: 6px 10px; border-radius: 2px;
   z-index: 100; pointer-events: none;
@@ -210,73 +209,159 @@ body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
 }
 .ent .tip::after {
   content: ""; position: absolute; top: 100%; left: 12px;
-  border: 4px solid transparent; border-top-color: var(--tip-bg);
+  border: 4px solid transparent; border-top-color: var(--tip-bg-light);
 }
-.ent:hover .tip, .ent:focus .tip, .ent.tapped .tip { visibility: visible; opacity: 1; }
+.ent:hover .tip, .ent:focus .tip, .ent.tapped .tip { display: block; }
+
+[data-theme="dark"] .ent .tip {
+  background: var(--tip-bg); color: var(--tip-fg);
+}
+[data-theme="dark"] .ent .tip::after {
+  border-top-color: var(--tip-bg);
+}
 
 @media (max-width: 720px) {
   .ent .tip { display: none; }
   .ent.tapped .tip { display: block; visibility: visible; opacity: 1; }
 }
 
-.tip .tip-key {
-  font-variant: small-caps; letter-spacing: 0.1em;
-  color: var(--accent); font-weight: 700; font-size: 8pt;
-  display: block; margin-bottom: 2px;
-}
-.tip .tip-zh { display: block; }
-
-/* ============= 边注标注 (.margin) =============
-   与实体 .ent 的区别:
-   - 用 1px dashed 下划线 (更轻, 不如实线醒目)
-   - underline-color 用 var(--margin-line) 灰色而非 accent
-   - hover tooltip 内容更详细 (拉丁语法+释义)
+/* ============= 边注标注 (.margin) v3.7 优化 =============
+   v3.7 关键变更 (用户决策):
+   - 不再用 1px dashed 下划线 (v3.6 方案)
+   - 改为 ::before 伪元素渲染 † 脚注符号 (小字上标, 酒红色)
+   - 根因: 之前 .margin 内的 .q 与 .ent 的 .q 重复显示同一词 (如 Itālia),
+     现在 .q 视觉不可见, 仅保留 DOM 语义, 触发器统一为 † 符号
+   - tooltip max-width 400px 以容纳长语法说明
+   - 左侧 accent 色竖线标记 (区别于 entity tooltip)
+   - 日间 tooltip 用浅米黄底, 夜间保持深色
    ============= */
+/* v3.7+1: 边注触发器 .margin
+   - 负 margin-left 抵消 HTML 中 <span class="margin"> 之前的空白字符
+     (之前 margin:0 写在 ::before 上是错的, 因为间隙来自 ::before 之外的
+      span 之前的 HTML 文本节点空格)
+   - 负 margin-right 让 † 与下一个单词的距离也接近 0 */
 .margin {
   position: relative; cursor: help;
-  border-bottom: 1px dashed var(--margin-line);
-  padding-bottom: 1px;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  padding: 0;
+  margin: 0 -0.12em;  /* v3.7+1: 拉近 † 与前后单词的距离, 抵消 HTML 空白 */
+  transition: background 0.3s ease;
+}
+/* 边注触发器: † 脚注符号 (拉丁脚注传统符号)
+   v3.7+: 紧贴前后单词 (margin: 0), 与单词内字间距保持一致 */
+.margin::before {
+  content: "†";
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 1;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0;  /* 紧贴 .margin 容器左缘 (负 margin 已在 .margin 本身) */
+  transition: color 0.3s ease;
+}
+/* 隐藏 .q (原 .margin 内的触发词)
+   - 保留 DOM 节点供屏幕阅读器/可访问性使用
+   - 视觉上由 ::before 的 † 符号替代
+   - 用 position: absolute + opacity: 0 而非 display: none,
+     避免影响 .margin 容器的 inline 布局 */
+.margin .q {
+  position: absolute;
+  width: 1px; height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
 .margin:hover, .margin:focus, .margin.tapped {
   background: var(--accent-soft);
-  border-bottom-color: var(--accent);
   border-radius: 2px;
 }
+.margin:hover::before, .margin:focus::before, .margin.tapped::before {
+  color: var(--accent-2);  /* hover 时变暗酒红 */
+}
 .margin .tip {
-  visibility: hidden; opacity: 0; transition: opacity 0.2s ease;
+  display: none;
   position: absolute; bottom: 130%; left: 0;
-  background: var(--tip-bg); color: var(--tip-fg);
+  background: var(--tip-bg-light); color: var(--tip-fg-light);
   font-family: Georgia, serif; font-style: normal; font-variant: normal;
-  font-size: 8.5pt; line-height: 1.4; padding: 6px 10px; border-radius: 2px;
+  font-size: 9pt; line-height: 1.5; padding: 10px 14px; border-radius: 2px;
   z-index: 100; pointer-events: none;
   box-shadow: var(--shadow);
-  min-width: 240px; max-width: 340px; white-space: normal;
+  border-left: 3px solid var(--accent);
+  min-width: 260px; max-width: 400px; white-space: normal;
 }
 .margin .tip::after {
   content: ""; position: absolute; top: 100%; left: 12px;
-  border: 4px solid transparent; border-top-color: var(--tip-bg);
+  border: 4px solid transparent; border-top-color: var(--tip-bg-light);
 }
-.margin:hover .tip, .margin:focus .tip, .margin.tapped .tip { visibility: visible; opacity: 1; }
+.margin .tip code {
+  background: transparent;
+  padding: 0 2px; border-radius: 2px;
+  font-family: Georgia, serif; font-style: italic;
+  font-size: 9pt; color: var(--accent-2);
+}
+.margin .tip em {
+  font-style: italic; color: var(--fg);
+}
+.margin:hover .tip, .margin:focus .tip, .margin.tapped .tip { display: block; }
+
+[data-theme="dark"] .margin .tip {
+  background: var(--tip-bg); color: var(--tip-fg);
+}
+[data-theme="dark"] .margin .tip::after {
+  border-top-color: var(--tip-bg);
+}
+[data-theme="dark"] .margin .tip code {
+  background: rgba(255,255,255,0.1);
+  color: var(--accent);
+}
 @media (max-width: 720px) {
   .margin .tip { display: none; }
   .margin.tapped .tip { display: block; visibility: visible; opacity: 1; }
 }
-.margin .tip-key {
+
+/* 统一 tip-key 样式 (实体 + 边注共用) */
+.tip .tip-key {
   font-variant: small-caps; letter-spacing: 0.1em;
-  color: var(--fg-mute); font-weight: 700; font-size: 8pt;
-  display: block; margin-bottom: 2px;
+  color: var(--accent); font-weight: 700; font-size: 8pt;
+  display: block; margin-bottom: 3px;
+  border-bottom: 1px solid var(--rule-soft); padding-bottom: 3px;
+}
+.tip .tip-lat { display: block; }
+
+/* v3.7: tooltip 内多类型排版 (词性/变格两列对齐)
+   - 使用 inline-grid: 元素本身是 inline, 内部仍是 grid 行为
+   - 因为 <span class="tip"> 是 inline 元素, 内部不能再嵌 <div>,
+     改用 <span class="tip-grid"> 配 inline-grid 才符合 HTML5 解析规范
+     (v3.7 修正: grid→inline-grid 防止 tip-grid 跳出 .tip 容器) */
+.tip .tip-grid {
+  display: inline-grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1px 10px;
+  margin: 2px 0 0;
+  vertical-align: top;
+}
+.tip .tip-grid .tip-key {
+  font-variant: small-caps; letter-spacing: 0.08em;
+  color: var(--fg-mute); font-weight: 600; font-size: 7.5pt;
+  display: block; margin: 0; padding: 0;
+  border-bottom: none;  /* 网格行内不画分隔线 */
+}
+.tip .tip-grid code {
+  background: transparent; padding: 0;
+  font-style: italic;
 }
 
-/* ============= Grammatica 板块 ============= */
+/* ============= Grammatica 板块 (v3.5: 透明底色 + A/B 规则表格化) ============= */
 .grammatica {
-  max-width: 700px; margin: 28px auto; padding: 20px 24px;
-  background: var(--bg-soft); border-top: 1px solid var(--rule);
+  max-width: 660px; margin: 28px auto; padding: 20px 0;
+  background: transparent; border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  transition: background 0.4s ease;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10pt; line-height: 1.6;
+  transition: background 0.35s ease;
 }
 .grammatica .gram-heading {
-  font-size: 10pt; font-variant: small-caps; letter-spacing: 0.2em;
+  font-size: 11pt; font-variant: small-caps; letter-spacing: 0.18em;
   font-weight: 700; color: var(--fg); margin-bottom: 14px;
   text-align: center; padding-bottom: 6px;
   border-bottom: 1px solid var(--rule-soft);
@@ -285,16 +370,23 @@ body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
   margin-bottom: 16px;
 }
 .grammatica .gram-rule-title {
-  font-size: 9.5pt; font-weight: 700; font-variant: small-caps;
+  font-size: 10pt; font-weight: 700; font-variant: small-caps;
   letter-spacing: 0.08em; color: var(--accent); margin-bottom: 4px;
 }
+.grammatica .gram-rule-intro {
+  font-size: 12pt; line-height: 1.85; color: var(--fg-soft);
+  text-align: justify; margin-bottom: 4px;
+}
 .grammatica .gram-rule-body {
-  font-size: 9.5pt; line-height: 1.55; color: var(--fg-soft);
+  font-size: 12pt; line-height: 1.85; color: var(--fg-soft);
   text-align: justify;
 }
 .grammatica .gram-rule-body code {
   background: var(--bg-card); padding: 1px 4px; border-radius: 2px;
   font-family: Georgia, serif; font-style: italic;
+}
+.grammatica .gram-rule-body em {
+  font-style: italic; color: var(--fg);
 }
 
 /* 边注 inline 列表 (在 grammatica 内) */
@@ -311,38 +403,120 @@ body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
   margin-right: 4px;
 }
 
-/* ============= 拓展卡 (.ll-ext-block) - v3.2 大量卡片优化 ============= */
+/* v3.7: 语法表格 = 说明性文字 (8.5pt), 与正文 10pt 形成 1.5pt 对比 */
+.grammatica .gram-table {
+  width: 100%; border-collapse: collapse;
+  margin: 8px 0 4px; font-size: 8.5pt; line-height: 1.45;
+  /* 无外框, 无竖线, 仅表头下方一条 1px 细线 */
+}
+.grammatica .gram-table thead th {
+  text-align: left;
+  font-variant: small-caps; letter-spacing: 0.08em;
+  font-weight: 600; font-size: 7.5pt;
+  color: var(--fg-mute);
+  padding: 3px 6px 4px;
+  border-bottom: 1px solid var(--rule-soft);
+  border-top: none; border-left: none; border-right: none;
+}
+.grammatica .gram-table tbody td {
+  padding: 2px 6px;
+  border: none;  /* 单元格无线 */
+  vertical-align: top;
+  color: var(--fg-soft);
+}
+.grammatica .gram-table tbody tr:last-child td {
+  padding-bottom: 6px;
+}
+.grammatica .gram-table code {
+  background: transparent; padding: 0;
+  font-family: Georgia, serif; font-style: italic;
+  font-size: 8.5pt; color: var(--fg);
+}
+.grammatica .gram-table .col-decl,
+.grammatica .gram-table .col-gen {
+  white-space: nowrap;
+  font-variant: small-caps; letter-spacing: 0.04em;
+  color: var(--accent); font-size: 7.5pt;
+}
+
+/* v3.7+1: 语法示例 grid (D/E 规则内 6 code + 5 in+abl)
+   - 把密集逗号分隔的代码示例拆分为可扫描的网格
+   - 提高可读性 (CRAP: Proximity — 视觉上把同组示例聚成一个单元)
+   - v3.7+1: 取消 li 的 accent-soft 底色 (用户要求), 仅以 0.5px
+     border-soft 描边 + 居中排版作为分组暗示, 与正文 12pt 形成层次 */
+.grammatica .gram-examples {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 8px;
+  margin: 6px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+.grammatica .gram-examples.cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grammatica .gram-examples li {
+  /* v3.7+1: 无背景色, 仅 0.5px 细线暗示分组 */
+  background: transparent;
+  border: 0.5px solid var(--rule-soft);
+  border-radius: 1px;
+  padding: 3px 6px;
+  text-align: center;
+  font-size: 9pt;
+  line-height: 1.35;
+  color: var(--fg-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.grammatica .gram-examples li code {
+  background: transparent;
+  padding: 0;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 9pt;
+  color: var(--fg);
+}
+
+/* ============= 拓展卡 (.ll-ext-block) (v3.7: 奇偶交替底色 + 对齐正文 660px) ============= */
 .ll-ext-block {
-  padding: 14px 18px; background: var(--bg-soft);
-  max-width: 700px; margin: 24px auto;
-  border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent);
+  padding: 14px 0; background: transparent;
+  max-width: 660px; margin: 24px auto;
+  border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft);
 }
 .ll-ext-heading {
-  font-size: 10pt; font-variant: small-caps; letter-spacing: 0.2em;
-  color: var(--accent); font-weight: 700; margin-bottom: 12px;
-  text-align: center;
+  font-size: 11pt; font-variant: small-caps; letter-spacing: 0.18em;
+  color: var(--fg); font-weight: 700; margin-bottom: 12px;
+  text-align: center; padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule-soft);
 }
 .ll-ext-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 6px; text-align: left; font-style: normal;
+  gap: 10px; text-align: left; font-style: normal;
 }
 .ll-ext-card {
-  background: var(--bg-card); border: 1px solid var(--border-soft);
-  border-left: 2px solid var(--accent);
+  background: var(--bg-card); border: none;
   padding: 6px 8px; font-size: 8pt; line-height: 1.4;
   display: flex; flex-direction: column; gap: 2px;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease;
 }
-.ll-ext-card:hover { background: var(--accent-soft); border-color: var(--accent); }
+/* 未展开前只留必要信息: 书名+匹配度 */
+.ll-ext-preview, .ll-ext-meta { display: none; }
+/* v3.7: 取消奇偶交替底色, 全部统一为 var(--bg-card) (用户要求) */
+.ll-ext-card:hover {
+  background: var(--accent-soft);
+}
 .ll-ext-head { display: flex; justify-content: space-between; gap: 4px; align-items: baseline; }
 .ll-ext-score {
-  background: var(--accent); color: var(--bg);
-  font-size: 6.5pt; padding: 1px 4px; font-variant: small-caps; flex-shrink: 0;
+  background: transparent; color: var(--accent);
+  font-size: 6.5pt; padding: 0; font-variant: small-caps; flex-shrink: 0;
 }
 .ll-ext-book {
   font-weight: 700; font-size: 8pt; line-height: 1.2;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
   overflow: hidden;
+  width: 100%;  /* v3.7: 满宽, 与 full-body 右边缘对齐 */
+  text-align: left;
 }
 .ll-ext-preview {
   color: var(--fg-soft); line-height: 1.3;
@@ -356,10 +530,13 @@ body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
   cursor: pointer; font-size: 7pt; color: var(--accent);
   font-variant: small-caps; letter-spacing: 0.04em;
 }
+/* v3.7: full-body 去掉左右 padding (由 .ll-ext-card 承担),
+   保证书名 (.ll-ext-book) 与正文 (.ll-ext-full-body) 左/右边缘完全对齐 */
 .ll-ext-full-body {
-  margin-top: 4px; padding: 6px 8px; background: var(--accent-soft);
+  margin-top: 4px; padding: 6px 0; background: var(--accent-soft);
   font-style: normal; font-size: 8pt; line-height: 1.5;
   max-height: 200px; overflow-y: auto;
+  text-align: left;
 }
 
 /* ============= 底部 Colophon ============= */
@@ -380,6 +557,8 @@ body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
   .nav-controls .nav-chapter { flex: 1 1 100%; order: 3; }
   .ll-ext-grid { grid-template-columns: 1fr; }
   .grammatica .gram-margin-list { grid-template-columns: 1fr; }
+  .grammatica .gram-examples { grid-template-columns: repeat(2, 1fr); }
+  .grammatica .gram-examples.cols-5 { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 480px) {
   body { padding: 18px 12px 28px; }
