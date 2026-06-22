@@ -1,0 +1,773 @@
+/* ============================================================
+   LLPSI+++ M2 · product 版样式 v3.7+9 (2026-06-12)
+   母版: HTML/Themes_AcademicJournal.html (Caesar DBG 注释版)
+   设计规范: CRAP (Contrast/Repetition/Alignment/Proximity) @design-crap SKILL
+   ============================================================
+   v3.7+9 关键变化:
+   - .ent / .margin: 取消所有负 margin (margin: 0) (v3.7+6~+8 反复试探 -0.25em
+     造成 "Syria, Iūlia" 中逗号紧贴 Iūlia, 同时还造成 "Iūlia?" 中问号重叠)
+   - HTML 改紧凑写法: <span> 紧跟前词 (取消多余缩进空格), 信任浏览器默认间距
+   v3.7+8 关键变化:
+   - .margin .q 取消 color: var(--accent-2) (用户反馈: 有悬浮注释的单词与正文同色)
+   - .ent / .margin 取消 margin-right: -0.25em (造成后续标点重叠, 如 Iūlia?)
+   v3.7+7 关键变化:
+   - .ent / .margin: vertical-align 回到 baseline (v3.7+5 改的 text-top 导致上下错位)
+   - .ent / .margin: line-height: 1.85 (与 .two-col p 一致, 避免内文与外文基线错位)
+   v3.7+6 关键变化:
+   - .ent / .margin: margin: 0 -0.25em (抵消 HTML 缩进产生的空格文本节点)
+   - .two-col / .two-col p: text-align: left !important (强制覆盖, 防浏览器 fallback)
+   v3.7+5 关键变化:
+   - .two-col / .two-col p: text-align: justify → left
+   - 取消 text-indent
+   - hyphens: auto → none
+   v3.7+4 关键变化:
+   - 边注: † → 小圆点角标 (●, ::after 替代 ::before)
+   - .q 可见 (display:inline, 不再 clip 隐藏)
+   - 边注行内嵌入 (不再独立成段)
+   v3.7+3 关键变化:
+   - 根绝 tooltip 横向/纵向错位: .ent/.margin 改为 display:inline-block,
+     确保绝对定位子元素 (.tip) 的包含块为可预测的矩形盒
+   - .ent .tip / .margin .tip: bottom:100% + margin-bottom:8px 替代
+     bottom:135%
+   v3.7 关键变化:
+   - tooltip 根绝泄漏 (HTML5 解析铁律): <div class="tip-grid"> → <span class="tip-grid">
+     + display: grid → display: inline-grid (HTML5 解析强制闭合 inline
+     元素含 block 元素, 改为 span+inline-grid 后, grid 容器不再逃出 .tip)
+   - 边注触发器改 † 脚注符号 (用户决策): 不再用 1px dashed 下划线,
+     改为 ::before 伪元素渲染 † (小字上标, 酒红色).
+     根除 .q 与 .ent 的 .q 重复显示同一词 (如 Itālia) 的问题
+   - 栏宽统一: grammatica/ll-ext-block 去左右 padding, 与正文 edge-to-edge
+   - 语法正文: 10pt→12pt (与主阅读区一致)
+   - 底部翻页控件: nav-bottom
+   - doi 合并: FR · Cap. I · pp. 9–14 内联到 Capitulum Primum
+   - 卡片精简: 隐藏预览/元信息, 仅留书名+匹配度
+   ============================================================ */
+
+/* === 主题变量 === */
+:root {
+  --bg:          #FFFFFF;
+  --fg:          #111111;
+  --fg-soft:     #444444;
+  --fg-mute:     #888888;
+  --accent:      #B22A2A;          /* 酒红 (light) */
+  --accent-2:    #8B1F1F;          /* 暗酒红 */
+  --accent-soft: #FFF8E1;
+  --rule:        #000000;
+  --rule-soft:   #DDDDDD;
+  --bg-soft:     #FAFAF6;
+  --bg-card:     #FFFFFF;
+  --border-soft: #D4C5A0;
+  --tip-bg:      #1A1A1A;
+  --tip-fg:      #F5F5F5;
+  --tip-bg-light: #FBF7EC;         /* 日间 tooltip 背景: 米黄/纸色 */
+  --tip-fg-light: #1A1A1A;         /* 日间 tooltip 前景: 深色 */
+  --shadow:      0 2px 8px rgba(0,0,0,0.25);
+  --nav-bg:      #F4F0E8;
+  --nav-active:  #B22A2A;
+  --margin-line: #888888;          /* 边注虚线色 */
+}
+
+[data-theme="dark"] {
+  --bg:          #1A0E0E;          /* 深酒红黑 */
+  --fg:          #F5E8E8;          /* 微酒米白 */
+  --fg-soft:     #C9B0B0;
+  --fg-mute:     #8A7070;
+  --accent:      #E85D5D;          /* 深夜酒红 (主色) */
+  --accent-2:    #C44848;
+  --accent-soft: #2A1414;          /* 暗酒红 hover */
+  --rule:        #E8D0D0;
+  --rule-soft:   #4A3030;
+  --bg-soft:     #251818;
+  --bg-card:     #2A1818;
+  --border-soft: #5A3838;
+  --tip-bg:      #0F0606;
+  --tip-fg:      #F5E8E8;
+  --shadow:      0 2px 8px rgba(0,0,0,0.7);
+  --nav-bg:      #2A1818;
+  --nav-active:  #E85D5D;
+  --margin-line: #6A5050;
+}
+
+/* === 基础 === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, "Times New Roman", "Iowan Old Style", "Source Han Serif SC", "Noto Serif CJK SC", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+body { padding: 36px 20px 48px; }
+.page { max-width: 800px; margin: 0 auto; background: var(--bg); }
+
+/* 全局切换动画 */
+body, .page, .masthead, .two-col, .grammatica, .ll-ext-block,
+.colophon, .nav-controls, .theme-toggle, .ent, .margin {
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+/* ============= 主题切换按钮 (v3.6: 去边框/去圆点, 仅文字) ============= */
+.theme-toggle {
+  position: fixed; top: 16px; right: 16px; z-index: 200;
+  background: transparent; color: var(--fg-mute);
+  border: none;
+  padding: 4px 8px; cursor: pointer;
+  font-family: inherit; font-size: 8pt;
+  font-variant: small-caps; letter-spacing: 0.12em;
+  transition: color 0.35s ease;
+}
+.theme-toggle:hover { color: var(--accent); }
+.theme-toggle:active { transform: scale(0.96); }
+
+/* ============= 导航控件 (v3.6: 居中 + 无边框 + 无标签) ============= */
+.nav-controls {
+  max-width: 800px; margin: 0 auto 18px;
+  display: flex; justify-content: center; align-items: center;
+  padding: 4px 10px; background: transparent;
+  border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 8pt; gap: 24px;
+}
+.nav-controls a, .nav-controls select {
+  color: var(--fg-mute); text-decoration: none;
+  font-family: inherit; font-size: 8pt;
+  padding: 2px 6px; border: none;
+  background: transparent;
+  cursor: pointer; transition: color 0.3s ease;
+}
+.nav-controls a:hover, .nav-controls select:hover {
+  color: var(--accent);
+}
+.nav-controls .nav-prev, .nav-controls .nav-next {
+  font-variant: small-caps; letter-spacing: 0.08em;
+  text-align: center;
+}
+.nav-controls .nav-prev::before { content: "← "; opacity: 0.6; }
+.nav-controls .nav-next::after { content: " →"; opacity: 0.6; }
+.nav-controls .nav-chapter {
+  font-variant: small-caps; letter-spacing: 0.06em;
+}
+.nav-controls .nav-chapter select {
+  color: var(--fg-mute); font-variant: small-caps; letter-spacing: 0.06em;
+}
+
+/* ============= 报头 ============= */
+.masthead { text-align: center; padding-bottom: 10px; margin-top: 12px; }
+.masthead .journal-name {
+  font-size: 8pt; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--fg); font-variant: small-caps; font-weight: 600;
+}
+.masthead .rule-black { height: 1px; background: var(--rule); margin: 8px 0 3px; }
+.masthead .rule-red { height: 1px; background: var(--accent); margin: 0 0 14px; }
+.masthead h1.title {
+  font-size: 22pt; font-weight: 700; line-height: 1.18;
+  letter-spacing: 0.005em; margin: 0 0 4px;
+}
+.masthead .doi {
+  font-size: 8pt; color: var(--fg-mute);
+  font-family: "SF Mono", "Courier New", monospace; margin-bottom: 8px;
+}
+.masthead .rule-bottom { height: 1px; background: var(--rule); margin-top: 8px; }
+
+/* 底部导航 */
+.nav-bottom { margin-top: 28px; }
+
+/* ============= 章节标题 (v3.7: 统一 H2 + doi 内联) ============= */
+.section-heading { max-width: 700px; margin: 0 auto 8px; text-align: center; }
+.section-heading h2 {
+  font-size: 11pt; font-variant: small-caps; letter-spacing: 0.18em;
+  font-weight: 700; border-bottom: 1px solid var(--rule-soft);
+  padding: 0 0 6px; margin: 0;
+}
+.section-heading .doi {
+  font-size: 7.5pt; font-variant: normal; letter-spacing: 0.04em;
+  font-weight: 400; color: var(--fg-mute);
+  font-family: "SF Mono", "Courier New", monospace;
+  margin-left: 12px;
+}
+
+/* ============= 单列正文 =============
+   v3.7+5: 改 text-align: justify → left (用户反馈: 换行后词间距被拉大, 难看)
+   v3.7+5: 取消 text-indent (与其他段缩进差异造成错位感)
+   v3.7+6: text-align: left !important 强制覆盖, 解决部分段落仍 justify 的问题
+   v3.7+5: line-height 1.85 保持行高舒适 */
+.two-col {
+  max-width: 660px; margin: 0 auto;
+  text-align: left !important;  /* v3.7+6: !important 强制 (某些浏览器 fallback 到 justify) */
+  margin-top: 18px;
+  font-size: 12pt; line-height: 1.85;
+  hyphens: none; -webkit-hyphens: none;
+}
+.two-col p {
+  position: relative;
+  margin: 0 0 0.85em;
+  font-size: 12pt; line-height: 1.85;
+  text-align: left !important;  /* v3.7+6: !important */
+}
+.two-col p.no-indent { text-indent: 0; }
+.two-col em { text-align: left; display: inline; }  /* v3.7+6: em 显式 left */
+.sec-num {
+  position: absolute; top: 0.2em; right: 100%; margin-right: 0.6em;
+  font-weight: 700; color: var(--accent); font-size: 7.5pt; vertical-align: super;
+  font-variant: small-caps; letter-spacing: 0.04em;
+}
+
+/* ============= 实体标注 (v3.3: 极轻标记) =============
+   v3.3 变化:
+   - 无视觉标记 (无异色下划线/角标)
+   - hover 时显示 tooltip
+   - 仅靠 cursor: help 提示可交互
+   ============= */
+/* v3.7+3: display:inline-block 确保绝对定位子元素 (.tip) 有可预测的矩形包含块.
+   纯 inline 元素 + position:relative 的包含块在浏览器间不一致,
+   导致 left:50% / bottom 百分比计算结果不可靠 (悬浮注释横向/纵向错位的根因).
+   v3.7+5 尝试: vertical-align: text-top → 过度修复, 导致词上下错位 (v3.7+7 复盘)
+   v3.7+7 根绝修复: 回到 vertical-align: baseline (与周围文字基线一致)
+     + line-height: 1.85 (与 .two-col p 一致, 避免 inline-block 内文与外文基线错位)
+   v3.7+9 根绝修复: 取消所有负 margin (margin: 0)
+     - v3.7+6 ~ +8 反复试探 -0.25em 负 margin, 造成 "Iūlia? 中 ? 紧贴 Iūlia"
+       与 "Syria, Iūlia 中 , 紧贴 Iūlia" 两类标点重叠问题
+     - 根因: HTML 缩进产生的空格节点与前后标点混淆, 负 margin 统一拉近, 错伤了标点
+     - 现在: HTML 写法紧凑 ( <span> 紧跟词, 取消多余缩进), 完全交浏览器默认间距
+   注: 之前 v3.7+5 的 "text-top" 对齐到文字顶, 实际是 9pt cap-height 顶部, 而行高 22.2pt
+   中还有 ascender 区域, 使 inline-block 顶高于周围文字中线, 看起来错位 */
+.ent {
+  position: relative; cursor: help;
+  display: inline-block; vertical-align: baseline;  /* v3.7+7: 回到 baseline */
+  line-height: 1.85;  /* v3.7+7: 保留父级 1.85 行高 (与 .two-col p 一致), 避免内文错位 */
+  margin: 0;  /* v3.7+9: 取消所有负 margin, 信任浏览器默认间距 */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.ent:hover, .ent:focus, .ent.tapped {
+  background: var(--accent-soft);
+  border-radius: 2px;
+}
+
+/* 实体 tooltip 卡片 (v3.7: display:none 根绝泄漏)
+   v3.7+2 M3: 改为居中对齐 (left:50% + translateX(-50%)).
+   v3.7+3: bottom:100% + margin-bottom 替代 135% 百分比 (依赖 inline-block 明确盒高). */
+.ent .tip {
+  display: none;
+  position: absolute;
+  bottom: 100%; margin-bottom: 8px;  /* v3.7+3: .tip 底边贴 .ent 顶边, 8px 呼吸空间 */
+  left: 50%; transform: translateX(-50%);  /* 居中于 .ent (现为 inline-block, 盒宽明确) */
+  background: var(--tip-bg-light); color: var(--tip-fg-light);
+  font-family: Georgia, serif; font-style: normal; font-variant: normal;
+  font-size: 9pt; line-height: 1.4; padding: 6px 10px; border-radius: 2px;
+  z-index: 100; pointer-events: none;
+  box-shadow: var(--shadow);
+  min-width: 180px; max-width: 240px; white-space: normal;  /* v3.7+2: 280→240 减宽 */
+}
+.ent .tip::after {
+  content: ""; position: absolute;
+  top: 100%; left: 50%; transform: translateX(-50%);  /* 箭头居中于 tooltip 底边 */
+  border: 4px solid transparent; border-top-color: var(--tip-bg-light);
+}
+.ent:hover .tip, .ent:focus .tip, .ent.tapped .tip { display: block; }
+
+[data-theme="dark"] .ent .tip {
+  background: var(--tip-bg); color: var(--tip-fg);
+}
+[data-theme="dark"] .ent .tip::after {
+  border-top-color: var(--tip-bg);
+}
+
+@media (max-width: 720px) {
+  .ent .tip { display: none; }
+  .ent.tapped .tip { display: block; visibility: visible; opacity: 1; }
+}
+
+/* ============= 边注标注 (.margin) v3.7+4 优化 =============
+   v3.7+4 关键变更:
+   - † 符号改为小圆点角标 (●), 更紧凑, 不遮挡行距
+   - .margin 不再独立成段, 必须嵌入正文行内, 紧跟被标注词之后
+   - .q (触发词) 改为可见 (不再是 clip 隐藏), 作为行内文本显示
+   - ::after 渲染小圆点角标 (替代原 ::before 的 †)
+   - v3.7+3 的 display:inline-block 保留 (确保 .tip 包含块可预测)
+
+   设计依据 (CRAP):
+   - Proximity: 角标紧跟被标注词, 物理距离最近 → 归属感强
+   - Contrast: 酒红色小圆点 vs 黑色正文, 对比明显
+   - Repetition: 所有边注角标样式一致
+   - Alignment: 角标垂直对齐到 super 位置, 不干扰正文基线
+   ============= */
+/* v3.7+4: .margin 触发器
+   - display:inline-block 确保绝对定位子元素 (.tip) 有可预测的矩形包含块
+   - .q 可见, 显示被标注词 (如 "vocābulum Graecum")
+   - ::after 渲染酒红色小圆点角标, 紧跟 .q 之后
+   v3.7+7: 同样从 text-top 回到 baseline (避免上下错位), line-height: 1.85 */
+.margin {
+  position: relative; cursor: help;
+  display: inline-block; vertical-align: baseline;  /* v3.7+7: 回到 baseline */
+  line-height: 1.85;  /* v3.7+7: 保留父级 1.85 行高 */
+  padding: 0; margin: 0;  /* v3.7+9: 取消所有负 margin */
+  transition: background 0.3s ease;
+}
+/* v3.7+4: .q 可见 — 显示被标注的词语本身, 作为行内文本
+   v3.7+8: 取消 color: var(--accent-2) (用户反馈: 有悬浮注释的单词与其他正文一个颜色) */
+.margin .q {
+  display: inline;
+  font-style: italic;
+  /* color: inherit (默认), 与正文同色 */
+}
+/* v3.7+4: 小圆点角标 — 紧跟 .q 词后, 酒红色, 不遮挡行距
+   - content: "●" 替代原 † (更紧凑, 不占行高)
+   - font-size: 0.5em (比 † 的 0.7em 更小)
+   - margin-left: 1px (与 .q 词尾保持极小间距) */
+.margin::after {
+  content: "●";
+  font-size: 0.5em;
+  vertical-align: super;
+  line-height: 1;
+  color: var(--accent);
+  font-weight: 700;
+  margin-left: 1px;
+  transition: color 0.3s ease;
+}
+.margin:hover, .margin:focus, .margin.tapped {
+  background: var(--accent-soft);
+  border-radius: 2px;
+}
+.margin:hover::after, .margin:focus::after, .margin.tapped::after {
+  color: var(--accent-2);  /* hover 时变暗酒红 */
+}
+.margin .tip {
+  display: none;
+  position: absolute;
+  bottom: 100%; margin-bottom: 8px;
+  left: 50%; transform: translateX(-50%);
+  background: var(--tip-bg-light); color: var(--tip-fg-light);
+  font-family: Georgia, serif; font-style: normal; font-variant: normal;
+  font-size: 9pt; line-height: 1.5; padding: 10px 14px; border-radius: 2px;
+  z-index: 100; pointer-events: none;
+  box-shadow: var(--shadow);
+  border-left: 3px solid var(--accent);
+  min-width: 260px; max-width: 360px; white-space: normal;
+}
+.margin .tip::after {
+  content: ""; position: absolute;
+  top: 100%; left: 50%; transform: translateX(-50%);
+  border: 4px solid transparent; border-top-color: var(--tip-bg-light);
+}
+.margin .tip code {
+  background: transparent;
+  padding: 0 2px; border-radius: 2px;
+  font-family: Georgia, serif; font-style: italic;
+  font-size: 9pt; color: var(--accent-2);
+}
+.margin .tip em {
+  font-style: italic; color: var(--fg);
+}
+.margin:hover .tip, .margin:focus .tip, .margin.tapped .tip { display: block; }
+
+[data-theme="dark"] .margin .tip {
+  background: var(--tip-bg); color: var(--tip-fg);
+}
+[data-theme="dark"] .margin .tip::after {
+  border-top-color: var(--tip-bg);
+}
+[data-theme="dark"] .margin .tip code {
+  background: rgba(255,255,255,0.1);
+  color: var(--accent);
+}
+@media (max-width: 720px) {
+  .margin .tip { display: none; }
+  .margin.tapped .tip { display: block; visibility: visible; opacity: 1; }
+}
+
+/* 统一 tip-key 样式 (实体 + 边注共用) */
+.tip .tip-key {
+  font-variant: small-caps; letter-spacing: 0.1em;
+  color: var(--accent); font-weight: 700; font-size: 8pt;
+  display: block; margin-bottom: 3px;
+  border-bottom: 1px solid var(--rule-soft); padding-bottom: 3px;
+}
+.tip .tip-lat { display: block; }
+
+/* v3.7: tooltip 内多类型排版 (词性/变格两列对齐)
+   - 使用 inline-grid: 元素本身是 inline, 内部仍是 grid 行为
+   - 因为 <span class="tip"> 是 inline 元素, 内部不能再嵌 <div>,
+     改用 <span class="tip-grid"> 配 inline-grid 才符合 HTML5 解析规范
+     (v3.7 修正: grid→inline-grid 防止 tip-grid 跳出 .tip 容器) */
+.tip .tip-grid {
+  display: inline-grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1px 10px;
+  margin: 2px 0 0;
+  vertical-align: top;
+}
+.tip .tip-grid .tip-key {
+  font-variant: small-caps; letter-spacing: 0.08em;
+  color: var(--fg-mute); font-weight: 600; font-size: 7.5pt;
+  display: block; margin: 0; padding: 0;
+  border-bottom: none;  /* 网格行内不画分隔线 */
+}
+.tip .tip-grid code {
+  background: transparent; padding: 0;
+  font-style: italic;
+}
+
+/* ============= Grammatica 板块 (v3.5: 透明底色 + A/B 规则表格化) ============= */
+.grammatica {
+  max-width: 660px; margin: 28px auto; padding: 20px 0;
+  background: transparent; border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10pt; line-height: 1.6;
+  transition: background 0.35s ease;
+}
+.grammatica .gram-heading {
+  font-size: 11pt; font-variant: small-caps; letter-spacing: 0.18em;
+  font-weight: 700; color: var(--fg); margin-bottom: 14px;
+  text-align: center; padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.grammatica .gram-rule {
+  margin-bottom: 16px;
+}
+.grammatica .gram-rule-title {
+  font-size: 10pt; font-weight: 700; font-variant: small-caps;
+  letter-spacing: 0.08em; color: var(--accent); margin-bottom: 4px;
+}
+.grammatica .gram-rule-intro {
+  font-size: 12pt; line-height: 1.85; color: var(--fg-soft);
+  text-align: justify; margin-bottom: 4px;
+}
+.grammatica .gram-rule-body {
+  font-size: 12pt; line-height: 1.85; color: var(--fg-soft);
+  text-align: justify;
+}
+.grammatica .gram-rule-body code {
+  background: var(--bg-card); padding: 1px 4px; border-radius: 2px;
+  font-family: Georgia, serif; font-style: italic;
+}
+.grammatica .gram-rule-body em {
+  font-style: italic; color: var(--fg);
+}
+
+/* 边注 inline 列表 (在 grammatica 内) */
+.grammatica .gram-margin-list {
+  list-style: none; padding: 0; margin: 8px 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px;
+}
+.grammatica .gram-margin-list li {
+  font-size: 8.5pt; color: var(--fg-soft);
+  padding: 2px 0;
+}
+.grammatica .gram-margin-list li strong {
+  color: var(--accent); font-weight: 600; font-variant: small-caps;
+  margin-right: 4px;
+}
+
+/* v3.7: 语法表格 = 说明性文字 (8.5pt), 与正文 10pt 形成 1.5pt 对比 */
+.grammatica .gram-table {
+  width: 100%; border-collapse: collapse;
+  margin: 8px 0 4px; font-size: 8.5pt; line-height: 1.45;
+  /* 无外框, 无竖线, 仅表头下方一条 1px 细线 */
+}
+.grammatica .gram-table thead th {
+  text-align: left;
+  font-variant: small-caps; letter-spacing: 0.08em;
+  font-weight: 600; font-size: 7.5pt;
+  color: var(--fg-mute);
+  padding: 3px 6px 4px;
+  border-bottom: 1px solid var(--rule-soft);
+  border-top: none; border-left: none; border-right: none;
+}
+.grammatica .gram-table tbody td {
+  padding: 2px 6px;
+  border: none;  /* 单元格无线 */
+  vertical-align: top;
+  color: var(--fg-soft);
+}
+.grammatica .gram-table tbody tr:last-child td {
+  padding-bottom: 6px;
+}
+.grammatica .gram-table code {
+  background: transparent; padding: 0;
+  font-family: Georgia, serif; font-style: italic;
+  font-size: 8.5pt; color: var(--fg);
+}
+.grammatica .gram-table .col-decl,
+.grammatica .gram-table .col-gen {
+  white-space: nowrap;
+  font-variant: small-caps; letter-spacing: 0.04em;
+  color: var(--accent); font-size: 7.5pt;
+}
+
+/* v3.7+1: 语法示例 grid (D/E 规则内 6 code + 5 in+abl)
+   - 把密集逗号分隔的代码示例拆分为可扫描的网格
+   - 提高可读性 (CRAP: Proximity — 视觉上把同组示例聚成一个单元)
+   - v3.7+1: 取消 li 的 accent-soft 底色 (用户要求), 仅以 0.5px
+     border-soft 描边 + 居中排版作为分组暗示, 与正文 12pt 形成层次 */
+.grammatica .gram-examples {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 8px;
+  margin: 6px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+.grammatica .gram-examples.cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grammatica .gram-examples li {
+  /* v3.7+1: 无背景色, 仅 0.5px 细线暗示分组 */
+  background: transparent;
+  border: 0.5px solid var(--rule-soft);
+  border-radius: 1px;
+  padding: 3px 6px;
+  text-align: center;
+  font-size: 9pt;
+  line-height: 1.35;
+  color: var(--fg-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.grammatica .gram-examples li code {
+  background: transparent;
+  padding: 0;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 9pt;
+  color: var(--fg);
+}
+
+/* ============= 拓展卡 (.ll-ext-block) (v3.7: 奇偶交替底色 + 对齐正文 660px) ============= */
+.ll-ext-block {
+  padding: 14px 0; background: transparent;
+  max-width: 660px; margin: 24px auto;
+  border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft);
+}
+.ll-ext-heading {
+  font-size: 11pt; font-variant: small-caps; letter-spacing: 0.18em;
+  color: var(--fg); font-weight: 700; margin-bottom: 12px;
+  text-align: center; padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.ll-ext-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px; text-align: left; font-style: normal;
+}
+.ll-ext-card {
+  background: var(--bg-card); border: none;
+  padding: 6px 8px; font-size: 8pt; line-height: 1.4;
+  display: flex; flex-direction: column; gap: 2px;
+  transition: background 0.2s ease;
+}
+/* 未展开前只留必要信息: 书名+匹配度 */
+.ll-ext-preview, .ll-ext-meta { display: none; }
+/* v3.7: 取消奇偶交替底色, 全部统一为 var(--bg-card) (用户要求) */
+.ll-ext-card:hover {
+  background: var(--accent-soft);
+}
+.ll-ext-head { display: flex; justify-content: space-between; gap: 4px; align-items: baseline; }
+.ll-ext-score {
+  background: transparent; color: var(--accent);
+  font-size: 6.5pt; padding: 0; font-variant: small-caps; flex-shrink: 0;
+}
+.ll-ext-book {
+  font-weight: 700; font-size: 8pt; line-height: 1.2;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 100%;  /* v3.7: 满宽, 与 full-body 右边缘对齐 */
+  text-align: left;
+}
+.ll-ext-preview {
+  color: var(--fg-soft); line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden; font-size: 7.5pt;
+}
+.ll-ext-meta { color: var(--fg-mute); font-size: 7pt; font-variant: small-caps; }
+.ll-ext-meta code { background: var(--bg-soft); padding: 0 3px; border-radius: 2px; font-size: 7pt; }
+.ll-ext-toggle { margin-top: 2px; }
+.ll-ext-toggle summary {
+  cursor: pointer; font-size: 7pt; color: var(--accent);
+  font-variant: small-caps; letter-spacing: 0.04em;
+}
+/* v3.7: full-body 去掉左右 padding (由 .ll-ext-card 承担),
+   保证书名 (.ll-ext-book) 与正文 (.ll-ext-full-body) 左/右边缘完全对齐 */
+.ll-ext-full-body {
+  margin-top: 4px; padding: 6px 0; background: var(--accent-soft);
+  font-style: normal; font-size: 8pt; line-height: 1.5;
+  max-height: 200px; overflow-y: auto;
+  text-align: left;
+}
+
+/* ============= 底部 Colophon ============= */
+.colophon { margin-top: 28px; padding-top: 6px; border-top: 1px solid var(--rule); }
+.colophon .rule-red { height: 1px; background: var(--accent); margin-top: 2px; }
+.colophon p {
+  text-align: center; font-size: 7.5pt; color: var(--fg-mute);
+  letter-spacing: 0.06em; font-variant: small-caps; padding-top: 6px;
+}
+
+/* ============= 响应式 ============= */
+@media (max-width: 720px) {
+  .masthead h1.title { font-size: 17pt; }
+  .two-col { font-size: 11pt; }
+  .two-col p { font-size: 11pt; }
+  .theme-toggle { font-size: 7.5pt; padding: 4px 8px; }
+  .nav-controls { flex-wrap: wrap; font-size: 8pt; padding: 6px 10px; }
+  .nav-controls .nav-chapter { flex: 1 1 100%; order: 3; }
+  .ll-ext-grid { grid-template-columns: 1fr; }
+  .grammatica .gram-margin-list { grid-template-columns: 1fr; }
+  .grammatica .gram-examples { grid-template-columns: repeat(2, 1fr); }
+  .grammatica .gram-examples.cols-5 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+  body { padding: 18px 12px 28px; }
+  .masthead h1.title { font-size: 15pt; }
+}
+
+/* ============= 打印 ============= */
+@media print {
+  .theme-toggle, .nav-controls { display: none; }
+  .ent .tip, .margin .tip { display: none !important; }
+  .ll-ext-block, .grammatica { page-break-before: always; }
+  body { background: #fff; color: #000; }
+  .ll-ext-block, .grammatica, .colophon { page-break-inside: avoid; }
+}
+
+/* =============================================================
+   M3 拓展读物矩阵 (feat/reader-pivot 2026-06-12)
+   沿用 M2 §10 拓展卡 (.ll-ext-block) 基础, 新增按章分组
+   ============================================================= */
+
+/* M3.1 拓展块标题 */
+.ll-ext-block > .ll-ext-heading {
+  max-width: 660px; margin: 18px auto 8px;
+  padding: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-variant: small-caps; letter-spacing: 0.08em;
+  font-size: 9pt; font-weight: 400;
+  color: var(--accent);
+  text-align: center;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+/* M3.2 按章分组 (.ll-ext-group) */
+.ll-ext-block .ll-ext-group {
+  max-width: 660px; margin: 0 auto 16px;
+  padding: 0;
+}
+.ll-ext-block .ll-ext-group-head {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 4px 0;
+  margin-bottom: 6px;
+  border-bottom: 0.5px dashed var(--rule-soft);
+}
+.ll-ext-block .ll-ext-group-num {
+  font-family: Georgia, serif;
+  font-variant: small-caps; letter-spacing: 0.06em;
+  font-size: 9pt; color: var(--accent);
+  font-weight: 700;
+}
+.ll-ext-block .ll-ext-group-title {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 9pt; color: var(--fg-soft);
+}
+
+/* M3.3 卡片网格 (沿用 .ll-ext-grid, 4 列) */
+.ll-ext-block .ll-ext-group .ll-ext-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px 6px;
+}
+
+/* M3.4 卡片 active 态 (当前页面对应的卡片) */
+.ll-ext-card {
+  text-decoration: none; color: inherit;
+  /* 沿用 M2 v3.7+1 样式: 统一 var(--bg-card), 0.5px 边框, hover accent-soft */
+}
+.ll-ext-card.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.ll-ext-card.active .ll-ext-book,
+.ll-ext-card.active .ll-ext-preview,
+.ll-ext-card.active .ll-ext-meta {
+  color: #fff;
+}
+[data-theme="dark"] .ll-ext-card.active {
+  background: var(--accent);
+  color: var(--bg);
+}
+[data-theme="dark"] .ll-ext-card.active .ll-ext-book,
+[data-theme="dark"] .ll-ext-card.active .ll-ext-preview,
+[data-theme="dark"] .ll-ext-card.active .ll-ext-meta {
+  color: var(--bg);
+}
+
+/* M3.5 样本提示框 (灰色边框 + 米黄底) */
+.sample-notice {
+  max-width: 660px; margin: 14px auto;
+  padding: 10px 14px;
+  background: #fff7e6;
+  border-left: 3px solid #d4a017;
+  border-radius: 2px;
+  font-family: Georgia, serif;
+  font-size: 8.5pt; line-height: 1.5;
+  color: #5a4500;
+}
+[data-theme="dark"] .sample-notice {
+  background: #2a2419;
+  color: #d4c79a;
+  border-left-color: #b8902a;
+}
+.sample-notice code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 4px;
+  border-radius: 1px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 8.5pt;
+}
+
+/* M3 响应式: 卡片网格降到 2 列 */
+@media (max-width: 720px) {
+  .ll-ext-block .ll-ext-group .ll-ext-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ll-ext-block .ll-ext-group-head {
+    flex-wrap: wrap; gap: 4px;
+  }
+}
+@media (max-width: 480px) {
+  .ll-ext-block .ll-ext-group .ll-ext-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* v3.7+10: 展开/折叠按钮 (默认折叠, 隐藏次要拓展读物)
+   - 用 <details>/<summary> 原生支持, 零 JS
+   - 折叠时显示 ▸, 展开时显示 ▾ (CSS [open] 选择器)
+   - 次要卡片 .ll-ext-card--more 用 var(--bg-soft) 弱化, 与核心 4 张区分 */
+.ll-ext-more { margin-top: 8px; }
+.ll-ext-more-toggle {
+  cursor: pointer; list-style: none;
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 7.5pt; color: var(--accent);
+  font-variant: small-caps; letter-spacing: 0.06em;
+  padding: 4px 6px; border-radius: 2px;
+  user-select: none;
+}
+.ll-ext-more-toggle:hover { background: var(--accent-soft); }
+.ll-ext-more-toggle::-webkit-details-marker { display: none; }
+.ll-ext-more-icon { font-size: 9pt; transition: transform 0.15s; display: inline-block; }
+.ll-ext-more[open] .ll-ext-more-icon { transform: rotate(90deg); }
+.ll-ext-more[open] .ll-ext-more-toggle { color: var(--fg); }
+.ll-ext-grid--more { margin-top: 8px; }
+.ll-ext-card--more {
+  background: var(--bg-soft);
+  opacity: 0.85;
+}
+.ll-ext-card--more:hover { opacity: 1; background: var(--accent-soft); }
+
+[data-theme="dark"] .ll-ext-card--more { background: var(--bg-card); }

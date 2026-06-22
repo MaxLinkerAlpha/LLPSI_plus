@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="la">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colloquia Personarum · Cap. I — Syria, Aegyptus, Arabia · LLPSI+++</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+<button class="theme-toggle" aria-label="Switch theme">Dies</button>
+
+<!-- ============== 顶部: chapter select (LLPSI 章节) ============== -->
+<!-- M3+1: 翻页下拉菜单改为选择 LLPSI 本体的章节 (FR 33 章 + RA 26 章),
+     不再按"读物名"分组 (Colloquia/Fabulae/Via Latina),
+     因为当前页面是 Colloquia Cap. I, 对应 FR Cap. I "Imperium Rōmānum" -->
+<nav class="nav-controls">
+  <a class="nav-prev" href="#" aria-label="Previous chapter">PRAECEDENS</a>
+  <div class="nav-chapter">
+    <select id="chap-select" onchange="if(this.value) window.location.href=this.value;">
+      <optgroup label="Familia Rōmāna (LLPSI FR)">
+        <option value="fr_cap_1.html" selected>Cap. I — Imperium Rōmānum</option>
+        <option value="fr_cap_2.html">Cap. II — Familia Rōmāna</option>
+        <option value="fr_cap_3.html">Cap. III — Puer improbus</option>
+        <option value="fr_cap_4.html">Cap. IV — Imperator in lectīculā</option>
+        <option value="fr_cap_5.html">Cap. V — Itinera Mīlicis</option>
+        <option value="fr_cap_6.html">Cap. VI — Senex et domus</option>
+        <option value="fr_cap_7.html">Cap. VII — Septimānī et horologium</option>
+        <option value="fr_cap_8.html">Cap. VIII — Taberna et cēna</option>
+        <option value="fr_cap_9.html">Cap. IX — Subūra</option>
+        <option value="fr_cap_10.html">Cap. X — Iūlius Brūtus</option>
+        <option value="fr_cap_11.html">Cap. XI — Rōma aeterna</option>
+        <option value="fr_cap_12.html">Cap. XII — Piscātor et agricola</option>
+        <option value="fr_cap_13.html">Cap. XIII — Forō Rōmānō</option>
+        <option value="fr_cap_14.html">Cap. XIV — Circēnsēs</option>
+        <option value="fr_cap_15.html">Cap. XV — In Catilināriam</option>
+        <option value="fr_cap_16.html">Cap. XVI — Classis Mīlitum</option>
+        <option value="fr_cap_17.html">Cap. XVII — Puella Rōmāna</option>
+        <option value="fr_cap_18.html">Cap. XVIII — Fabula Phaethontis</option>
+        <option value="fr_cap_19.html">Cap. XIX — Poēta in cōnspectū populī</option>
+        <option value="fr_cap_20.html">Cap. XX — Rēs triumphālis</option>
+        <option value="fr_cap_21.html">Cap. XXI — Thēsaurus</option>
+        <option value="fr_cap_22.html">Cap. XXII — Ratiōnēs Curiōrum</option>
+        <option value="fr_cap_23.html">Cap. XXIII — Aestās nova</option>
+        <option value="fr_cap_24.html">Cap. XXIV — Litterae ad Mārcum</option>
+        <option value="fr_cap_25.html">Cap. XXV — Medica</option>
+        <option value="fr_cap_26.html">Cap. XXVI — Romulus et Numā</option>
+        <option value="fr_cap_27.html">Cap. XXVII — Via Appia</option>
+        <option value="fr_cap_28.html">Cap. XXVIII — Hannibal</option>
+        <option value="fr_cap_29.html">Cap. XXIX — Graecia capta</option>
+        <option value="fr_cap_30.html">Cap. XXX — Dēclāriō Caesaris</option>
+        <option value="fr_cap_31.html">Cap. XXXI — Athenae</option>
+        <option value="fr_cap_32.html">Cap. XXXII — Domus</option>
+        <option value="fr_cap_33.html">Cap. XXXIII — Dīves et pauper</option>
+      </optgroup>
+      <optgroup label="Rōma Aeterna (LLPSI RA)">
+        <option value="ra_cap_1.html">Cap. I — Initium</option>
+        <option value="ra_cap_2.html">Cap. II — Apud Ciceronem</option>
+        <option value="ra_cap_3.html">Cap. III — In Senātū</option>
+        <option value="ra_cap_4.html">Cap. IV — Pōns Mulvius</option>
+        <option value="ra_cap_5.html">Cap. V — Patritius et Clients</option>
+        <option value="ra_cap_6.html">Cap. VI — Cēna Trimalchiōnis</option>
+        <option value="ra_cap_7.html">Cap. VII — In Circō</option>
+        <option value="ra_cap_8.html">Cap. VIII — Pīrātae</option>
+        <option value="ra_cap_9.html">Cap. IX — Terrae Tremor</option>
+        <option value="ra_cap_10.html">Cap. X — Templum Isidis</option>
+        <option value="ra_cap_11.html">Cap. XI — Via Appia (subūra)</option>
+        <option value="ra_cap_12.html">Cap. XII — Tabulārium</option>
+        <option value="ra_cap_13.html">Cap. XIII — Āra Caesaris</option>
+        <option value="ra_cap_14.html">Cap. XIV — Magister equitum</option>
+        <option value="ra_cap_15.html">Cap. XV — Toga virīlis</option>
+        <option value="ra_cap_16.html">Cap. XVI — Auctōribus operum</option>
+        <option value="ra_cap_17.html">Cap. XVII — Iūdās Mēdicus</option>
+        <option value="ra_cap_18.html">Cap. XVIII — Septimius Sevērus</option>
+        <option value="ra_cap_19.html">Cap. XIX — Aquae Ductus</option>
+        <option value="ra_cap_20.html">Cap. XX — Thermae</option>
+        <option value="ra_cap_21.html">Cap. XXI — Forum Dioclētiānī</option>
+        <option value="ra_cap_22.html">Cap. XXII — Christus et Apostolī</option>
+        <option value="ra_cap_23.html">Cap. XXIII — Dīvide et īmpera</option>
+        <option value="ra_cap_24.html">Cap. XXIV — Spēs ūltima</option>
+        <option value="ra_cap_25.html">Cap. XXV — Christophorus</option>
+        <option value="ra_cap_26.html">Cap. XXVI — Destructio Rōmae</option>
+      </optgroup>
+    </select>
+  </div>
+  <a class="nav-next" href="fr_cap_2.html" aria-label="Next chapter">SEQUENS</a>
+</nav>
+
+<!-- ============== 拓展读物矩阵 (M3+1: 仅显示当前 LLPSI 章节下的路由读物) ============== -->
+<!-- M3+1 决策: 矩阵只展示与"当前 LLPSI 章节" (FR Cap. I) 路由匹配的读物
+     (即 LLPSI FR Cap. I 主题下, 与之相关的所有拓展读物章节).
+     此处对应: Colloquia Cap. 1 (active) / Fabulae Syrae Cap. 1 / Nutting Cap. 1 / Via Latina Cap. 1.
+     删除了原 Cap. II 那一组 (Cap. II 的读物属于"当前 LLPSI Cap. I"页面之外的内容). -->
+<section class="ll-ext-block" aria-label="Reader Matrix">
+  <h2 class="ll-ext-heading">Capiti Coniuncta · FR Cap. I</h2>
+
+  <article class="ll-ext-group" aria-label="FR Cap. I — Imperium Rōmānum">
+    <header class="ll-ext-group-head">
+      <span class="ll-ext-group-num">FR · Cap. I</span>
+      <span class="ll-ext-group-title">Imperium Rōmānum</span>
+    </header>
+    <div class="ll-ext-grid">
+      <a class="ll-ext-card active" href="main_template.html" aria-current="page">
+        <header class="ll-ext-head">
+          <span class="ll-ext-score">●</span>
+          <span class="ll-ext-book">Colloquia Personarum</span>
+        </header>
+        <p class="ll-ext-preview">Ubi est Syria, Iūlia? — Syria in Asiā est...</p>
+        <div class="ll-ext-meta">t80 · Cap. I · 42 tokens · active</div>
+      </a>
+
+      <a class="ll-ext-card" href="fabulae_syrae_cap_1.html">
+        <header class="ll-ext-head">
+          <span class="ll-ext-score">0.84</span>
+          <span class="ll-ext-book">Fabulae Syrae</span>
+        </header>
+        <p class="ll-ext-preview">Eurōpa, fīlia Agenoris, rēgis Phoenicis, in ōre maris...</p>
+        <div class="ll-ext-meta">t80 · Cap. I · 67 tokens</div>
+      </a>
+
+      <a class="ll-ext-card" href="via_latina_cap_1.html">
+        <header class="ll-ext-head">
+          <span class="ll-ext-score">0.70</span>
+          <span class="ll-ext-book">Via Latina</span>
+        </header>
+        <p class="ll-ext-preview">Ecce Lārentia. Larentia femina est, in Italia habitat...</p>
+        <div class="ll-ext-meta">t70 · Cap. I · 35 tokens</div>
+      </a>
+
+      <a class="ll-ext-card" href="nutting_cap_1.html">
+        <header class="ll-ext-head">
+          <span class="ll-ext-score">0.65</span>
+          <span class="ll-ext-book">Nutting Reader</span>
+        </header>
+        <p class="ll-ext-preview">In antiquā urbe Rōmā habitābat quidam vir, Mārcus...</p>
+        <div class="ll-ext-meta">t70 · Cap. I · 28 tokens</div>
+      </a>
+    </div>
+
+    <!-- v3.7+10: 展开/折叠按钮 (默认折叠, 隐藏 12 张次要拓展读物) -->
+    <details class="ll-ext-more" id="ll-ext-more-cap-1">
+      <summary class="ll-ext-more-toggle">
+        <span class="ll-ext-more-icon" aria-hidden="true">▸</span>
+        <span class="ll-ext-more-text">Mostrā aliās lēctiōnēs (<span class="ll-ext-more-count">12</span>)</span>
+      </summary>
+
+      <div class="ll-ext-grid ll-ext-grid--more">
+        <a class="ll-ext-card ll-ext-card--more" href="sermones_romani_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.58</span>
+            <span class="ll-ext-book">Sermōnēs Rōmānī</span>
+          </header>
+          <p class="ll-ext-preview">Quōmodo Rōmānī pānem faciēbant...</p>
+          <div class="ll-ext-meta">t60 · Cap. I · 31 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="epitome_historiae_sacrae_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.55</span>
+            <span class="ll-ext-book">Epitome Hist. Sacr.</span>
+          </header>
+          <p class="ll-ext-preview">In prīncipiō creāvit Deus caelum et terram...</p>
+          <div class="ll-ext-meta">t60 · Cap. I · 24 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="aeneis_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.52</span>
+            <span class="ll-ext-book">Aenēis (Verg.)</span>
+          </header>
+          <p class="ll-ext-preview">Arma virumque canō, Trōiae quī prīmus ab ōrīs...</p>
+          <div class="ll-ext-meta">t50 · Cap. I · 19 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="bello_gallico_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.48</span>
+            <span class="ll-ext-book">Bellō Gallicō</span>
+          </header>
+          <p class="ll-ext-preview">Gallia est omnis dīvīsa in partēs trēs...</p>
+          <div class="ll-ext-meta">t50 · Cap. I · 22 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="de_rerum_natura_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.45</span>
+            <span class="ll-ext-book">Dē Rērum Nātūrā</span>
+          </header>
+          <p class="ll-ext-preview">Foedera certe nōs et pācem nōn associō dictīs...</p>
+          <div class="ll-ext-meta">t40 · Cap. I · 17 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="cena_trimalchionis_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.42</span>
+            <span class="ll-ext-book">Cēna Trīmalchiōnis</span>
+          </header>
+          <p class="ll-ext-preview">Argentum sceleratum... in prīmīs...</p>
+          <div class="ll-ext-meta">t40 · Cap. I · 14 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="catilina_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.40</span>
+            <span class="ll-ext-book">Catilīna (Sall.)</span>
+          </header>
+          <p class="ll-ext-preview">Omnīs hominēs quī sēsē student...</p>
+          <div class="ll-ext-meta">t40 · Cap. I · 13 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="ars_amatoria_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.38</span>
+            <span class="ll-ext-book">Ars Amātōria</span>
+          </header>
+          <p class="ll-ext-preview">Sī quis in hīs artibus nōvā...</p>
+          <div class="ll-ext-meta">t30 · Cap. I · 11 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="amphitryo_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.35</span>
+            <span class="ll-ext-book">Amphitryō (Plaut.)</span>
+          </header>
+          <p class="ll-ext-preview">Merūri ē gremiō mātris...</p>
+          <div class="ll-ext-meta">t30 · Cap. I · 9 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="fabellae_latinae_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.32</span>
+            <span class="ll-ext-book">Fabellae Latīnae</span>
+          </header>
+          <p class="ll-ext-preview">Lupus et agni: quācumque...</p>
+          <div class="ll-ext-meta">t30 · Cap. I · 8 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="suburani_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.30</span>
+            <span class="ll-ext-book">Subūrānī (Ørberg)</span>
+          </header>
+          <p class="ll-ext-preview">Mārcus in Subūrā habitat...</p>
+          <div class="ll-ext-meta">t30 · Cap. I · 7 tokens</div>
+        </a>
+        <a class="ll-ext-card ll-ext-card--more" href="fabulae_gracae_cap_1.html">
+          <header class="ll-ext-head">
+            <span class="ll-ext-score">0.28</span>
+            <span class="ll-ext-book">Fabulae Graecae</span>
+          </header>
+          <p class="ll-ext-preview">Pērseus et Medūsa...</p>
+          <div class="ll-ext-meta">t20 · Cap. I · 6 tokens</div>
+        </a>
+      </div>
+    </details>
+  </article>
+</section>
+
+<!-- ============== 正文 ============== -->
+<div class="page">
+<header class="masthead">
+    <div class="journal-name">LLPSI+++ · Colloquia Personarum</div>
+    <div class="rule-black"></div>
+    <div class="rule-red"></div>
+    <h1 class="title">Colloquia Personarum</h1>
+    <div class="rule-bottom"></div>
+</header>
+
+<div class="section-heading">
+    <h2>Capitulum Primum <span class="doi">CP · Cap. I · pp. VII–VIII</span> · Syria, Aegyptus, Arabia</h2>
+</div>
+
+<!-- M3+1: 正文已从 source/LLPSI_reader_colloquia_personarum.pdf (pp. VII–VIII) 提取,
+     含完整长音 (ā, ē, ī, ō, ū, ȳ). OCR 文件 ocr_output/colloquia_personarum/page_007-008.txt
+     保存了原始抽取结果. 段号 [I]–[XXXVIII] 使用罗马数字 (M3+1 规范: 不使用阿拉伯数字). -->
+<article class="two-col">
+
+    <p>
+      <span class="sec-num">[I]</span>
+      <span class="ent ent-gen"><span class="q">Mārcus</span><span class="tip"><span class="tip-key">GENS · MARCVS</span><span class="tip-lat">Puer Rōmānus, fīlius Iūliī et Aemiliae.</span></span></span>:
+      <em>“Ubi est Syria,<span class="ent ent-gen"><span class="q"> Iūlia</span><span class="tip"><span class="tip-key">GENS · IVLIA</span><span class="tip-lat">Puella Rōmāna, fīlia Iūliī.</span></span></span>?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[II]</span>
+      Iūlia: <em>“<span class="ent ent-loc"><span class="q">Suria</span><span class="tip"><span class="tip-key">LOCUS · SVRIA</span><span class="tip-lat">Nomen terrārum in Asiā. Mārcus monet syllabam secundam <code>y</code> esse, nōn <code>i</code>.</span></span></span>est in Asiā.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[III]</span>
+      Mārcus: <em>“Nōn Suria, sed Syria in Asiā est.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[IV]</span>
+      Iūlia: <em>“Siria . . . ”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[V]</span>
+      Mārcus: <em>“Ō Iūlia! Syria, nōn Siria: littera secunda est y, nōn i.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[VI]</span>
+      Iūlia: <em>“Nōn i, sed y:<span class="margin"><span class="q"> i–y</span><span class="tip"><span class="tip-key">ORTHOGRAPHIA · I/Y</span><span class="tip-lat">Littera <code>i</code> est Latīna; littera <code>y</code> Graeca, in vocābulīs Graecīs adhibita. In <code>Syria</code> secunda littera <code>y</code> est, nōn <code>i</code>.</span></span></span>, i–y. Num y littera Latīna est?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[VII]</span>
+      Mārcus: <em>“Y nōn est littera Latīna, sed littera Graeca. Syria est<span class="margin"><span class="q"> vocābulum Graecum</span><span class="tip"><span class="tip-key">PHRASIS · VOCABVLVM GRAECVM</span><span class="tip-lat">Nōmen ā linguā Graecā dērīvātum. <code>Syria</code> exemplum est, ā Graecō <code>Συρία</code> ortum.</span></span></span>.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[VIII]</span>
+      Iūlia: <em>“Siria, Syria: nōn Siria, sed Syria.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[IX]</span>
+      Mārcus: <em>“Ubi est Syria?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[X]</span>
+      Iūlia: <em>“Syria in Asiā est.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XI]</span>
+      Mārcus: <em>“Ubi est Aegyptus?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XII]</span>
+      Iūlia: <em>“Aegiptus . . . ”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XIII]</span>
+      Mārcus: <em>“Aegyptus!”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XIV]</span>
+      Iūlia: <em>“Aegyptus quoque in Asiā est.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XV]</span>
+      Mārcus: <em>“In Asiā? Aegyptus nōn est in Asiā!”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XVI]</span>
+      Iūlia: <em>“Aegyptus in Āfricā est — sed<span class="margin"><span class="q"> Barabia</span><span class="tip"><span class="tip-key">NOMEN PROPRIVM · BARABIA</span><span class="tip-lat">Formā falsā pro <code>Arabia</code>. Iūlia litteram prīmam <code>b</code> prō <code>a</code> scrībit.</span></span></span>est in Asiā.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XVII]</span>
+      Mārcus: <em>“Quid? Barabia? In Asiā nōn est Barabia!”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XVIII]</span>
+      Iūlia: <em>“<span class="margin"><span class="q">Estne</span><span class="tip"><span class="tip-key">PARTICVLA · -NE</span><span class="tip-lat">Particula interrogātīva enclitica. Post vocābulum positum quaestiōnem format (cf. <code>Estne Crēta oppidum Graecum?</code>).</span></span></span>Barabia in Āfricā?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XIX]</span>
+      Mārcus: <em>“Barabia nōn est in Āfricā.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XX]</span>
+      Iūlia: <em>“Num Barabia in<span class="ent ent-loc"><span class="q"> Eurōpā</span><span class="tip"><span class="tip-key">CONTINENS · EVROPA</span><span class="tip-lat">Una ex tribus partibus orbis terrārum, cum Asiā et Āfricā.</span></span></span>est?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXI]</span>
+      Mārcus: <em>“Barabia in Eurōpā, in Āfricā, in Asiā nōn est!”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXII]</span>
+      Iūlia: <em>“Sed ubi est Barabia?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXIII]</span>
+      Mārcus: <em>“<span class="ent ent-loc"><span class="q">Arabia</span><span class="tip"><span class="tip-key">LOCUS · ARABIA</span><span class="tip-lat">Terra in Asiā merīdiānā. Iūlia litteram prīmam <code>b</code> prō <code>a</code> scrībit.</span></span></span>, nōn Barabia, in Asiā est. In Arabiā littera prīma est a, nōn b.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXIV]</span>
+      Iūlia: <em>“Arabia, Aegyptus, Syria. Syria et Arabia sunt in Asiā, sed Aegyptus in Āfricā est.<span class="ent ent-feat"><span class="q"> Nīlus</span><span class="tip"><span class="tip-key">FLVMEN · NILVS</span><span class="tip-lat">Flūmen maximum in Āfricā, per Aegyptum fluēns.</span></span></span>quoque in Āfricā est.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXV]</span>
+      Mārcus: <em>“Quid est Nīlus?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXVI]</span>
+      Iūlia: <em>“Nīlus magnus fluvius est.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXVII]</span>
+      Mārcus: <em>“Quid est<span class="ent ent-loc"><span class="q"> Sparta</span><span class="tip"><span class="tip-key">LOCUS · SPARTA</span><span class="tip-lat">Oppidum Graecum, in Peloponnēsō situm.</span></span></span>?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXVIII]</span>
+      Iūlia: <em>“Sparta est magnum oppidum Graecum.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXIX]</span>
+      Mārcus: <em>“Estne<span class="ent ent-loc"><span class="q"> Crēta</span><span class="tip"><span class="tip-key">LOCUS · CRETA</span><span class="tip-lat">Īnsula Graeca in mare Aegaeō, māgnitūdine nota.</span></span></span>oppidum Graecum?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXX]</span>
+      Iūlia: <em>“Est.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXXI]</span>
+      Mārcus: <em>“Nōn est!”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXXII]</span>
+      Iūlia: <em>“Quid est Crēta?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXXIII]</span>
+      Mārcus: <em>“Crēta est īnsula Graeca. Crēta et Naxus et Rhodus īnsulae Graecae sunt. In Graeciā sunt multae īnsulae. Estne Syria īnsula Graeca?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXXIV]</span>
+      Iūlia: <em>“Nōn est.”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXXV]</span>
+      Mārcus: <em>“Quid est Syria?”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXXVI]</span>
+      Iūlia: <em>“Siria est . . . ”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXXVII]</span>
+      Mārcus: <em>“Syria!”</em>
+    </p>
+
+    <p>
+      <span class="sec-num">[XXXVIII]</span>
+      Iūlia: <em>“Syria est . . . vocābulum Graecum!”</em>
+    </p>
+
+    <!-- v3.7+4: 边注已嵌入正文中对应词语旁, 不再独立成段 -->
+
+</article>
+
+<!-- M3 决策: 去除 Grammatica 板块 (M3 强调纯阅读) -->
+
+<footer class="colophon">
+    <div class="rule-red"></div>
+    <p>LLPSI+++ · M3+1 · Colloquia Personarum · Cap. I · MMXXVI</p>
+</footer>
+</div>
+
+<!-- 底部翻页 (LLPSI 章节下拉, 与顶部一致) -->
+<nav class="nav-controls nav-bottom">
+  <a class="nav-prev" href="#" aria-label="Previous chapter">PRAECEDENS</a>
+  <div class="nav-chapter">
+    <select id="chap-select-bottom" onchange="if(this.value) window.location.href=this.value;">
+      <optgroup label="Familia Rōmāna (LLPSI FR)">
+        <option value="fr_cap_1.html" selected>Cap. I — Imperium Rōmānum</option>
+        <option value="fr_cap_2.html">Cap. II — Familia Rōmāna</option>
+        <option value="fr_cap_3.html">Cap. III — Puer improbus</option>
+        <option value="fr_cap_4.html">Cap. IV — Imperator in lectīculā</option>
+        <option value="fr_cap_5.html">Cap. V — Itinera Mīlicis</option>
+        <option value="fr_cap_6.html">Cap. VI — Senex et domus</option>
+        <option value="fr_cap_7.html">Cap. VII — Septimānī et horologium</option>
+        <option value="fr_cap_8.html">Cap. VIII — Taberna et cēna</option>
+        <option value="fr_cap_9.html">Cap. IX — Subūra</option>
+        <option value="fr_cap_10.html">Cap. X — Iūlius Brūtus</option>
+        <option value="fr_cap_11.html">Cap. XI — Rōma aeterna</option>
+        <option value="fr_cap_12.html">Cap. XII — Piscātor et agricola</option>
+        <option value="fr_cap_13.html">Cap. XIII — Forō Rōmānō</option>
+        <option value="fr_cap_14.html">Cap. XIV — Circēnsēs</option>
+        <option value="fr_cap_15.html">Cap. XV — In Catilināriam</option>
+        <option value="fr_cap_16.html">Cap. XVI — Classis Mīlitum</option>
+        <option value="fr_cap_17.html">Cap. XVII — Puella Rōmāna</option>
+        <option value="fr_cap_18.html">Cap. XVIII — Fabula Phaethontis</option>
+        <option value="fr_cap_19.html">Cap. XIX — Poēta in cōnspectū populī</option>
+        <option value="fr_cap_20.html">Cap. XX — Rēs triumphālis</option>
+        <option value="fr_cap_21.html">Cap. XXI — Thēsaurus</option>
+        <option value="fr_cap_22.html">Cap. XXII — Ratiōnēs Curiōrum</option>
+        <option value="fr_cap_23.html">Cap. XXIII — Aestās nova</option>
+        <option value="fr_cap_24.html">Cap. XXIV — Litterae ad Mārcum</option>
+        <option value="fr_cap_25.html">Cap. XXV — Medica</option>
+        <option value="fr_cap_26.html">Cap. XXVI — Romulus et Numā</option>
+        <option value="fr_cap_27.html">Cap. XXVII — Via Appia</option>
+        <option value="fr_cap_28.html">Cap. XXVIII — Hannibal</option>
+        <option value="fr_cap_29.html">Cap. XXIX — Graecia capta</option>
+        <option value="fr_cap_30.html">Cap. XXX — Dēclāriō Caesaris</option>
+        <option value="fr_cap_31.html">Cap. XXXI — Athenae</option>
+        <option value="fr_cap_32.html">Cap. XXXII — Domus</option>
+        <option value="fr_cap_33.html">Cap. XXXIII — Dīves et pauper</option>
+      </optgroup>
+      <optgroup label="Rōma Aeterna (LLPSI RA)">
+        <option value="ra_cap_1.html">Cap. I — Initium</option>
+        <option value="ra_cap_2.html">Cap. II — Apud Ciceronem</option>
+        <option value="ra_cap_3.html">Cap. III — In Senātū</option>
+        <option value="ra_cap_4.html">Cap. IV — Pōns Mulvius</option>
+        <option value="ra_cap_5.html">Cap. V — Patritius et Clients</option>
+        <option value="ra_cap_6.html">Cap. VI — Cēna Trimalchiōnis</option>
+        <option value="ra_cap_7.html">Cap. VII — In Circō</option>
+        <option value="ra_cap_8.html">Cap. VIII — Pīrātae</option>
+        <option value="ra_cap_9.html">Cap. IX — Terrae Tremor</option>
+        <option value="ra_cap_10.html">Cap. X — Templum Isidis</option>
+        <option value="ra_cap_11.html">Cap. XI — Via Appia (subūra)</option>
+        <option value="ra_cap_12.html">Cap. XII — Tabulārium</option>
+        <option value="ra_cap_13.html">Cap. XIII — Āra Caesaris</option>
+        <option value="ra_cap_14.html">Cap. XIV — Magister equitum</option>
+        <option value="ra_cap_15.html">Cap. XV — Toga virīlis</option>
+        <option value="ra_cap_16.html">Cap. XVI — Auctōribus operum</option>
+        <option value="ra_cap_17.html">Cap. XVII — Iūdās Mēdicus</option>
+        <option value="ra_cap_18.html">Cap. XVIII — Septimius Sevērus</option>
+        <option value="ra_cap_19.html">Cap. XIX — Aquae Ductus</option>
+        <option value="ra_cap_20.html">Cap. XX — Thermae</option>
+        <option value="ra_cap_21.html">Cap. XXI — Forum Dioclētiānī</option>
+        <option value="ra_cap_22.html">Cap. XXII — Christus et Apostolī</option>
+        <option value="ra_cap_23.html">Cap. XXIII — Dīvide et īmpera</option>
+        <option value="ra_cap_24.html">Cap. XXIV — Spēs ūltima</option>
+        <option value="ra_cap_25.html">Cap. XXV — Christophorus</option>
+        <option value="ra_cap_26.html">Cap. XXVI — Destructio Rōmae</option>
+      </optgroup>
+    </select>
+  </div>
+  <a class="nav-next" href="fr_cap_2.html" aria-label="Next chapter">SEQUENS</a>
+</nav>
+
+<script src="theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+{
+  "version": "ent_v1.0",
+  "generated_at": "2026-06-11",
+  "scope": "FR Cap. I-III 出现的所有 lemma + 格变化",
+  "lemma_count": 25,
+  "inflected_count": 81,
+  "entities": {
+    "Roma": {
+      "type": "loc",
+      "zh": "罗马 — 意大利中部城市，罗马帝国首都",
+      "tip_key": "LOCUS · ROMA"
+    },
+    "Italia": {
+      "type": "loc",
+      "zh": "意大利 — 罗马所在地",
+      "tip_key": "LOCUS · ITALIA"
+    },
+    "Graecia": {
+      "type": "loc",
+      "zh": "希腊",
+      "tip_key": "LOCUS · GRAECIA"
+    },
+    "Germania": {
+      "type": "loc",
+      "zh": "日耳曼 — 罗马帝国北部的蛮族地区",
+      "tip_key": "LOCUS · GERMANIA"
+    },
+    "Hispania": {
+      "type": "loc",
+      "zh": "西班牙",
+      "tip_key": "LOCUS · HISPANIA"
+    },
+    "Gallia": {
+      "type": "loc",
+      "zh": "高卢 — 现代法国一带",
+      "tip_key": "LOCUS · GALLIA"
+    },
+    "Britannia": {
+      "type": "loc",
+      "zh": "不列颠",
+      "tip_key": "LOCUS · BRITANNIA"
+    },
+    "Nilus": {
+      "type": "feat",
+      "zh": "尼罗河",
+      "tip_key": "FLUMEN · NILUS"
+    },
+    "Rhenus": {
+      "type": "feat",
+      "zh": "莱茵河",
+      "tip_key": "FLUMEN · RHENUS"
+    },
+    "Danuvius": {
+      "type": "feat",
+      "zh": "多瑙河",
+      "tip_key": "FLUMEN · DANVVIVS"
+    },
+    "Tiberis": {
+      "type": "feat",
+      "zh": "台伯河 — 流经罗马",
+      "tip_key": "FLUMEN · TIBERIS"
+    },
+    "Brundisium": {
+      "type": "loc",
+      "zh": "布伦迪西 — 意大利东南港口",
+      "tip_key": "LOCUS · BRVNDISIVM"
+    },
+    "Tusculum": {
+      "type": "loc",
+      "zh": "图斯库卢姆 — 罗马附近古城",
+      "tip_key": "LOCUS · TVSCVLVM"
+    },
+    "Corsica": {
+      "type": "loc",
+      "zh": "科西嘉",
+      "tip_key": "LOCUS · CORSICA"
+    },
+    "Sardinia": {
+      "type": "loc",
+      "zh": "撒丁岛",
+      "tip_key": "LOCUS · SARDINIA"
+    },
+    "Africa": {
+      "type": "loc",
+      "zh": "非洲（罗马行省）",
+      "tip_key": "LOCUS · AFRICA"
+    },
+    "Europa": {
+      "type": "loc",
+      "zh": "欧洲",
+      "tip_key": "LOCUS · EVROPA"
+    },
+    "Iulius": {
+      "type": "gen",
+      "zh": "尤利乌斯 — 男子名 (gens Iulia)",
+      "tip_key": "GENS · IVLIVS"
+    },
+    "Marcus": {
+      "type": "gen",
+      "zh": "马尔库斯 — 男子名",
+      "tip_key": "GENS · MARCVS"
+    },
+    "Aemilia": {
+      "type": "gen",
+      "zh": "埃米利娅 — 女子名",
+      "tip_key": "GENS · AEMILIA"
+    },
+    "Quintus": {
+      "type": "gen",
+      "zh": "昆图斯 — 男子名 (拉丁序数 第五)",
+      "tip_key": "GENS · QVINTVS"
+    },
+    "Iulia": {
+      "type": "gen",
+      "zh": "尤利娅 — 女子名",
+      "tip_key": "GENS · IVLIA"
+    },
+    "Medus": {
+      "type": "gen",
+      "zh": "梅杜斯 — 男子名",
+      "tip_key": "GENS · MEDVS"
+    },
+    "Davus": {
+      "type": "gen",
+      "zh": "达乌斯 — 奴隶常见名",
+      "tip_key": "GENS · DAVVS"
+    },
+    "Aeneas": {
+      "type": "gen",
+      "zh": "埃涅阿斯 — 特洛伊英雄，罗马建国传说",
+      "tip_key": "GENS · AENEAS"
+    }
+  },
+  "inflections": {
+    "Roma": ["Roma", "Romae", "Romam"],
+    "Italia": ["Italia", "Italiae", "Italiam"],
+    "Graecia": ["Graecia", "Graeciae", "Graeciam"],
+    "Germania": ["Germania", "Germaniae", "Germaniam"],
+    "Hispania": ["Hispania", "Hispaniae", "Hispaniam"],
+    "Gallia": ["Gallia", "Galliae", "Galliam"],
+    "Britannia": ["Britannia", "Britanniae", "Britanniam"],
+    "Nilus": ["Nilus", "Nili", "Nilo", "Nilum"],
+    "Rhenus": ["Rhenus", "Rheni", "Rheno", "Rhenum"],
+    "Danuvius": ["Danuvius", "Danuvii", "Danuvio", "Danuvium"],
+    "Tiberis": ["Tiberis", "Tiberi", "Tiberim"],
+    "Brundisium": ["Brundisium", "Brundisii", "Brundisio"],
+    "Tusculum": ["Tusculum", "Tusculi", "Tusculo"],
+    "Corsica": ["Corsica", "Corsicae", "Corsicam"],
+    "Sardinia": ["Sardinia", "Sardinia", "Sardiniae", "Sardiniam"],
+    "Africa": ["Africa", "Africae", "Africam"],
+    "Europa": ["Europa", "Europae", "Europam"],
+    "Iulius": ["Iulius", "Iulii", "Iulio", "Iulium"],
+    "Marcus": ["Marcus", "Marci", "Marco", "Marcum"],
+    "Aemilia": ["Aemilia", "Aemiliae", "Aemiliam"],
+    "Quintus": ["Quintus", "Quinti", "Quinto", "Quintum"],
+    "Iulia": ["Iulia", "Iuliae", "Iuliam"],
+    "Medus": ["Medus", "Medi", "Medo"],
+    "Davus": ["Davus", "Davi", "Davo"],
+    "Aeneas": ["Aeneas", "Aeneae", "Aenean"]
+  },
+  "indexes": {
+    "Roma": "L¹", "Italia": "L²", "Graecia": "L³", "Germania": "L⁴", "Hispania": "L⁵",
+    "Gallia": "L⁶", "Britannia": "L⁷", "Brundisium": "L⁸", "Tusculum": "L⁹",
+    "Corsica": "L¹⁰", "Sardinia": "L¹¹", "Africa": "L¹²", "Europa": "L¹³",
+    "Nilus": "F¹", "Rhenus": "F²", "Danuvius": "F³", "Tiberis": "F⁴",
+    "Iulius": "G¹", "Marcus": "G²", "Aemilia": "G³", "Quintus": "G⁴",
+    "Iulia": "G⁵", "Medus": "G⁶", "Davus": "G⁷", "Aeneas": "G⁸"
+  }
+}
