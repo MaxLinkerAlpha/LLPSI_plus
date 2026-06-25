@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Source PDFs
+source/
+
+# OCR text
+OCR/
