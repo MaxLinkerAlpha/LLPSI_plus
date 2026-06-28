@@ -6,3 +6,9 @@ source/
 
 # OCR text
 OCR/
+
+# Auto-generated / intermediate outputs
+.timed/
+
+# Python cache
+__pycache__/

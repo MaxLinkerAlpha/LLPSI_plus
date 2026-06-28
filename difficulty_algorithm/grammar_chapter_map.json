@@ -1,0 +1,266 @@
+{
+  "1": [
+    {
+      "la": "Singularis et plūrālis",
+      "zh": "单数与复数"
+    }
+  ],
+  "2": [
+    {
+      "la": "Masculinum, fēmininum, neutrum",
+      "zh": "阳性、阴性、中性"
+    },
+    {
+      "la": "Genetīvus",
+      "zh": "属格"
+    }
+  ],
+  "3": [
+    {
+      "la": "Nominātīvus et accusātīvus",
+      "zh": "主格与宾格"
+    },
+    {
+      "la": "Verbum",
+      "zh": "动词"
+    }
+  ],
+  "4": [
+    {
+      "la": "Vocātīvus",
+      "zh": "呼格"
+    },
+    {
+      "la": "Imperātīvus et indicātīvus",
+      "zh": "命令式与直陈式"
+    }
+  ],
+  "5": [
+    {
+      "la": "Accūsātīvus",
+      "zh": "宾格"
+    }
+  ],
+  "6": [
+    {
+      "la": "Praepositiōnēs",
+      "zh": "介词"
+    },
+    {
+      "la": "Verbum āctīvum et passīvum",
+      "zh": "主动与被动语态"
+    }
+  ],
+  "7": [
+    {
+      "la": "Datīvus",
+      "zh": "与格"
+    }
+  ],
+  "8": [
+    {
+      "la": "Prōnōmina: quis, quī, is, ille",
+      "zh": "代词（指示代词 is/ille/iste 等）"
+    }
+  ],
+  "9": [
+    {
+      "la": "Dēclīnātiō tertia",
+      "zh": "第三变格"
+    }
+  ],
+  "10": [
+    {
+      "la": "Infīnitīvus",
+      "zh": "不定式"
+    },
+    {
+      "la": "Dēclīnātiō tertia",
+      "zh": "第三变格"
+    }
+  ],
+  "11": [
+    {
+      "la": "Dēclīnātiō tertia",
+      "zh": "第三变格"
+    }
+  ],
+  "12": [
+    {
+      "la": "Dēclīnātiō quarta",
+      "zh": "第四变格"
+    },
+    {
+      "la": "Adiectīvum",
+      "zh": "形容词"
+    }
+  ],
+  "13": [
+    {
+      "la": "Dēclīnātiō quīnta",
+      "zh": "第五变格"
+    },
+    {
+      "la": "Superlātīvus",
+      "zh": "最高级"
+    }
+  ],
+  "14": [
+    {
+      "la": "Participium",
+      "zh": "分词"
+    }
+  ],
+  "15": [
+    {
+      "la": "Persōnae verbī",
+      "zh": "动词人称"
+    }
+  ],
+  "16": [
+    {
+      "la": "Verba dēpōnentia",
+      "zh": "异态动词"
+    }
+  ],
+  "17": [
+    {
+      "la": "Persōnae verbī passīvī",
+      "zh": "被动语态人称"
+    }
+  ],
+  "18": [
+    {
+      "la": "Adverbium",
+      "zh": "副词"
+    }
+  ],
+  "19": [
+    {
+      "la": "Verbī tempora",
+      "zh": "动词时态"
+    },
+    {
+      "la": "Tempus praesēns et praeteritum",
+      "zh": "现在时与过去时"
+    }
+  ],
+  "20": [
+    {
+      "la": "Verbī tempora",
+      "zh": "动词时态"
+    },
+    {
+      "la": "Tempus futūrum",
+      "zh": "将来时"
+    }
+  ],
+  "21": [
+    {
+      "la": "Verbī tempora",
+      "zh": "动词时态"
+    },
+    {
+      "la": "Tempus perfectum et imperfectum",
+      "zh": "完成时与未完成时"
+    }
+  ],
+  "22": [
+    {
+      "la": "Supīnum",
+      "zh": "目的动名词"
+    }
+  ],
+  "23": [
+    {
+      "la": "Participium et infīnitīvus futūrī",
+      "zh": "未来分词与不定式"
+    }
+  ],
+  "24": [
+    {
+      "la": "Verbī tempora",
+      "zh": "动词时态"
+    },
+    {
+      "la": "Plūsquamperfectum",
+      "zh": "过去完成时"
+    }
+  ],
+  "25": [
+    {
+      "la": "Verba dēpōnentia",
+      "zh": "异态动词"
+    }
+  ],
+  "26": [
+    {
+      "la": "Gerundium",
+      "zh": "动名词"
+    }
+  ],
+  "27": [
+    {
+      "la": "Coniūnctīvus",
+      "zh": "虚拟式"
+    }
+  ],
+  "28": [
+    {
+      "la": "Coniūnctīvus",
+      "zh": "虚拟式"
+    },
+    {
+      "la": "Tempus imperfectum",
+      "zh": "未完成时"
+    }
+  ],
+  "29": [
+    {
+      "la": "Sententiae cum coniūnctīvō (ut, nē)",
+      "zh": "带 ut / nē 的虚拟式从句"
+    }
+  ],
+  "30": [
+    {
+      "la": "Verbī tempora",
+      "zh": "动词时态"
+    },
+    {
+      "la": "Futūrum perfectum",
+      "zh": "将来完成时"
+    }
+  ],
+  "31": [
+    {
+      "la": "Gerundīvum",
+      "zh": "动形词"
+    }
+  ],
+  "32": [
+    {
+      "la": "Coniūnctīvus",
+      "zh": "虚拟式"
+    },
+    {
+      "la": "Tempus perfectum",
+      "zh": "完成时"
+    }
+  ],
+  "33": [
+    {
+      "la": "Coniūnctīvus",
+      "zh": "虚拟式"
+    },
+    {
+      "la": "Tempus plūsquamperfectum",
+      "zh": "过去完成时"
+    }
+  ],
+  "34": [
+    {
+      "la": "Dē versibus",
+      "zh": "关于诗行"
+    }
+  ]
+}
