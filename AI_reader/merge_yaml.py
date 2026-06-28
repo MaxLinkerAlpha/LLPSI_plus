@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """
-merge_yaml.py v2_10_0 — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realites.json索引。
+merge_yaml.py v2_11_0 — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realitates.json索引。
 
 管线位置：Step 4 — AI生成后 → evaluate_v2.py评估 → ai_review.py审查（可选） → merge_yaml.py合并 → 入库
+
+v2_11_0 变更（相对 v2_10_0）：
+  - 路径重命名：realites → realitates（修正拉丁语拼写错误）
+  - 函数 update_realites_index → update_realitates_index
 
 v2_10_0 变更（相对 v2_9_0）：
   - 新增 --review / --review-ai-command / --review-strict 三参数
@@ -36,18 +40,18 @@ v2_6_0 变更（相对 v2_5_0）：
   - next_story_filename() 签名变更：增加 title_la 参数
 
 v2_3_0 变更（相对 v2_2_0）：
-  - 默认输出目录：stories/  →  realites/
-  - 索引文件：stories.json  →  realites.json
-  - 函数 update_stories_index()  →  update_realites_index()
+  - 默认输出目录：stories/  →  realitates/
+  - 索引文件：stories.json  →  realitates.json
+  - 函数 update_stories_index()  →  update_realitates_index()
 
 v2_0_0 变更（相对 v1_0_0）：
   - 输出格式：纯YAML 文本  →  MD文件（YAML Front Matter + 拉丁语正文）
-  - 默认文件命名：realites/Cap{N}_{NNN}.md（N=目标章节，NNN=三位递增序号）
-  - 新增 --output-dir（默认 realites/）与 --auto-number（默认 true）参数
-  - 每次运行后自动维护 realites.json 索引（仅文件名清单，~2KB）
+  - 默认文件命名：realitates/Cap{N}_{NNN}.md（N=目标章节，NNN=三位递增序号）
+  - 新增 --output-dir（默认 realitates/）与 --auto-number（默认 true）参数
+  - 每次运行后自动维护 realitates.json 索引（仅文件名清单，~2KB）
 
 用法：
-    # 默认行为：自动编号写入 realites/Cap{N}_{NNN}.md
+    # 默认行为：自动编号写入 realitates/Cap{N}_{NNN}.md
     cat ai_output.txt | python AI_reader/merge_yaml.py
 
     # 从文件读取
@@ -57,7 +61,7 @@ v2_0_0 变更（相对 v1_0_0）：
     python AI_reader/merge_yaml.py --file ai_output.txt --output my_story.md
 
     # 关闭自动编号 + 自定义输出目录
-    python AI_reader/merge_yaml.py --file ai_output.txt --output-dir /tmp/realites --auto-number=false
+    python AI_reader/merge_yaml.py --file ai_output.txt --output-dir /tmp/realitates --auto-number=false
 
     # 输出到 stdout（保持旧行为，便于管道传递）
     python AI_reader/merge_yaml.py --file ai_output.txt --stdout
@@ -463,15 +467,15 @@ def next_story_filename(
     return chapter_dir / f"Cap{chapter}_{title_slug}_{length_la}_{next_n:03d}.md"
 
 
-def update_realites_index(ai_reader_dir: Path, entry: dict) -> None:
-    """追加或更新 realites.json 索引条目。
+def update_realitates_index(ai_reader_dir: Path, entry: dict) -> None:
+    """追加或更新 realitates.json 索引条目。
 
-    路径：{ai_reader_dir}/realites.json
-    格式：[{"path": "realites/Cap10_001.md", "chapter": 10, "title_zh": "..."}, ...]
+    路径：{ai_reader_dir}/realitates.json
+    格式：[{"path": "realitates/Cap10_001.md", "chapter": 10, "title_zh": "..."}, ...]
     去重：以 path 为唯一键，更新该条目的所有字段。
     排序：按 (chapter, path) 升序。
     """
-    index_path = ai_reader_dir / "realites.json"
+    index_path = ai_reader_dir / "realitates.json"
     items: list = []
     if index_path.exists():
         try:
@@ -480,10 +484,10 @@ def update_realites_index(ai_reader_dir: Path, entry: dict) -> None:
             if isinstance(loaded, list):
                 items = loaded
             else:
-                print(f"[merge_yaml] 警告：realites.json 顶层不是数组，重建为空列表。",
+                print(f"[merge_yaml] 警告：realitates.json 顶层不是数组，重建为空列表。",
                       file=sys.stderr)
         except (json.JSONDecodeError, OSError) as e:
-            print(f"[merge_yaml] 警告：realites.json 读取失败（{e}），重建为空列表。",
+            print(f"[merge_yaml] 警告：realitates.json 读取失败（{e}），重建为空列表。",
                   file=sys.stderr)
 
     # 去重：以 path 为键
@@ -629,12 +633,12 @@ def main():
     )
     parser.add_argument(
         "--output", "-o",
-        help="输出文件路径。指定后忽略 --output-dir / --auto-number，仍会更新 realites.json。"
+        help="输出文件路径。指定后忽略 --output-dir / --auto-number，仍会更新 realitates.json。"
     )
     parser.add_argument(
         "--output-dir",
-        default="realites",
-        help="自动编号模式下的输出目录（相对 AI_reader/）。默认 realites/。"
+        default="realitates",
+        help="自动编号模式下的输出目录（相对 AI_reader/）。默认 realitates/。"
     )
     parser.add_argument(
         "--auto-number",
@@ -814,7 +818,7 @@ def main():
                 f.write(md_content)
             print(f"[merge_yaml] [{i}/{n}] 已写入 {output_path}", file=sys.stderr)
 
-            # 维护 realites.json 索引（以评估难度章节为键）
+            # 维护 realitates.json 索引（以评估难度章节为键）
             try:
                 rel_path = output_path.relative_to(script_dir).as_posix()
             except ValueError:
@@ -824,7 +828,7 @@ def main():
                 "chapter": effective_chapter,
                 "title_zh": ai_meta.get("title_zh", "")
             }
-            update_realites_index(script_dir, index_entry)
+            update_realitates_index(script_dir, index_entry)
             print(f"[merge_yaml] [{i}/{n}] 索引已更新：{rel_path}", file=sys.stderr)
 
             # OOV 反馈日志（方案D 数据闭环）

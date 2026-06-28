@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
-generate_prompt.py v1_5_0 — 一行命令生成AI提示词（增强版 · 方案C词表 + 评估打标 grammar）。
+generate_prompt.py v1_6_0 — 一行命令生成AI提示词（增强版 · 方案C词表 + 评估打标 grammar）。
 
 读取 STRATEGY.md 模板，替换 {{CHAPTER}} 占位符，输出完整的AI提示词。
+
+v1_6_0 变更（相对 v1_5_0）：
+  - 路径重命名：realites → realitates（修正拉丁语拼写错误）
 
 v1_5_0 变更（相对 v1_4_0）：
   - load_vocab_section() 优先读取 cap{N}_vocab_clean.json（vocab_clean.py 清洗版），
@@ -17,7 +20,7 @@ v1_4_0 变更（相对 v1_3_0）：
   - 方案C核心组件：以数据约束替代算法事后检测，从源头控制难度
 
 v1_2_0 变更（相对 v1_1_0）：
-  - 新增 --history / -H 参数：自动读 realites.json，在 prompt 末尾追加「避免使用以下组合」
+  - 新增 --history / -H 参数：自动读 realitates.json，在 prompt 末尾追加「避免使用以下组合」
   - 新增 --exclude-dim 参数：手动指定要排除的维度组合（多个逗号分隔）
   - 新增 --show-history / -s 参数：仅打印历史已用维度清单，不输出 prompt
   - 函数 load_history()、format_exclusion() 暴露为可复用
@@ -95,7 +98,7 @@ def resolve_prompt(chapter: int, template_path: Path) -> str:
 # ============================================================
 
 def load_history(index_path: Path) -> list:
-    """从 realites.json 加载已生成故事的索引。
+    """从 realitates.json 加载已生成故事的索引。
 
     Returns:
         索引列表（可能为空）。读取失败时返回空列表 + stderr 警告。
@@ -120,15 +123,15 @@ def get_used_dimensions(history: list, chapter: int, index_path: Path = None) ->
     """从 history 中提取指定章节已使用的维度值。
 
     Args:
-        history: realites.json 加载的索引列表
+        history: realitates.json 加载的索引列表
         chapter: 目标章节
-        index_path: realites.json 路径（用于解析相对路径）
+        index_path: realitates.json 路径（用于解析相对路径）
 
     Returns:
         {dim_name: [used_value1, used_value2, ...]} 字典，仅包含有数据的维度。
 
     Note:
-        realites.json 索引仅含 path/chapter/title_zh，不含主题/风格/题材。
+        realitates.json 索引仅含 path/chapter/title_zh，不含主题/风格/题材。
         因此本函数对每条记录尝试从对应 MD 文件读取 Front Matter。
         找不到 MD 或 Front Matter 缺字段时跳过该条。
     """
@@ -166,7 +169,7 @@ def get_used_dimensions(history: list, chapter: int, index_path: Path = None) ->
 
 
 def index_path_to_md(rel_path: str, index_path: Path = None) -> Path:
-    """将 realites.json 里的相对路径解析为绝对 MD 文件路径。"""
+    """将 realitates.json 里的相对路径解析为绝对 MD 文件路径。"""
     p = Path(rel_path)
     if p.is_absolute():
         return p
@@ -386,7 +389,7 @@ def main() -> None:
     parser.add_argument(
         "--history", "-H",
         action="store_true",
-        help="启用历史追踪：自动从 realites.json 读已用维度，追加到 prompt 末尾"
+        help="启用历史追踪：自动从 realitates.json 读已用维度，追加到 prompt 末尾"
     )
     parser.add_argument(
         "--exclude-dim",
@@ -401,8 +404,8 @@ def main() -> None:
     parser.add_argument(
         "--index",
         type=Path,
-        default=Path(__file__).resolve().parent / "realites.json",
-        help="realites.json 路径（默认：脚本同目录下的 realites.json）"
+        default=Path(__file__).resolve().parent / "realitates.json",
+        help="realitates.json 路径（默认：脚本同目录下的 realitates.json）"
     )
     parser.add_argument(
         "--vocab", "-V",

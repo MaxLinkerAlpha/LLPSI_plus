@@ -1175,8 +1175,8 @@ macrons_status: "generated"
       - 解析 AI 输出的 YAML头（12字段）
       - 调用 evaluate_v2.py 评估拉丁语正文（5字段）
       - 合并为 19 字段完整 YAML
-      - 输出 MD Front Matter 格式 → `AI_reader/realites/Cap{N}_{NNN}.md`
-      - 维护 `AI_reader/realites.json` 索引
+      - 输出 MD Front Matter 格式 → `AI_reader/realitates/Cap{N}_{NNN}.md`
+      - 维护 `AI_reader/realitates.json` 索引
 
 3. **语法映射辅助**（按需，预生成）
    └─ 一次性：`python difficulty_algorithm/extract_grammar.py`
@@ -1187,7 +1187,7 @@ macrons_status: "generated"
 
 4. **浏览与筛选**（人类用户）
    └─ 打开 `AI_reader/browser.html`（待实现）
-      - 加载 realites.json 索引
+      - 加载 realitates.json 索引
       - 筛选条件：章节/主题/题材/风格/主角/篇幅/系列
       - 选中后 fetch 对应 MD 文件，正文显示
 ````
@@ -1196,11 +1196,11 @@ macrons_status: "generated"
 
 - `STRATEGY.md`：AI 操作提示词（核心，~1515行）
 - `generate_prompt.py` v1_3_0：注入章节号 + 方案C词表注入（`--vocab`）+ 历史追踪（`--history`）
-- `merge_yaml.py` v2_9_0：合并评估 + 输出 MD（默认输出到 realites/Cap{N}/） + 多篇批量 + target_chapter 自动校准 + OOV 日志（**v2_9_0 暂停入库后自动 OOV 分析**，改人工触发）
+- `merge_yaml.py` v2_9_0：合并评估 + 输出 MD（默认输出到 realitates/Cap{N}/） + 多篇批量 + target_chapter 自动校准 + OOV 日志（**v2_9_0 暂停入库后自动 OOV 分析**，改人工触发）
 - `difficulty_algorithm/extract_grammar.py` v1_0_0：语法映射表生成
 - `difficulty_algorithm/evaluate_v2.py` v2_3_0：难度评估（v2算法在 lemmatize 前已剥离长音）
 - `difficulty_algorithm/grammar_chapter_map.json`：每章语法点（自动生成）
-- `AI_reader/realites.json`：故事索引（自动维护）
+- `AI_reader/realitates.json`：故事索引（自动维护）
 - `AI_reader/browser.html`：筛选浏览（待实现）
 
 参阅 `difficulty_algorithm/evaluate_v2.py` 了解算法详情。

@@ -32,18 +32,18 @@ python AI_reader/merge_yaml.py -f <ai_output.txt>            # 合并+写入
 **做法**：
 1. 一次生成 N 篇（推荐 N=5）
 2. `merge_yaml.py` 自动评估每篇真实难度章节
-3. 每篇自动归入 `realites/Cap{X}/`（X 由算法决定）
+3. 每篇自动归入 `realitates/Cap{X}/`（X 由算法决定）
 4. 人工从同章节多篇中择优保留（删除其余）
 
 **示例**（Cap.8 目标，一次生成 5 篇）：
 
 | 生成序号 | 实际章节 | 文件 | 人工决策 |
 |---------|---------|------|---------|
-| 1 | Cap.8 | realites/Cap8/.../001.md | ✅ 保留 |
-| 2 | Cap.11 | realites/Cap11/.../007.md | ✅ 保留（也是好故事）|
-| 3 | Cap.13 | realites/Cap13/.../005.md | ❌ 删除（Cap.13 已有 2 篇）|
-| 4 | Cap.17 | realites/Cap17/.../008.md | ✅ 保留 |
-| 5 | Cap.24 | realites/Cap24/.../004.md | ❌ 删除（Cap.24 已 1 篇，且过难）|
+| 1 | Cap.8 | realitates/Cap8/.../001.md | ✅ 保留 |
+| 2 | Cap.11 | realitates/Cap11/.../007.md | ✅ 保留（也是好故事）|
+| 3 | Cap.13 | realitates/Cap13/.../005.md | ❌ 删除（Cap.13 已有 2 篇）|
+| 4 | Cap.17 | realitates/Cap17/.../008.md | ✅ 保留 |
+| 5 | Cap.24 | realitates/Cap24/.../004.md | ❌ 删除（Cap.24 已 1 篇，且过难）|
 
 **优点**：不动 prompt/算法/映射表，**靠冗余换取精准性**。
 **前提**：OOV 日志自动累积（`oov_corrections.jsonl`），供后续方案D（映射表补全）使用。
@@ -54,12 +54,12 @@ python AI_reader/merge_yaml.py -f <ai_output.txt>            # 合并+写入
 |------|------|
 | `STRATEGY.md` v2_4_0 | **核心策略文档**，既是人类参考也是 AI 操作提示词。包含：5条硬约束+7条软约束、6张选择表（85主题/14风格/12题材/7主角/5篇幅+叙事模式）、参考手册、附录 |
 | `generate_prompt.py` v1_3_0 | 注入章节号 + 方案C词表注入（`--vocab`）→ 输出完整 AI 提示词；支持 `--history` 自动追踪已用维度 |
-| `merge_yaml.py` v2_9_0 | 解析 AI 输出 → 调用难度评估 → 输出 MD Front Matter → 维护 realites.json；支持 `validate` 子命令预校验 + 多篇批量 + target_chapter 自动校准 + OOV 日志（自动分析已暂停，靠人工触发） |
+| `merge_yaml.py` v2_9_0 | 解析 AI 输出 → 调用难度评估 → 输出 MD Front Matter → 维护 realitates.json；支持 `validate` 子命令预校验 + 多篇批量 + target_chapter 自动校准 + OOV 日志（自动分析已暂停，靠人工触发） |
 | `difficulty_algorithm/evaluate_v2.py` v2_3_0 | 难度评估（v2算法已剥离长音再lemmatize） |
 | `difficulty_algorithm/auto_supplement_map.py` v1_0_0 | OOV 增量分析（手动触发）：读 oov_corrections.jsonl，生成补全建议到 supplement_suggestions.jsonl（不直接修改映射表） |
 | `logic.md` | 概念引擎的深层展开，供人类参考或选择引用 |
-| `realites/` | 已生成的故事（MD 格式，Front Matter + 拉丁语正文），按难度分文件夹 realites/Cap{N}/ |
-| `realites.json` | 故事索引（自动维护，供 HTML 筛选使用） |
+| `realitates/` | 已生成的故事（MD 格式，Front Matter + 拉丁语正文），按难度分文件夹 realitates/Cap{N}/ |
+| `realitates.json` | 故事索引（自动维护，供 HTML 筛选使用） |
 | `oov_corrections.jsonl` | 每次入库自动追加 OOV 词（方案D 数据闭环用） |
 | `supplement_suggestions.jsonl` | OOV 增量分析产出（供人工审核，不直接修改映射表） |
 | `_archived/` | 已归档的旧文件（PROMPT.md 等） |
@@ -78,7 +78,7 @@ python AI_reader/merge_yaml.py -f <ai_output.txt>            # 合并+写入
 
 2. 合并与评估阶段
    └─ merge_yaml.py -f <output> → 解析 → evaluate_v2.py 评估
-      → 输出 realites/Cap{N}/Cap{N}_{title_slug}_{length_la}_{NNN}.md → 维护 realites.json
+      → 输出 realitates/Cap{N}/Cap{N}_{title_slug}_{length_la}_{NNN}.md → 维护 realitates.json
 
 3. 语法映射辅助（按需）
    └─ 一次性：difficulty_algorithm/extract_grammar.py
@@ -86,7 +86,7 @@ python AI_reader/merge_yaml.py -f <ai_output.txt>            # 合并+写入
    └─ 提示词注入：generate_prompt.py --chapter N --grammar
 
 4. 浏览与筛选
-   └─ LLPSI_Insights.html 加载 realites.json → 客户端筛选 → fetch MD
+   └─ LLPSI_Insights.html 加载 realitates.json → 客户端筛选 → fetch MD
 ```
 
 ## 主题（85条）
@@ -99,7 +99,7 @@ python AI_reader/merge_yaml.py -f <ai_output.txt>            # 合并+写入
 故事文件统一使用拉丁文命名，格式为：
 
 ```
-realites/Cap{N}/{Cap{N}_{title_slug}_{length_la}_{NNN}.md}
+realitates/Cap{N}/{Cap{N}_{title_slug}_{length_la}_{NNN}.md}
 ```
 
 **四要素（均拉丁文）**：
@@ -113,7 +113,7 @@ realites/Cap{N}/{Cap{N}_{title_slug}_{length_la}_{NNN}.md}
 
 **篇幅映射**：短篇→`brevis` / 中篇→`media` / 中长篇→`longior` / 长篇→`longa` / 超长篇→`longissima`
 
-**示例**：`realites/Cap19/Cap19_Taberna_Spei_brevis_001.md`
+**示例**：`realitates/Cap19/Cap19_Taberna_Spei_brevis_001.md`
 
 ## 维护
 
@@ -127,7 +127,7 @@ realites/Cap{N}/{Cap{N}_{title_slug}_{length_la}_{NNN}.md}
 - v2_8_0 (2026-06-28)：入库后自动触发 OOV 增量分析（auto_supplement_map.py v1_0_0）+ 补全建议文件
 - v2_7_0 (2026-06-28)：target_chapter 自动校准（用算法实测覆盖 AI 声明）+ OOV 日志（oov_corrections.jsonl，方案D 雏形）+ 长音剥离修复（evaluate_v2 v2_3_0）
 - v2_6_0 (2026-06-28)：命名规范全面拉丁化（Cap{N}_{title_slug}_{length_la}_{NNN}.md）+ 方案C词表注入 + v2_best_fit + 多篇批量处理
-- v2_3_0 (2026-06-28)：输出目录 stories/  →  realites/，索引 stories.json  →  realites.json
+- v2_3_0 (2026-06-28)：输出目录 stories/  →  realitates/，索引 stories.json  →  realitates.json
 - v2_2_0 (2026-06-28)：硬/软约束统一 → 谱系化题材（12类） → 语法映射 → merge_yaml 输出MD
 - v2_0_0-v2_1_0：约束重构 + 表E不设上限 + H5新增
 - v1_5_0-v1_8_0：6次迭代，含双文件拆分尝试后回滚
