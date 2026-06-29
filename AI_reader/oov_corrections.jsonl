@@ -16,3 +16,253 @@
 {"ts": "2026-06-28T15:07:43Z", "path": "realitates/Cap16/Cap16_Puer_et_Arbor_brevis_003.md", "target": 16, "oov": ["commōvit", "frūctūs", "hortulānus", "nāscitur", "sentīvit", "subrīsit"]}
 {"ts": "2026-06-28T15:07:43Z", "path": "realitates/Cap20/Cap20_Pater_et_Fīlius_in_Macellō_brevis_003.md", "target": 20, "oov": ["Quotienscumque", "esurīrent", "gallīnae", "iniūnxit", "lūctum", "macellō", "vēritātem"]}
 {"ts": "2026-06-28T15:07:56Z", "path": "test_review_output.md", "target": 16, "oov": ["commōvit", "frūctūs", "hortulānus", "nāscitur", "sentīvit", "subrīsit"]}
+{"ts": "2026-06-29T00:24:38Z", "path": "realitates/Cap10/Cap10_Quid_Est_Iūstitia_brevis_008.md", "target": 10, "oov": ["iūstitia", "«Iūstitia", "«Nōn", "«Oppidum", "«Quid"]}
+{"ts": "2026-06-29T00:24:38Z", "path": "realitates/Cap18/Cap18_Vēritās_in_Saxō_brevis_008.md", "target": 18, "oov": ["recordor", "«RŌMA"]}
+{"ts": "2026-06-29T00:24:39Z", "path": "realitates/Cap12/Cap12_Tū_Mīles_brevis_002.md", "target": 12, "oov": ["Galliā", "fortitūdō"]}
+{"ts": "2026-06-29T00:26:36Z", "path": "realitates/Cap15/Cap15_Imperātor_et_Umbra_brevis_001.md", "target": 15, "oov": ["Palātium", "palātiō"]}
+{"ts": "2026-06-29T00:26:37Z", "path": "realitates/Cap16/Cap16_Fātum_et_Ventus_brevis_009.md", "target": 16, "oov": ["«Venī"]}
+{"ts": "2026-06-29T00:28:25Z", "path": "realitates/Cap13/Cap13_Hōrologium_et_Senex_brevis_002.md", "target": 13, "oov": ["Hōrologium", "hōrologium"]}
+{"ts": "2026-06-29T00:28:25Z", "path": "realitates/Cap17/Cap17_Magister_et_Puer_brevis_004.md", "target": 17, "oov": ["sapientia", "sapientiam", "«Bene", "«Ego", "«Hic", "«Magister", "«Nunc", "«Sed", "«Tū"]}
+{"ts": "2026-06-29T00:28:26Z", "path": "realitates/Cap25/Cap25_Flōs_in_Saxō_brevis_001.md", "target": 25, "oov": ["nāscitur"]}
+{"ts": "2026-06-29T00:28:26Z", "path": "realitates/Cap14/Cap14_Post_Bellum_brevis_006.md", "target": 14, "oov": ["fīnitum"]}
+{"ts": "2026-06-29T00:29:54Z", "path": "realitates/Cap14/Cap14_Invidia_Fratrum_brevis_007.md", "target": 14, "oov": ["«Cūr"]}
+{"ts": "2026-06-29T00:29:54Z", "path": "realitates/Cap19/Cap19_Sapientia_Simplex_brevis_006.md", "target": 19, "oov": ["Sapientia", "sapientia", "simplex", "«Hoc", "«Ita", "«Nesciō", "«Quid", "«Sapientia", "«Sed"]}
+{"ts": "2026-06-29T00:29:55Z", "path": "realitates/Cap16/Cap16_Spēs_in_Nocte_brevis_010.md", "target": 16, "oov": ["crāstinō", "«Nox"]}
+{"ts": "2026-06-29T00:31:27Z", "path": "realitates/Cap10/Cap10_Fīnis_Viae_brevis_009.md", "target": 10, "oov": ["fīnīta"]}
+{"ts": "2026-06-29T00:31:27Z", "path": "realitates/Cap10/Cap10_Somnum_Aeternum_brevis_010.md", "target": 10, "oov": ["mitis"]}
+{"ts": "2026-06-29T00:31:28Z", "path": "realitates/Cap14/Cap14_Fidēs_Fracta_brevis_008.md", "target": 14, "oov": ["«Dā", "«Ego", "«Nunc", "«Nōn", "«Ubi"]}
+{"ts": "2026-06-29T01:18:34Z", "path": "realitates/Cap20/Cap20_Flūmen_et_Mūtātiō_brevis_004.md", "target": 20, "oov": ["gutta"]}
+{"ts": "2026-06-29T01:18:35Z", "path": "realitates/Cap13/Cap13_Via_Sine_Fīne_brevis_004.md", "target": 13, "oov": ["somniō"]}
+{"ts": "2026-06-29T01:18:35Z", "path": "realitates/Cap17/Cap17_Magister_et_Discipulus_brevis_005.md", "target": 17, "oov": ["līberrimus"]}
+{"ts": "2026-06-29T01:18:36Z", "path": "realitates/Cap26/Cap26_Āra_in_Somniō_brevis_001.md", "target": 26, "oov": ["somniō"]}
+{"ts": "2026-06-29T01:20:51Z", "path": "realitates/Cap19/Cap19_Mors_et_Vīta_brevis_008.md", "target": 19, "oov": ["vīsitāvit"]}
+{"ts": "2026-06-29T01:20:52Z", "path": "realitates/Cap11/Cap11_Amor_Servī_brevis_004.md", "target": 11, "oov": ["lībertātem"]}
+{"ts": "2026-06-29T01:20:54Z", "path": "realitates/Cap20/Cap20_Formīca_et_Poēta_brevis_005.md", "target": 20, "oov": ["Formīca", "calcās", "formīcam"]}
+{"ts": "2026-06-29T01:23:05Z", "path": "realitates/Cap19/Cap19_Sapientia_in_Forō_brevis_009.md", "target": 19, "oov": ["Sapientia", "angulō", "circumvenit", "sapientia"]}
+{"ts": "2026-06-29T01:23:06Z", "path": "realitates/Cap17/Cap17_Somnium_Apertum_brevis_007.md", "target": 17, "oov": ["Somniō", "somnium"]}
+{"ts": "2026-06-29T01:25:04Z", "path": "realitates/Cap18/Cap18_Hōrologium_brevis_012.md", "target": 18, "oov": ["Oppidānī", "Quota", "hōrologium", "oppidānī"]}
+{"ts": "2026-06-29T01:25:05Z", "path": "realitates/Cap29/Cap29_Post_Omnia_brevis_001.md", "target": 29, "oov": ["viridis"]}
+{"ts": "2026-06-29T01:25:06Z", "path": "realitates/Cap13/Cap13_Alter_Ego_brevis_006.md", "target": 13, "oov": ["Possumne"]}
+{"ts": "2026-06-29T01:27:14Z", "path": "realitates/Cap18/Cap18_Post_Bellum_brevis_013.md", "target": 18, "oov": ["agnōscit", "fīnitum"]}
+{"ts": "2026-06-29T01:27:15Z", "path": "realitates/Cap16/Cap16_Schola_Sub_Arbore_brevis_013.md", "target": 16, "oov": ["Schola", "sapientia", "sapientiam", "scholam", "scholā"]}
+{"ts": "2026-06-29T01:29:17Z", "path": "realitates/Cap19/Cap19_Amor_Senex_brevis_013.md", "target": 19, "oov": ["Meministīne", "capulī"]}
+{"ts": "2026-06-29T01:29:18Z", "path": "realitates/Cap24/Cap24_Fīlum_Fātī_brevis_002.md", "target": 24, "oov": ["angulō"]}
+{"ts": "2026-06-29T01:29:19Z", "path": "realitates/Cap24/Cap24_Urbs_Mea_brevis_003.md", "target": 24, "oov": ["lapidēs", "ārdentem"]}
+{"ts": "2026-06-29T01:29:19Z", "path": "realitates/Cap18/Cap18_Amīcus_Vērus_brevis_015.md", "target": 18, "oov": ["vīsitās"]}
+{"ts": "2026-06-29T02:20:25Z", "path": "realitates/Cap31/Cap31_Sacerdōs_Sēnium_Immolāns_brevis_001.md", "target": 31, "oov": ["cārissimae", "septuāgēsimum", "siccāvit", "vestcr", "victima", "victimae"]}
+{"ts": "2026-06-29T02:20:25Z", "path": "realitates/Cap22/Cap22_Mercātor_Dīvitiam_Īnspiciēns_brevis_002.md", "target": 22, "oov": ["Mēnsūram", "abscondunt", "cellā", "clāritātem", "lancem", "mendīcōs", "mēnsūram", "mēnsūrā", "mēnsūrās", "ponderāvī", "vacant"]}
+{"ts": "2026-06-29T02:20:26Z", "path": "realitates/Cap20/Cap20_Sinae_Mercātor_Dōnum_Ferēns_brevis_006.md", "target": 20, "oov": ["Sīnensi", "implendī", "pingtum", "salicis", "scrīnium", "scrīptūrā", "sīca"]}
+{"ts": "2026-06-29T02:20:26Z", "path": "realitates/Cap19/Cap19_Servus_Dominum_Rīdēns_brevis_014.md", "target": 19, "oov": ["**", "**Dominus", "**Servus", "glōriātur", "insānus", "vēritātem"]}
+{"ts": "2026-06-29T02:20:27Z", "path": "realitates/Cap23/Cap23_Fābula_Nārrāns_Sē_Ipsam_brevis_001.md", "target": 23, "oov": ["Lupine", "circulō", "longinquā", "nārrāns", "vēnātor", "vēnātōre", "vēnātōrem"]}
+{"ts": "2026-06-29T02:23:12Z", "path": "realitates/Cap19/Cap19_Iter_Immolātiōnis_brevis_015.md", "target": 19, "oov": ["Sinēnsis", "longīnquīs", "pāgulus", "pāgulō"]}
+{"ts": "2026-06-29T02:23:13Z", "path": "realitates/Cap23/Cap23_Via_Quam_Ambulem_brevis_002.md", "target": 23, "oov": ["Redērunt", "alibi", "ambulandī", "subrīsit"]}
+{"ts": "2026-06-29T02:23:13Z", "path": "realitates/Cap18/Cap18_Cattus_Philosophus_brevis_016.md", "target": 18, "oov": ["Cattus", "Fēlēs", "cattule", "cattum", "cattus", "catēnātus", "cavernam", "fugiō", "fēlīcitās", "lībertās", "silvestrēs"]}
+{"ts": "2026-06-29T02:23:14Z", "path": "realitates/Cap22/Cap22_Magister_Dīvitiās_Dēpōnēns_brevis_003.md", "target": 22, "oov": ["Mandūcāvī", "cōgeram", "mandūcā", "pōmum", "pōmō"]}
+{"ts": "2026-06-29T02:23:14Z", "path": "realitates/Cap18/Cap18_Servus_Solitūdinem_Legēns_brevis_017.md", "target": 18, "oov": ["**", "**Dominus", "**Servus", "Emptōrī", "Lectiō", "Prūdēns", "cellā", "lībertās", "prūdēns", "quispiam"]}
+{"ts": "2026-06-29T02:24:45Z", "path": "realitates/Cap24/Cap24_Brūtus_Dēmēns_brevis_004.md", "target": 24, "oov": ["Brūtum", "Brūtus", "dūra", "occīditne", "plorātus", "taciturnum"]}
+{"ts": "2026-06-29T02:24:46Z", "path": "realitates/Cap29/Cap29_Sacerdōs_Iēiūnus_brevis_002.md", "target": 29, "oov": ["Esuriēsne", "Esuriō", "Paupertātem", "dēmonstrāvit", "dītam", "ederat", "edis", "indūmentum", "satur", "subrīsit", "ēsuriēbat", "ēsurīre"]}
+{"ts": "2026-06-29T02:24:47Z", "path": "realitates/Cap18/Cap18_Servus_Līber_brevis_018.md", "target": 18, "oov": ["Crotus", "Mārcus", "Thōrax", "lībertās", "īnventārium"]}
+{"ts": "2026-06-29T02:24:47Z", "path": "realitates/Cap21/Cap21_Mārcus_Dīves_et_Mārcus_Pauper_brevis_002.md", "target": 21, "oov": ["Cōnfundō", "Mārcus", "Mārcōs", "loculīs", "mendīcus", "multiplicāvit", "palatiō"]}
+{"ts": "2026-06-29T02:24:47Z", "path": "realitates/Cap17/Cap17_Hōrologium_Intus_brevis_008.md", "target": 17, "oov": ["**", "**Dominus", "**Servus", "Respondō", "amēns", "nempe", "strepentēs"]}
+{"ts": "2026-06-29T02:26:28Z", "path": "realitates/Cap20/Cap20_Puella_in_Hortō_brevis_007.md", "target": 20, "oov": ["Differō", "Flōreō", "differīs", "differō", "rēnāta", "seram", "subrīsit", "vīvābat"]}
+{"ts": "2026-06-29T02:26:29Z", "path": "realitates/Cap24/Cap24_Senex_et_Speculum_brevis_005.md", "target": 24, "oov": ["frāgmenta", "mendācia", "mendāx", "singulātim", "somniō", "volutās"]}
+{"ts": "2026-06-29T02:26:29Z", "path": "realitates/Cap18/Cap18_Puer_in_Mari_brevis_019.md", "target": 18, "oov": ["Ioculāre", "fūrtim", "ioculāre", "ioculāris", "nōrmam", "olent", "vectōrī", "vēlāria"]}
+{"ts": "2026-06-29T02:26:29Z", "path": "realitates/Cap16/Cap16_Magister_Silēns_brevis_014.md", "target": 16, "oov": ["Heredēs", "Taciturnitātem", "grammaticam", "scrīniō", "subrīderet", "subrīdeō"]}
+{"ts": "2026-06-29T02:26:30Z", "path": "realitates/Cap17/Cap17_Imāgō_Somniī_brevis_009.md", "target": 17, "oov": ["**", "**Cattus", "Somniavi", "Somnium", "cattus", "cellulā", "dormitūrus", "evigilātus", "imāgō", "loquendum", "somniavi", "somniō"]}
+{"ts": "2026-06-29T02:28:21Z", "path": "realitates/Cap21/Cap21_Mīles_Timidus_brevis_003.md", "target": 21, "oov": ["Centuriō", "abdidit", "centuriō", "retrō", "strepunt"]}
+{"ts": "2026-06-29T02:28:22Z", "path": "realitates/Cap20/Cap20_Fossa_in_Viā_brevis_008.md", "target": 20, "oov": ["Cadō", "Cicātrix", "cicātrice"]}
+{"ts": "2026-06-29T02:28:22Z", "path": "realitates/Cap16/Cap16_Puer_Somniāns_brevis_015.md", "target": 16, "oov": ["Cacūmen", "cadō"]}
+{"ts": "2026-06-29T02:28:22Z", "path": "realitates/Cap22/Cap22_Aves_Bellī_brevis_004.md", "target": 22, "oov": ["Centuriō", "Corvī", "corvus", "edimus", "edērunt", "mēlium", "vīverat"]}
+{"ts": "2026-06-29T02:28:23Z", "path": "realitates/Cap20/Cap20_Fossa_Lūcis_brevis_009.md", "target": 20, "oov": ["Imāginātiō", "Somnium", "aeternitāte", "cadō", "differt", "implēta", "profunda", "somnium"]}
+{"ts": "2026-06-29T02:30:20Z", "path": "realitates/Cap16/Cap16_Via_Sine_Fīne_brevis_016.md", "target": 16, "oov": ["albam", "ambulātiō", "labōrium", "misericordiam", "mortuārium", "princupiō", "pulvereus"]}
+{"ts": "2026-06-29T02:30:20Z", "path": "realitates/Cap20/Cap20_Somnus_Senis_brevis_010.md", "target": 20, "oov": ["Differt", "Somnium", "Somniāvī", "adiuvāvit", "differt", "memoriō", "retro", "somniat", "somnium", "somniō"]}
+{"ts": "2026-06-29T02:30:21Z", "path": "realitates/Cap18/Cap18_Puer_et_Volucrēs_brevis_020.md", "target": 18, "oov": ["Plūma", "Plūmae", "Plūmās", "edere", "lapidem", "permanent", "plūmae", "plūmās", "volātis", "volātū"]}
+{"ts": "2026-06-29T02:30:22Z", "path": "realitates/Cap22/Cap22_Fābula_Sine_Fīne_brevis_005.md", "target": 22, "oov": ["Differēnter", "Viātor", "immortalitās", "prōrsus", "quondam", "subrīsit", "terminus", "tēnden", "viātōrēs"]}
+{"ts": "2026-06-29T02:30:22Z", "path": "realitates/Cap19/Cap19_Lūmen_in_Tectō_brevis_016.md", "target": 19, "oov": ["fōns", "nusquam", "parietēs"]}
+{"ts": "2026-06-29T02:38:11Z", "path": "realitates/Cap2/Cap2_Quid_est_in_Eurōpā_brevis_001.md", "target": 2, "oov": ["Estne", "Gallia", "Germānia", "Mārcus", "Sparta"]}
+{"ts": "2026-06-29T02:38:11Z", "path": "realitates/Cap9/Cap9_Īnsula_parva_brevis_001.md", "target": 9, "oov": ["casae", "sufficit"]}
+{"ts": "2026-06-29T02:38:12Z", "path": "realitates/Cap10/Cap10_Quattuor_terrae_brevis_011.md", "target": 10, "oov": ["Germānia", "Germāniā", "Rōmānem"]}
+{"ts": "2026-06-29T02:38:13Z", "path": "realitates/Cap16/Cap16_Nāvis_in_ōceanō_brevis_017.md", "target": 16, "oov": ["nāvigit"]}
+{"ts": "2026-06-29T02:39:37Z", "path": "realitates/Cap20/Cap20_Senex_in_viā_brevis_011.md", "target": 20, "oov": ["Vīsne", "laessus", "lentē", "vādis"]}
+{"ts": "2026-06-29T02:39:37Z", "path": "realitates/Cap16/Cap16_Discipulus_et_magister_brevis_018.md", "target": 16, "oov": ["Latīnē", "dēstruis"]}
+{"ts": "2026-06-29T02:39:38Z", "path": "realitates/Cap26/Cap26_Tres_viae_brevis_002.md", "target": 26, "oov": ["Viātor", "viātor", "viātōrem", "ēmensus"]}
+{"ts": "2026-06-29T02:39:38Z", "path": "realitates/Cap17/Cap17_Māter_et_fīlia_brevis_010.md", "target": 17, "oov": ["asperum", "tēner"]}
+{"ts": "2026-06-29T02:39:39Z", "path": "realitates/Cap32/Cap32_Templum_Iovis_brevis_001.md", "target": 32, "oov": ["sacrifícia"]}
+{"ts": "2026-06-29T02:41:07Z", "path": "realitates/Cap16/Cap16_Quid_in_īnsulā_brevis_019.md", "target": 16, "oov": ["Capram", "Estne"]}
+{"ts": "2026-06-29T02:41:07Z", "path": "realitates/Cap17/Cap17_Roma_et_Brundisium_brevis_011.md", "target": 17, "oov": ["Senātor", "sarcīnās"]}
+{"ts": "2026-06-29T02:41:08Z", "path": "realitates/Cap20/Cap20_Nauta_et_gubernātor_brevis_012.md", "target": 20, "oov": ["Immobilitās", "gubernātiō", "ignāvum", "immobilis", "immōbilē", "occāsiō", "vehemens"]}
+{"ts": "2026-06-29T02:41:09Z", "path": "realitates/Cap28/Cap28_Pater_senex_brevis_001.md", "target": 28, "oov": ["longinquam"]}
+{"ts": "2026-06-29T02:41:09Z", "path": "realitates/Cap27/Cap27_Fūr_in_viā_brevis_002.md", "target": 27, "oov": ["Crūmena", "comedit", "crūmenam", "crūmenā", "cōnsuētūdine", "dēfessus", "iūstitia", "laessus", "sepelit", "victimam"]}
+{"ts": "2026-06-29T02:45:20Z", "path": "realitates/Cap29/Cap29_Māter_et_pater_brevis_003.md", "target": 29, "oov": ["Estne", "fēlīcius"]}
+{"ts": "2026-06-29T02:45:21Z", "path": "realitates/Cap19/Cap19_In_tabernā_brevis_017.md", "target": 19, "oov": ["albom", "avārē", "comedit", "crūmenā", "nigrom"]}
+{"ts": "2026-06-29T02:45:21Z", "path": "realitates/Cap28/Cap28_Senex_et_memoria_brevis_002.md", "target": 28, "oov": ["Sepulcrum", "nescius", "quondam", "sepulcrō", "trānsmūtat", "trānsmūtāvit"]}
+{"ts": "2026-06-29T02:45:22Z", "path": "realitates/Cap22/Cap22_Rēx_et_mendāx_brevis_006.md", "target": 22, "oov": ["Mendāx", "aulam", "mendācem", "mendāciō", "mendāx", "probās", "scrūtāris"]}
+{"ts": "2026-06-29T02:45:22Z", "path": "realitates/Cap16/Cap16_Somnia_nautae_brevis_020.md", "target": 16, "oov": ["Mäter", "Somnium", "Undae", "expergīscor", "flētū", "sanguineum", "somnium", "somniīs", "somniō"]}
+{"ts": "2026-06-29T02:45:56Z", "path": "realitates/Cap13/Cap13_Quinque_terrae_brevis_007.md", "target": 13, "oov": ["Gallia"]}
+{"ts": "2026-06-29T02:45:57Z", "path": "realitates/Cap13/Cap13_Insulae_Graeciae_brevis_008.md", "target": 13, "oov": ["Creta"]}
+{"ts": "2026-06-29T02:45:57Z", "path": "realitates/Cap10/Cap10_Flūmina_Rōmāna_brevis_013.md", "target": 10, "oov": ["Aegyptō", "Danuvius", "Germānicus", "Germāniā", "Nilus"]}
+{"ts": "2026-06-29T02:45:58Z", "path": "realitates/Cap14/Cap14_Populi_imperiī_brevis_011.md", "target": 14, "oov": ["Aegyptī", "Aegyptō", "Britannī", "Galliā", "Germāniā", "Germānī"]}
+{"ts": "2026-06-29T02:51:19Z", "path": "realitates/Cap19/Cap19_Sex_prōvinciae_brevis_018.md", "target": 19, "oov": ["Gallia", "Germānia", "longinqua"]}
+{"ts": "2026-06-29T02:51:20Z", "path": "realitates/Cap11/Cap11_Tria_maria_brevis_005.md", "target": 11, "oov": ["longinquum"]}
+{"ts": "2026-06-29T02:51:20Z", "path": "realitates/Cap28/Cap28_Quattuor_flūmina_brevis_003.md", "target": 28, "oov": ["Danuvius", "Germānicus", "Nilus"]}
+{"ts": "2026-06-29T02:51:21Z", "path": "realitates/Cap14/Cap14_Septem_īnsulae_brevis_012.md", "target": 14, "oov": ["Colossēa", "Creta", "Euboea", "Mīnōis", "Sapphōnis", "aspera"]}
+{"ts": "2026-06-29T02:51:22Z", "path": "realitates/Cap31/Cap31_Octō_oppida_brevis_002.md", "target": 31, "oov": ["Delphī", "Sparta", "vicīna", "ēmula", "ōrāculum"]}
+{"ts": "2026-06-29T02:51:49Z", "path": "realitates/Cap14/Cap14_Quattuor_populī_brevis_013.md", "target": 14, "oov": ["Galliā", "Germāniā", "Germānī"]}
+{"ts": "2026-06-29T02:51:49Z", "path": "realitates/Cap10/Cap10_Duodecim_īnsulae_brevis_014.md", "target": 10, "oov": ["Creta", "Euboea", "Naxus"]}
+{"ts": "2026-06-29T02:51:50Z", "path": "realitates/Cap48/Cap48_Quattuor_terrae_Africae_brevis_001.md", "target": 48, "oov": ["Aegyptus", "Mauretania", "Nili"]}
+{"ts": "2026-06-29T02:51:51Z", "path": "realitates/Cap1/Cap1_Asia_triplex_brevis_001.md", "target": 1, "oov": ["Asia", "Asiae", "Asiā"]}
+{"ts": "2026-06-29T02:52:00Z", "path": "realitates/Cap14/Cap14_Quattuor_populī_brevis_014.md", "target": 14, "oov": ["Galliā", "Germāniā", "Germānī"]}
+{"ts": "2026-06-29T02:52:01Z", "path": "realitates/Cap10/Cap10_Duodecim_īnsulae_brevis_015.md", "target": 10, "oov": ["Creta", "Euboea", "Naxus"]}
+{"ts": "2026-06-29T02:52:02Z", "path": "realitates/Cap48/Cap48_Quattuor_terrae_Africae_brevis_002.md", "target": 48, "oov": ["Aegyptus", "Mauretania", "Nili"]}
+{"ts": "2026-06-29T02:52:02Z", "path": "realitates/Cap1/Cap1_Asia_triplex_brevis_002.md", "target": 1, "oov": ["Asia", "Asiae", "Asiā"]}
+{"ts": "2026-06-29T02:52:51Z", "path": "realitates/Cap10/Cap10_Quattuor_maria_brevis_016.md", "target": 10, "oov": ["Aegyptum", "Nilus"]}
+{"ts": "2026-06-29T02:52:52Z", "path": "realitates/Cap16/Cap16_Tria_oppida_Graeciae_brevis_021.md", "target": 16, "oov": ["Sparta"]}
+{"ts": "2026-06-29T02:52:52Z", "path": "realitates/Cap25/Cap25_Insulae_duae_brevis_002.md", "target": 25, "oov": ["Creta", "Diōnȳsī", "Naxus"]}
+{"ts": "2026-06-29T02:52:53Z", "path": "realitates/Cap16/Cap16_Asia_et_Syria_brevis_022.md", "target": 16, "oov": ["Asia"]}
+{"ts": "2026-06-29T02:52:53Z", "path": "realitates/Cap13/Cap13_Tres_flūmina_brevis_011.md", "target": 13, "oov": ["Danuvius", "Germāniā"]}
+{"ts": "2026-06-29T02:52:59Z", "path": "realitates/Cap10/Cap10_Quattuor_maria_brevis_017.md", "target": 10, "oov": ["Aegyptum", "Nilus"]}
+{"ts": "2026-06-29T02:53:00Z", "path": "realitates/Cap16/Cap16_Tria_oppida_Graeciae_brevis_023.md", "target": 16, "oov": ["Sparta"]}
+{"ts": "2026-06-29T02:53:00Z", "path": "realitates/Cap25/Cap25_Insulae_duae_brevis_003.md", "target": 25, "oov": ["Creta", "Diōnȳsī", "Naxus"]}
+{"ts": "2026-06-29T02:53:01Z", "path": "realitates/Cap16/Cap16_Asia_et_Syria_brevis_024.md", "target": 16, "oov": ["Asia"]}
+{"ts": "2026-06-29T02:53:01Z", "path": "realitates/Cap13/Cap13_Tres_flūmina_brevis_012.md", "target": 13, "oov": ["Danuvius", "Germāniā"]}
+{"ts": "2026-06-29T02:53:28Z", "path": "realitates/Cap14/Cap14_Tres_populī_brevis_015.md", "target": 14, "oov": ["Galliā"]}
+{"ts": "2026-06-29T02:53:28Z", "path": "realitates/Cap10/Cap10_Duodecim_īnsulae_brevis_018.md", "target": 10, "oov": ["Creta", "Euboea", "Naxus"]}
+{"ts": "2026-06-29T02:53:29Z", "path": "realitates/Cap10/Cap10_Tria_flūmina_brevis_019.md", "target": 10, "oov": ["Danuvius", "Germānicus", "Germāniā"]}
+{"ts": "2026-06-29T02:53:30Z", "path": "realitates/Cap16/Cap16_Quattuor_terrae_brevis_025.md", "target": 16, "oov": ["Germānia"]}
+{"ts": "2026-06-29T02:53:30Z", "path": "realitates/Cap12/Cap12_Mare_unum_brevis_003.md", "target": 12, "oov": ["Nilus"]}
+{"ts": "2026-06-29T02:54:05Z", "path": "realitates/Cap16/Cap16_Asia_et_Africa_brevis_026.md", "target": 16, "oov": ["Aegyptus", "Aegyptō", "Asia", "Asiā"]}
+{"ts": "2026-06-29T02:54:06Z", "path": "realitates/Cap1/Cap1_Tres_terrae_septentriōnis_brevis_003.md", "target": 1, "oov": ["Gallia", "Galliā", "Germānia", "Germāniā"]}
+{"ts": "2026-06-29T02:54:06Z", "path": "realitates/Cap35/Cap35_Insulae_Graecae_brevis_001.md", "target": 35, "oov": ["Creta"]}
+{"ts": "2026-06-29T02:54:07Z", "path": "realitates/Cap34/Cap34_Tria_flūmina_magna_brevis_001.md", "target": 34, "oov": ["Aegyptō", "Danuvius", "Germāniā", "Nilus"]}
+{"ts": "2026-06-29T02:54:07Z", "path": "realitates/Cap11/Cap11_Sex_oppida_Italiae_brevis_006.md", "target": 11, "oov": ["Neapolis"]}
+{"ts": "2026-06-29T02:54:15Z", "path": "realitates/Cap16/Cap16_Asia_et_Africa_brevis_027.md", "target": 16, "oov": ["Aegyptus", "Aegyptō", "Asia", "Asiā"]}
+{"ts": "2026-06-29T02:54:16Z", "path": "realitates/Cap1/Cap1_Tres_terrae_septentriōnis_brevis_004.md", "target": 1, "oov": ["Gallia", "Galliā", "Germānia", "Germāniā"]}
+{"ts": "2026-06-29T02:54:16Z", "path": "realitates/Cap35/Cap35_Insulae_Graecae_brevis_002.md", "target": 35, "oov": ["Creta"]}
+{"ts": "2026-06-29T02:54:16Z", "path": "realitates/Cap34/Cap34_Tria_flūmina_magna_brevis_002.md", "target": 34, "oov": ["Aegyptō", "Danuvius", "Germāniā", "Nilus"]}
+{"ts": "2026-06-29T02:54:17Z", "path": "realitates/Cap11/Cap11_Sex_oppida_Italiae_brevis_007.md", "target": 11, "oov": ["Neapolis"]}
+{"ts": "2026-06-29T03:04:37Z", "path": "realitates/Cap9/Cap9_Quinque_terrae_Eurōpae_brevis_002.md", "target": 9, "oov": ["Gallia", "Galliā"]}
+{"ts": "2026-06-29T03:04:38Z", "path": "realitates/Cap9/Cap9_Tria_oppida_Graeciae_brevis_003.md", "target": 9, "oov": ["Sparta"]}
+{"ts": "2026-06-29T03:04:38Z", "path": "realitates/Cap48/Cap48_Āfrica_et_Asia_brevis_003.md", "target": 48, "oov": ["Aegyptus", "Aegyptō", "Asia", "Asiā"]}
+{"ts": "2026-06-29T03:04:38Z", "path": "realitates/Cap16/Cap16_Sex_prōvinciae_orientis_brevis_028.md", "target": 16, "oov": ["Aegyptus", "Asia", "Asiae", "Creta"]}
+{"ts": "2026-06-29T03:04:39Z", "path": "realitates/Cap1/Cap1_Tria_flūmina_brevis_005.md", "target": 1, "oov": ["Danuvius", "Germāniā"]}
+{"ts": "2026-06-29T03:04:39Z", "path": "realitates/Cap6/Cap6_Sicilia_et_Sardinia_brevis_001.md", "target": 6, "oov": ["aspera"]}
+{"ts": "2026-06-29T03:04:39Z", "path": "realitates/Cap13/Cap13_Quattuor_īnsulae_brevis_013.md", "target": 13, "oov": ["Creta", "Euboea"]}
+{"ts": "2026-06-29T03:04:40Z", "path": "realitates/Cap10/Cap10_Duodecim_īnsulae_maris_brevis_020.md", "target": 10, "oov": ["Creta", "Euboea", "Naxus"]}
+{"ts": "2026-06-29T03:04:41Z", "path": "realitates/Cap4/Cap4_Quattuor_populī_brevis_001.md", "target": 4, "oov": ["Galliā", "Germāniā", "Germānī"]}
+{"ts": "2026-06-29T03:04:41Z", "path": "realitates/Cap10/Cap10_Quinque_flūmina_brevis_021.md", "target": 10, "oov": ["Aegyptō", "Danuvius", "Galliā", "Germāniā", "Nilus", "Rhodanus"]}
+{"ts": "2026-06-29T03:04:42Z", "path": "realitates/Cap10/Cap10_Novem_īnsulae_brevis_022.md", "target": 10, "oov": ["Creta", "Euboea"]}
+{"ts": "2026-06-29T03:04:42Z", "path": "realitates/Cap6/Cap6_Sex_oppida_Rōmāna_brevis_003.md", "target": 6, "oov": ["Neapolis"]}
+{"ts": "2026-06-29T03:04:42Z", "path": "realitates/Cap26/Cap26_Decem_oppida_brevis_003.md", "target": 26, "oov": ["Delphī", "Neapolis", "Sparta", "ōrāculum"]}
+{"ts": "2026-06-29T03:04:42Z", "path": "realitates/Cap15/Cap15_Septem_terrae_imperiī_brevis_003.md", "target": 15, "oov": ["Gallia", "Germānia", "longinqua"]}
+{"ts": "2026-06-29T03:04:43Z", "path": "realitates/Cap13/Cap13_Quinque_terrae_Asiae_brevis_014.md", "target": 13, "oov": ["Asia", "Asiae", "Cilicia", "Pontus"]}
+{"ts": "2026-06-29T03:04:43Z", "path": "realitates/Cap32/Cap32_Octō_populī_brevis_002.md", "target": 32, "oov": ["Aegyptī", "Arabī", "Britannī", "Germānī", "longinquī"]}
+{"ts": "2026-06-29T03:04:43Z", "path": "realitates/Cap1/Cap1_Sex_flūmina_magna_brevis_006.md", "target": 1, "oov": ["Aegyptō", "Danuvius", "Dorius", "Germāniā", "Nilus", "Rhodanus"]}
+{"ts": "2026-06-29T03:04:44Z", "path": "realitates/Cap10/Cap10_Septem_īnsulae_parvae_brevis_023.md", "target": 10, "oov": ["Cyprus", "Naxus"]}
+{"ts": "2026-06-29T03:06:10Z", "path": "realitates/Cap16/Cap16_Germānia_et_Rhenus_brevis_029.md", "target": 16, "oov": ["Gallia", "Germānia"]}
+{"ts": "2026-06-29T03:06:11Z", "path": "realitates/Cap19/Cap19_Tria_oppida_Hispāniae_brevis_019.md", "target": 19, "oov": ["Corduba", "Tarraco"]}
+{"ts": "2026-06-29T03:06:11Z", "path": "realitates/Cap10/Cap10_Britannia_et_Hibernia_brevis_024.md", "target": 10, "oov": ["Hibernia"]}
+{"ts": "2026-06-29T03:06:11Z", "path": "realitates/Cap16/Cap16_Gallia_et_Germānia_brevis_030.md", "target": 16, "oov": ["Gallia", "Germānia"]}
+{"ts": "2026-06-29T03:06:12Z", "path": "realitates/Cap6/Cap6_Quattuor_oppida_brevis_005.md", "target": 6, "oov": ["Neapolis"]}
+{"ts": "2026-06-29T03:06:12Z", "path": "realitates/Cap9/Cap9_Duae_terrae_brevis_004.md", "target": 9, "oov": ["Aegyptus", "Aegyptō", "Asiā"]}
+{"ts": "2026-06-29T03:06:13Z", "path": "realitates/Cap10/Cap10_Octō_īnsulae_brevis_025.md", "target": 10, "oov": ["Creta", "Euboea"]}
+{"ts": "2026-06-29T03:06:13Z", "path": "realitates/Cap10/Cap10_Quattuor_īnsulae_Graecae_brevis_026.md", "target": 10, "oov": ["Creta", "Euboea"]}
+{"ts": "2026-06-29T03:06:13Z", "path": "realitates/Cap25/Cap25_Septem_oppida_brevis_004.md", "target": 25, "oov": ["Neapolis", "Sparta"]}
+{"ts": "2026-06-29T03:06:13Z", "path": "realitates/Cap10/Cap10_Tria_flūmina_Eurōpae_brevis_027.md", "target": 10, "oov": ["Danuvius", "Galliā", "Germāniā", "Rhodanus"]}
+{"ts": "2026-06-29T03:06:14Z", "path": "realitates/Cap15/Cap15_Novem_terrae_brevis_004.md", "target": 15, "oov": ["Aegyptus", "Asia", "Gallia", "Germānia"]}
+{"ts": "2026-06-29T03:06:14Z", "path": "realitates/Cap15/Cap15_Sex_terrae_imperiī_brevis_005.md", "target": 15, "oov": ["Asia", "Gallia"]}
+{"ts": "2026-06-29T03:06:14Z", "path": "realitates/Cap6/Cap6_Octō_flūmina_brevis_006.md", "target": 6, "oov": ["Aegyptō", "Arar", "Danuvius", "Dorius", "Germāniā", "Nilus", "Rhodanus"]}
+{"ts": "2026-06-29T03:06:14Z", "path": "realitates/Cap14/Cap14_Quinque_populī_brevis_016.md", "target": 14, "oov": ["Aegyptī", "Aegyptō", "Galliā", "Germāniā", "Germānī"]}
+{"ts": "2026-06-29T03:06:15Z", "path": "realitates/Cap32/Cap32_Decem_populī_brevis_003.md", "target": 32, "oov": ["Aegyptī", "Afrī", "Arabī", "Britannī", "Germānī", "Hispānī"]}
+{"ts": "2026-06-29T03:06:15Z", "path": "realitates/Cap4/Cap4_Quattuor_flūmina_brevis_002.md", "target": 4, "oov": ["Aegyptō", "Danuvius", "Germāniā", "Nilus"]}
+{"ts": "2026-06-29T03:06:15Z", "path": "realitates/Cap10/Cap10_Sex_īnsulae_parvae_brevis_028.md", "target": 10, "oov": ["Naxus"]}
+{"ts": "2026-06-29T03:06:16Z", "path": "realitates/Cap26/Cap26_Quinque_oppida_Graeciae_brevis_004.md", "target": 26, "oov": ["Delphī", "Sparta", "Thēbae", "ōrāculum"]}
+{"ts": "2026-06-29T03:12:26Z", "path": "realitates/Cap1/Cap1_Trēs_īnsulae_parvae_brevis_007.md", "target": 1, "oov": ["Naxus"]}
+{"ts": "2026-06-29T03:12:27Z", "path": "realitates/Cap10/Cap10_Quattuor_īnsulae_Graecae_brevis_029.md", "target": 10, "oov": ["Crēta"]}
+{"ts": "2026-06-29T03:12:28Z", "path": "realitates/Cap1/Cap1_Trēs_terrae_Eurōpae_brevis_008.md", "target": 1, "oov": ["Gallia"]}
+{"ts": "2026-06-29T03:12:28Z", "path": "realitates/Cap1/Cap1_Sex_prōvinciae_Rōmānae_brevis_009.md", "target": 1, "oov": ["Aegyptus", "Asiā", "Gallia"]}
+{"ts": "2026-06-29T03:12:29Z", "path": "realitates/Cap6/Cap6_Quīnque_flūmina_Eurōpae_brevis_008.md", "target": 6, "oov": ["Dānuvius", "Galliā", "Germāniā", "Rhodanus"]}
+{"ts": "2026-06-29T03:12:29Z", "path": "realitates/Cap1/Cap1_Trēs_īnsulae_in_imperiō_brevis_010.md", "target": 1, "oov": ["Cyprus"]}
+{"ts": "2026-06-29T03:12:30Z", "path": "realitates/Cap25/Cap25_Quattuor_maria_magna_brevis_005.md", "target": 25, "oov": ["Britannicum"]}
+{"ts": "2026-06-29T03:12:30Z", "path": "realitates/Cap1/Cap1_Duo_imperia_antīqua_brevis_011.md", "target": 1, "oov": ["Asiā", "Persicum"]}
+{"ts": "2026-06-29T03:12:31Z", "path": "realitates/Cap13/Cap13_Quattuor_portae_Rōmae_brevis_015.md", "target": 13, "oov": ["Collīna", "Esquilīna", "Fontīnālis"]}
+{"ts": "2026-06-29T03:12:32Z", "path": "realitates/Cap19/Cap19_Sex_montēs_Rōmae_brevis_020.md", "target": 19, "oov": ["Aventīnus", "Esquiliae", "Palātium", "Viminālis"]}
+{"ts": "2026-06-29T03:12:32Z", "path": "realitates/Cap13/Cap13_Quīnque_oppida_Hispāniae_brevis_016.md", "target": 13, "oov": ["Corduba", "Hispalis", "Tarraco", "Toletum"]}
+{"ts": "2026-06-29T03:12:33Z", "path": "realitates/Cap46/Cap46_Trēs_colōniae_Graecae_brevis_001.md", "target": 46, "oov": ["Neapolis", "Syrācūsae", "colōniae"]}
+{"ts": "2026-06-29T03:13:25Z", "path": "realitates/Cap16/Cap16_Trēs_gentēs_Hispāniae_brevis_031.md", "target": 16, "oov": ["Cantabrī", "Lusitānī", "Vasconēs"]}
+{"ts": "2026-06-29T03:13:26Z", "path": "realitates/Cap16/Cap16_Quattuor_gentēs_Galliae_brevis_032.md", "target": 16, "oov": ["Aquītānī", "Belgae", "Celtae", "Galliā", "Narbonēnsēs"]}
+{"ts": "2026-06-29T03:13:26Z", "path": "realitates/Cap16/Cap16_Trēs_gentēs_Germāniae_brevis_033.md", "target": 16, "oov": ["Chattī", "Frisiī", "Germāniā", "Suebī"]}
+{"ts": "2026-06-29T03:13:27Z", "path": "realitates/Cap16/Cap16_Quīnque_gentēs_Britanniae_brevis_034.md", "target": 16, "oov": ["Britannī", "Cantiacī", "Hiberniā", "Icenī", "Pictī", "Scotī"]}
+{"ts": "2026-06-29T03:13:27Z", "path": "realitates/Cap32/Cap32_Sex_gentēs_Asiae_brevis_004.md", "target": 32, "oov": ["Aegyptō", "Arabēs", "Asiā", "Parthī", "Persae"]}
+{"ts": "2026-06-29T03:13:29Z", "path": "realitates/Cap13/Cap13_Septem_diēs_hebdomadis_brevis_019.md", "target": 13, "oov": ["Mercuriī", "Mārtis", "hebdomas"]}
+{"ts": "2026-06-29T03:13:29Z", "path": "realitates/Cap31/Cap31_Quīnque_sēnsūs_corporis_brevis_003.md", "target": 31, "oov": ["gustus", "olfaciō", "olfactus"]}
+{"ts": "2026-06-29T03:13:29Z", "path": "realitates/Cap26/Cap26_Quattuor_elementa_mundī_brevis_005.md", "target": 26, "oov": ["elementa", "hūmida"]}
+{"ts": "2026-06-29T03:13:30Z", "path": "realitates/Cap32/Cap32_Octō_maria_mundī_brevis_005.md", "target": 32, "oov": ["Britannicum", "Germānicum", "Hadriāticum", "Tyrrhēnum"]}
+{"ts": "2026-06-29T03:13:30Z", "path": "realitates/Cap42/Cap42_Novem_oppida_Graeca_brevis_001.md", "target": 42, "oov": ["Argos", "Dēlphī", "Mīlētus", "Olympia", "Sparta", "Thēbae"]}
+{"ts": "2026-06-29T03:13:31Z", "path": "realitates/Cap4/Cap4_Decem_prōvinciae_Rōmānae_brevis_004.md", "target": 4, "oov": ["Aegyptus", "Gallia", "Germānia"]}
+{"ts": "2026-06-29T03:13:31Z", "path": "realitates/Cap10/Cap10_Septem_flūmina_Asiae_brevis_030.md", "target": 10, "oov": ["Aegyptō", "Asiā", "Euphrātēs", "Gangēs", "Indiā", "Indūs", "Iordanēs", "Mesopotamiā", "Nīlus", "Tigris"]}
+{"ts": "2026-06-29T03:13:32Z", "path": "realitates/Cap9/Cap9_Octō_montēs_magnī_brevis_005.md", "target": 9, "oov": ["Apennīnus", "Atlās", "Caucasus", "Galliā", "Haemus", "Olympus", "Parnassus", "Pyrēnaeī"]}
+{"ts": "2026-06-29T03:15:21Z", "path": "realitates/Cap9/Cap9_Trēs_in_hortō_brevis_007.md", "target": 9, "oov": ["viridis"]}
+{"ts": "2026-06-29T03:15:22Z", "path": "realitates/Cap13/Cap13_Quattuor_in_aquā_brevis_020.md", "target": 13, "oov": ["Anguilla", "Rāna", "anguilla", "rāna", "serpit"]}
+{"ts": "2026-06-29T03:15:22Z", "path": "realitates/Cap12/Cap12_Duo_frātrēs_brevis_005.md", "target": 12, "oov": ["Mārcus"]}
+{"ts": "2026-06-29T03:15:23Z", "path": "realitates/Cap30/Cap30_Māter_et_fīlia_brevis_001.md", "target": 30, "oov": ["Līvia", "Līviam"]}
+{"ts": "2026-06-29T03:15:23Z", "path": "realitates/Cap19/Cap19_Pater_et_fīlius_brevis_021.md", "target": 19, "oov": ["Titus"]}
+{"ts": "2026-06-29T03:15:26Z", "path": "realitates/Cap12/Cap12_Mīles_et_dux_brevis_006.md", "target": 12, "oov": ["ignāvus"]}
+{"ts": "2026-06-29T03:15:27Z", "path": "realitates/Cap16/Cap16_Nauta_et_mare_brevis_035.md", "target": 16, "oov": ["caeruleum"]}
+{"ts": "2026-06-29T03:17:12Z", "path": "realitates/Cap10/Cap10_Servus_in_hortō_brevis_034.md", "target": 10, "oov": ["sūdō"]}
+{"ts": "2026-06-29T03:17:14Z", "path": "realitates/Cap16/Cap16_Fēmina_ad_fontem_brevis_036.md", "target": 16, "oov": ["fontem", "urnam", "urnā"]}
+{"ts": "2026-06-29T03:17:15Z", "path": "realitates/Cap8/Cap8_Tabernārius_et_emptor_brevis_002.md", "target": 8, "oov": ["Emptor"]}
+{"ts": "2026-06-29T03:17:15Z", "path": "realitates/Cap10/Cap10_Mendīcus_ad_portam_brevis_035.md", "target": 10, "oov": ["Mendīcum", "Mendīcus"]}
+{"ts": "2026-06-29T03:17:17Z", "path": "realitates/Cap26/Cap26_Nāvis_in_portū_brevis_006.md", "target": 26, "oov": ["onera"]}
+{"ts": "2026-06-29T03:17:17Z", "path": "realitates/Cap12/Cap12_Epistula_ad_amīcum_brevis_007.md", "target": 12, "oov": ["invītō"]}
+{"ts": "2026-06-29T03:17:17Z", "path": "realitates/Cap19/Cap19_Dōnum_brevis_023.md", "target": 19, "oov": ["Lūcius"]}
+{"ts": "2026-06-29T03:17:18Z", "path": "realitates/Cap13/Cap13_Hostis_in_portīs_brevis_021.md", "target": 13, "oov": ["casīs", "firmae"]}
+{"ts": "2026-06-29T03:17:18Z", "path": "realitates/Cap32/Cap32_Victōria_brevis_006.md", "target": 32, "oov": ["Corōnam"]}
+{"ts": "2026-06-29T03:17:19Z", "path": "realitates/Cap29/Cap29_Iūdex_et_fūr_brevis_004.md", "target": 29, "oov": ["Iūdex", "fūrātus"]}
+{"ts": "2026-06-29T03:18:28Z", "path": "realitates/Cap15/Cap15_Cēna_familiae_brevis_006.md", "target": 15, "oov": ["ede", "ēsurio"]}
+{"ts": "2026-06-29T03:18:29Z", "path": "realitates/Cap18/Cap18_In_thermīs_brevis_022.md", "target": 18, "oov": ["Audīvistīne", "thermīs"]}
+{"ts": "2026-06-29T03:18:31Z", "path": "realitates/Cap26/Cap26_Fabrī_et_mūrus_brevis_007.md", "target": 26, "oov": ["Lapidēs"]}
+{"ts": "2026-06-29T03:18:32Z", "path": "realitates/Cap14/Cap14_Custōs_et_porta_brevis_019.md", "target": 14, "oov": ["Custōs", "custōdit", "custōs"]}
+{"ts": "2026-06-29T03:18:33Z", "path": "realitates/Cap33/Cap33_Gladiātor_in_arēnā_brevis_001.md", "target": 33, "oov": ["Pollice", "arēnā"]}
+{"ts": "2026-06-29T03:18:33Z", "path": "realitates/Cap13/Cap13_Senātor_et_populus_brevis_022.md", "target": 13, "oov": ["Senātor"]}
+{"ts": "2026-06-29T03:18:34Z", "path": "realitates/Cap32/Cap32_Captīvus_et_victor_brevis_007.md", "target": 32, "oov": ["Captīvus", "captīvus"]}
+{"ts": "2026-06-29T03:18:35Z", "path": "realitates/Cap25/Cap25_Vātēs_et_rēx_brevis_007.md", "target": 25, "oov": ["Vātēs", "vātem"]}
+{"ts": "2026-06-29T03:19:33Z", "path": "realitates/Cap26/Cap26_Nauta_et_tempestās_brevis_008.md", "target": 26, "oov": ["undīs"]}
+{"ts": "2026-06-29T03:19:34Z", "path": "realitates/Cap13/Cap13_Viātor_et_nox_brevis_024.md", "target": 13, "oov": ["Viātor"]}
+{"ts": "2026-06-29T03:19:35Z", "path": "realitates/Cap16/Cap16_Fūr_et_lūna_brevis_037.md", "target": 16, "oov": ["Maledicta", "casam"]}
+{"ts": "2026-06-29T03:19:35Z", "path": "realitates/Cap11/Cap11_Equus_et_dominus_brevis_011.md", "target": 11, "oov": ["Equus", "equus", "hinnit", "stabulō"]}
+{"ts": "2026-06-29T03:19:36Z", "path": "realitates/Cap27/Cap27_Vīnum_et_amīcus_brevis_005.md", "target": 27, "oov": ["calicibus", "focō"]}
+{"ts": "2026-06-29T03:19:37Z", "path": "realitates/Cap27/Cap27_Cēna_ultima_mīlitis_brevis_006.md", "target": 27, "oov": ["edit"]}
+{"ts": "2026-06-29T03:19:38Z", "path": "realitates/Cap19/Cap19_Dīves_et_pauper_brevis_027.md", "target": 19, "oov": ["culpa"]}
+{"ts": "2026-06-29T03:21:24Z", "path": "realitates/Cap30/Cap30_In_culīnā_brevis_003.md", "target": 30, "oov": ["calet", "focō", "ollā"]}
+{"ts": "2026-06-29T03:21:25Z", "path": "realitates/Cap13/Cap13_In_stabulō_brevis_025.md", "target": 13, "oov": ["Equus", "hinnit", "stabulō"]}
+{"ts": "2026-06-29T03:21:26Z", "path": "realitates/Cap13/Cap13_Via_ad_urbem_brevis_026.md", "target": 13, "oov": ["paulātim", "veniam"]}
+{"ts": "2026-06-29T03:21:26Z", "path": "realitates/Cap11/Cap11_In_triclīniō_brevis_012.md", "target": 11, "oov": ["Ede", "ēsuriō"]}
+{"ts": "2026-06-29T03:21:26Z", "path": "realitates/Cap22/Cap22_Faber_et_gladius_brevis_007.md", "target": 22, "oov": ["officīnā", "tundit"]}
+{"ts": "2026-06-29T03:21:27Z", "path": "realitates/Cap13/Cap13_Porta_urbis_brevis_027.md", "target": 13, "oov": ["Custōdēs", "vādis"]}
+{"ts": "2026-06-29T03:21:28Z", "path": "realitates/Cap25/Cap25_Ōrāculum_deōrum_brevis_008.md", "target": 25, "oov": ["ōrāculum"]}
+{"ts": "2026-06-29T03:21:29Z", "path": "realitates/Cap25/Cap25_Sapientia_senis_brevis_009.md", "target": 25, "oov": ["Sapientia", "sapientia"]}
+{"ts": "2026-06-29T03:22:26Z", "path": "realitates/Cap14/Cap14_Mors_amīcī_brevis_022.md", "target": 14, "oov": ["sepeliō"]}
+{"ts": "2026-06-29T03:22:27Z", "path": "realitates/Cap13/Cap13_Hortus_post_pluviam_brevis_028.md", "target": 13, "oov": ["hūmidī", "viridēs"]}
+{"ts": "2026-06-29T03:22:29Z", "path": "realitates/Cap13/Cap13_Mercātor_et_via_brevis_031.md", "target": 13, "oov": ["veniam"]}
+{"ts": "2026-06-29T03:32:18Z", "path": "realitates/Cap3/Cap3_Mārcus_et_Iūlia_brevis_004.md", "target": 3, "oov": ["Mārcum", "Mārcus"]}
+{"ts": "2026-06-29T03:34:35Z", "path": "realitates/Cap3/Cap3_Fluvius_magnus_brevis_006.md", "target": 3, "oov": ["Asiā"]}
+{"ts": "2026-06-29T03:34:35Z", "path": "realitates/Cap2/Cap2_Īnsulae_Graecae_brevis_007.md", "target": 2, "oov": ["Crēta"]}
+{"ts": "2026-06-29T03:34:38Z", "path": "realitates/Cap3/Cap3_Mārcus_dormit_brevis_009.md", "target": 3, "oov": ["Mārcum", "Mārcus"]}
+{"ts": "2026-06-29T03:36:44Z", "path": "realitates/Cap9/Cap9_In_silvīs_Eurōpae_brevis_011.md", "target": 9, "oov": ["Natūra"]}
+{"ts": "2026-06-29T03:36:46Z", "path": "realitates/Cap11/Cap11_Agricola_et_terra_brevis_014.md", "target": 11, "oov": ["Plantae", "plantās", "plantīs"]}
+{"ts": "2026-06-29T03:36:47Z", "path": "realitates/Cap14/Cap14_Epistula_ad_patrem_brevis_024.md", "target": 14, "oov": ["caeruleum", "discō"]}
+{"ts": "2026-06-29T03:36:49Z", "path": "realitates/Cap15/Cap15_Puer_et_magister_brevis_010.md", "target": 15, "oov": ["discō"]}
+{"ts": "2026-06-29T03:36:51Z", "path": "realitates/Cap17/Cap17_Philosophus_et_discipulus_brevis_012.md", "target": 17, "oov": ["Sapientia", "discō", "sapientia", "sapientiam"]}
+{"ts": "2026-06-29T03:45:12Z", "path": "realitates/Cap16/Cap16_Umbra_Orphei_brevis_044.md", "target": 16, "oov": ["Eurydicēn", "Orpheum", "fluitant", "habēns", "immōtae", "lyrā", "susurrat"]}
+{"ts": "2026-06-29T03:45:12Z", "path": "realitates/Cap20/Cap20_Mercator_et_consul_brevis_017.md", "target": 20, "oov": ["exigis", "exēgistī", "murmurant"]}
+{"ts": "2026-06-29T03:45:13Z", "path": "realitates/Cap16/Cap16_Miles_sine_nomine_brevis_045.md", "target": 16, "oov": ["Centuriō", "Gallicē", "Tuba", "centuriō", "tuba"]}
+{"ts": "2026-06-29T03:45:13Z", "path": "realitates/Cap21/Cap21_Senex_et_chaos_brevis_004.md", "target": 21, "oov": ["Lapidēs", "chaos", "exstat", "lapidēs"]}
+{"ts": "2026-06-29T03:45:14Z", "path": "realitates/Cap17/Cap17_Scientia_servi_brevis_014.md", "target": 17, "oov": ["Cleanthēs", "centrum", "sapientiae"]}
+{"ts": "2026-06-29T03:45:14Z", "path": "realitates/Cap17/Cap17_Mors_in_horto_brevis_015.md", "target": 17, "oov": ["Mārcus", "Petala", "scholā"]}
+{"ts": "2026-06-29T03:45:15Z", "path": "realitates/Cap19/Cap19_Amor_ancillae_brevis_030.md", "target": 19, "oov": ["Leucō", "Leucōn", "Nūptiae", "nūptiās", "somniāre"]}
+{"ts": "2026-06-29T03:45:15Z", "path": "realitates/Cap14/Cap14_Rex_et_umbra_brevis_025.md", "target": 14, "oov": ["cadis"]}
+{"ts": "2026-06-29T03:45:15Z", "path": "realitates/Cap29/Cap29_Pons_et_gladius_brevis_007.md", "target": 29, "oov": ["barbare", "sustulī", "tēctīs"]}
+{"ts": "2026-06-29T03:45:16Z", "path": "realitates/Cap19/Cap19_Senex_et_ordo_brevis_031.md", "target": 19, "oov": ["fīnīta", "rogātiōnem"]}
+{"ts": "2026-06-29T03:45:16Z", "path": "realitates/Cap17/Cap17_Deus_et_servus_brevis_016.md", "target": 17, "oov": ["Sapientia", "abscondunt", "intellegentiam", "sapientia", "sapientiam", "scientiam"]}
+{"ts": "2026-06-29T03:45:17Z", "path": "realitates/Cap19/Cap19_Via_et_domus_brevis_032.md", "target": 19, "oov": ["**", "**Via", "Pulvis"]}
+{"ts": "2026-06-29T03:45:17Z", "path": "realitates/Cap25/Cap25_Lupa_et_puer_brevis_011.md", "target": 25, "oov": ["flentēs", "lupae"]}

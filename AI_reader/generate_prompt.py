@@ -77,9 +77,9 @@ def resolve_prompt(chapter: int, template_path: Path) -> str:
         ValueError: 章节号超出有效范围
         FileNotFoundError: 模板文件不存在
     """
-    if not 1 <= chapter <= 34:
+    if not 1 <= chapter <= 56:
         raise ValueError(
-            f"章节号必须在 1-34 之间（LLPSI 共 34 章），当前输入: {chapter}。"
+            f"章节号必须在 1-56 之间，当前输入: {chapter}。"
         )
 
     if not template_path.exists():
