@@ -1,7 +1,7 @@
 ---
 
 story_id: "cap10_30"
-title_la: "Quattuor insulae Graecae"
+title_la: "Quattuor Insulae Graecae"
 title_zh: "四座希腊岛"
 target_chapter: 10
 theme: "18 自然"

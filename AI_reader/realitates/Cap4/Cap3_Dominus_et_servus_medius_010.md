@@ -1,6 +1,6 @@
 ---
 story_id: "cap3_02"
-title_la: "Dominus et servus"
+title_la: "Dominus et Servus"
 title_zh: "主与奴"
 target_chapter: 3
 theme: "03 权力"
