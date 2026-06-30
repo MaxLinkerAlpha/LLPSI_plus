@@ -1,0 +1,95 @@
+{
+  "version": "1_0_0",
+  "timestamp": "20260701_020652",
+  "files": [
+    {
+      "file": "form_chapter_map.json",
+      "original": 33047,
+      "cleaned": 31286,
+      "deleted": 1979,
+      "rescued_new": 218,
+      "rescued_merged": 390,
+      "delete_reasons": {
+        "non_latin_misc": 1185,
+        "hyphenated": 582,
+        "comma_join": 323,
+        "too_long": 221,
+        "cross_sentence": 197,
+        "contains_digit": 166,
+        "quote_joined": 118,
+        "camel_joint": 94,
+        "number_prefix": 73,
+        "english": 17,
+        "ellipsis": 16
+      },
+      "backup": "form_chapter_map_clean_bak_20260701_020651.json"
+    },
+    {
+      "file": "lemma_chapter_map.json",
+      "original": 14613,
+      "cleaned": 13400,
+      "deleted": 1636,
+      "rescued_new": 423,
+      "rescued_merged": 185,
+      "delete_reasons": {
+        "non_latin_misc": 1186,
+        "comma_join": 323,
+        "hyphenated": 242,
+        "too_long": 221,
+        "cross_sentence": 197,
+        "contains_digit": 166,
+        "quote_joined": 118,
+        "camel_joint": 94,
+        "number_prefix": 73,
+        "ellipsis": 16,
+        "english": 13
+      },
+      "backup": "lemma_chapter_map_clean_bak_20260701_020652.json"
+    },
+    {
+      "file": "word_lemma_map.json",
+      "original": 20944,
+      "cleaned": 19202,
+      "deleted": 1977,
+      "rescued_new": 235,
+      "rescued_merged": 373,
+      "delete_reasons": {
+        "non_latin_misc": 1185,
+        "hyphenated": 582,
+        "comma_join": 323,
+        "too_long": 221,
+        "cross_sentence": 197,
+        "contains_digit": 166,
+        "quote_joined": 118,
+        "camel_joint": 94,
+        "number_prefix": 73,
+        "ellipsis": 16,
+        "english": 15
+      },
+      "backup": "word_lemma_map_clean_bak_20260701_020652.json"
+    },
+    {
+      "file": "word_chapter_map_normalized.json",
+      "original": 17536,
+      "cleaned": 15823,
+      "deleted": 1885,
+      "rescued_new": 172,
+      "rescued_merged": 420,
+      "delete_reasons": {
+        "non_latin_misc": 1179,
+        "hyphenated": 566,
+        "comma_join": 323,
+        "too_long": 221,
+        "contains_digit": 162,
+        "quote_joined": 118,
+        "number_prefix": 71,
+        "ellipsis": 16,
+        "english": 15
+      },
+      "backup": "word_chapter_map_normalized_clean_bak_20260701_020652.json"
+    }
+  ],
+  "total_original": 86140,
+  "total_cleaned": 79711,
+  "total_deleted": 7477
+}
