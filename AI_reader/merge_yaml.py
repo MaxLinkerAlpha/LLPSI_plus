@@ -415,10 +415,8 @@ def output_yaml(merged: dict, latin_text: str) -> str:
 
 LENGTH_TIER_LA = {
     "短篇": "brevis",
-    "中篇": "media",
-    "中长篇": "longior",
-    "长篇": "longa",
-    "超长篇": "longissima",
+    "中篇": "medius",
+    "长篇": "longus",
 }
 
 

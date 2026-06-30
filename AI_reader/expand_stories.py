@@ -101,11 +101,11 @@ def fix_file(filepath, target_words):
 if __name__ == "__main__":
     cap11_dir = BASE / "realitates" / "Cap11"
     
-    # 目标词数：中篇=300, 中长篇=500, 长篇=800
+    # 目标词数（v4 终版）：短篇 150-349 / 中篇 350-699 / 长篇 700-1000+
     targets = {
-        "medius": 300,
-        "longior": 500,
-        "longus": 800,
+        "brevis": 250,   # 短篇中位
+        "medius": 500,   # 中篇中位
+        "longus": 850,   # 长篇中位
     }
     
     for tier, target in targets.items():

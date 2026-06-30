@@ -18,7 +18,7 @@ EVAL_SCRIPT = PROJECT_ROOT / "difficulty_algorithm" / "evaluate_v2.py"
 STORIES_FILE = Path("/tmp/stories_v2_15.txt")
 
 # 篇幅映射
-LENGTH_MAP = {"短篇": "brevis", "中篇": "media", "中长篇": "longior", "长篇": "longa", "超长篇": "longissima"}
+LENGTH_MAP = {"短篇": "brevis", "中篇": "medius", "长篇": "longus"}
 
 def title_to_slug(title_la: str) -> str:
     """拉丁标题 → 文件名 slug"""
@@ -32,10 +32,8 @@ def title_to_slug(title_la: str) -> str:
 def next_number(chapter_dir: Path, target_chapter: int) -> str:
     """找到下一个可用的 NNN"""
     existing = list(chapter_dir.glob(f"Cap{target_chapter}_*_brevis_*.md"))
-    existing += list(chapter_dir.glob(f"Cap{target_chapter}_*_media_*.md"))
-    existing += list(chapter_dir.glob(f"Cap{target_chapter}_*_longior_*.md"))
-    existing += list(chapter_dir.glob(f"Cap{target_chapter}_*_longa_*.md"))
-    existing += list(chapter_dir.glob(f"Cap{target_chapter}_*_longissima_*.md"))
+    existing += list(chapter_dir.glob(f"Cap{target_chapter}_*_medius_*.md"))
+    existing += list(chapter_dir.glob(f"Cap{target_chapter}_*_longus_*.md"))
 
     max_n = 0
     for f in existing:
