@@ -217,3 +217,39 @@ LLPSI OCR (56章文本)
 FR Excel 单词表
     └─→ extract_fr_lemmas.py ──→ fr_lemmas.json ──→ 交叉验证
 ```
+
+---
+
+## 十一、v3_0_0 实施记录（2026-06-30）
+
+### 11.1 word_chapter_map 数据清理
+
+对 `word_chapter_map.json`（OCR 来源）做了质量审查，发现并清理了 72 条脏数据：
+
+| 类型 | 数量 | 示例 |
+|------|------|------|
+| OCR 粘连词（多词合并） | 15 条 | `sternerestrāvissestratum`、`multitudinempraedonum` |
+| 英语词混入（页边注释被 OCR 误收） | 8 条 | `following`、`book`、`words` |
+| 2 字母辅音碎片（词内辅音团被当成独立词） | 50 条 | `st`、`tr`、`pr`、`nt` |
+| OCR 字母误识（`oo` → `o`） | 8 条 | `ooctavus` → `octavus`、`cognooistis` → `cognovistis` |
+
+其中 7 条 OCR 误识词修正后保留，其余删除。原始 16,737 条 → 清理后 16,665 条。
+
+### 11.2 下游脚本迁移
+
+以下 AI_reader 管线脚本已从 simplemma 实时还原迁移到 form_chapter_map 直接查表：
+
+| 文件 | 改动 |
+|------|------|
+| `AI_reader/verify_vocab.py` | `simplemma.lemmatize()` → `FCM.get(clean)`，零外部依赖 |
+| `AI_reader/check_words.py` | 同上，移除 simplemma import |
+| `difficulty_algorithm/auto_supplement_map.py` | 优先查 form_chapter_map，未命中才走近邻分析 |
+
+### 11.3 外部方案评估
+
+调研了两个外部拉丁语还原方案，结论均为**不引入**：
+
+- **Whitaker's Words**：Python 封装包不存在于 PyPI，原始数据格式（自定义二进制 `DICTFILE.GEN`）需要专门解析器，投入产出比低
+- **CLTK LEMMATA 词典**（270,233 条）：准确率 26%，远低于 simplemma 的 55%；覆盖率仅 62%；唯一能修正 simplemma 的 6 条（0.6%）都是专有名词大小写，影响微小
+
+当前「预计算 33K 表 + simplemma 兜底」是实测最优组合。
