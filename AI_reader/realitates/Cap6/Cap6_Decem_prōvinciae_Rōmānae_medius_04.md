@@ -1,0 +1,114 @@
+---
+story_id: "cap4_04"
+title_la: "Decem prōvinciae Rōmānae"
+title_zh: "罗马十省"
+target_chapter: 4
+theme: "06 权力"
+style: "白话"
+genre: "C 历史与人物"
+character_type: "罗马人"
+length_tier: "中篇"
+narrative_mode: "第三人称"
+word_count: 368
+macrons_status: "generated"
+evaluated_chapter: 6
+best_fit_chapter: 6
+coverage_rate: 92.7
+oov_words: ["Aegyptus", "Asia", "Cr\u0113ta", "Asi\u0101", "N\u012blus", "Aegypt\u014d"]
+rewritten_from: "brevis"
+rewritten_at: "2026-06-30T04:12:22.083963+00:00"
+status: "rewritten"
+---
+
+Decem prōvinciae Rōmānae sunt.
+Prōvincia prīma est Sicilia.
+Prōvincia secunda est Sardinia.
+Prōvincia tertia est Corsica.
+Prōvincia quārta est Hispānia.
+Prōvincia quīnta est Britannia.
+Prōvincia sexta est Syria.
+Prōvincia septima est Aegyptus.
+Prōvincia octāva est Āfrica.
+Prōvincia nōna est Asia.
+Prōvincia decima est Crēta.
+Sicilia est īnsula.
+Sicilia est īnsula magna.
+Sicilia est īnsula pulchra.
+Sicilia prope Italiam est.
+Sicilia est prōvincia Rōmāna.
+In Siciliā multa oppida sunt.
+In Siciliā multī virī sunt.
+In Siciliā multae fēminae sunt.
+Sicilia est īnsula bona.
+Sicilia Rōmānīs pāret.
+Sardinia est īnsula.
+Sardinia nōn est magna — sed Sardinia est pulchra.
+Sardinia prope Italiam est.
+Sardinia est prōvincia Rōmāna.
+In Sardiniā multa oppida sunt.
+Sardinia Rōmānīs pāret.
+Sardinia est īnsula bona.
+Corsica est īnsula.
+Corsica est īnsula parva.
+Corsica inter Sardiniam et Italiam est.
+Corsica est prōvincia Rōmāna.
+Corsica Rōmānīs pāret.
+Corsica est īnsula pulchra.
+Corsica est īnsula bona.
+Hispānia est prōvincia magna.
+Hispānia in Eurōpā est.
+Hispānia multa oppida habet.
+Hispānia multōs virōs habet.
+Hispānia multās fēminās habet.
+Hispānia multās viās habet.
+Hispānia est prōvincia magna.
+Hispānia Rōmānīs pāret.
+Hispānia est prōvincia bona.
+Britannia est īnsula magna.
+Britannia est prōvincia Rōmāna.
+Britannia nōn est prope Italiam.
+Britannia est īnsula longa.
+In Britanniā multī virī sunt.
+In Britanniā multae fēminae sunt.
+Britannia Rōmānīs pāret.
+Britannia est īnsula magna.
+Syria in Asiā est.
+Syria est prōvincia Rōmāna.
+Syria multa oppida habet.
+Syria multōs virōs habet.
+Syria Rōmānīs pāret.
+Syria est prōvincia bona.
+Aegyptus est prōvincia magna.
+Aegyptus in Āfricā est.
+Aegyptus multa oppida habet.
+Aegyptus multōs virōs habet.
+Nīlus in Aegyptō est.
+Nīlus Aegyptō aquam dat.
+Nīlus est aqua magna.
+Aegyptus Rōmānīs pāret.
+Aegyptus est prōvincia bona.
+Āfrica est prōvincia magna.
+Āfrica multa oppida habet.
+Āfrica multōs virōs habet.
+Āfrica multās viās habet.
+Āfrica Rōmānīs pāret.
+Āfrica est prōvincia magna.
+Asia est prōvincia magna.
+Asia multa oppida habet.
+Asia multōs virōs habet.
+Asia multās fēminās habet.
+Asia Rōmānīs pāret.
+Asia est prōvincia magna.
+Crēta est īnsula.
+Crēta est īnsula magna.
+Crēta est īnsula pulchra.
+Crēta est prōvincia Rōmāna.
+Crēta Rōmānīs pāret.
+Crēta est īnsula bona.
+Decem prōvinciae Rōmānae.
+Decem prōvinciae — ūnum imperium.
+Rōma est oppidum magnum.
+Rōma prōvincīs imperat.
+Prōvinciae Rōmae pārent.
+Decem prōvinciae — decem viae.
+Et decem prōvinciae sunt bonae.

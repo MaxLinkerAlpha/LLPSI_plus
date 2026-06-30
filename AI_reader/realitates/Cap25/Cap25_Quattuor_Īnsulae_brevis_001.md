@@ -1,0 +1,65 @@
+---
+
+title_la: "Quattuor Īnsulae"
+title_zh: "四岛"
+target_chapter: 13
+theme: "22 旅程"
+style: "白话"
+genre: "B 神话与传说"
+character_type: "希腊人"
+length_tier: "短篇"
+narrative_mode: "第三人称"
+word_count: 278
+macrons_status: "generated"
+evaluated_chapter: 25
+v2_rate: 97.9
+v2_oov: ["Cr\u0113tam", "statua", "m\u012br\u0101cula"]
+created_at: "2026-06-30T10:52:21Z"
+updated_at: "2026-06-30T10:52:21Z"
+status: "rewritten"
+rewritten_from: "brevis"
+
+---
+
+Nāvis in marī est.
+Nāvis quattuor īnsulās petit.
+In nāve, senex et iuvenis sunt.
+Senex est nauta.
+Iuvenis est discipulus.
+Iuvenis: 'Magister, cūr quattuor īnsulās petimus?' Senex: 'Quia quaeque īnsula aliquid docet.
+Prīma īnsula: Crēta.
+Ibi rēx Mīnōs vīxit.
+Mīnōs magnum labyrinthum habuit.
+In labyrinthō, mōnstrum fuit.
+Sed mōnstrum nōn est magnum.
+Magnum est quod homō facit — labyrinthum.' Iuvenis: 'Quid labyrinthus docet?' Senex: 'Labyrinthus docet: viae multae sunt.
+Sed via ad cor — ūna est.' Nāvis ad Crētam nāvigat.
+Īnsula est magna.
+Iuvenis: 'Crēta est pulchra.
+Sed ego labyrinthum nōn videō.' Senex: 'Labyrinthus nōn in terrā est — labyrinthus in corde est.' Nāvis ad secundam īnsulam nāvigat: Rhodus.
+Senex: 'Rhodus est īnsula sōlis.
+Hīc, Colossus stetit — statua magna, inter septem mīrācula mundī.' Iuvenis: 'Ubi est Colossus nunc?' Senex: 'Cadit.
+Terra mōvit — et Colossus cadit.
+Hoc docet: etiam magna cadunt.' Nāvis ad tertiam īnsulam nāvigat: Delos.
+Senex: 'Delos est īnsula sacra.
+Hīc, deus nātus est.
+Sed nunc Delos est vacua.
+Nēmō hīc vīvit.
+Hoc docet: etiam sacra loca vacua fiunt.' Iuvenis: 'Tristis est.' Senex: 'Vīta est trīstis.
+Sed vīta est quoque pulchra.' Nāvis ad quārtam īnsulam nāvigat: īnsula parva sine nōmine.
+Senex: 'Haec īnsula nōn est in librīs.
+Nēmō dē eā scrībit.
+Sed hīc hominēs vīvunt.
+Hīc puerī rīdent.
+Hīc fēminae canunt.
+Hoc docet: etiam parvae rēs sunt magnae.' Iuvenis: 'Intellegō, magister.
+Quattuor īnsulae — quattuor verba.' Senex: 'Dīc mihi.' Iuvenis: 'Crēta: via.
+Rhodus: cadit.
+Delos: vacua.
+Īnsula sine nōmine: vīta.' Senex: 'Bene, discipule.
+Nunc tū es nauta.
+Nunc tū potes sōlus nāvigāre.' Nāvis in mare redit.
+Senex et iuvenis in caelum spectant.
+Stēllae in caelō sunt.
+Mare est magnum.
+Et nāvis — nāvis semper nāvigat.

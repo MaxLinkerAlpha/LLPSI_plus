@@ -22,4 +22,19 @@ updated_at: "2026-06-30T14:48:09Z"
 status: "evaluated"
 ---
 
-Duo frātrēs in eādem domō habitābant — vīgintī annōs. Sed numquam locūtī erant. Nōn quod ōderant sē — sed quod pater, antequam morerētur, dīxerat: "Domus haec est duōrum — sed ūnus tantum eam habēbit. Quī prior loquētur, domum perdet." Uterque frāter domum volēbat. Uterque tacēbat. Vīgintī annōs — in eādem domō, in eōdem mēnsā, in eōdem hortō — duo frātrēs tacitī vīvēbant. Ūnus aquam ferēbat — alter ignem. Ūnus pānem emēbat — alter carnem. Sed numquam verba. Numquam. Quandō alter aegrōtus erat, alter medicum vocāvit — sed per servum. Quandō alter fēlīx erat, alter rīsit — sed in silentiō. Post vīgintī annōs, ūnus mortuus est. Alter — iam sōlus — ad sepulcrum frātris vēnit. "Frāter," inquit — prīmum verbum post vīgintī annōs — "domus est tua. Semper tua fuit." Et lacrimāvit. Sed frāter iam audīre nōn poterat.
+Duo frātrēs in eādem domō habitābant — vīgintī annōs.
+Sed numquam locūtī erant.
+Nōn quod ōderant sē — sed quod pater, antequam morerētur, dīxerat: "Domus haec est duōrum — sed ūnus tantum eam habēbit.
+Quī prior loquētur, domum perdet." Uterque frāter domum volēbat.
+Uterque tacēbat.
+Vīgintī annōs — in eādem domō, in eōdem mēnsā, in eōdem hortō — duo frātrēs tacitī vīvēbant.
+Ūnus aquam ferēbat — alter ignem.
+Ūnus pānem emēbat — alter carnem.
+Sed numquam verba.
+Numquam.
+Quandō alter aegrōtus erat, alter medicum vocāvit — sed per servum.
+Quandō alter fēlīx erat, alter rīsit — sed in silentiō.
+Post vīgintī annōs, ūnus mortuus est.
+Alter — iam sōlus — ad sepulcrum frātris vēnit. "Frāter," inquit — prīmum verbum post vīgintī annōs — "domus est tua.
+Semper tua fuit." Et lacrimāvit.
+Sed frāter iam audīre nōn poterat.

@@ -1,0 +1,102 @@
+---
+story_id: "cap8_02"
+title_la: "Fīlia ad fenestram"
+title_zh: "窗边的女孩"
+target_chapter: 8
+theme: "18 自然"
+style: "抒情"
+genre: "A LLPSI宇宙"
+character_type: "罗马人"
+length_tier: "中篇"
+narrative_mode: "第三人称"
+word_count: 475
+macrons_status: "generated"
+evaluated_chapter: 10
+best_fit_chapter: 10
+coverage_rate: 100.0
+oov_words: []
+rewritten_from: "brevis"
+rewritten_at: "2026-06-30T07:25:05.560484+00:00"
+status: "rewritten"
+---
+
+Fīlia ad fenestram stat.
+Fīlia est Iūlia.
+Fenestra est magna.
+Fenestra est aperta.
+Iūlia per fenestram spectat.
+Iūlia hortum videt.
+Hortus est magnus.
+Hortus est pulcher.
+In hortō multae rosae sunt.
+Rosae sunt pulchrae.
+Rosae sunt pulchrae.
+Rosae sunt magnae.
+Iūlia rosās spectat.
+Iūlia: 'Rosae, rosae — tū estis pulchrae.
+Ego tū amō.' In hortō etiam līlia sunt.
+Līlia sunt alba.
+Līlia sunt pulchra.
+Iūlia līlia spectat.
+Iūlia: 'Līlia, tū quoque estis pulchra.
+Sed rosae sunt pulchriōrēs.' Māter Iūliae in cubiculum venit.
+Māter est Iūlia.
+Iūlia: 'Iūlia, quid vidēs?
+Quid per fenestram spectās?' Iūlia: 'Māter, ego hortum videō.
+Ego rosās videō.
+Ego līlia videō.
+Hortus est pulcher.' Iūlia ad fenestram venit.
+Iūlia per fenestram spectat.
+Iūlia: 'Ita, fīlia mea.
+Hortus est pulcher.
+Hortus meus est pulcher.' Iūlia: 'Māter, cūr hortus est tam pulcher?
+Cūr rosae sunt tam pulchrae?' Iūlia: 'Hortus est pulcher quod eum cūrāmus.
+Rosae sunt pulchrae quod eīs aquam damus.
+Pulchrum nōn est sōlum — pulchrum est labōris.' Iūlia: 'Labōris?
+Quid est labōris?' Iūlia: 'Labōris est quod facimus.
+Servī in hortō labōrant.
+Ego et pater tuus in hortō labōrāmus.
+Multae manūs hortum pulchrum faciunt.' Iūlia: 'Et ego, māter?
+Ego in hortō labōrāre possum?' Iūlia: 'Tū es parva, fīlia — sed tū potes adiuvāre.
+Tū potes rosīs aquam dare.
+Tū potes rosās spectāre.' Iūlia: 'Māter, ego in hortum īre volō.
+Ego rosās prope vidēre volō.
+Ego rosīs aquam dare volō.' Iūlia: 'Bene, fīlia.
+Venī mēcum.
+In hortum ībimus.' Iūlia et Iūlia ex vīllā exeunt.
+In hortum intrant.
+Hortus est plēnus flōrum.
+Hortus est plēnus colōrum.
+Iūlia ad rosās currit.
+Iūlia rosās spectat.
+Iūlia: 'Māter, hae rosae sunt pulchrae!
+Eae sunt pulchriōrēs quam ex fenestrā!' Iūlia: 'Ita, fīlia.
+Prope, rosae sunt pulchriōrēs.
+Fenestra mōnstrat — sed hortus dat.' Iūlia rosam tenet.
+Rosa est mollis.
+Iūlia: 'Māter, rosa est mollis!
+Rosa est pulchra!' Iūlia: 'Nōlī rosam carpere, Iūlia.
+Rosa in hortō esse dēbet.
+Sī rosam carpis, rosa nōn diū pulchra est.' Iūlia: 'Ita, māter.
+Ego rosam nōn carpam.
+Ego rosam spectābō.' Iūlia aquam ad rosās portat.
+Iūlia: 'Iūlia, venī.
+Tū rosīs aquam dare potes.' Iūlia parvam aquam capit.
+Iūlia rosīs aquam dat.
+Iūlia: 'Bibite, rosae!
+Bibite aquam!
+Et estōte pulchrae!' Iūlia rīdet.
+Iūlia: 'Bene, fīlia mea.
+Tū rosās cūrās.
+Tū es bona hortī servus.' Iūlia: 'Māter, ego hortum amō.
+Ego in hortō laeta sum.' Iūlia: 'Et ego laeta sum, fīlia.
+Hortus meus est pulcher — et tū es pulchra in hortō.' Iūlia et Iūlia in hortō stant.
+Iūlia rosās spectat.
+Iūlia aquam audit.
+Iūlia: 'Māter, ex fenestrā hortus est pulcher.
+Sed in hortō, hortus est pulchrior.
+Et ego hīc esse volō — nōn ad fenestram.' Iūlia: 'Fenestra est bona — sed hortus est bonus.
+Mementō, fīlia: vidēre est bonum, sed esse est bonum.' Iūlia: 'Ego memoriā tenēbō, māter.' Māter et fīlia in hortō sunt.
+Sōl in caelō est.
+Canēs cantant.
+Et in hortō, multa sunt pulchra.

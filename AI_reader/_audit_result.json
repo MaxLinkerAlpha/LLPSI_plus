@@ -1,0 +1,248 @@
+{
+  "scan_time": "2026-07-01",
+  "total_stories": 961,
+  "duplicate_groups": 209,
+  "duplicate_files": 249,
+  "misplaced_files": 66,
+  "zero_macron_stories": 0,
+  "gaps": [
+    "Cap2(缺3)",
+    "Cap3(缺6)",
+    "Cap4(缺3)",
+    "Cap30(缺3)",
+    "Cap31(缺6)"
+  ],
+  "per_chapter": {
+    "1": {
+      "brevis": 8,
+      "medius": 3,
+      "longus": 0,
+      "total": 11,
+      "zero_macrons": 0
+    },
+    "2": {
+      "brevis": 4,
+      "medius": 3,
+      "longus": 0,
+      "total": 7,
+      "zero_macrons": 0
+    },
+    "3": {
+      "brevis": 3,
+      "medius": 1,
+      "longus": 0,
+      "total": 4,
+      "zero_macrons": 0
+    },
+    "4": {
+      "brevis": 1,
+      "medius": 6,
+      "longus": 0,
+      "total": 7,
+      "zero_macrons": 0
+    },
+    "5": {
+      "brevis": 14,
+      "medius": 13,
+      "longus": 1,
+      "total": 28,
+      "zero_macrons": 0
+    },
+    "6": {
+      "brevis": 14,
+      "medius": 8,
+      "longus": 2,
+      "total": 24,
+      "zero_macrons": 0
+    },
+    "7": {
+      "brevis": 7,
+      "medius": 6,
+      "longus": 1,
+      "total": 14,
+      "zero_macrons": 0
+    },
+    "8": {
+      "brevis": 6,
+      "medius": 5,
+      "longus": 1,
+      "total": 12,
+      "zero_macrons": 0
+    },
+    "9": {
+      "brevis": 22,
+      "medius": 9,
+      "longus": 3,
+      "total": 34,
+      "zero_macrons": 0
+    },
+    "10": {
+      "brevis": 21,
+      "medius": 6,
+      "longus": 4,
+      "total": 31,
+      "zero_macrons": 0
+    },
+    "11": {
+      "brevis": 15,
+      "medius": 5,
+      "longus": 2,
+      "total": 22,
+      "zero_macrons": 0
+    },
+    "12": {
+      "brevis": 10,
+      "medius": 2,
+      "longus": 2,
+      "total": 14,
+      "zero_macrons": 0
+    },
+    "13": {
+      "brevis": 25,
+      "medius": 8,
+      "longus": 1,
+      "total": 34,
+      "zero_macrons": 0
+    },
+    "14": {
+      "brevis": 26,
+      "medius": 4,
+      "longus": 0,
+      "total": 30,
+      "zero_macrons": 0
+    },
+    "15": {
+      "brevis": 12,
+      "medius": 1,
+      "longus": 0,
+      "total": 13,
+      "zero_macrons": 0
+    },
+    "16": {
+      "brevis": 42,
+      "medius": 11,
+      "longus": 4,
+      "total": 57,
+      "zero_macrons": 0
+    },
+    "17": {
+      "brevis": 40,
+      "medius": 20,
+      "longus": 5,
+      "total": 65,
+      "zero_macrons": 0
+    },
+    "18": {
+      "brevis": 50,
+      "medius": 11,
+      "longus": 19,
+      "total": 80,
+      "zero_macrons": 0
+    },
+    "19": {
+      "brevis": 46,
+      "medius": 29,
+      "longus": 8,
+      "total": 83,
+      "zero_macrons": 0
+    },
+    "20": {
+      "brevis": 33,
+      "medius": 17,
+      "longus": 3,
+      "total": 53,
+      "zero_macrons": 0
+    },
+    "21": {
+      "brevis": 27,
+      "medius": 18,
+      "longus": 9,
+      "total": 54,
+      "zero_macrons": 0
+    },
+    "22": {
+      "brevis": 29,
+      "medius": 14,
+      "longus": 8,
+      "total": 51,
+      "zero_macrons": 0
+    },
+    "23": {
+      "brevis": 14,
+      "medius": 8,
+      "longus": 5,
+      "total": 27,
+      "zero_macrons": 0
+    },
+    "24": {
+      "brevis": 14,
+      "medius": 9,
+      "longus": 6,
+      "total": 29,
+      "zero_macrons": 0
+    },
+    "25": {
+      "brevis": 35,
+      "medius": 15,
+      "longus": 6,
+      "total": 56,
+      "zero_macrons": 0
+    },
+    "26": {
+      "brevis": 15,
+      "medius": 13,
+      "longus": 5,
+      "total": 33,
+      "zero_macrons": 0
+    },
+    "27": {
+      "brevis": 9,
+      "medius": 10,
+      "longus": 0,
+      "total": 19,
+      "zero_macrons": 0
+    },
+    "28": {
+      "brevis": 13,
+      "medius": 4,
+      "longus": 0,
+      "total": 17,
+      "zero_macrons": 0
+    },
+    "29": {
+      "brevis": 12,
+      "medius": 6,
+      "longus": 2,
+      "total": 20,
+      "zero_macrons": 0
+    },
+    "30": {
+      "brevis": 4,
+      "medius": 3,
+      "longus": 0,
+      "total": 7,
+      "zero_macrons": 0
+    },
+    "31": {
+      "brevis": 4,
+      "medius": 0,
+      "longus": 0,
+      "total": 4,
+      "zero_macrons": 0
+    },
+    "32": {
+      "brevis": 11,
+      "medius": 0,
+      "longus": 0,
+      "total": 11,
+      "zero_macrons": 0
+    },
+    "33": {
+      "brevis": 5,
+      "medius": 2,
+      "longus": 3,
+      "total": 10,
+      "zero_macrons": 0
+    }
+  }
+}

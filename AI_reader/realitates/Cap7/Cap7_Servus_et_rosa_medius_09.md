@@ -1,0 +1,124 @@
+---
+
+story_id: "cap5_09"
+title_la: "Servus et rosa"
+title_zh: "奴隶与玫瑰"
+target_chapter: 5
+theme: "04 正义"
+style: "冷峻"
+genre: "B 神话与传说"
+character_type: "希腊人"
+length_tier: "中篇"
+narrative_mode: "旁观者视角"
+word_count: 585
+macrons_status: "generated"
+evaluated_chapter: 7
+best_fit_chapter: 7
+coverage_rate: 95.7
+oov_words: ["D\u0101vus", "D\u0101v\u012b", "D\u0101vum", "D\u0101ve", "capiendum", "D\u0101v\u014d"]
+rewritten_from: "brevis"
+rewritten_at: "2026-06-30T04:13:00.202585+00:00"
+status: "rewritten"
+
+---
+
+Servus in vīllā est.
+Servus est Dāvus.
+Dāvus est servus bonus.
+Dāvus dominō pāret.
+Dominus est Philō.
+Philō est dominus malus.
+Philō multōs servōs habet.
+Philō servīs imperat.
+Philō nōn est bonus dominus.
+Philō servōs nōn bene videt.
+Dāvus in hortō multa agit.
+Dāvus aquam portat.
+Dāvus rosās videt.
+Dāvus līlia videt.
+Dāvus hortum pulchrum facit.
+In hortō ūna rosa est pulchra.
+Rosa est magna.
+Rosa est bona.
+Dāvus hanc rosam bene videt.
+Dāvus huic rosae aquam dat.
+Dāvus hanc rosam spectat.
+Dāvus: 'Ō rosa, tū es pulchra.
+Tū es mihi bona.
+Tū es bona hortī.
+Ego tē bene videō.' Dāvus rosam amat.
+Rosa est bonum in corde Dāvī.
+Philō in hortum venit.
+Philō hortum spectat.
+Philō: 'Hortus est pulcher.
+Quis hortum videt?' Dāvus: 'Ego, domine.
+Ego hortum videō.' Philō rosam pulchram videt.
+Philō: 'Haec rosa est pulchra!
+Haec rosa est bona hortī.
+Ego hanc rosam volō!' Dāvus: 'Domine, haec rosa est... haec rosa est...' Philō: 'Haec rosa est mea!
+Ego sum dominus!
+Multa in hōc hortō mea sunt.
+Tū es servus meus.
+Tū nōn habēs rosam.
+Ego habeō rosam.' Philō rosam capit.
+Philō rosam ex hortō portat.
+Dāvus rosam suam abīre videt.
+Dāvus lacrimās habet.
+Dāvus: 'Rosa mea... rosa mea abiit.' Philō rosam in vīllā pōnit.
+Rosa in vīllā est — sed rosa in vīllā nōn est laeta.
+Rosa in vīllā nōn est pulchra.
+Post paucōs diēs, rosa nōn iam pulchra est.
+Rosa nōn iam pulchra est.
+Philō rosam nōn iam pulchram videt.
+Philō: 'Cūr rosa nōn iam pulchra est?
+Ego rosae aquam dedī!
+Ego rosam in bonō locō posuī!' Dāvus: 'Domine, rosa nōn iam pulchra est quod rosa in hortō esse volēbat.
+Rosa in hortō nāta est.
+Rosa in hortō laeta erat.
+Tū rosam ex hortō cēpistī — et rosa nōn iam pulchra est.' Philō Dāvum spectat.
+Philō: 'Tū putās quod ego rosam malē ēgī?' Dāvus: 'Domine, tū rosam ex hortō cēpistī.
+Rosa nōn erat tua — rosa erat hortī.
+Tū rosam cēpistī — et rosa nōn iam pulchra est.' Philō tacet.
+Philō rosam nōn iam pulchram spectat.
+Philō: 'Dāve, tū hanc rosam bene vidēbās.
+Tū hanc rosam amāvistī.
+Ego hanc rosam tibi cēpī.
+Ego nōn bene ēgī.' Dāvus: 'Domine, rosa nōn est mea.
+Rosa nōn est tua.
+Rosa est rosae.
+Rosa est hortī.' Philō: 'Dāve, tū mē bene facis.
+Ego rosam cēpī — et ego rosam nōn iam habeō.
+Ego iam videō: pulchrum nōn potest capī.
+Pulchrum est videndum — nōn capiendum.' Philō Dāvum spectat.
+Philō: 'Dāve, tū es servus — sed tū habēs cor magnum.
+Tū hortum vidēs.
+Tū rosās vidēs.
+Ego tē bene videō.' Dāvus: 'Domine, servus sum.
+Ego hortum videō.
+Ego rosās videō.
+Ego nōn multa habeō — sed ego rosās videō.
+Et rosae sunt pulchrae.' Philō: 'Dāve, tū nōn nihil habēs.
+Tū habēs cor.
+Tū habēs oculōs.
+Tū habēs manūs.
+Tū habēs multa.
+Et ego tibi novam rosam dō — nōn ut capiās, sed ut videās.' Philō Dāvō novam rosam dat.
+Rosa est parva — sed rosa est pulchra.
+Dāvus rosam capit.
+Dāvus rosam in hortō pōnit.
+Dāvus rosae aquam dat.
+Dāvus rosam bene videt.
+Rosa est pulchra.
+Dāvus rosam spectat.
+Dāvus laetus est.
+Philō Dāvum spectat.
+Philō quoque laetus est.
+Philō: 'Dāve, iam ego videō.
+Rosa nōn est mea.
+Rosa nōn est tua.
+Rosa est rosae.
+Et pulchrum est multōrum.' Dāvus: 'Domine, ita est.
+Pulchrum est multōrum — et pulchrum est in oculīs.' Servus et dominus in hortō sunt.
+Rosa in hortō est.
+Rosa est pulchra.
+Et rosa est laeta — nam rosa in hortō suō est.

@@ -1,0 +1,54 @@
+---
+
+story_id: "cap10_15"
+title_la: "Flumina Romana"
+title_zh: "罗马的河流"
+target_chapter: 10
+theme: "18 自然"
+style: "白话"
+genre: "C 历史与人物"
+character_type: "罗马人"
+length_tier: "短篇"
+narrative_mode: "第三人称"
+word_count: 160
+macrons_status: "generated"
+evaluated_chapter: 9
+best_fit_chapter: 9
+coverage_rate: 100.0
+oov_words: []
+rewritten_from: "brevis"
+rewritten_at: "2026-06-30T09:26:55.129167+00:00"
+status: "rewritten"
+
+---
+
+Duae aquae magnae in Italiā sunt.
+Prīma aquā Rōmam tangit.
+Prīma aquā est aquā Rōmāna.
+Prīma aquā per Rōmam fluit.
+Rōma ad prīmam aquam est.
+Prīma aquā aquam Rōmae dat.
+Prīma aquā nāvēs portat.
+Prīma aquā est pater Rōmae.
+Sīne prīma aquā, Rōma nōn est.
+Secunda aquā est in parte superiore Italiae.
+Secunda aquā est aquā magnā.
+Secunda aquā per multa oppida fluit.
+Secunda aquā aquam dat.
+Secunda aquā terrās bonas facit.
+Vir ad prīmam aquam it.
+Vir prīmam aquam spectat.
+Vir: 'Prīma aquā est aquā nostrā.
+Prīma aquā Rōmae aquam dat.
+Prīma aquā nāvēs portat.
+Prīma aquā est cor Rōmae.' Vir ad secundam aquam it.
+Vir secundam aquam spectat.
+Vir: 'Secunda aquā est magnā.
+Secunda aquā est bonā.
+Secunda aquā terrās bonas facit.
+Secunda aquā Ītaliam iuvat.' Vir: 'Duae aquae — duō bonā.
+Prīma aquā est pater Rōmae.
+Secunda aquā est pater Italiae.
+Aquae sunt magnae viae.
+Aquae terrās coniungunt.
+Aquae rēm dant.' Et vir prope aquam laetus est.

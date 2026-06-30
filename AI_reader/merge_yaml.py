@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """
-merge_yaml.py v2_11_0 — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realitates.json索引。
+merge_yaml.py v2_12_0 — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realitates.json索引。
 
 管线位置：Step 4 — AI生成后 → evaluate_v2.py评估 → ai_review.py审查（可选） → merge_yaml.py合并 → 入库
+
+v2_12_0 变更（相对 v2_11_0）：
+  - 新增加 check_duplicate()：入库前扫描已有故事，正文重复则跳过（防 L18/L19 再犯）
+  - 新增文件夹一致性校验：写入后对比 best_fit_chapter 与文件夹章号，偏差 > 2 打印警告（防 L20 再犯）
+  - 新增批次末汇总：打印去重跳过 + 放置警告统计
 
 v2_11_0 变更（相对 v2_10_0）：
   - 路径重命名：realites → realitates（修正拉丁语拼写错误）
@@ -91,6 +96,64 @@ AI_KNOWN_FIELDS = [
 
 EVAL_SCRIPT_NAME = "evaluate_v2.py"
 EVAL_TIMEOUT = 60  # 秒
+
+# ============================================================
+# 去重检查（v2_12_0 新增 — 防 L18/L19 再犯）
+# ============================================================
+
+def normalize_body_for_dedup(latin_text: str) -> str:
+    """归一化拉丁正文用于去重比对。
+    
+    规则：去长音 → 小写 → 去标点 → 保留 2 字母以上词 → 排序后拼接。
+    与 _audit_stories.py 保持一致的归一化逻辑。
+    """
+    norm = re.sub(r'[āēīōūȳǣ]', '', latin_text.lower())
+    norm = re.sub(r'[^a-z\s]', ' ', norm)
+    words = sorted(w for w in norm.split() if len(w) > 1)
+    return ' '.join(words)
+
+
+def _body_hash(latin_text: str) -> str:
+    """正文归一化 SHA256 指纹（16 位）。"""
+    import hashlib
+    norm = normalize_body_for_dedup(latin_text)
+    return hashlib.sha256(norm.encode('utf-8')).hexdigest()[:16]
+
+
+def check_duplicate(latin_text: str, output_dir: Path) -> Path | None:
+    """检查拉丁正文是否与已有故事重复。
+    
+    扫描 output_dir 下所有 Cap*/ 目录的 .md 文件，
+    提取拉丁正文并归一化比对。
+    
+    Returns:
+        命中时返回已有文件路径，否则返回 None。
+    """
+    target_hash = _body_hash(latin_text)
+    output_dir = Path(output_dir)
+    
+    for cap_dir in sorted(output_dir.iterdir()):
+        if not cap_dir.is_dir() or not cap_dir.name.startswith('Cap'):
+            continue
+        for md_file in cap_dir.glob('*.md'):
+            try:
+                content = md_file.read_text(encoding='utf-8', errors='replace')
+                # 提取拉丁正文（跳过 YAML frontmatter）
+                body = ''
+                if content.startswith('---'):
+                    parts = content.split('---', 2)
+                    if len(parts) >= 3:
+                        body = parts[2].strip()
+                else:
+                    body = content.strip()
+                
+                if body and _body_hash(body) == target_hash:
+                    return md_file
+            except Exception:
+                continue
+    
+    return None
+
 
 # ============================================================
 # 解析AI输出
@@ -710,6 +773,10 @@ def main():
     n = len(stories)
     print(f"[merge_yaml] 检测到 {n} 篇故事，开始批量处理...", file=sys.stderr)
 
+    # 批次级统计（v2_12_0 新增）
+    skipped_duplicates: list = []
+    placement_warnings: list = []
+
     if n == 0:
         print("[merge_yaml] 错误：未检测到任何故事（YAML 头缺失或字段不全）。", file=sys.stderr)
         sys.exit(1)
@@ -810,11 +877,34 @@ def main():
                 sys.stdout.write(md_content)
                 continue
 
+            # ====================================================
+            # 去重检查（v2_12_0 新增 — 防 L18/L19 再犯）
+            # ====================================================
+            output_dir_for_dedup = (script_dir / args.output_dir).resolve() if args.auto_number else output_path.parent
+            dup = check_duplicate(latin_text, output_dir_for_dedup)
+            if dup:
+                print(f"[merge_yaml] [{i}/{n}] ⚠️ 跳过（与已有故事重复）: {dup.name}  "
+                      f"标题={ai_meta.get('title_la')}", file=sys.stderr)
+                skipped_duplicates.append(dup.name)
+                continue
+
             # 写入文件
             output_path.parent.mkdir(parents=True, exist_ok=True)
             with open(output_path, "w", encoding="utf-8") as f:
                 f.write(md_content)
             print(f"[merge_yaml] [{i}/{n}] 已写入 {output_path}", file=sys.stderr)
+
+            # ====================================================
+            # 文件夹一致性校验（v2_12_0 新增 — 防 L20 再犯）
+            # ====================================================
+            folder_cap = effective_chapter  # 当前文件夹章号
+            best_cap = merged.get("best_fit_chapter") or merged.get("evaluated_chapter")
+            if best_cap is not None and abs(int(folder_cap) - int(best_cap)) > 2:
+                print(f"[merge_yaml] [{i}/{n}] ⚠️ 章节偏差 > 2：文件夹=Cap{folder_cap}  "
+                      f"best_fit=Cap{best_cap}  标题={ai_meta.get('title_la')}", file=sys.stderr)
+                placement_warnings.append(
+                    f"{output_path.name}: Cap{folder_cap} vs Cap{best_cap}"
+                )
 
             # 维护 realitates.json 索引（以评估难度章节为键）
             try:
@@ -834,6 +924,20 @@ def main():
             if oov_list:
                 log_oov(script_dir, rel_path, oov_list, effective_chapter)
                 print(f"[merge_yaml] [{i}/{n}] OOV 已记录：{len(oov_list)} 个 → oov_corrections.jsonl", file=sys.stderr)
+
+    # ====================================================
+    # 批次末汇总（v2_12_0 新增）
+    # ====================================================
+    if skipped_duplicates:
+        print(f"\n[merge_yaml] ⚠️ 去重跳过 {len(skipped_duplicates)} 篇: "
+              f"{', '.join(skipped_duplicates[:5])}"
+              f"{'...' if len(skipped_duplicates) > 5 else ''}", file=sys.stderr)
+    if placement_warnings:
+        print(f"\n[merge_yaml] ⚠️ 章节放置警告 {len(placement_warnings)} 篇:", file=sys.stderr)
+        for w in placement_warnings[:5]:
+            print(f"    {w}", file=sys.stderr)
+        if len(placement_warnings) > 5:
+            print(f"    ... 还有 {len(placement_warnings) - 5} 篇", file=sys.stderr)
 
     # 注意：原"自动调用 auto_supplement_map"已暂停（v2_8_0 → v2_9_0）。
     # 原因：当前样本量太小，OOV 自动建议的准确率仅约 50%，不应自动应用。

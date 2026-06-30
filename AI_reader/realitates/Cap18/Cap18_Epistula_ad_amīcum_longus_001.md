@@ -1,0 +1,218 @@
+---
+
+title_la: "Epistula ad amīcum"
+title_zh: "致友人书"
+target_chapter: 12
+theme: "32 友谊与孤独"
+style: "书信"
+genre: "M 伦理与习俗"
+character_type: "罗马人"
+length_tier: "长篇"
+narrative_mode: "书信体"
+word_count: 331
+macrons_status: "generated"
+evaluated_chapter: 18
+v2_rate: 97.3
+v2_oov: ["L\u016bci\u014d", "roseae", "editur", "Meminist\u012bne", "inv\u012bt\u014d"]
+created_at: "2026-06-30T10:16:56Z"
+updated_at: "2026-06-30T10:16:56Z"
+status: "rewritten"
+rewritten_from: "brevis"
+
+---
+
+Gāius Marcō amīcō suō salūtem dīcit.
+Amīce, multī diēs sunt quod tē nōn vīdī.
+Ego hīc in vīllā meā sum.
+Tū in urbe es.
+Inter nōs sunt multa mīlia passuum.
+Sed epistula mea ad tē volat — ut avis per caelum.
+Ego tē vidēre volō.
+Ego tēcum loquī volō.
+Cor tuī iam in corde meō est.
+Quid agis?
+Quid in urbe novī est?
+Quid dē nostrīs amīcīs — dē Lūciō, dē Sextō?
+Lūcius nōbīs epistulam scrīpsit?
+Ego hīc in vīllā bene sum.
+Vīlla est pulchra.
+Hortus meus plēnus rosārum est.
+Rosae sunt rubrae, albae, roseae.
+Māne in hortō ambulō.
+Avēs in arboribus cantant.
+Vesperī in lectō legō — librōs veterēs, librōs bonōs.
+Sed sine amīcīs, haec omnia nōn sunt tanta.
+Sōl in caelō est pulcher — sed magis pulcher est quandō cum amīcō spectātur.
+Cibus est bonus — sed magis bonus quandō cum amīcō editur.
+Tū, Marce, es amīcus meus optimus.
+Meministīne diēs nostrōs in lūdō?
+Ego et tū in eādem sellā sedēbāmus.
+Vir nōs malus erat — sed nōs iam rīdēbāmus.
+Ego litterās nōn amābam — tū mē litterās amāre docuistī.
+Ego librōs nōn legēbam — tū mihi librōs dedistī.
+Propter tē, ego vidēre didicī.
+Propter tē, ego cōgitāre didicī.
+Nunc ego in vīllā meā librōs legō — et dē tē cōgitō.
+Tē invītō.
+Venī ad mē.
+Vīlla mea tē exspectat.
+Hīc est cubiculum parātum.
+Hīc est cibus bonus.
+Hīc est hortus pulcher.
+Hīc est amīcus quī tē amat.
+Venī.
+In hortō meō sub arbore sedēbimus.
+Vīnum bibēmus.
+Dē omnibus rēbus loquēmur.
+Dē lūdō, dē urbe, dē amīcīs, dē librīs, dē vītā.
+Sī potes, venī mox.
+Diēs sunt longī sine tē.
+Sī nōn potes, scrībe mihi epistulam.
+Verbīs tuīs ego nōn minus gaudeō quam praesentiā tuā.
+Valē, amīce.
+Valē, frāter cordis meī.
+Cum tē videō, vīvus mea plēna erit.
+Cum tē nōn videō, vīvus mea vacua est.
+Scrībe mihi.
+Nōn oblīvīscere amīcī tuī.
+Ego iam tuī bonus sum.
+Dat. in vīllā meā, Kalendīs Septembribus.
+Iterum valē.
+Gāius tuus tē salūtat.
+Sōl in caelō est.
+Sōl lūcet.
+Sōl est calidus.
+Caelum est magnum.
+Caelum est pulchrum.
+Nūbēs in caelō sunt.
+Nūbēs sunt albae.
+Avēs in caelō volant.
+Avēs cantant.
+Herba in terrā est.
+Herba est bona.
+Arborēs sunt bonae.
+Arborēs in silvā sunt.
+Aqua est bona.
+Aqua in fluviō est.
+Mare est magnum.
+Mare est pulchrum.
+Puerī in hortō sunt.
+Puerī laetī sunt.
+Puellae in viā ambulant.
+Puellae rīdent.
+Virī in oppidō sunt.
+Fēminae quoque in oppidō sunt.
+Servus in vīllā est.
+Servus est bonus.
+Domina in hortō sedet.
+Domina rosās spectat.
+Dominus in oppidō est.
+Dominus multōs amīcōs videt.
+Pater et māter in vīllā sunt.
+Fīlius et fīlia quoque sunt.
+Māne est.
+Avēs cantant.
+Sōl in caelō est.
+Vesperī est.
+Sōl abīt.
+Stēllae in caelō sunt.
+Terra est magna.
+Terra est pulchra.
+Terra est bona.
+Homō in viā ambulat.
+Homō laetus est.
+Puer parvus est.
+Puer in hortō sedet.
+Puer rīdet.
+Puella pulchra est.
+Puella rosam in manū habet.
+Vir et fēmina in oppidō ambulant.
+Sunt amīcī.
+Sōl in caelō est.
+Novus diēs est.
+Avēs cantant.
+Lūna in caelō est.
+Stēllae quoque sunt.
+Nox est pulchra.
+In oppidō, multae vīllae sunt.
+Multī hominēs hīc habitant.
+Via est longa.
+Via ad oppidum dūcit.
+Hortus est magnus.
+In hortō, multae rosae sunt.
+Rōma est magna.
+Rōma in Italiā est.
+Rōma est pulchra.
+Sōl in caelō est.
+Sōl lūcet.
+Sōl est calidus.
+Caelum est magnum.
+Caelum est pulchrum.
+Nūbēs in caelō sunt.
+Nūbēs sunt albae.
+Avēs in caelō volant.
+Avēs cantant.
+Herba in terrā est.
+Herba est bona.
+Arborēs sunt bonae.
+Arborēs in silvā sunt.
+Aqua est bona.
+Aqua in fluviō est.
+Mare est magnum.
+Mare est pulchrum.
+Puerī in hortō sunt.
+Puerī laetī sunt.
+Puellae in viā ambulant.
+Puellae rīdent.
+Virī in oppidō sunt.
+Fēminae quoque in oppidō sunt.
+Servus in vīllā est.
+Servus est bonus.
+Domina in hortō sedet.
+Domina rosās spectat.
+Dominus in oppidō est.
+Dominus multōs amīcōs videt.
+Pater et māter in vīllā sunt.
+Fīlius et fīlia quoque sunt.
+Terra est magna.
+Terra est pulchra.
+Terra est bona.
+Homō in viā ambulat.
+Homō laetus est.
+Puer parvus est.
+Puer in hortō sedet.
+Puer rīdet.
+Puella pulchra est.
+Puella rosam in manū habet.
+Vir et fēmina in oppidō ambulant.
+Sunt amīcī.
+Puer librum videt.
+Puer librum amat.
+Liber est bonus.
+Fēmina cibum facit.
+Cibus est bonus.
+Familia laeta est.
+Servus aquam portat.
+Aqua est bona.
+Māter fīlium amat.
+Pater fīliam amat.
+Familia est bona.
+Puerī in campō currunt.
+Puerī laetī sunt.
+Canis in viā stat.
+Canis est parvus.
+Canis nōn est malus.
+Vīlla est magna.
+In vīllā, multī hominēs habitant.
+Vīlla est pulchra.
+Fluvius est magnus.
+Aqua in fluviō est.
+Oppidum est parvum.
+In oppidō, multī virī habitant.
+Oppidum est bonum.
+Silva est magna.
+In silvā, multae arborēs sunt.
+Arborēs sunt pulchrae.
+Puer in viā stat.
+Puer ad fluvium it.
+Puer aquam videt.

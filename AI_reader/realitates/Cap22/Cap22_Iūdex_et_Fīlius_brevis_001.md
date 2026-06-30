@@ -22,4 +22,11 @@ updated_at: "2026-06-30T14:41:48Z"
 status: "evaluated"
 ---
 
-"Fīlius tuus hominem occīdit." "Sciō." "Tū iūdex es. Tū eum iūdicāre dēbēs." "Sciō." "Quid faciēs?" "Iūdicābō." "Secundum lēgem?" "Secundum lēgem." "Lēx dīcit: quī hominem occīdit, morī dēbet." "Sciō." "Fīlium tuum ad mortem mittēs?" "Lēx hoc dīcit." "Sed tū pater es. Tū eum amās." "Amō." "Et tamen eum occīdēs?" "Ego nōn occīdam. Lēx occīdet." "Tū lēx es." "Nōn. Ego minister lēgis sum. Lēx maior est quam ego — et maior quam fīlius meus." "Ergō fīlius tuus moriētur." "Moriētur." "Et tū posteā?" "Ego posteā... iūdex nōn erō. Pater — semper erō. Sed pater quī fīlium suum iūdicāvit — iūdicātus est."
+"Fīlius tuus hominem occīdit." "Sciō." "Tū iūdex es.
+Tū eum iūdicāre dēbēs." "Sciō." "Quid faciēs?" "Iūdicābō." "Secundum lēgem?" "Secundum lēgem." "Lēx dīcit: quī hominem occīdit, morī dēbet." "Sciō." "Fīlium tuum ad mortem mittēs?" "Lēx hoc dīcit." "Sed tū pater es.
+Tū eum amās." "Amō." "Et tamen eum occīdēs?" "Ego nōn occīdam.
+Lēx occīdet." "Tū lēx es." "Nōn.
+Ego minister lēgis sum.
+Lēx maior est quam ego — et maior quam fīlius meus." "Ergō fīlius tuus moriētur." "Moriētur." "Et tū posteā?" "Ego posteā... iūdex nōn erō.
+Pater — semper erō.
+Sed pater quī fīlium suum iūdicāvit — iūdicātus est."

@@ -22,4 +22,24 @@ updated_at: "2026-06-30T14:51:24Z"
 status: "evaluated"
 ---
 
-Tōtam vītam stēllās spectāvī. Quīnquāgintā annōs — noctem post noctem — in hōc monte sēdī, oculīs ad caelum versīs. Stēllās numerāvī. Stēllārum cursūs mēnsus sum. Stēllārum mōtūs in tabulīs notāvī. Et hodiē — hodiē intellegō: nihil intellēxī. Nōn quod errāvī — nam numerī meī vērī sunt. Sed quod stēllae nōn sunt numerī. Stēllae sunt... ignēs. Ignēs quī ardent — et nōn cūrant utrum ego eōs intellegam an nōn. Stēllae ante mē erant. Stēllae post mē erunt. Ego — ego sum ātōmus inter stēllās. Pulvis quī putat sē caelum intellegere. Hoc est sapientia quam quīnquāgintā annōs quaesīvī: nōn omnia intellegere — sed intellegere quod nōn omnia possum intellegere. Hoc est initium. Hoc est... lībertās. Nunc — quandō ultimam stellam cadentem videō — nōn mētior. Nōn numerō. Tantum... spectō. Et pulchritūdō — nōn numerīs, sed oculīs — est vēra scientia.
+Tōtam vītam stēllās spectāvī.
+Quīnquāgintā annōs — noctem post noctem — in hōc monte sēdī, oculīs ad caelum versīs.
+Stēllās numerāvī.
+Stēllārum cursūs mēnsus sum.
+Stēllārum mōtūs in tabulīs notāvī.
+Et hodiē — hodiē intellegō: nihil intellēxī.
+Nōn quod errāvī — nam numerī meī vērī sunt.
+Sed quod stēllae nōn sunt numerī.
+Stēllae sunt... ignēs.
+Ignēs quī ardent — et nōn cūrant utrum ego eōs intellegam an nōn.
+Stēllae ante mē erant.
+Stēllae post mē erunt.
+Ego — ego sum ātōmus inter stēllās.
+Pulvis quī putat sē caelum intellegere.
+Hoc est sapientia quam quīnquāgintā annōs quaesīvī: nōn omnia intellegere — sed intellegere quod nōn omnia possum intellegere.
+Hoc est initium.
+Hoc est... lībertās.
+Nunc — quandō ultimam stellam cadentem videō — nōn mētior.
+Nōn numerō.
+Tantum... spectō.
+Et pulchritūdō — nōn numerīs, sed oculīs — est vēra scientia.

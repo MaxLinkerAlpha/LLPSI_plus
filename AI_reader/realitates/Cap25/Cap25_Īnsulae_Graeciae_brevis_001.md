@@ -1,0 +1,54 @@
+---
+
+title_la: "Īnsulae Graeciae"
+title_zh: "希腊群岛"
+target_chapter: 13
+theme: "22 旅程"
+style: "白话"
+genre: "B 神话与传说"
+character_type: "希腊人"
+length_tier: "短篇"
+narrative_mode: "第三人称"
+word_count: 226
+macrons_status: "generated"
+evaluated_chapter: 25
+v2_rate: 98.5
+v2_oov: ["M\u012bn\u014dtaurus", "Naxos"]
+created_at: "2026-06-30T10:52:21Z"
+updated_at: "2026-06-30T10:52:21Z"
+status: "rewritten"
+rewritten_from: "brevis"
+
+---
+
+Nāvis in marī est.
+Nāvis inter īnsulās Graeciae nāvigat.
+In nāve, vir Graecus est.
+Vir multās terrās vīdit.
+Vir: 'Īnsulae Graeciae sunt multae — sīcut stēllae in caelō.
+Quaeque īnsula suam fābulam habet.' Nauta: 'Quam fābulam nārrābis hodiē?' Vir: 'Ego nārrābō dē Crētā — īnsulā magnā.
+In Crētā, rēx Mīnōs vīxit.
+Mīnōs magnum palātium habuit.
+In palātiō, multae viae erant — sīcut labyrinthus.' Nauta: 'Dē labyrinthō audīvī.
+Ibi mōnstrum fuit.' Vir: 'Ita.
+Mōnstrum nōmine Mīnōtaurus.
+Sed fābula nōn est dē mōnstrō — fābula est dē homine.
+Homō nōmine Daedalus.
+Daedalus labyrinthum fēcit.
+Daedalus volāre voluit.
+Daedalus ālās fēcit — ex cērā et pennīs.' Nauta: 'Et volāvit?' Vir: 'Ita.
+Daedalus volāvit — ex Crētā ad Siciliam.
+Sed fīlius eius, Īcarus, nōn ad terram vēnit.
+Īcarus in mare cadit.
+Mare nunc nōmen eius habet — Mare Īcarium.' Nauta: 'Tristis fābula est.' Vir: 'Ita.
+Sed fābula docet: nōlī nimis altum volāre.
+Sed etiam docet: homō potest volāre — sī vult.' Nāvis ad aliam īnsulam nāvigat.
+Īnsula est parva.
+Vir: 'Haec est īnsula Naxos.
+Hīc, fēmina nōmine Ariadna relicta est.
+Ariadna Thēseum iūvit — et Thēseus eam relīquit.' Nauta: 'Cūr omnēs fābulae sunt trīstēs?' Vir: 'Fortasse quia vīta est trīstis.
+Sed fābulae nōs docent: etiam in trīstitiā, pulchrum est.' Sōl in mare cadit.
+Mare est rubrum.
+Nāvis inter īnsulās nāvigat.
+Vir fābulās nārrat.
+Et nautae audiunt — et īnsulae tacent.

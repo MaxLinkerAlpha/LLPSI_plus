@@ -58,16 +58,11 @@ def split_front_matter(content: str) -> tuple[str, str, str]:
 
 
 def format_body(body: str) -> str:
-    """对正文做最小分段。"""
-    # 0. 如果正文已有空行分段，保留原结构，不做句号换行
-    if "\n\n" in body:
-        return body
-
+    """对正文做最小分段。前提：调用方已确认 body 无空行。"""
     # 1. 句号后换行：处理 ". " → ".\n"（句号+空格+大写起头）
     body = re.sub(r'\.\s+(?=[A-ZĀĒĪŌŪȲ])', '.\n', body)
 
     # 2. 问号/感叹号 + 引号后换行（处理对话边界）
-    # "? " → "?\n"  /  "! " → "!\n"  /  ?" → ?"\n  /  !" → !"\n
     body = re.sub(r'([!?])\s+(?=[A-ZĀĒĪŌŪȲ])', r'\1\n', body)
     body = re.sub(r'([!?][\u201c\u201d"\u2018\u2019])\s+(?=[A-ZĀĒĪŌŪȲ])', r'\1\n', body)
 
@@ -102,14 +97,29 @@ def format_body(body: str) -> str:
 
 
 def format_file(filepath: Path, dry_run: bool = False) -> dict:
-    """处理单个文件，返回变更统计。"""
+    """处理单个文件，返回变更统计。
+
+    严格规则：已有分段的文件（正文含 \\n\\n）完全不动。
+    只处理完全无空行的文件。
+    """
     original = filepath.read_text(encoding="utf-8")
     pre, front, body = split_front_matter(original)
 
-    # front matter 后强制空行
+    # 解析失败，跳过
+    if not front and not body and not original.startswith("---"):
+        return {"file": str(filepath), "changed": False, "orig_lines": 0, "new_lines": 0, "added_lines": 0}
+
+    # 关键：已有空行的文件完全不动
+    # 忽略 body 开头的连续换行（这些是 front matter 后的空行，不是正文段落）
+    body_stripped_lead = body.lstrip("\n")
+    if "\n\n" in body_stripped_lead:
+        return {"file": str(filepath.relative_to(filepath.parents[1])), "changed": False,
+                "orig_lines": original.count("\n"), "new_lines": original.count("\n"), "added_lines": 0}
+
+    # 只有无空行文件才走后面的处理
     new_body = format_body(body)
 
-    # 重新组装：pre + "---" + front + "---\n\n" + new_body
+    # 重新组装
     stripped_body = new_body.lstrip("\n")
     if front or body:
         new_content = "---" + front + "---\n\n" + stripped_body
@@ -120,7 +130,6 @@ def format_file(filepath: Path, dry_run: bool = False) -> dict:
     if not new_content.endswith("\n"):
         new_content += "\n"
 
-    # 计算 diff 大小
     orig_lines = original.count("\n")
     new_lines = new_content.count("\n")
     orig_len = len(original)

@@ -22,4 +22,15 @@ updated_at: "2026-06-30T14:48:11Z"
 status: "evaluated"
 ---
 
-Ūnum verbum quaerō — trīgintā annōs. Verbum quod nōn est in ūllā linguā. Verbum quod significat: "amor quī mortuus est, sed cuius memoria manet." Graecī nōn habent hoc verbum. Rōmānī nōn habent. Aegyptiī, quōrum lingua antīquissima est, nōn habent. Fortasse verbum nōn est — quia nēmō umquam hoc sentīre voluit. Fortasse nōs — hominēs — nōlumus verbum habēre prō dolōre quī numquam fīnitur. Habēmus verba prō īrā, prō gaudiō, prō morte. Sed nōn prō amōre quī mortuus est — et tamen... manet. Fortasse hoc est cūr linguās facimus: nōn ut dīcāmus quod scīmus — sed ut inveniāmus quod nescīmus. Et quandō verbum inveniam — sī umquam inveniam — mundus paulō minor erit. Quia omne verbum novum est mundus novus — in quō vīvere possumus.
+Ūnum verbum quaerō — trīgintā annōs.
+Verbum quod nōn est in ūllā linguā.
+Verbum quod significat: "amor quī mortuus est, sed cuius memoria manet." Graecī nōn habent hoc verbum.
+Rōmānī nōn habent.
+Aegyptiī, quōrum lingua antīquissima est, nōn habent.
+Fortasse verbum nōn est — quia nēmō umquam hoc sentīre voluit.
+Fortasse nōs — hominēs — nōlumus verbum habēre prō dolōre quī numquam fīnitur.
+Habēmus verba prō īrā, prō gaudiō, prō morte.
+Sed nōn prō amōre quī mortuus est — et tamen... manet.
+Fortasse hoc est cūr linguās facimus: nōn ut dīcāmus quod scīmus — sed ut inveniāmus quod nescīmus.
+Et quandō verbum inveniam — sī umquam inveniam — mundus paulō minor erit.
+Quia omne verbum novum est mundus novus — in quō vīvere possumus.

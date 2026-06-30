@@ -22,4 +22,15 @@ updated_at: "2026-06-30T14:48:06Z"
 status: "evaluated"
 ---
 
-Hodiē mē rogāvērunt: "Cūr fīliōs nōn habēs?" Rīsī. "Habeō," inquam. "Duōs." "Et cūr nōn cum eīs habitās?" "Quia nōn volō." Obstupuērunt. Fēmina quae fīliōs nōn amat — mōnstrum est. Nēmō hoc dīcit, sed omnēs hoc crēdunt. Ego nōn sum mōnstrum. Ego sum fēmina quae nōn mentītur. Fīliōs meōs amō — sed nōn ut aliī mātrēs. Nōn eōs in manibus tenēre volō. Nōn eōs cotīdiē vidēre volō. Eōs amō ā longinquō — ubi nōn mē dēvorant. Ubi nōn mē in "mātrem" mūtant — et mē ipsam dēlent. Societās dīcit: "Māter bona est māter quae sē dat." Ego dīcō: "Māter bona est māter quae vīva manet." Mortua māter nūllī prōdest.
+Hodiē mē rogāvērunt: "Cūr fīliōs nōn habēs?"
+Rīsī. "Habeō," inquam. "Duōs." "Et cūr nōn cum eīs habitās?" "Quia nōn volō." Obstupuērunt.
+Fēmina quae fīliōs nōn amat — mōnstrum est.
+Nēmō hoc dīcit, sed omnēs hoc crēdunt.
+Ego nōn sum mōnstrum.
+Ego sum fēmina quae nōn mentītur.
+Fīliōs meōs amō — sed nōn ut aliī mātrēs.
+Nōn eōs in manibus tenēre volō.
+Nōn eōs cotīdiē vidēre volō.
+Eōs amō ā longinquō — ubi nōn mē dēvorant.
+Ubi nōn mē in "mātrem" mūtant — et mē ipsam dēlent.
+Societās dīcit: "Māter bona est māter quae sē dat." Ego dīcō: "Māter bona est māter quae vīva manet." Mortua māter nūllī prōdest.
