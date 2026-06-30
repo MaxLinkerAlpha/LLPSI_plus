@@ -53,7 +53,7 @@ python AI_reader/merge_yaml.py -f <ai_output.txt>            # 合并+写入
 
 | 文件 | 用途 |
 |------|------|
-| `STRATEGY.md` v2_4_0 | **核心策略文档**，既是人类参考也是 AI 操作提示词。包含：5条硬约束+7条软约束、6张选择表（85主题/14风格/12题材/7主角/5篇幅+叙事模式）、参考手册、附录 |
+| `STRATEGY.md` v3_0_0 | **核心策略文档**，既是人类参考也是 AI 操作提示词。包含：5条硬约束+7条软约束、6张选择表（85主题/14风格/12题材/7主角/5篇幅+叙事模式）、参考手册、附录 |
 | `generate_prompt.py` v1_3_0 | 注入章节号 + 方案C词表注入（`--vocab`）→ 输出完整 AI 提示词；支持 `--history` 自动追踪已用维度 |
 | `merge_yaml.py` v2_9_0 | 解析 AI 输出 → 调用难度评估 → 输出 MD Front Matter → 维护 realitates.json；支持 `validate` 子命令预校验 + 多篇批量 + target_chapter 自动校准 + OOV 日志（自动分析已暂停，靠人工触发） |
 | `difficulty_algorithm/evaluate_v2.py` v2_3_0 | 难度评估（v2算法已剥离长音再lemmatize） |
@@ -64,6 +64,7 @@ python AI_reader/merge_yaml.py -f <ai_output.txt>            # 合并+写入
 | `oov_corrections.jsonl` | 每次入库自动追加 OOV 词（方案D 数据闭环用） |
 | `supplement_suggestions.jsonl` | OOV 增量分析产出（供人工审核，不直接修改映射表） |
 | `_archived/` | 已归档的旧文件（PROMPT.md 等） |
+| `GENERATION_QUEUE.md` v1_0_0 | **篇幅缺口填补清单**：当前每章故事分布 + 待生成缺口 + 执行流程。本文档即进度追踪器（逐篇 ✅） |
 
 ## 相关项目
 
@@ -113,7 +114,7 @@ realitates/Cap{N}/{Cap{N}_{title_slug}_{length_la}_{NNN}.md}
 | `length_la` | 篇幅拉丁标识 | `brevis` | YAML 的 `length_tier` 字段 |
 | `NNN` | 三位递增序号 | `001` | 同目录自动编号 |
 
-**篇幅映射**：短篇→`brevis` / 中篇→`media` / 中长篇→`longior` / 长篇→`longa` / 超长篇→`longissima`
+**篇幅映射**：短篇→`brevis` / 中篇→`medius` / 长篇→`longus`
 
 **示例**：`realitates/Cap19/Cap19_Taberna_Spei_brevis_001.md`
 

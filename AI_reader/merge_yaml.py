@@ -35,7 +35,7 @@ v2_7_0 变更（相对 v2_6_0）：
 v2_6_0 变更（相对 v2_5_0）：
   - 命名规范全面拉丁化：Cap{N}_{title_slug}_{length_la}_{NNN}.md
   - 四要素：难度章节 + 拉丁语标题 + 篇幅拉丁标识 + 序号
-  - 篇幅标识：短篇→brevis 中篇→media 中长篇→longior 长篇→longa 超长篇→longissima
+  - 篇幅标识：短篇→brevis 中篇→medius 长篇→longus
   - 新增 title_to_slug()、LENGTH_TIER_LA 映射表
   - next_story_filename() 签名变更：增加 title_la 参数
 
@@ -440,7 +440,7 @@ def next_story_filename(
     命名要素（均拉丁文）：
       - Cap{N}：难度章节
       - title_slug：文章拉丁语标题（空格转下划线）
-      - length_la：篇幅标识（brevis/media/longior/longa/longissima）
+      - length_la：篇幅标识（brevis/medius/longus）
       - NNN：三位递增序号
 
     算法：扫描该子目录下所有匹配 Cap{N}_*_*_NNN.md 的文件，
