@@ -1280,6 +1280,11 @@
     "title_zh": "沉默中的声音"
   },
   {
+    "path": "realitates/Cap17/Cap17_Catēna_Aurea_brevis_001.md",
+    "chapter": 17,
+    "title_zh": "金锁链"
+  },
+  {
     "path": "realitates/Cap17/Cap17_Deus_et_servus_brevis_016.md",
     "chapter": 17,
     "title_zh": "神与奴隶"
@@ -1413,6 +1418,11 @@
     "path": "realitates/Cap18/Cap18_Puer_in_Mari_brevis_019.md",
     "chapter": 18,
     "title_zh": "海中的男孩"
+  },
+  {
+    "path": "realitates/Cap18/Cap18_Sellae_Duae_brevis_001.md",
+    "chapter": 18,
+    "title_zh": "两把椅子"
   },
   {
     "path": "realitates/Cap18/Cap18_Servus_Līber_brevis_018.md",
@@ -1555,6 +1565,11 @@
     "title_zh": "老人与秩序"
   },
   {
+    "path": "realitates/Cap19/Cap19_Septem_Epistulae_Quās_Nēmō_Lēgit_brevis_017.md",
+    "chapter": 19,
+    "title_zh": "无人读过的七封信"
+  },
+  {
     "path": "realitates/Cap19/Cap19_Sermō_Ultimus_brevis_001.md",
     "chapter": 19,
     "title_zh": "最后的对话"
@@ -1675,6 +1690,11 @@
     "title_zh": "父子在市场"
   },
   {
+    "path": "realitates/Cap20/Cap20_Portātor_et_Ultimum_Flūmen_brevis_001.md",
+    "chapter": 20,
+    "title_zh": "摆渡人与最后的河"
+  },
+  {
     "path": "realitates/Cap20/Cap20_Puella_in_Hortō_brevis_007.md",
     "chapter": 20,
     "title_zh": "花园里的女孩"
@@ -1738,6 +1758,11 @@
     "path": "realitates/Cap22/Cap22_Fābula_Sine_Fīne_brevis_005.md",
     "chapter": 22,
     "title_zh": "无结局的故事"
+  },
+  {
+    "path": "realitates/Cap22/Cap22_Iūdex_et_Fīlius_brevis_001.md",
+    "chapter": 22,
+    "title_zh": "法官与儿子"
   },
   {
     "path": "realitates/Cap22/Cap22_Magister_Dīvitiās_Dēpōnēns_brevis_003.md",
