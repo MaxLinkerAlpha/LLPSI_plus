@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-难度评估 v2_3_0 — 带词形还原（lemmatization）+ CLI。
+难度评估 v2_4_0 — 带词形还原（lemmatization）+ CLI。
 - 外部文本先分词 → 剥长音 → simplemma 还原 → 查 lemma_chapter_map
 - 85% 类型覆盖率阈值
 - 对比 v1（无还原）和 v2（有还原）的收录率提升
 - 新增：out_of_vocabulary 超纲词清单
+- v2_4_0：新增 --file PATH 参数，自动识别 .md 文件并跳过 YAML frontmatter
 - v2_3_0：v2 算法在 simplemma 前增加长音剥离（simplemma 不识别长音字符），
            修复 v2 率虚低 5-10% 的问题（v1 已有此预处理）
 - v2_2_0：新增 CLI（--text / --json），配合 merge_yaml.py 管线使用
@@ -129,13 +130,27 @@ if __name__ == "__main__":
     # ========== CLI 模式（供 merge_yaml.py 等下游调用）==========
     parser = argparse.ArgumentParser(description="LLPSI 拉丁语难度评估 v2")
     parser.add_argument("--text", help="要评估的拉丁语文本")
+    parser.add_argument("--file", help="要评估的 .md 文件路径（自动跳过 YAML frontmatter）")
     parser.add_argument("--json", action="store_true", help="以 JSON 格式输出评估结果")
     parser.add_argument("--name", default="unnamed", help="文本名称（用于 JSON 输出）")
     args_cli = parser.parse_args()
 
-    if args_cli.text:
+    if args_cli.text or args_cli.file:
         _print_loaded()
-        r = evaluate(args_cli.text, args_cli.name)
+        if args_cli.file:
+            # 自动读取 .md 文件并跳过 YAML frontmatter
+            with open(args_cli.file, encoding="utf-8") as f:
+                content = f.read()
+            if content.startswith("---"):
+                parts = content.split("---", 2)
+                text_input = parts[2].strip() if len(parts) >= 3 else content
+            else:
+                text_input = content
+            if not args_cli.name or args_cli.name == "unnamed":
+                args_cli.name = args_cli.file.split("/")[-1]
+        else:
+            text_input = args_cli.text
+        r = evaluate(text_input, args_cli.name)
         if args_cli.json:
             # 仅输出纯 JSON——不可有任何其他打印，否则 merge_yaml.py 会解析失败
             print(json.dumps(r, ensure_ascii=False))
