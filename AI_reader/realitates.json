@@ -1,2117 +1,2252 @@
 [
   {
-    "path": "realitates/Cap1/Cap1_Asia_triplex_brevis_001.md",
+    "path": "Cap1/Cap1_Eurōpa_brevis_022.md",
     "chapter": 1,
-    "title_zh": "三重的亚洲"
+    "title_la": "Eurōpa",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Asia_triplex_brevis_002.md",
+    "path": "Cap1/Cap1_Hispānia_terra_magna_brevis_021.md",
     "chapter": 1,
-    "title_zh": "三重的亚洲"
+    "title_la": "Hispānia, terra magna",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Duo_imperia_antīqua_brevis_011.md",
+    "path": "Cap1/Cap1_Imperium_Rōmānum_brevis_023.md",
     "chapter": 1,
-    "title_zh": "两个古帝国"
+    "title_la": "Imperium Rōmānum",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Sex_flūmina_magna_brevis_006.md",
+    "path": "Cap1/Cap1_Rōma_et_Ītalia_brevis_016.md",
     "chapter": 1,
-    "title_zh": "六大河"
+    "title_la": "Rōma et Ītalia",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Sex_prōvinciae_Rōmānae_brevis_009.md",
+    "path": "Cap1/Cap1_Terrae_et_aquae_Eurōpae_medius_024.md",
     "chapter": 1,
-    "title_zh": "罗马六行省"
+    "title_la": "Terrae et aquae Eurōpae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Tres_terrae_septentriōnis_brevis_003.md",
+    "path": "Cap1/Cap1_Tria_flūmina_Rōmāna_brevis_018.md",
     "chapter": 1,
-    "title_zh": "北方三地"
+    "title_la": "Tria flūmina Rōmāna",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Tres_terrae_septentriōnis_brevis_004.md",
+    "path": "Cap1/Cap1_Trēs_prōvinciae_īnsulārum_brevis_019.md",
     "chapter": 1,
-    "title_zh": "北方三地"
+    "title_la": "Trēs prōvinciae īnsulārum",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Tria_flūmina_brevis_005.md",
+    "path": "Cap1/Cap1_Trēs_īnsulae_magnae_brevis_017.md",
     "chapter": 1,
-    "title_zh": "三条河"
+    "title_la": "Trēs īnsulae magnae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Trēs_terrae_Eurōpae_brevis_008.md",
+    "path": "Cap1/Cap1_Īnsulae_Graecae_brevis_020.md",
     "chapter": 1,
-    "title_zh": "欧洲三地"
+    "title_la": "Īnsulae Graecae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Trēs_īnsulae_in_imperiō_brevis_010.md",
+    "path": "Cap1/Cap2_Quid_est_in_Eurōpā_medius_006.md",
     "chapter": 1,
-    "title_zh": "帝国三岛"
+    "title_la": "Quid est in Eurōpā?",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap1/Cap1_Trēs_īnsulae_parvae_brevis_007.md",
+    "path": "Cap1/Cap2_Īnsulae_Graecae_Multae_medius_018.md",
     "chapter": 1,
-    "title_zh": "三座小岛"
+    "title_la": "Īnsulae Graecae Multae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap2/Cap2_Duo_dominī_brevis_006.md",
-    "chapter": 2,
-    "title_zh": "二主"
-  },
-  {
-    "path": "realitates/Cap2/Cap2_Familia_in_īnsulā_brevis_004.md",
-    "chapter": 2,
-    "title_zh": "岛上之家"
-  },
-  {
-    "path": "realitates/Cap2/Cap2_Fīlia_et_māter_brevis_009.md",
-    "chapter": 2,
-    "title_zh": "母女"
-  },
-  {
-    "path": "realitates/Cap2/Cap2_Oppidum_novum_brevis_005.md",
-    "chapter": 2,
-    "title_zh": "新城"
-  },
-  {
-    "path": "realitates/Cap2/Cap2_Pater_et_fīlius_brevis_002.md",
-    "chapter": 2,
-    "title_zh": "父与子"
-  },
-  {
-    "path": "realitates/Cap2/Cap2_Pater_et_puer_brevis_010.md",
-    "chapter": 2,
-    "title_zh": "父亲与男孩"
-  },
-  {
-    "path": "realitates/Cap2/Cap2_Quid_est_in_Eurōpā_brevis_001.md",
-    "chapter": 2,
-    "title_zh": "欧洲有什么？"
-  },
-  {
-    "path": "realitates/Cap2/Cap2_Rōma_magna_brevis_003.md",
-    "chapter": 2,
-    "title_zh": "伟大的罗马"
-  },
-  {
-    "path": "realitates/Cap2/Cap2_Servus_et_liber_brevis_008.md",
-    "chapter": 2,
-    "title_zh": "奴隶与书"
-  },
-  {
-    "path": "realitates/Cap2/Cap2_Īnsulae_Graecae_brevis_007.md",
-    "chapter": 2,
-    "title_zh": "希腊群岛"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Dominus_sum_brevis_002.md",
-    "chapter": 3,
-    "title_zh": "我为主人"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Ego_videō_brevis_008.md",
-    "chapter": 3,
-    "title_zh": "我看见"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Fluvius_magnus_brevis_006.md",
-    "chapter": 3,
-    "title_zh": "大河"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Mārcus_dormit_brevis_009.md",
-    "chapter": 3,
-    "title_zh": "马库斯睡了"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Mārcus_et_Iūlia_brevis_004.md",
-    "chapter": 3,
-    "title_zh": "马库斯与尤利娅"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Māter_et_fīlia_brevis_001.md",
-    "chapter": 3,
-    "title_zh": "母与女"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Māter_īrāta_brevis_005.md",
-    "chapter": 3,
-    "title_zh": "愤怒的母亲"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Pater_et_fīlius_improbī_brevis_010.md",
-    "chapter": 3,
-    "title_zh": "父子皆恶"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Puella_cantat_brevis_003.md",
-    "chapter": 3,
-    "title_zh": "女孩唱歌"
-  },
-  {
-    "path": "realitates/Cap3/Cap3_Puer_quī_plōrat_brevis_007.md",
-    "chapter": 3,
-    "title_zh": "哭泣的男孩"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Decem_prōvinciae_Rōmānae_brevis_004.md",
-    "chapter": 4,
-    "title_zh": "罗马十省"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Discēde_brevis_008.md",
-    "chapter": 4,
-    "title_zh": "滚开！"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Dominus_et_servus_in_viā_brevis_011.md",
-    "chapter": 4,
-    "title_zh": "主奴同行"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Fīlius_improbus_brevis_005.md",
-    "chapter": 4,
-    "title_zh": "坏儿子"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Pecūnia_patris_brevis_009.md",
-    "chapter": 4,
-    "title_zh": "父亲的财富"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Puella_et_aqua_brevis_014.md",
-    "chapter": 4,
-    "title_zh": "女孩与水"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Puer_et_liber_brevis_006.md",
-    "chapter": 4,
-    "title_zh": "男孩与书"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Puer_et_piscis_brevis_012.md",
-    "chapter": 4,
-    "title_zh": "男孩与鱼"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Puer_sōlus_brevis_013.md",
-    "chapter": 4,
-    "title_zh": "孤独的男孩"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Quattuor_flūmina_brevis_002.md",
-    "chapter": 4,
-    "title_zh": "四条河"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Quattuor_oppida_Ītaliae_brevis_003.md",
-    "chapter": 4,
-    "title_zh": "意大利四城"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Quattuor_populī_brevis_001.md",
-    "chapter": 4,
-    "title_zh": "四族"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Servus_bonus_brevis_007.md",
-    "chapter": 4,
-    "title_zh": "好奴隶"
-  },
-  {
-    "path": "realitates/Cap4/Cap4_Servus_et_aqua_brevis_010.md",
-    "chapter": 4,
-    "title_zh": "奴隶与水"
-  },
-  {
-    "path": "realitates/Cap5/Cap5_Ancilla_et_domina_brevis_007.md",
-    "chapter": 5,
-    "title_zh": "女奴与女主人"
-  },
-  {
-    "path": "realitates/Cap5/Cap5_Fēmina_sōla_brevis_005.md",
-    "chapter": 5,
-    "title_zh": "孤独的女人"
-  },
-  {
-    "path": "realitates/Cap5/Cap5_Fīlius_discit_brevis_006.md",
-    "chapter": 5,
-    "title_zh": "儿子学习"
-  },
-  {
-    "path": "realitates/Cap5/Cap5_In_hortō_brevis_003.md",
-    "chapter": 5,
-    "title_zh": "在花园里"
-  },
-  {
-    "path": "realitates/Cap5/Cap5_Māter_et_fīlia_in_hortō_brevis_004.md",
-    "chapter": 5,
-    "title_zh": "母女在花园"
-  },
-  {
-    "path": "realitates/Cap5/Cap5_Quī_dormit_brevis_001.md",
-    "chapter": 5,
-    "title_zh": "谁在睡觉？"
-  },
-  {
-    "path": "realitates/Cap5/Cap5_Via_ad_oppidum_brevis_002.md",
-    "chapter": 5,
-    "title_zh": "通往城镇之路"
-  },
-  {
-    "path": "realitates/Cap5/Cap5_Vīlla_Rōmāna_brevis_008.md",
-    "chapter": 5,
-    "title_zh": "罗马庄园"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Dominus_bonus_brevis_016.md",
-    "chapter": 6,
-    "title_zh": "好主人"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Dominus_et_servus_brevis_010.md",
-    "chapter": 6,
-    "title_zh": "主与仆"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Duae_īnsulae_magnae_brevis_007.md",
-    "chapter": 6,
-    "title_zh": "两座大岛"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_In_viā_brevis_013.md",
-    "chapter": 6,
-    "title_zh": "在路上"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Octō_flūmina_brevis_006.md",
-    "chapter": 6,
-    "title_zh": "八条河"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Oppidum_in_nocte_brevis_015.md",
-    "chapter": 6,
-    "title_zh": "夜之城"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Puella_in_viā_brevis_014.md",
-    "chapter": 6,
-    "title_zh": "路上的女孩"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Quattuor_oppida_brevis_005.md",
-    "chapter": 6,
-    "title_zh": "四座城"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Quīnque_flūmina_Eurōpae_brevis_008.md",
-    "chapter": 6,
-    "title_zh": "欧洲五河"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Sex_oppida_Rōmāna_brevis_003.md",
-    "chapter": 6,
-    "title_zh": "罗马六城"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Sicilia_et_Corsica_brevis_004.md",
-    "chapter": 6,
-    "title_zh": "西西里与科西嘉"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Sicilia_et_Sardinia_brevis_001.md",
-    "chapter": 6,
-    "title_zh": "西西里与撒丁"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Sōlus_in_viā_brevis_011.md",
-    "chapter": 6,
-    "title_zh": "独行路上"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Tria_oppida_magnae_brevis_002.md",
-    "chapter": 6,
-    "title_zh": "三座大城"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Trēs_viae_Rōmānae_brevis_009.md",
-    "chapter": 6,
-    "title_zh": "罗马三道"
-  },
-  {
-    "path": "realitates/Cap6/Cap6_Via_ad_Graeciam_brevis_012.md",
-    "chapter": 6,
-    "title_zh": "通往希腊之路"
-  },
-  {
-    "path": "realitates/Cap7/Cap7_Puella_in_viā_brevis_002.md",
-    "chapter": 7,
-    "title_zh": "街上的女孩"
-  },
-  {
-    "path": "realitates/Cap7/Cap7_Rosa_in_hortō_brevis_005.md",
-    "chapter": 7,
-    "title_zh": "园中玫瑰"
-  },
-  {
-    "path": "realitates/Cap7/Cap7_Servus_novus_brevis_003.md",
-    "chapter": 7,
-    "title_zh": "新奴隶"
-  },
-  {
-    "path": "realitates/Cap7/Cap7_Spēs_in_īnsulā_brevis_004.md",
-    "chapter": 7,
-    "title_zh": "岛上之望"
-  },
-  {
-    "path": "realitates/Cap7/Cap7_Vēritās_brevis_001.md",
-    "chapter": 7,
-    "title_zh": "真理"
-  },
-  {
-    "path": "realitates/Cap8/Cap8_Iūdex_in_Forō_brevis_001.md",
-    "chapter": 8,
-    "title_zh": "广场上的法官"
-  },
-  {
-    "path": "realitates/Cap8/Cap8_Tabernārius_et_emptor_brevis_002.md",
-    "chapter": 8,
-    "title_zh": "店主与顾客"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Duae_terrae_brevis_004.md",
-    "chapter": 9,
-    "title_zh": "两地"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Duo_canēs_brevis_008.md",
-    "chapter": 9,
-    "title_zh": "两只狗"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_In_silvīs_Eurōpae_brevis_011.md",
-    "chapter": 9,
-    "title_zh": "在欧洲森林中"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Magnum_et_parvum_brevis_006.md",
-    "chapter": 9,
-    "title_zh": "大与小"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Octō_montēs_magnī_brevis_005.md",
-    "chapter": 9,
-    "title_zh": "八大山脉"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Pāstor_et_ovēs_brevis_009.md",
-    "chapter": 9,
-    "title_zh": "牧人与羊"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Quinque_terrae_Eurōpae_brevis_002.md",
-    "chapter": 9,
-    "title_zh": "欧洲五地"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Servus_et_canis_brevis_010.md",
-    "chapter": 9,
-    "title_zh": "奴隶与狗"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Tria_oppida_Graeciae_brevis_003.md",
-    "chapter": 9,
-    "title_zh": "希腊三城"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Trēs_in_hortō_brevis_007.md",
-    "chapter": 9,
-    "title_zh": "园中三物"
-  },
-  {
-    "path": "realitates/Cap9/Cap9_Īnsula_parva_brevis_001.md",
-    "chapter": 9,
-    "title_zh": "小岛"
-  },
-  {
-    "path": "realitates/Cap10/Cap10_Britannia_et_Hibernia_brevis_024.md",
+    "path": "Cap10/Cap10_Duodecim_insulae_brevis_042.md",
     "chapter": 10,
-    "title_zh": "不列颠与爱尔兰"
+    "title_la": "Duodecim insulae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Canis_et_puer_brevis_037.md",
+    "path": "Cap10/Cap10_Forum_Romanum_brevis_059.md",
     "chapter": 10,
-    "title_zh": "狗与男孩"
+    "title_la": "Forum Romanum",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Duodecim_īnsulae_brevis_014.md",
+    "path": "Cap10/Cap10_Imperium_brevis_006.md",
     "chapter": 10,
-    "title_zh": "十二座岛"
+    "title_la": "Imperium",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Duodecim_īnsulae_brevis_015.md",
+    "path": "Cap10/Cap10_In_foro_brevis_045.md",
     "chapter": 10,
-    "title_zh": "十二座岛"
+    "title_la": "In foro",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Duodecim_īnsulae_brevis_018.md",
+    "path": "Cap10/Cap10_Mare_et_terra_brevis_040.md",
     "chapter": 10,
-    "title_zh": "十二座岛"
+    "title_la": "Mare et terra",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Duodecim_īnsulae_maris_brevis_020.md",
+    "path": "Cap10/Cap10_Mercator_Graecus_brevis_061.md",
     "chapter": 10,
-    "title_zh": "海中十二岛"
+    "title_la": "Mercator Graecus",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Flūmina_Rōmāna_brevis_013.md",
+    "path": "Cap10/Cap10_Novem_insulae_brevis_053.md",
     "chapter": 10,
-    "title_zh": "罗马诸河"
+    "title_la": "Novem insulae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Forum_Rōmānum_brevis_038.md",
+    "path": "Cap10/Cap10_Septem_insulae_parvae_brevis_054.md",
     "chapter": 10,
-    "title_zh": "罗马广场"
+    "title_la": "Septem insulae parvae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Fīnis_Viae_brevis_009.md",
+    "path": "Cap10/Cap10_Servus_in_horto_brevis_058.md",
     "chapter": 10,
-    "title_zh": "路之尽头"
+    "title_la": "Servus in horto",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Imperium_brevis_006.md",
+    "path": "Cap10/Cap10_finis_viae_brevis_001.md",
     "chapter": 10,
-    "title_zh": "权力"
+    "title_la": "Finis viae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_In_forō_brevis_031.md",
+    "path": "Cap10/Cap10_quinque_flumina_brevis_001.md",
     "chapter": 10,
-    "title_zh": "在市集"
+    "title_la": "Quinque flumina",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_In_viā_brevis_032.md",
+    "path": "Cap10/Cap10_septem_flumina_asiae_brevis_001.md",
     "chapter": 10,
-    "title_zh": "在街上"
+    "title_la": "Septem flumina Asiae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Mare_et_terra_brevis_012.md",
+    "path": "Cap10/Cap10_via_romana_brevis_001.md",
     "chapter": 10,
-    "title_zh": "海与陆"
+    "title_la": "Via Romana",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Mendīcus_ad_portam_brevis_035.md",
+    "path": "Cap10/Cap11_Amor_in_Forō_medius_001.md",
     "chapter": 10,
-    "title_zh": "门前的乞丐"
+    "title_la": "Amor in Forō",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Mercātor_Graecus_brevis_039.md",
+    "path": "Cap10/Cap11_Anulus_Sine_Gemma_longus_001.md",
     "chapter": 10,
-    "title_zh": "希腊商人"
+    "title_la": "Anulus Sine Gemma",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Novem_īnsulae_brevis_022.md",
+    "path": "Cap10/Cap11_Duo_maria_brevis_001.md",
     "chapter": 10,
-    "title_zh": "九座岛"
+    "title_la": "Duo maria",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Octō_īnsulae_brevis_025.md",
+    "path": "Cap10/Cap11_In_triclīniō_medius_001.md",
     "chapter": 10,
-    "title_zh": "八座岛"
+    "title_la": "In triclīniō",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Puer_et_avis_brevis_036.md",
+    "path": "Cap10/Cap11_Lūdus_puerōrum_medius_001.md",
     "chapter": 10,
-    "title_zh": "男孩与鸟"
+    "title_la": "Lūdus puerōrum",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Quattuor_maria_brevis_016.md",
+    "path": "Cap10/Cap11_Roma_et_Tiberis_longus_001.md",
     "chapter": 10,
-    "title_zh": "四海"
+    "title_la": "Roma et Tiberis",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Quattuor_maria_brevis_017.md",
+    "path": "Cap10/Cap11_Sex_oppida_Italiae_medius_001.md",
     "chapter": 10,
-    "title_zh": "四海"
+    "title_la": "Sex oppida Italiae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Quattuor_terrae_brevis_011.md",
+    "path": "Cap10/Cap11_Tria_maria_longus_001.md",
     "chapter": 10,
-    "title_zh": "四方之地"
+    "title_la": "Tria maria",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Quattuor_īnsulae_Graecae_brevis_026.md",
+    "path": "Cap10/Cap12_Duo_frātrēs_medius_001.md",
     "chapter": 10,
-    "title_zh": "四座希腊岛"
+    "title_la": "Duo frātrēs",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Quattuor_īnsulae_Graecae_brevis_029.md",
+    "path": "Cap10/Cap12_Frātrēs_duo_longus_001.md",
     "chapter": 10,
-    "title_zh": "四座希腊岛"
+    "title_la": "Frātrēs duo",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Quid_Est_Iūstitia_brevis_008.md",
+    "path": "Cap10/Cap12_Mare_unum_medius_001.md",
     "chapter": 10,
-    "title_zh": "什么是正义？"
+    "title_la": "Mare unum",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Quinque_flūmina_brevis_021.md",
+    "path": "Cap10/Cap9_Duo_canes_brevis_041.md",
     "chapter": 10,
-    "title_zh": "五条河"
+    "title_la": "Duo canes",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Septem_flūmina_Asiae_brevis_030.md",
+    "path": "Cap10/Cap9_In_silvis_brevis_044.md",
     "chapter": 10,
-    "title_zh": "亚洲七河"
+    "title_la": "In silvis",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Septem_īnsulae_parvae_brevis_023.md",
+    "path": "Cap10/Cap9_Insula_parva_brevis_023.md",
     "chapter": 10,
-    "title_zh": "七座小岛"
+    "title_la": "Insula parva",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap10/Cap10_Servus_in_hortō_brevis_034.md",
-    "chapter": 10,
-    "title_zh": "园中奴隶"
-  },
-  {
-    "path": "realitates/Cap10/Cap10_Sex_īnsulae_parvae_brevis_028.md",
-    "chapter": 10,
-    "title_zh": "六座小岛"
-  },
-  {
-    "path": "realitates/Cap10/Cap10_Somnum_Aeternum_brevis_010.md",
-    "chapter": 10,
-    "title_zh": "永恒之眠"
-  },
-  {
-    "path": "realitates/Cap10/Cap10_Tria_flūmina_Eurōpae_brevis_027.md",
-    "chapter": 10,
-    "title_zh": "欧洲三河"
-  },
-  {
-    "path": "realitates/Cap10/Cap10_Tria_flūmina_brevis_019.md",
-    "chapter": 10,
-    "title_zh": "三条河"
-  },
-  {
-    "path": "realitates/Cap10/Cap10_Īnsula_et_Mors_brevis_007.md",
-    "chapter": 10,
-    "title_zh": "岛与死亡"
-  },
-  {
-    "path": "realitates/Cap10/Cap10_Īnsula_parva_brevis_033.md",
-    "chapter": 10,
-    "title_zh": "小岛"
-  },
-  {
-    "path": "realitates/Cap11/Cap11_Agricola_et_terra_brevis_014.md",
+    "path": "Cap11/Cap10_Canis_et_puer_brevis_049.md",
     "chapter": 11,
-    "title_zh": "农夫与土地"
+    "title_la": "Canis et puer",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Amor_Servī_brevis_004.md",
+    "path": "Cap11/Cap10_Finis_Viae_brevis_004.md",
     "chapter": 11,
-    "title_zh": "奴隶之爱"
+    "title_la": "Finis Viae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Amor_in_Forō_brevis_002.md",
+    "path": "Cap11/Cap10_Flumina_Romana_brevis_041.md",
     "chapter": 11,
-    "title_zh": "广场上的爱"
+    "title_la": "Flumina Romana",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Anulus_Sine_Gemma_brevis_001.md",
+    "path": "Cap11/Cap10_Insula_et_Mors_brevis_002.md",
     "chapter": 11,
-    "title_zh": "无宝石的戒指"
+    "title_la": "Insula et Mors",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Duo_maria_brevis_008.md",
+    "path": "Cap11/Cap10_Sex_insulae_parvae_medius_065.md",
     "chapter": 11,
-    "title_zh": "两片海"
+    "title_la": "Sex insulae parvae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Equus_et_dominus_brevis_011.md",
+    "path": "Cap11/Cap10_Tria_flumina_Europae_brevis_057.md",
     "chapter": 11,
-    "title_zh": "马与主人"
+    "title_la": "Tria flumina Europae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_In_campō_brevis_013.md",
+    "path": "Cap11/Cap10_Tria_flumina_brevis_051.md",
     "chapter": 11,
-    "title_zh": "在原野"
+    "title_la": "Tria flumina",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_In_triclīniō_brevis_012.md",
+    "path": "Cap11/Cap11_Agricola_et_terra_medius_001.md",
     "chapter": 11,
-    "title_zh": "在餐厅"
+    "title_la": "Agricola et terra",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Lūdus_puerōrum_brevis_009.md",
+    "path": "Cap11/Cap11_Medicus_et_aeger_medius_001.md",
     "chapter": 11,
-    "title_zh": "孩子们的学校"
+    "title_la": "Medicus et aeger",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Medicus_et_aeger_brevis_010.md",
+    "path": "Cap11/Cap11_Mōns_et_Homō_medius_001.md",
     "chapter": 11,
-    "title_zh": "医生与病人"
+    "title_la": "Mōns et Homō",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Mōns_et_Homō_brevis_003.md",
+    "path": "Cap11/Cap12_Epistula_ad_amīcum_longus_001.md",
     "chapter": 11,
-    "title_zh": "山与人"
+    "title_la": "Epistula ad amīcum",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Sex_oppida_Italiae_brevis_006.md",
+    "path": "Cap11/Cap12_Mīles_et_bellum_longus_001.md",
     "chapter": 11,
-    "title_zh": "意大利六城"
+    "title_la": "Mīles et bellum",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Sex_oppida_Italiae_brevis_007.md",
+    "path": "Cap11/Cap12_Tū,_Mīles_medius_001.md",
     "chapter": 11,
-    "title_zh": "意大利六城"
+    "title_la": "Tū, Mīles",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap11/Cap11_Tria_maria_brevis_005.md",
+    "path": "Cap11/Cap13_Alter_Ego_brevis_001.md",
     "chapter": 11,
-    "title_zh": "三片海"
+    "title_la": "Alter Ego",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Duo_frātrēs_brevis_005.md",
+    "path": "Cap11/Cap13_Diarium_Medici_brevis_001.md",
+    "chapter": 11,
+    "title_la": "Diarium Medici",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap11/Cap14_Graecus_in_Taberna_brevis_002.md",
+    "chapter": 11,
+    "title_la": "Graecus in Taberna",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap12/Cap10_In_via_brevis_046.md",
     "chapter": 12,
-    "title_zh": "两兄弟"
+    "title_la": "In via",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Duo_frātrēs_brevis_010.md",
+    "path": "Cap12/Cap10_Puer_et_avis_brevis_048.md",
     "chapter": 12,
-    "title_zh": "两兄弟"
+    "title_la": "Puer et avis",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Epistula_ad_amīcum_brevis_007.md",
+    "path": "Cap12/Cap10_Quattuor_Insulae_Graecae_brevis_063.md",
     "chapter": 12,
-    "title_zh": "致友人书"
+    "title_la": "Quattuor Insulae Graecae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Mare_unum_brevis_003.md",
+    "path": "Cap12/Cap10_Quattuor_maria_brevis_043.md",
     "chapter": 12,
-    "title_zh": "唯一之海"
+    "title_la": "Quattuor maria",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Mīles_Fortis_brevis_001.md",
+    "path": "Cap12/Cap10_Quinque_flumina_brevis_052.md",
     "chapter": 12,
-    "title_zh": "勇敢的士兵"
+    "title_la": "Quinque flumina",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Mīles_et_dux_brevis_006.md",
+    "path": "Cap12/Cap12_Mīles_Fortis_medius_001.md",
     "chapter": 12,
-    "title_zh": "兵与将"
+    "title_la": "Mīles Fortis",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Mīles_et_mors_brevis_012.md",
+    "path": "Cap12/Cap12_Mīles_et_dux_medius_001.md",
     "chapter": 12,
-    "title_zh": "士兵与死亡"
+    "title_la": "Mīles et dux",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Mīles_fortis_brevis_009.md",
+    "path": "Cap12/Cap12_Mīles_et_mors_longus_001.md",
     "chapter": 12,
-    "title_zh": "勇者"
+    "title_la": "Mīles et mors",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Mīles_sōlus_brevis_008.md",
+    "path": "Cap12/Cap12_Mīles_sōlus_longus_001.md",
     "chapter": 12,
-    "title_zh": "孤独的士兵"
+    "title_la": "Mīles sōlus",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Nāvis_in_marī_brevis_011.md",
+    "path": "Cap12/Cap14_Sapientis_Stultitia_brevis_003.md",
     "chapter": 12,
-    "title_zh": "船在海上"
+    "title_la": "Sapientis Stultitia",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap12/Cap12_Tria_maria_brevis_004.md",
-    "chapter": 12,
-    "title_zh": "三片海"
-  },
-  {
-    "path": "realitates/Cap12/Cap12_Tū_Mīles_brevis_002.md",
-    "chapter": 12,
-    "title_zh": "你，士兵"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Alter_Ego_brevis_006.md",
+    "path": "Cap13/Cap10_Britannia_et_Hibernia_brevis_044.md",
     "chapter": 13,
-    "title_zh": "另一个我"
+    "title_la": "Britannia et Hibernia",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Diarium_Medici_brevis_001.md",
+    "path": "Cap13/Cap10_Duodecim_Insulae_Nautae_brevis_064.md",
     "chapter": 13,
-    "title_zh": "医生日志"
+    "title_la": "Duodecim Insulae Nautae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Dēspērātiō_in_Urbe_brevis_003.md",
+    "path": "Cap13/Cap10_Duodecim_Insulae_Viatoris_medius_062.md",
     "chapter": 13,
-    "title_zh": "城中的绝望"
+    "title_la": "Duodecim Insulae Viatoris",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Fīlius_et_umbra_patris_brevis_023.md",
+    "path": "Cap13/Cap10_Duodecim_insulae_maris_brevis_050.md",
     "chapter": 13,
-    "title_zh": "儿子与父影"
+    "title_la": "Duodecim insulae maris",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Hortus_post_pluviam_brevis_028.md",
+    "path": "Cap13/Cap10_Octo_insulae_brevis_055.md",
     "chapter": 13,
-    "title_zh": "雨后花园"
+    "title_la": "Octo insulae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Hostis_in_portīs_brevis_021.md",
+    "path": "Cap13/Cap10_Quattuor_Insulae_Graecae_Nautae_brevis_056.md",
     "chapter": 13,
-    "title_zh": "敌在门前"
+    "title_la": "Quattuor Insulae Graecae Nautae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Hōrologium_et_Senex_brevis_002.md",
+    "path": "Cap13/Cap10_Quattuor_terrae_brevis_017.md",
     "chapter": 13,
-    "title_zh": "钟与老人"
+    "title_la": "Quattuor terrae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_In_stabulō_brevis_025.md",
+    "path": "Cap13/Cap10_Quid_Est_Iustitia_brevis_003.md",
     "chapter": 13,
-    "title_zh": "在马厩"
+    "title_la": "Quid Est Iustitia",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Insulae_Graeciae_brevis_008.md",
+    "path": "Cap13/Cap12_Nāvis_in_marī_longus_001.md",
     "chapter": 13,
-    "title_zh": "希腊诸岛"
+    "title_la": "Nāvis in marī",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Lūna_et_puer_brevis_029.md",
+    "path": "Cap13/Cap13_Ancilla_et_Lūna_medius_001.md",
     "chapter": 13,
-    "title_zh": "月亮与男孩"
+    "title_la": "Ancilla et Lūna",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Mercātor_et_via_brevis_031.md",
+    "path": "Cap13/Cap13_Fīlius_et_Umbra_Patris_brevis_001.md",
     "chapter": 13,
-    "title_zh": "商人与路"
+    "title_la": "Fīlius et Umbra Patris",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Noctū_in_oppidō_brevis_032.md",
+    "path": "Cap13/Cap13_Hortus_Post_Pluviam_brevis_001.md",
     "chapter": 13,
-    "title_zh": "城中之夜"
+    "title_la": "Hortus Post Pluviam",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Nox_in_vīllā_brevis_030.md",
+    "path": "Cap13/Cap13_Hostis_in_Portīs_brevis_001.md",
     "chapter": 13,
-    "title_zh": "庄园之夜"
+    "title_la": "Hostis in Portīs",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Porta_urbis_brevis_027.md",
+    "path": "Cap13/Cap13_Hōrologium_et_Senex_brevis_001.md",
     "chapter": 13,
-    "title_zh": "城门"
+    "title_la": "Hōrologium et Senex",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Pōns_in_fluviō_brevis_033.md",
+    "path": "Cap13/Cap13_Lūna_et_Puer_brevis_001.md",
     "chapter": 13,
-    "title_zh": "河上之桥"
+    "title_la": "Lūna et Puer",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Quattuor_in_aquā_brevis_020.md",
+    "path": "Cap13/Cap13_Mercātor_et_Via_brevis_001.md",
     "chapter": 13,
-    "title_zh": "水中四物"
+    "title_la": "Mercātor et Via",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Quattuor_partēs_annī_brevis_018.md",
+    "path": "Cap13/Cap13_Noctū_in_Oppidō_brevis_001.md",
     "chapter": 13,
-    "title_zh": "一年四季"
+    "title_la": "Noctū in Oppidō",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Quattuor_partēs_diēī_brevis_017.md",
+    "path": "Cap13/Cap13_Nox_in_Vīllā_brevis_001.md",
     "chapter": 13,
-    "title_zh": "一日四时"
+    "title_la": "Nox in Vīllā",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Quattuor_portae_Rōmae_brevis_015.md",
+    "path": "Cap13/Cap13_Septem_Diēs_Hebdomadis_brevis_001.md",
     "chapter": 13,
-    "title_zh": "罗马四门"
+    "title_la": "Septem Diēs Hebdomadis",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Quattuor_īnsulae_brevis_013.md",
+    "path": "Cap13/Cap13_Via_Sine_Fīne_brevis_001.md",
     "chapter": 13,
-    "title_zh": "四座岛"
+    "title_la": "Via Sine Fīne",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Quinque_terrae_Asiae_brevis_014.md",
+    "path": "Cap13/Cap13_Via_ad_Urbem_medius_001.md",
     "chapter": 13,
-    "title_zh": "亚洲五地"
+    "title_la": "Via ad Urbem",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Quinque_terrae_brevis_007.md",
+    "path": "Cap13/Cap13_Viātor_et_Nox_brevis_001.md",
     "chapter": 13,
-    "title_zh": "五地"
+    "title_la": "Viātor et Nox",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Quīnque_oppida_Hispāniae_brevis_016.md",
+    "path": "Cap13/Cap16_Mīles_et_Puer_brevis_001.md",
     "chapter": 13,
-    "title_zh": "西班牙五城"
+    "title_la": "Mīles et Puer",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap13/Cap13_Senātor_et_populus_brevis_022.md",
-    "chapter": 13,
-    "title_zh": "元老与人民"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Septem_diēs_hebdomadis_brevis_019.md",
-    "chapter": 13,
-    "title_zh": "一周七日"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Tres_flūmina_brevis_011.md",
-    "chapter": 13,
-    "title_zh": "三条河"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Tres_flūmina_brevis_012.md",
-    "chapter": 13,
-    "title_zh": "三条河"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Tria_oppida_Italiae_brevis_009.md",
-    "chapter": 13,
-    "title_zh": "意大利三城"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Tria_oppida_Italiae_brevis_010.md",
-    "chapter": 13,
-    "title_zh": "意大利三城"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Via_Sine_Fīne_brevis_004.md",
-    "chapter": 13,
-    "title_zh": "无尽之路"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Via_ad_urbem_brevis_026.md",
-    "chapter": 13,
-    "title_zh": "通往城市的路"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Viātor_et_nox_brevis_024.md",
-    "chapter": 13,
-    "title_zh": "旅人与夜"
-  },
-  {
-    "path": "realitates/Cap13/Cap13_Vōx_Arboris_brevis_005.md",
-    "chapter": 13,
-    "title_zh": "树之声"
-  },
-  {
-    "path": "realitates/Cap14/Cap14_Amīcus_falsus_brevis_020.md",
+    "path": "Cap14/Cap10_Insula_Piscatoris_brevis_047.md",
     "chapter": 14,
-    "title_zh": "假朋友"
+    "title_la": "Insula Piscatoris",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Custōs_et_porta_brevis_019.md",
+    "path": "Cap14/Cap13_Diarium_Medici_II_brevis_001.md",
     "chapter": 14,
-    "title_zh": "守门人与门"
+    "title_la": "Diarium Medici II",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Dux_et_mīlitēs_brevis_021.md",
+    "path": "Cap14/Cap13_Dēspērātiō_in_Urbe_brevis_001.md",
     "chapter": 14,
-    "title_zh": "将军与士兵"
+    "title_la": "Dēspērātiō in Urbe",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Epistula_ad_patrem_brevis_024.md",
+    "path": "Cap14/Cap13_In_Stabulō_brevis_001.md",
     "chapter": 14,
-    "title_zh": "给父亲的信"
+    "title_la": "In Stabulō",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Fidēs_Fracta_brevis_008.md",
+    "path": "Cap14/Cap13_Porta_Urbis_brevis_001.md",
     "chapter": 14,
-    "title_zh": "破碎的信任"
+    "title_la": "Porta Urbis",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Graecus_in_Taberna_brevis_002.md",
+    "path": "Cap14/Cap13_Quattuor_Partēs_Diēī_brevis_001.md",
     "chapter": 14,
-    "title_zh": "希腊人在店铺"
+    "title_la": "Quattuor Partēs Diēī",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Invidia_Fratrum_brevis_007.md",
+    "path": "Cap14/Cap13_Quīnque_Oppida_Hispāniae_brevis_001.md",
     "chapter": 14,
-    "title_zh": "兄弟之妒"
+    "title_la": "Quīnque Oppida Hispāniae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Lupus_et_Ōrdō_brevis_004.md",
+    "path": "Cap14/Cap13_Vōx_Arboris_medius_001.md",
     "chapter": 14,
-    "title_zh": "狼与秩序"
+    "title_la": "Vōx Arboris",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Mors_amīcī_brevis_022.md",
+    "path": "Cap14/Cap14_Mulier_Quae_Fīliōs_Nōn_Amāvit_brevis_002.md",
     "chapter": 14,
-    "title_zh": "友人之死"
+    "title_la": "Mulier Quae Fīliōs Nōn Amāvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Māne_in_vīllā_brevis_018.md",
+    "path": "Cap14/Cap14_Mulier_Quae_Fīliōs_Nōn_Amāvit_brevis_005.md",
     "chapter": 14,
-    "title_zh": "庄园之晨"
+    "title_la": "Mulier Quae Fīliōs Nōn Amāvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Māter_et_Fīlius_brevis_009.md",
+    "path": "Cap14/Cap14_Puella_Quae_Pluviam_Vocāvit_brevis_003.md",
     "chapter": 14,
-    "title_zh": "母与子"
+    "title_la": "Puella Quae Pluviam Vocāvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Nox_in_urbe_brevis_017.md",
+    "path": "Cap14/Cap14_Puella_Quae_Pluviam_Vocāvit_brevis_007.md",
     "chapter": 14,
-    "title_zh": "城市之夜"
+    "title_la": "Puella Quae Pluviam Vocāvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Populi_imperiī_brevis_011.md",
+    "path": "Cap14/Cap14_Puer_Quī_Ventum_Audīvit_brevis_001.md",
     "chapter": 14,
-    "title_zh": "帝国诸族"
+    "title_la": "Puer Quī Ventum Audīvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Post_Bellum_brevis_006.md",
+    "path": "Cap14/Cap14_Puer_Quī_Ventum_Audīvit_brevis_004.md",
     "chapter": 14,
-    "title_zh": "战后"
+    "title_la": "Puer Quī Ventum Audīvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Quattuor_populī_brevis_013.md",
+    "path": "Cap14/Cap14_Stēlla_Quae_Nōn_Occidit_medius_006.md",
     "chapter": 14,
-    "title_zh": "四族"
+    "title_la": "Stēlla Quae Nōn Occidit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Quattuor_populī_brevis_014.md",
+    "path": "Cap14/Cap16_Fātum_Parvae_Avis_brevis_008.md",
     "chapter": 14,
-    "title_zh": "四族"
+    "title_la": "Fātum Parvae Avis",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Quinque_populī_brevis_016.md",
+    "path": "Cap14/Cap16_Mercātor_Graecus_in_Forō_Rōmānō_brevis_001.md",
     "chapter": 14,
-    "title_zh": "五族"
+    "title_la": "Mercātor Graecus in Forō Rōmānō",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Rex_et_umbra_brevis_025.md",
+    "path": "Cap14/Cap16_Sagāx_Magister_brevis_002.md",
     "chapter": 14,
-    "title_zh": "王与影"
+    "title_la": "Sagāx Magister",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap14/Cap14_Salvē_magister_brevis_023.md",
-    "chapter": 14,
-    "title_zh": "你好，老师"
-  },
-  {
-    "path": "realitates/Cap14/Cap14_Sapientis_Stultitia_brevis_003.md",
-    "chapter": 14,
-    "title_zh": "聪明人的蠢事"
-  },
-  {
-    "path": "realitates/Cap14/Cap14_Septem_īnsulae_brevis_012.md",
-    "chapter": 14,
-    "title_zh": "七座岛"
-  },
-  {
-    "path": "realitates/Cap14/Cap14_Speculum_et_Vēritās_brevis_010.md",
-    "chapter": 14,
-    "title_zh": "镜与真"
-  },
-  {
-    "path": "realitates/Cap14/Cap14_Sōlus_in_Turba_brevis_005.md",
-    "chapter": 14,
-    "title_zh": "人群中的孤独"
-  },
-  {
-    "path": "realitates/Cap14/Cap14_Tres_populī_brevis_015.md",
-    "chapter": 14,
-    "title_zh": "三族"
-  },
-  {
-    "path": "realitates/Cap15/Cap15_Cēna_familiae_brevis_006.md",
+    "path": "Cap15/Cap13_Quattuor_in_Aquā_brevis_001.md",
     "chapter": 15,
-    "title_zh": "家庭晚餐"
+    "title_la": "Quattuor in Aquā",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap15/Cap15_Cōnsilium_ducis_brevis_008.md",
+    "path": "Cap15/Cap15_Lūna_et_Piscātor_brevis_001.md",
     "chapter": 15,
-    "title_zh": "将军的计策"
+    "title_la": "Lūna et Piscātor",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap15/Cap15_Discipulus_novus_brevis_009.md",
+    "path": "Cap15/Cap15_Lūna_et_Piscātor_brevis_002.md",
     "chapter": 15,
-    "title_zh": "新学生"
+    "title_la": "Lūna et Piscātor",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap15/Cap15_Imperātor_et_Umbra_brevis_001.md",
+    "path": "Cap15/Cap16_Umbra_Orphei_brevis_044.md",
     "chapter": 15,
-    "title_zh": "皇帝与影子"
+    "title_la": "Umbra Orphei",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap15/Cap15_Litterae_patris_brevis_007.md",
+    "path": "Cap15/Cap17_Taberna_Speī_brevis_001.md",
     "chapter": 15,
-    "title_zh": "父亲的信"
+    "title_la": "Taberna Speī",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap15/Cap15_Novem_terrae_brevis_004.md",
+    "path": "Cap15/Cap18_Ōrdō_et_Chaos_brevis_007.md",
     "chapter": 15,
-    "title_zh": "九地"
+    "title_la": "Ōrdō et Chaos",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap15/Cap15_Puer_et_magister_brevis_010.md",
-    "chapter": 15,
-    "title_zh": "男孩与老师"
-  },
-  {
-    "path": "realitates/Cap15/Cap15_Septem_terrae_imperiī_brevis_003.md",
-    "chapter": 15,
-    "title_zh": "帝国七地"
-  },
-  {
-    "path": "realitates/Cap15/Cap15_Servus_et_Porta_brevis_002.md",
-    "chapter": 15,
-    "title_zh": "奴隶与门"
-  },
-  {
-    "path": "realitates/Cap15/Cap15_Sex_terrae_imperiī_brevis_005.md",
-    "chapter": 15,
-    "title_zh": "帝国六地"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Asia_et_Africa_brevis_026.md",
+    "path": "Cap16/Cap10_Mendicus_ad_portam_brevis_060.md",
     "chapter": 16,
-    "title_zh": "亚细亚与非洲"
+    "title_la": "Mendicus ad portam",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Asia_et_Africa_brevis_027.md",
+    "path": "Cap16/Cap13_Puer_et_Liber_brevis_001.md",
     "chapter": 16,
-    "title_zh": "亚细亚与非洲"
+    "title_la": "Puer et Liber",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Asia_et_Syria_brevis_022.md",
+    "path": "Cap16/Cap13_Pōns_in_Fluviō_brevis_001.md",
     "chapter": 16,
-    "title_zh": "亚细亚与叙利亚"
+    "title_la": "Pōns in Fluviō",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Asia_et_Syria_brevis_024.md",
+    "path": "Cap16/Cap13_Quattuor_Portae_Rōmae_brevis_001.md",
     "chapter": 16,
-    "title_zh": "亚细亚与叙利亚"
+    "title_la": "Quattuor Portae Rōmae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Carmen_pāstōris_brevis_041.md",
+    "path": "Cap16/Cap13_Quattuor_Īnsulae_brevis_001.md",
     "chapter": 16,
-    "title_zh": "牧人之歌"
+    "title_la": "Quattuor Īnsulae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Discipulus_et_magister_brevis_018.md",
+    "path": "Cap16/Cap13_Quīnque_Terrae_Asiae_brevis_001.md",
     "chapter": 16,
-    "title_zh": "学生与老师"
+    "title_la": "Quīnque Terrae Asiae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Fātum_Parvae_Avis_brevis_008.md",
+    "path": "Cap16/Cap13_Quīnque_Terrae_brevis_001.md",
     "chapter": 16,
-    "title_zh": "小鸟的命运"
+    "title_la": "Quīnque Terrae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Fātum_et_Ventus_brevis_009.md",
+    "path": "Cap16/Cap13_Trēs_Flūmina_brevis_001.md",
     "chapter": 16,
-    "title_zh": "命运与风"
+    "title_la": "Trēs Flūmina",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Fēmina_ad_fontem_brevis_036.md",
+    "path": "Cap16/Cap16_Caupōna_ad_Finem_Viae_medius_020.md",
     "chapter": 16,
-    "title_zh": "泉边的女人"
+    "title_la": "Caupōna ad Finem Viae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Fūr_et_lūna_brevis_037.md",
+    "path": "Cap16/Cap16_Caupōna_ad_Finem_Viae_medius_024.md",
     "chapter": 16,
-    "title_zh": "贼与月"
+    "title_la": "Caupōna ad Finem Viae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Gallia_et_Germānia_brevis_030.md",
+    "path": "Cap16/Cap16_Frātrēs_Quī_Numquam_Locūtī_Sunt_brevis_019.md",
     "chapter": 16,
-    "title_zh": "高卢与日耳曼"
+    "title_la": "Frātrēs Quī Numquam Locūtī Sunt",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Germānia_et_Rhenus_brevis_029.md",
+    "path": "Cap16/Cap16_Frātrēs_Quī_Numquam_Locūtī_Sunt_brevis_023.md",
     "chapter": 16,
-    "title_zh": "日耳曼与莱茵"
+    "title_la": "Frātrēs Quī Numquam Locūtī Sunt",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Ignōsce_Mihi_brevis_012.md",
+    "path": "Cap16/Cap16_Mendīcus_et_Philosophus_medius_018.md",
     "chapter": 16,
-    "title_zh": "请宽恕我"
+    "title_la": "Mendīcus et Philosophus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Imperium_sine_fīne_brevis_043.md",
+    "path": "Cap16/Cap16_Mendīcus_et_Philosophus_medius_022.md",
     "chapter": 16,
-    "title_zh": "无尽的帝国"
+    "title_la": "Mendīcus et Philosophus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Magister_Silēns_brevis_014.md",
+    "path": "Cap16/Cap16_Mulier_et_Draco_Marīnus_medius_025.md",
     "chapter": 16,
-    "title_zh": "沉默的老师"
+    "title_la": "Mulier et Draco Marīnus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Mercātor_Graecus_in_Forō_Rōmānō_brevis_001.md",
+    "path": "Cap16/Cap16_Puer_Somniāns_brevis_015.md",
     "chapter": 16,
-    "title_zh": "罗马广场上的希腊商人"
+    "title_la": "Puer Somniāns",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Miles_sine_nomine_brevis_045.md",
+    "path": "Cap16/Cap16_Puer_et_Arbor_brevis_003.md",
     "chapter": 16,
-    "title_zh": "无名之兵"
+    "title_la": "Puer et Arbor",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Mīles_et_Puer_brevis_001.md",
+    "path": "Cap16/Cap16_Testāmentum_Nautae_brevis_017.md",
     "chapter": 16,
-    "title_zh": "士兵与男孩"
+    "title_la": "Testāmentum Nautae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Mūrus_crēscēns_brevis_038.md",
+    "path": "Cap16/Cap16_Testāmentum_Nautae_brevis_021.md",
     "chapter": 16,
-    "title_zh": "城墙渐长"
+    "title_la": "Testāmentum Nautae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Nauta_et_mare_brevis_035.md",
+    "path": "Cap16/Cap16_Via_Ipsa_brevis_016.md",
     "chapter": 16,
-    "title_zh": "水手与海"
+    "title_la": "Via Ipsa",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Nāvis_in_ōceanō_brevis_017.md",
+    "path": "Cap16/Cap19_Mors_et_Vīta_brevis_004.md",
     "chapter": 16,
-    "title_zh": "大洋中的船"
+    "title_la": "Mors et Vīta",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap16/Cap16_Proelium_in_campō_brevis_042.md",
-    "chapter": 16,
-    "title_zh": "原野之战"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Puer_Somniāns_brevis_015.md",
-    "chapter": 16,
-    "title_zh": "做梦的男孩"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Puer_et_Arbor_brevis_003.md",
-    "chapter": 16,
-    "title_zh": "男孩与树"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Quattuor_gentēs_Galliae_brevis_032.md",
-    "chapter": 16,
-    "title_zh": "高卢四族"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Quattuor_terrae_brevis_025.md",
-    "chapter": 16,
-    "title_zh": "四方"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Quid_in_īnsulā_brevis_019.md",
-    "chapter": 16,
-    "title_zh": "岛上有何物？"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Quīnque_gentēs_Britanniae_brevis_034.md",
-    "chapter": 16,
-    "title_zh": "不列颠五族"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Sagāx_Magister_brevis_002.md",
-    "chapter": 16,
-    "title_zh": "聪明师傅"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Schola_Sub_Arbore_brevis_013.md",
-    "chapter": 16,
-    "title_zh": "树下学堂"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Servus_fessus_brevis_040.md",
-    "chapter": 16,
-    "title_zh": "疲惫的奴隶"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Sex_prōvinciae_orientis_brevis_028.md",
-    "chapter": 16,
-    "title_zh": "东方六省"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Somnia_nautae_brevis_020.md",
-    "chapter": 16,
-    "title_zh": "水手的梦"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Spēs_in_Nocte_brevis_010.md",
-    "chapter": 16,
-    "title_zh": "夜中的希望"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Tria_oppida_Graeciae_brevis_021.md",
-    "chapter": 16,
-    "title_zh": "希腊三城"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Tria_oppida_Graeciae_brevis_023.md",
-    "chapter": 16,
-    "title_zh": "希腊三城"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Trēs_gentēs_Germāniae_brevis_033.md",
-    "chapter": 16,
-    "title_zh": "日耳曼三族"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Trēs_gentēs_Hispāniae_brevis_031.md",
-    "chapter": 16,
-    "title_zh": "西班牙三族"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Umbra_Orphei_brevis_044.md",
-    "chapter": 16,
-    "title_zh": "俄耳甫斯之影"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Umbra_et_lūx_brevis_039.md",
-    "chapter": 16,
-    "title_zh": "影与光"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Via_Sine_Fīne_brevis_016.md",
-    "chapter": 16,
-    "title_zh": "无尽之路"
-  },
-  {
-    "path": "realitates/Cap16/Cap16_Vōx_in_Silentiō_brevis_011.md",
-    "chapter": 16,
-    "title_zh": "沉默中的声音"
-  },
-  {
-    "path": "realitates/Cap17/Cap17_Catēna_Aurea_brevis_001.md",
+    "path": "Cap17/Cap13_Quattuor_Partēs_Annī_brevis_001.md",
     "chapter": 17,
-    "title_zh": "金锁链"
+    "title_la": "Quattuor Partēs Annī",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Deus_et_servus_brevis_016.md",
+    "path": "Cap17/Cap17_Amor_Sub_Terrā_medius_002.md",
     "chapter": 17,
-    "title_zh": "神与奴隶"
+    "title_la": "Amor Sub Terrā",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Hōrologium_Intus_brevis_008.md",
+    "path": "Cap17/Cap17_Amor_Sub_Terrā_medius_013.md",
     "chapter": 17,
-    "title_zh": "内在的钟"
+    "title_la": "Amor Sub Terrā",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Impavidus_brevis_002.md",
+    "path": "Cap17/Cap17_Cantus_Ultimus_Citharoedī_medius_005.md",
     "chapter": 17,
-    "title_zh": "勇敢的代价"
+    "title_la": "Cantus Ultimus Citharoedī",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Imāgō_Somniī_brevis_009.md",
+    "path": "Cap17/Cap17_Cantus_Ultimus_Citharoedī_medius_016.md",
     "chapter": 17,
-    "title_zh": "梦的影像"
+    "title_la": "Cantus Ultimus Citharoedī",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Magister_et_Discipulus_brevis_005.md",
+    "path": "Cap17/Cap17_Catēna_Aurea_brevis_001.md",
     "chapter": 17,
-    "title_zh": "师与徒"
+    "title_la": "Catēna Aurea",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Magister_et_Puer_brevis_004.md",
+    "path": "Cap17/Cap17_Catēna_Aurea_brevis_012.md",
     "chapter": 17,
-    "title_zh": "老师与学生"
+    "title_la": "Catēna Aurea",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Mors_in_horto_brevis_015.md",
+    "path": "Cap17/Cap17_Dēsertor_et_Fīlius_longus_022.md",
     "chapter": 17,
-    "title_zh": "园中之死"
+    "title_la": "Dēsertor et Fīlius",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Māter_et_fīlia_brevis_010.md",
+    "path": "Cap17/Cap17_Fībulae_Duae_medius_003.md",
     "chapter": 17,
-    "title_zh": "母亲和女儿"
+    "title_la": "Fībulae Duae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Philosophus_et_discipulus_brevis_012.md",
+    "path": "Cap17/Cap17_Fībulae_Duae_medius_014.md",
     "chapter": 17,
-    "title_zh": "哲人与弟子"
+    "title_la": "Fībulae Duae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Roma_et_Brundisium_brevis_011.md",
+    "path": "Cap17/Cap17_Hortus_in_Mūrō_medius_006.md",
     "chapter": 17,
-    "title_zh": "罗马与布伦迪西乌姆"
+    "title_la": "Hortus in Mūrō",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Rēx_et_Umbra_brevis_006.md",
+    "path": "Cap17/Cap17_Hortus_in_Mūrō_medius_018.md",
     "chapter": 17,
-    "title_zh": "王与影"
+    "title_la": "Hortus in Mūrō",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Scientia_servi_brevis_014.md",
+    "path": "Cap17/Cap17_Magister_Quī_Nihil_Docuit_medius_007.md",
     "chapter": 17,
-    "title_zh": "奴隶的学问"
+    "title_la": "Magister Quī Nihil Docuit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Somnium_Apertum_brevis_007.md",
+    "path": "Cap17/Cap17_Magister_Quī_Nihil_Docuit_medius_020.md",
     "chapter": 17,
-    "title_zh": "敞开的梦"
+    "title_la": "Magister Quī Nihil Docuit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Taberna_Speī_brevis_001.md",
+    "path": "Cap17/Cap17_Medicus_et_Mortis_Fīlius_brevis_008.md",
     "chapter": 17,
-    "title_zh": "希望之店"
+    "title_la": "Medicus et Mortis Fīlius",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Tu_serve_liber_brevis_013.md",
+    "path": "Cap17/Cap17_Medicus_et_Mortis_Fīlius_brevis_021.md",
     "chapter": 17,
-    "title_zh": "你，自由的奴隶"
+    "title_la": "Medicus et Mortis Fīlius",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap17/Cap17_Ōrdō_in_Īnsulā_brevis_003.md",
+    "path": "Cap17/Cap17_Mulier_Quae_Mare_Cantāvit_medius_011.md",
     "chapter": 17,
-    "title_zh": "岛上的秩序"
+    "title_la": "Mulier Quae Mare Cantāvit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Ager_Patris_brevis_011.md",
+    "path": "Cap17/Cap17_Mulier_Quae_Mare_Cantāvit_medius_019.md",
+    "chapter": 17,
+    "title_la": "Mulier Quae Mare Cantāvit",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap17/Cap17_Mīles_Quī_Nōn_Rediit_longus_004.md",
+    "chapter": 17,
+    "title_la": "Mīles Quī Nōn Rediit",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap17/Cap17_Mīles_Quī_Nōn_Rediit_longus_015.md",
+    "chapter": 17,
+    "title_la": "Mīles Quī Nōn Rediit",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap17/Cap17_Nauta_et_Portus_Quī_Nōn_Erat_medius_010.md",
+    "chapter": 17,
+    "title_la": "Nauta et Portus Quī Nōn Erat",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap17/Cap17_Nauta_et_Portus_Quī_Nōn_Erat_medius_017.md",
+    "chapter": 17,
+    "title_la": "Nauta et Portus Quī Nōn Erat",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap17/Cap17_Nauta_et_Stēlla_Maris_medius_009.md",
+    "chapter": 17,
+    "title_la": "Nauta et Stēlla Maris",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap17/Cap17_Nauta_et_Stēlla_Maris_medius_023.md",
+    "chapter": 17,
+    "title_la": "Nauta et Stēlla Maris",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap17/Cap18_Puer_et_Volucrēs_brevis_020.md",
+    "chapter": 17,
+    "title_la": "Puer et Volucrēs",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap17/Cap19_Amor_ancillae_brevis_030.md",
+    "chapter": 17,
+    "title_la": "Amor ancillae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap17/Cap19_Cancer_et_Stella_Marina_brevis_003.md",
+    "chapter": 17,
+    "title_la": "Cancer et Stella Marina",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap17/Cap19_Sermō_Ultimus_brevis_001.md",
+    "chapter": 17,
+    "title_la": "Sermō Ultimus",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap17/Cap20_Fossa_in_Viā_brevis_008.md",
+    "chapter": 17,
+    "title_la": "Fossa in Viā",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap17/Cap22_Fābula_Sine_Fīne_brevis_005.md",
+    "chapter": 17,
+    "title_la": "Fābula Sine Fīne",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap18/Cap13_Tria_Oppida_Italiae_brevis_001.md",
     "chapter": 18,
-    "title_zh": "父亲的田地"
+    "title_la": "Tria Oppida Italiae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Amīcus_Vērus_brevis_015.md",
+    "path": "Cap18/Cap18_Bibliothēca_Sub_Aquīs_brevis_002.md",
     "chapter": 18,
-    "title_zh": "真友"
+    "title_la": "Bibliothēca Sub Aquīs",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Cattus_Philosophus_brevis_016.md",
+    "path": "Cap18/Cap18_Bibliothēca_Sub_Aquīs_brevis_011.md",
     "chapter": 18,
-    "title_zh": "哲学的猫"
+    "title_la": "Bibliothēca Sub Aquīs",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Hōrologium_brevis_012.md",
+    "path": "Cap18/Cap18_Fābulae_Quās_Pater_Nōn_Nārrāvit_brevis_003.md",
     "chapter": 18,
-    "title_zh": "钟"
+    "title_la": "Fābulae Quās Pater Nōn Nārrāvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_In_thermīs_brevis_022.md",
+    "path": "Cap18/Cap18_Fābulae_Quās_Pater_Nōn_Nārrāvit_brevis_013.md",
     "chapter": 18,
-    "title_zh": "在浴场"
+    "title_la": "Fābulae Quās Pater Nōn Nārrāvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Lingua_Nova_brevis_010.md",
+    "path": "Cap18/Cap18_Gladiātor_et_Puer_longus_009.md",
     "chapter": 18,
-    "title_zh": "新语言"
+    "title_la": "Gladiātor et Puer",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Magister_et_discipulus_brevis_021.md",
+    "path": "Cap18/Cap18_Gladiātor_et_Puer_longus_015.md",
     "chapter": 18,
-    "title_zh": "师与徒"
+    "title_la": "Gladiātor et Puer",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Memoria_Patris_brevis_009.md",
+    "path": "Cap18/Cap18_Imperātor_et_Umbra_longus_004.md",
     "chapter": 18,
-    "title_zh": "父亲的记忆"
+    "title_la": "Imperātor et Umbra",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Post_Bellum_brevis_013.md",
+    "path": "Cap18/Cap18_Imperātor_et_Umbra_longus_014.md",
     "chapter": 18,
-    "title_zh": "战后"
+    "title_la": "Imperātor et Umbra",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Puer_et_Volucrēs_brevis_020.md",
+    "path": "Cap18/Cap18_Māter_et_Mare_longus_018.md",
     "chapter": 18,
-    "title_zh": "男孩与鸟"
+    "title_la": "Māter et Mare",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Puer_in_Mari_brevis_019.md",
+    "path": "Cap18/Cap18_Puella_Quae_Mare_Audīvit_medius_005.md",
     "chapter": 18,
-    "title_zh": "海中的男孩"
+    "title_la": "Puella Quae Mare Audīvit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Sellae_Duae_brevis_001.md",
+    "path": "Cap18/Cap18_Puella_Quae_Mare_Audīvit_medius_016.md",
     "chapter": 18,
-    "title_zh": "两把椅子"
+    "title_la": "Puella Quae Mare Audīvit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Servus_Līber_brevis_018.md",
+    "path": "Cap18/Cap18_Schola_Sub_Arbore_longus_008.md",
     "chapter": 18,
-    "title_zh": "自由的奴隶"
+    "title_la": "Schola Sub Arbore",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Servus_Solitūdinem_Legēns_brevis_017.md",
+    "path": "Cap18/Cap18_Schola_Sub_Arbore_longus_012.md",
     "chapter": 18,
-    "title_zh": "阅读孤独的奴隶"
+    "title_la": "Schola Sub Arbore",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Templum_Vacuum_brevis_014.md",
+    "path": "Cap18/Cap18_Sellae_Duae_brevis_001.md",
     "chapter": 18,
-    "title_zh": "空殿"
+    "title_la": "Sellae Duae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Vēritās_in_Saxō_brevis_008.md",
+    "path": "Cap18/Cap18_Sellae_Duae_brevis_010.md",
     "chapter": 18,
-    "title_zh": "石头里的真相"
+    "title_la": "Sellae Duae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap18/Cap18_Ōrdō_et_Chaos_brevis_007.md",
+    "path": "Cap18/Cap18_Senex_et_Stēllae_Cadentēs_brevis_006.md",
     "chapter": 18,
-    "title_zh": "秩序与混沌"
+    "title_la": "Senex et Stēllae Cadentēs",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Amor_Senex_brevis_013.md",
+    "path": "Cap18/Cap18_Senex_et_Stēllae_Cadentēs_brevis_017.md",
+    "chapter": 18,
+    "title_la": "Senex et Stēllae Cadentēs",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap18/Cap18_Vestis_et_Animus_longus_007.md",
+    "chapter": 18,
+    "title_la": "Vestis et Animus",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap18/Cap18_Vestis_et_Animus_longus_019.md",
+    "chapter": 18,
+    "title_la": "Vestis et Animus",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap18/Cap19_Imāgō_Vēra_brevis_004.md",
+    "chapter": 18,
+    "title_la": "Imāgō Vēra",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap18/Cap19_Speculum_Somnī_brevis_002.md",
+    "chapter": 18,
+    "title_la": "Speculum Somnī",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap18/Cap20_Diārium_Magistri_brevis_001.md",
+    "chapter": 18,
+    "title_la": "Diārium Magistri",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap18/Cap20_Fossa_Lūcis_brevis_009.md",
+    "chapter": 18,
+    "title_la": "Fossa Lūcis",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap18/Cap20_Pater_et_Fīlius_in_Macellō_brevis_003.md",
+    "chapter": 18,
+    "title_la": "Pater et Fīlius in Macellō",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap19/Cap10_Septem_flumina_Asiae_brevis_066.md",
     "chapter": 19,
-    "title_zh": "老去的爱"
+    "title_la": "Septem flumina Asiae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Amor_ancillae_brevis_030.md",
+    "path": "Cap19/Cap13_Senātor_et_Populus_brevis_001.md",
     "chapter": 19,
-    "title_zh": "女奴之爱"
+    "title_la": "Senātor et Populus",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Cancer_et_Stella_Marina_brevis_003.md",
+    "path": "Cap19/Cap17_Impavidus_brevis_002.md",
     "chapter": 19,
-    "title_zh": "小蟹与海星"
+    "title_la": "Impavidus",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Dīves_et_Pauper_brevis_011.md",
+    "path": "Cap19/Cap19_Agricola_et_Terra_Mortua_longus_021.md",
     "chapter": 19,
-    "title_zh": "富人与穷人"
+    "title_la": "Agricola et Terra Mortua",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Dīves_et_pauper_brevis_027.md",
+    "path": "Cap19/Cap19_Agricola_et_Terra_Mortua_longus_031.md",
     "chapter": 19,
-    "title_zh": "富人与穷人"
+    "title_la": "Agricola et Terra Mortua",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Dōnum_brevis_023.md",
+    "path": "Cap19/Cap19_Cantus_in_Tenebrīs_longus_023.md",
     "chapter": 19,
-    "title_zh": "礼物"
+    "title_la": "Cantus in Tenebrīs",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Hortus_senis_brevis_026.md",
+    "path": "Cap19/Cap19_Cantus_in_Tenebrīs_longus_033.md",
     "chapter": 19,
-    "title_zh": "老人的花园"
+    "title_la": "Cantus in Tenebrīs",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Imāgō_Vēra_brevis_004.md",
+    "path": "Cap19/Cap19_Carmen_Sine_Verbīs_medius_025.md",
     "chapter": 19,
-    "title_zh": "真实的影像"
+    "title_la": "Carmen Sine Verbīs",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_In_casā_brevis_022.md",
+    "path": "Cap19/Cap19_Carmen_Sine_Verbīs_medius_036.md",
     "chapter": 19,
-    "title_zh": "在屋里"
+    "title_la": "Carmen Sine Verbīs",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_In_tabernā_brevis_017.md",
+    "path": "Cap19/Cap19_Deus_Quī_Nōn_Crēdēbat_longus_034.md",
     "chapter": 19,
-    "title_zh": "酒馆之内"
+    "title_la": "Deus Quī Nōn Crēdēbat",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Iter_Immolātiōnis_brevis_015.md",
+    "path": "Cap19/Cap19_Litterae_Ad_Mortuum_medius_019.md",
     "chapter": 19,
-    "title_zh": "献祭之旅"
+    "title_la": "Litterae Ad Mortuum",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Lūmen_in_Tectō_brevis_016.md",
+    "path": "Cap19/Cap19_Litterae_Ad_Mortuum_medius_027.md",
     "chapter": 19,
-    "title_zh": "屋顶上的光"
+    "title_la": "Litterae Ad Mortuum",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Mors_et_Vīta_brevis_004.md",
+    "path": "Cap19/Cap19_Lūdī_Quōs_Nēmō_Vīcit_medius_018.md",
     "chapter": 19,
-    "title_zh": "死与生"
+    "title_la": "Lūdī Quōs Nēmō Vīcit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Mors_et_Vīta_brevis_008.md",
+    "path": "Cap19/Cap19_Lūdī_Quōs_Nēmō_Vīcit_medius_029.md",
     "chapter": 19,
-    "title_zh": "死与生"
+    "title_la": "Lūdī Quōs Nēmō Vīcit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Māter_et_Fīlius_brevis_007.md",
+    "path": "Cap19/Cap19_Lūmen_in_Tectō_brevis_016.md",
     "chapter": 19,
-    "title_zh": "母与子"
+    "title_la": "Lūmen in Tectō",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Mīles_et_imperātor_brevis_028.md",
+    "path": "Cap19/Cap19_Medicus_Quī_Mortem_Amāvit_medius_024.md",
     "chapter": 19,
-    "title_zh": "士兵与统帅"
+    "title_la": "Medicus Quī Mortem Amāvit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Pater_et_fīlius_brevis_021.md",
+    "path": "Cap19/Cap19_Medicus_Quī_Mortem_Amāvit_medius_035.md",
     "chapter": 19,
-    "title_zh": "父子"
+    "title_la": "Medicus Quī Mortem Amāvit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Pauper_et_Deus_brevis_012.md",
+    "path": "Cap19/Cap19_Pavō_et_Corvus_brevis_003.md",
     "chapter": 19,
-    "title_zh": "穷人与神"
+    "title_la": "Pavō et Corvus",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Pavō_et_Corvus_brevis_003.md",
+    "path": "Cap19/Cap19_Senex_et_Mūrus_Cadēns_longus_030.md",
     "chapter": 19,
-    "title_zh": "孔雀与乌鸦"
+    "title_la": "Senex et Mūrus Cadēns",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Piscātor_et_piscēs_brevis_025.md",
+    "path": "Cap19/Cap19_Septem_Epistulae_Quās_Nēmō_Lēgit_brevis_017.md",
     "chapter": 19,
-    "title_zh": "渔夫与鱼"
+    "title_la": "Septem Epistulae Quās Nēmō Lēgit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Sapientia_Simplex_brevis_006.md",
+    "path": "Cap19/Cap19_Septem_Epistulae_Quās_Nēmō_Lēgit_brevis_026.md",
     "chapter": 19,
-    "title_zh": "简单的智慧"
+    "title_la": "Septem Epistulae Quās Nēmō Lēgit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Sapientia_in_Forō_brevis_009.md",
+    "path": "Cap19/Cap19_Speculum_Quod_Nōn_Mentītur_longus_022.md",
     "chapter": 19,
-    "title_zh": "广场上的智慧"
+    "title_la": "Speculum Quod Nōn Mentītur",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Senex_et_ordo_brevis_031.md",
+    "path": "Cap19/Cap19_Speculum_Quod_Nōn_Mentītur_longus_032.md",
     "chapter": 19,
-    "title_zh": "老人与秩序"
+    "title_la": "Speculum Quod Nōn Mentītur",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Septem_Epistulae_Quās_Nēmō_Lēgit_brevis_017.md",
+    "path": "Cap19/Cap19_Vēritās_in_Forō_brevis_005.md",
     "chapter": 19,
-    "title_zh": "无人读过的七封信"
+    "title_la": "Vēritās in Forō",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Sermō_Ultimus_brevis_001.md",
+    "path": "Cap19/Cap19_Vīnum_et_Sanguis_medius_020.md",
     "chapter": 19,
-    "title_zh": "最后的对话"
+    "title_la": "Vīnum et Sanguis",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Servus_Dominum_Rīdēns_brevis_014.md",
+    "path": "Cap19/Cap19_Vīnum_et_Sanguis_medius_028.md",
     "chapter": 19,
-    "title_zh": "嘲笑主人的奴隶"
+    "title_la": "Vīnum et Sanguis",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Sex_montēs_Rōmae_brevis_020.md",
+    "path": "Cap19/Cap20_Epistula_ad_Titum_dē_Lībere_Servō_brevis_002.md",
     "chapter": 19,
-    "title_zh": "罗马六丘"
+    "title_la": "Epistula ad Titum dē Lībere Servō",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Sex_prōvinciae_brevis_018.md",
+    "path": "Cap19/Cap20_Mercator_et_consul_brevis_017.md",
     "chapter": 19,
-    "title_zh": "六个行省"
+    "title_la": "Mercator et consul",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Speculum_Somnī_brevis_002.md",
+    "path": "Cap19/Cap20_Pugna_Sine_Testibus_brevis_002.md",
     "chapter": 19,
-    "title_zh": "梦中镜"
+    "title_la": "Pugna Sine Testibus",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Templum_deōrum_brevis_024.md",
+    "path": "Cap19/Cap20_Somnus_Senis_brevis_010.md",
     "chapter": 19,
-    "title_zh": "众神之庙"
+    "title_la": "Somnus Senis",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Templum_deōrum_brevis_029.md",
-    "chapter": 19,
-    "title_zh": "众神之殿"
+    "path": "Cap2/Cap2_Duo_dominī_brevis_016.md",
+    "chapter": 2,
+    "title_la": "Duo dominī",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Tria_oppida_Hispāniae_brevis_019.md",
-    "chapter": 19,
-    "title_zh": "西班牙三城"
+    "path": "Cap2/Cap2_Familia_in_īnsulā_medius_009.md",
+    "chapter": 2,
+    "title_la": "Familia in īnsulā",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Urbs_Aeterna_brevis_010.md",
-    "chapter": 19,
-    "title_zh": "永恒之城"
+    "path": "Cap2/Cap2_Fīlia_et_māter_brevis_017.md",
+    "chapter": 2,
+    "title_la": "Fīlia et māter",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Via_et_domus_brevis_032.md",
-    "chapter": 19,
-    "title_zh": "路与家"
+    "path": "Cap2/Cap2_Oppidum_novum_brevis_019.md",
+    "chapter": 2,
+    "title_la": "Oppidum novum",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Vēritās_in_Forō_brevis_005.md",
-    "chapter": 19,
-    "title_zh": "广场上的真相"
+    "path": "Cap2/Cap2_Pater_et_fīlius_medius_007.md",
+    "chapter": 2,
+    "title_la": "Pater et fīlius",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap19/Cap19_Vīta_et_Mors_brevis_001.md",
-    "chapter": 19,
-    "title_zh": "生与死"
+    "path": "Cap2/Cap2_Rōma_magna_brevis_021.md",
+    "chapter": 2,
+    "title_la": "Rōma magna",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Castra_Rōmāna_brevis_016.md",
+    "path": "Cap2/Cap2_Servus_et_liber_medius_008.md",
+    "chapter": 2,
+    "title_la": "Servus et liber",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap20/Cap13_Īnsulae_Graeciae_brevis_001.md",
     "chapter": 20,
-    "title_zh": "罗马军营"
+    "title_la": "Īnsulae Graeciae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Diārium_Magistri_brevis_001.md",
+    "path": "Cap20/Cap20_Faber_et_Gladius_Ultimus_medius_007.md",
     "chapter": 20,
-    "title_zh": "教师日志"
+    "title_la": "Faber et Gladius Ultimus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Epistula_ad_Titum_dē_Lībere_Servō_brevis_002.md",
+    "path": "Cap20/Cap20_Faber_et_Gladius_Ultimus_medius_014.md",
     "chapter": 20,
-    "title_zh": "奴隶主之信"
+    "title_la": "Faber et Gladius Ultimus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Flūmen_et_Mūtātiō_brevis_004.md",
+    "path": "Cap20/Cap20_Fīlius_Quem_Nēmō_Voluit_longus_004.md",
     "chapter": 20,
-    "title_zh": "河流与变化"
+    "title_la": "Fīlius Quem Nēmō Voluit",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Formīca_et_Poēta_brevis_005.md",
+    "path": "Cap20/Cap20_Fīlius_Quem_Nēmō_Voluit_longus_009.md",
     "chapter": 20,
-    "title_zh": "蚂蚁与诗人"
+    "title_la": "Fīlius Quem Nēmō Voluit",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Fossa_Lūcis_brevis_009.md",
+    "path": "Cap20/Cap20_Mōns_Quī_Nōn_Respondet_brevis_006.md",
     "chapter": 20,
-    "title_zh": "光的坑"
+    "title_la": "Mōns Quī Nōn Respondet",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Fossa_in_Viā_brevis_008.md",
+    "path": "Cap20/Cap20_Mōns_Quī_Nōn_Respondet_brevis_013.md",
     "chapter": 20,
-    "title_zh": "路上的坑"
+    "title_la": "Mōns Quī Nōn Respondet",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Ignis_in_silvā_brevis_014.md",
+    "path": "Cap20/Cap20_Nāvis_Quae_Nōn_Rediit_brevis_002.md",
     "chapter": 20,
-    "title_zh": "林中火"
+    "title_la": "Nāvis Quae Nōn Rediit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Mercator_et_consul_brevis_017.md",
+    "path": "Cap20/Cap20_Nāvis_Quae_Nōn_Rediit_brevis_010.md",
     "chapter": 20,
-    "title_zh": "商人与执政官"
+    "title_la": "Nāvis Quae Nōn Rediit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Māter_et_fīlius_aeger_brevis_013.md",
+    "path": "Cap20/Cap20_Portātor_et_Ultimum_Flūmen_brevis_001.md",
     "chapter": 20,
-    "title_zh": "母亲与病儿"
+    "title_la": "Portātor et Ultimum Flūmen",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Nauta_et_gubernātor_brevis_012.md",
+    "path": "Cap20/Cap20_Portātor_et_Ultimum_Flūmen_brevis_008.md",
     "chapter": 20,
-    "title_zh": "水手与舵手"
+    "title_la": "Portātor et Ultimum Flūmen",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Pater_et_Fīlius_in_Macellō_brevis_003.md",
+    "path": "Cap20/Cap20_Septem_Hōrae_Noctis_medius_005.md",
     "chapter": 20,
-    "title_zh": "父子在市场"
+    "title_la": "Septem Hōrae Noctis",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Portātor_et_Ultimum_Flūmen_brevis_001.md",
+    "path": "Cap20/Cap20_Septem_Hōrae_Noctis_medius_012.md",
     "chapter": 20,
-    "title_zh": "摆渡人与最后的河"
+    "title_la": "Septem Hōrae Noctis",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Puella_in_Hortō_brevis_007.md",
+    "path": "Cap20/Cap20_Verbum_Quod_Mundum_Mūtāvit_brevis_003.md",
     "chapter": 20,
-    "title_zh": "花园里的女孩"
+    "title_la": "Verbum Quod Mundum Mūtāvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Pugna_Sine_Testibus_brevis_002.md",
+    "path": "Cap20/Cap20_Verbum_Quod_Mundum_Mūtāvit_brevis_011.md",
     "chapter": 20,
-    "title_zh": "无人见证之战"
+    "title_la": "Verbum Quod Mundum Mūtāvit",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Senex_in_viā_brevis_011.md",
+    "path": "Cap20/Cap22_Aves_Bellī_brevis_004.md",
     "chapter": 20,
-    "title_zh": "路上的老人"
+    "title_la": "Aves Bellī",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap20/Cap20_Sinae_Mercātor_Dōnum_Ferēns_brevis_006.md",
-    "chapter": 20,
-    "title_zh": "送礼的中国商人"
-  },
-  {
-    "path": "realitates/Cap20/Cap20_Somnus_Senis_brevis_010.md",
-    "chapter": 20,
-    "title_zh": "老人的睡眠"
-  },
-  {
-    "path": "realitates/Cap20/Cap20_Vigil_noctis_brevis_015.md",
-    "chapter": 20,
-    "title_zh": "守夜人"
-  },
-  {
-    "path": "realitates/Cap21/Cap21_Monologium_Temporis_brevis_001.md",
+    "path": "Cap21/Cap21_Cīvis_Quī_Nōn_Pārēbat_medius_004.md",
     "chapter": 21,
-    "title_zh": "时之独白"
+    "title_la": "Cīvis Quī Nōn Pārēbat",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap21/Cap21_Mārcus_Dīves_et_Mārcus_Pauper_brevis_002.md",
+    "path": "Cap21/Cap21_Cīvis_Quī_Nōn_Pārēbat_medius_006.md",
     "chapter": 21,
-    "title_zh": "富裕的马尔库斯与贫穷的马尔库斯"
+    "title_la": "Cīvis Quī Nōn Pārēbat",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap21/Cap21_Mīles_Timidus_brevis_003.md",
+    "path": "Cap21/Cap21_Fēmina_Quae_Duās_Vītās_Vīxit_longus_002.md",
     "chapter": 21,
-    "title_zh": "胆怯的士兵"
+    "title_la": "Fēmina Quae Duās Vītās Vīxit",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap21/Cap21_Senex_et_chaos_brevis_004.md",
+    "path": "Cap21/Cap21_Fēmina_Quae_Duās_Vītās_Vīxit_longus_007.md",
     "chapter": 21,
-    "title_zh": "老人与混沌"
+    "title_la": "Fēmina Quae Duās Vītās Vīxit",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap22/Cap22_Aves_Bellī_brevis_004.md",
+    "path": "Cap21/Cap21_Lacrimae_Imperātōris_medius_003.md",
+    "chapter": 21,
+    "title_la": "Lacrimae Imperātōris",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap21/Cap21_Lacrimae_Imperātōris_medius_005.md",
+    "chapter": 21,
+    "title_la": "Lacrimae Imperātōris",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap21/Cap21_Monologium_Temporis_brevis_001.md",
+    "chapter": 21,
+    "title_la": "Monologium Temporis",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap21/Cap21_Nōmen_Quod_Nēmō_Audīvit_longus_008.md",
+    "chapter": 21,
+    "title_la": "Nōmen Quod Nēmō Audīvit",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap22/Cap22_Fābula_Quam_Nēmō_Fīniit_longus_003.md",
     "chapter": 22,
-    "title_zh": "战争之鸟"
+    "title_la": "Fābula Quam Nēmō Fīniit",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap22/Cap22_Faber_et_gladius_brevis_007.md",
+    "path": "Cap22/Cap22_Fābula_Quam_Nēmō_Fīniit_longus_006.md",
     "chapter": 22,
-    "title_zh": "铁匠与剑"
+    "title_la": "Fābula Quam Nēmō Fīniit",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap22/Cap22_Fābula_Sine_Fīne_brevis_005.md",
+    "path": "Cap22/Cap22_Fāma_et_Ventus_medius_009.md",
     "chapter": 22,
-    "title_zh": "无结局的故事"
+    "title_la": "Fāma et Ventus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap22/Cap22_Iūdex_et_Fīlius_brevis_001.md",
+    "path": "Cap22/Cap22_Fōns_Quī_Numquam_Siccātur_longus_004.md",
     "chapter": 22,
-    "title_zh": "法官与儿子"
+    "title_la": "Fōns Quī Numquam Siccātur",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap22/Cap22_Magister_Dīvitiās_Dēpōnēns_brevis_003.md",
+    "path": "Cap22/Cap22_Fōns_Quī_Numquam_Siccātur_longus_007.md",
     "chapter": 22,
-    "title_zh": "放下财富的学者"
+    "title_la": "Fōns Quī Numquam Siccātur",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap22/Cap22_Mercātor_Dīvitiam_Īnspiciēns_brevis_002.md",
+    "path": "Cap22/Cap22_Iūdex_et_Fīlius_brevis_001.md",
     "chapter": 22,
-    "title_zh": "审视财富的商人"
+    "title_la": "Iūdex et Fīlius",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap22/Cap22_Oculī_Invidentēs_brevis_001.md",
+    "path": "Cap22/Cap22_Iūdex_et_Fīlius_brevis_005.md",
     "chapter": 22,
-    "title_zh": "嫉妒之眼"
+    "title_la": "Iūdex et Fīlius",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap22/Cap22_Rēx_et_mendāx_brevis_006.md",
+    "path": "Cap22/Cap22_Pīrāta_et_Philosophus_longus_002.md",
     "chapter": 22,
-    "title_zh": "国王与说谎者"
+    "title_la": "Pīrāta et Philosophus",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap23/Cap23_Fābula_Nārrāns_Sē_Ipsam_brevis_001.md",
+    "path": "Cap22/Cap22_Pīrāta_et_Philosophus_longus_008.md",
+    "chapter": 22,
+    "title_la": "Pīrāta et Philosophus",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap22/Cap24_Fīlum_Līberī_brevis_001.md",
+    "chapter": 22,
+    "title_la": "Fīlum Līberī",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap23/Cap23_Duo_Amīcī_et_Ūnum_Ferrum_longus_001.md",
     "chapter": 23,
-    "title_zh": "讲述自己的故事"
+    "title_la": "Duo Amīcī et Ūnum Ferrum",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap23/Cap23_Via_Quam_Ambulem_brevis_002.md",
+    "path": "Cap23/Cap23_Duo_Amīcī_et_Ūnum_Ferrum_longus_002.md",
     "chapter": 23,
-    "title_zh": "我走的路"
+    "title_la": "Duo Amīcī et Ūnum Ferrum",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap24/Cap24_Brūtus_Dēmēns_brevis_004.md",
-    "chapter": 24,
-    "title_zh": "愚蠢的布鲁图"
-  },
-  {
-    "path": "realitates/Cap24/Cap24_Fīlum_Fātī_brevis_002.md",
-    "chapter": 24,
-    "title_zh": "命运之线"
-  },
-  {
-    "path": "realitates/Cap24/Cap24_Fīlum_Līberī_brevis_001.md",
-    "chapter": 24,
-    "title_zh": "命运之线"
-  },
-  {
-    "path": "realitates/Cap24/Cap24_Senex_et_Speculum_brevis_005.md",
-    "chapter": 24,
-    "title_zh": "老人与镜"
-  },
-  {
-    "path": "realitates/Cap24/Cap24_Urbs_Mea_brevis_003.md",
-    "chapter": 24,
-    "title_zh": "我的城"
-  },
-  {
-    "path": "realitates/Cap25/Cap25_Flōs_in_Saxō_brevis_001.md",
+    "path": "Cap25/Cap10_Somnum_Aeternum_brevis_005.md",
     "chapter": 25,
-    "title_zh": "石中花"
+    "title_la": "Somnum Aeternum",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap25/Cap25_Insulae_duae_brevis_002.md",
+    "path": "Cap25/Cap25_Flūmen_et_Fābricātor_longus_002.md",
     "chapter": 25,
-    "title_zh": "两座岛"
+    "title_la": "Flūmen et Fābricātor",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap25/Cap25_Insulae_duae_brevis_003.md",
+    "path": "Cap25/Cap25_Ultimus_Cīvis_longus_001.md",
     "chapter": 25,
-    "title_zh": "两座岛"
+    "title_la": "Ultimus Cīvis",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap25/Cap25_Lupa_et_puer_brevis_011.md",
+    "path": "Cap25/Cap25_Ultimus_Cīvis_longus_003.md",
     "chapter": 25,
-    "title_zh": "母狼与男孩"
+    "title_la": "Ultimus Cīvis",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap25/Cap25_Mors_et_vita_brevis_010.md",
-    "chapter": 25,
-    "title_zh": "死与生"
-  },
-  {
-    "path": "realitates/Cap25/Cap25_Nūntius_et_rēx_brevis_006.md",
-    "chapter": 25,
-    "title_zh": "信使与国王"
-  },
-  {
-    "path": "realitates/Cap25/Cap25_Quattuor_maria_magna_brevis_005.md",
-    "chapter": 25,
-    "title_zh": "四大海"
-  },
-  {
-    "path": "realitates/Cap25/Cap25_Sapientia_senis_brevis_009.md",
-    "chapter": 25,
-    "title_zh": "老人的智慧"
-  },
-  {
-    "path": "realitates/Cap25/Cap25_Septem_oppida_brevis_004.md",
-    "chapter": 25,
-    "title_zh": "七座城"
-  },
-  {
-    "path": "realitates/Cap25/Cap25_Vātēs_et_rēx_brevis_007.md",
-    "chapter": 25,
-    "title_zh": "先知与国王"
-  },
-  {
-    "path": "realitates/Cap25/Cap25_Ōrāculum_deōrum_brevis_008.md",
-    "chapter": 25,
-    "title_zh": "神谕"
-  },
-  {
-    "path": "realitates/Cap26/Cap26_Decem_oppida_brevis_003.md",
+    "path": "Cap26/Cap26_Ignis_in_Monte_medius_006.md",
     "chapter": 26,
-    "title_zh": "十座城"
+    "title_la": "Ignis in Monte",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap26/Cap26_Fabrī_et_mūrus_brevis_007.md",
+    "path": "Cap26/Cap26_Philosophus_in_Fundō_Maris_longus_003.md",
     "chapter": 26,
-    "title_zh": "工匠与墙"
+    "title_la": "Philosophus in Fundō Maris",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap26/Cap26_Fātum_et_voluntās_brevis_009.md",
+    "path": "Cap26/Cap26_Philosophus_in_Fundō_Maris_longus_007.md",
     "chapter": 26,
-    "title_zh": "命运与意志"
+    "title_la": "Philosophus in Fundō Maris",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap26/Cap26_Nauta_et_tempestās_brevis_008.md",
+    "path": "Cap26/Cap26_Sacerdōs_Quī_Deōs_Nōn_Audīvit_longus_002.md",
     "chapter": 26,
-    "title_zh": "水手与风暴"
+    "title_la": "Sacerdōs Quī Deōs Nōn Audīvit",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap26/Cap26_Nāvis_in_portū_brevis_006.md",
+    "path": "Cap26/Cap26_Sacerdōs_Quī_Deōs_Nōn_Audīvit_longus_005.md",
     "chapter": 26,
-    "title_zh": "港中的船"
+    "title_la": "Sacerdōs Quī Deōs Nōn Audīvit",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap26/Cap26_Quattuor_elementa_mundī_brevis_005.md",
+    "path": "Cap26/Cap26_Silva_Quae_Urbem_Dēvorāvit_medius_001.md",
     "chapter": 26,
-    "title_zh": "世界四元素"
+    "title_la": "Silva Quae Urbem Dēvorāvit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap26/Cap26_Quinque_oppida_Graeciae_brevis_004.md",
+    "path": "Cap26/Cap26_Silva_Quae_Urbem_Dēvorāvit_medius_004.md",
     "chapter": 26,
-    "title_zh": "希腊五城"
+    "title_la": "Silva Quae Urbem Dēvorāvit",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap26/Cap26_Tres_viae_brevis_002.md",
-    "chapter": 26,
-    "title_zh": "三条路"
+    "path": "Cap3/Cap2_Pater_et_puer_brevis_020.md",
+    "chapter": 3,
+    "title_la": "Pater et puer",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap26/Cap26_Āra_in_Somniō_brevis_001.md",
-    "chapter": 26,
-    "title_zh": "梦中的祭坛"
+    "path": "Cap3/Cap3_Quis_sum_medius_009.md",
+    "chapter": 3,
+    "title_la": "Quis sum?",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap27/Cap27_Agricola_et_terra_brevis_003.md",
-    "chapter": 27,
-    "title_zh": "农夫与土地"
-  },
-  {
-    "path": "realitates/Cap27/Cap27_Cēna_ultima_mīlitis_brevis_006.md",
-    "chapter": 27,
-    "title_zh": "士兵的最后晚餐"
-  },
-  {
-    "path": "realitates/Cap27/Cap27_Fūr_in_viā_brevis_002.md",
-    "chapter": 27,
-    "title_zh": "路上的小偷"
-  },
-  {
-    "path": "realitates/Cap27/Cap27_Senex_et_puer_brevis_004.md",
-    "chapter": 27,
-    "title_zh": "老人与男孩"
-  },
-  {
-    "path": "realitates/Cap27/Cap27_Taberna_in_oppidō_brevis_001.md",
-    "chapter": 27,
-    "title_zh": "市集上的小酒馆"
-  },
-  {
-    "path": "realitates/Cap27/Cap27_Vīnum_et_amīcus_brevis_005.md",
-    "chapter": 27,
-    "title_zh": "酒与友"
-  },
-  {
-    "path": "realitates/Cap28/Cap28_Pater_senex_brevis_001.md",
-    "chapter": 28,
-    "title_zh": "年迈的父亲"
-  },
-  {
-    "path": "realitates/Cap28/Cap28_Quattuor_flūmina_brevis_003.md",
-    "chapter": 28,
-    "title_zh": "四条河"
-  },
-  {
-    "path": "realitates/Cap28/Cap28_Senex_et_memoria_brevis_002.md",
-    "chapter": 28,
-    "title_zh": "老人与记忆"
-  },
-  {
-    "path": "realitates/Cap29/Cap29_Deus_et_homō_brevis_005.md",
-    "chapter": 29,
-    "title_zh": "神与人"
-  },
-  {
-    "path": "realitates/Cap29/Cap29_Iūdex_et_fūr_brevis_004.md",
-    "chapter": 29,
-    "title_zh": "法官与贼"
-  },
-  {
-    "path": "realitates/Cap29/Cap29_Māter_et_pater_brevis_003.md",
-    "chapter": 29,
-    "title_zh": "母亲与父亲"
-  },
-  {
-    "path": "realitates/Cap29/Cap29_Pons_et_gladius_brevis_007.md",
-    "chapter": 29,
-    "title_zh": "桥与剑"
-  },
-  {
-    "path": "realitates/Cap29/Cap29_Post_Omnia_brevis_001.md",
-    "chapter": 29,
-    "title_zh": "一切之后"
-  },
-  {
-    "path": "realitates/Cap29/Cap29_Sacerdōs_Iēiūnus_brevis_002.md",
-    "chapter": 29,
-    "title_zh": "空腹的祭司"
-  },
-  {
-    "path": "realitates/Cap29/Cap29_Vir_et_fūr_brevis_006.md",
-    "chapter": 29,
-    "title_zh": "人与贼"
-  },
-  {
-    "path": "realitates/Cap30/Cap30_In_culīnā_brevis_003.md",
+    "path": "Cap30/Cap30_Nūgae_et_Imperium_medius_001.md",
     "chapter": 30,
-    "title_zh": "在厨房"
+    "title_la": "Nūgae et Imperium",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap30/Cap30_Māter_et_fīlia_brevis_001.md",
+    "path": "Cap30/Cap30_Nūgae_et_Imperium_medius_002.md",
     "chapter": 30,
-    "title_zh": "母女"
+    "title_la": "Nūgae et Imperium",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap30/Cap30_Puella_et_flōs_brevis_002.md",
-    "chapter": 30,
-    "title_zh": "女孩与花"
+    "path": "Cap4/Cap3_Dominus_et_Servus_medius_010.md",
+    "chapter": 4,
+    "title_la": "Dominus et Servus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap31/Cap31_Octō_oppida_brevis_002.md",
-    "chapter": 31,
-    "title_zh": "八座城"
+    "path": "Cap4/Cap3_Ego_amō_brevis_011.md",
+    "chapter": 4,
+    "title_la": "Ego amō",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap31/Cap31_Quīnque_sēnsūs_corporis_brevis_003.md",
-    "chapter": 31,
-    "title_zh": "身体五感"
+    "path": "Cap4/Cap3_Pater_meus_abest_medius_001.md",
+    "chapter": 4,
+    "title_la": "Pater meus abest",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap31/Cap31_Sacerdōs_Sēnium_Immolāns_brevis_001.md",
-    "chapter": 31,
-    "title_zh": "献祭暮年的祭司"
+    "path": "Cap4/Cap3_Quid_est_bonum_medius_004.md",
+    "chapter": 4,
+    "title_la": "Quid est bonum?",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap32/Cap32_Captīvus_et_victor_brevis_007.md",
-    "chapter": 32,
-    "title_zh": "俘虏与胜者"
+    "path": "Cap4/Cap3_Vir_bonus,_vir_improbus_medius_014.md",
+    "chapter": 4,
+    "title_la": "Vir bonus, vir improbus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap32/Cap32_Decem_populī_brevis_003.md",
-    "chapter": 32,
-    "title_zh": "十族"
+    "path": "Cap4/Cap3_Vir_novus_in_oppidō_medius_002.md",
+    "chapter": 4,
+    "title_la": "Vir novus in oppidō",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap32/Cap32_Octō_maria_mundī_brevis_005.md",
-    "chapter": 32,
-    "title_zh": "世界八海"
+    "path": "Cap4/Cap4_Fīlius_improbus_medius_09.md",
+    "chapter": 4,
+    "title_la": "Fīlius improbus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap32/Cap32_Octō_populī_brevis_002.md",
-    "chapter": 32,
-    "title_zh": "八族"
+    "path": "Cap5/Cap10_Quattuor_Insulae_Graecae_Parvae_brevis_001.md",
+    "chapter": 5,
+    "title_la": "Quattuor Insulae Graecae Parvae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap32/Cap32_Sex_gentēs_Asiae_brevis_004.md",
-    "chapter": 32,
-    "title_zh": "亚洲六族"
+    "path": "Cap5/Cap3_Duo_puerī_medius_003.md",
+    "chapter": 5,
+    "title_la": "Duo puerī",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap32/Cap32_Templum_Iovis_brevis_001.md",
-    "chapter": 32,
-    "title_zh": "朱庇特神庙"
+    "path": "Cap5/Cap3_Hortus_et_oppidum_medius_013.md",
+    "chapter": 5,
+    "title_la": "Hortus et oppidum",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap32/Cap32_Victōria_brevis_006.md",
-    "chapter": 32,
-    "title_zh": "胜利"
+    "path": "Cap5/Cap3_Puer_in_hortō_medius_012.md",
+    "chapter": 5,
+    "title_la": "Puer in hortō",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap33/Cap33_Gladiātor_in_arēnā_brevis_001.md",
-    "chapter": 33,
-    "title_zh": "角斗士在竞技场"
+    "path": "Cap5/Cap4_Decem_prōvinciae_Rōmānae_medius_04.md",
+    "chapter": 5,
+    "title_la": "Decem prōvinciae Rōmānae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap34/Cap34_Tria_flūmina_magna_brevis_001.md",
-    "chapter": 34,
-    "title_zh": "三大河"
+    "path": "Cap5/Cap4_Dominus_et_servus_in_viā_medius_11.md",
+    "chapter": 5,
+    "title_la": "Dominus et servus in viā",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap34/Cap34_Tria_flūmina_magna_brevis_002.md",
-    "chapter": 34,
-    "title_zh": "三大河"
+    "path": "Cap5/Cap4_Dāvus_Servus_Bonus_brevis_07.md",
+    "chapter": 5,
+    "title_la": "Dāvus Servus Bonus",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap35/Cap35_Insulae_Graecae_brevis_001.md",
-    "chapter": 35,
-    "title_zh": "希腊诸岛"
+    "path": "Cap5/Cap4_Pecūnia_patris_longus_10.md",
+    "chapter": 5,
+    "title_la": "Pecūnia patris",
+    "length_tier": "长篇"
   },
   {
-    "path": "realitates/Cap35/Cap35_Insulae_Graecae_brevis_002.md",
-    "chapter": 35,
-    "title_zh": "希腊诸岛"
+    "path": "Cap5/Cap4_Puella_et_aqua_medius_14.md",
+    "chapter": 5,
+    "title_la": "Puella et aqua",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap42/Cap42_Novem_oppida_Graeca_brevis_001.md",
-    "chapter": 42,
-    "title_zh": "希腊九城"
+    "path": "Cap5/Cap4_Puer_et_amīcus_medius_12.md",
+    "chapter": 5,
+    "title_la": "Puer et amīcus",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap46/Cap46_Trēs_colōniae_Graecae_brevis_001.md",
-    "chapter": 46,
-    "title_zh": "三座希腊殖民地"
+    "path": "Cap5/Cap4_Puer_et_hortus_brevis_06.md",
+    "chapter": 5,
+    "title_la": "Puer et hortus",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap48/Cap48_Quattuor_terrae_Africae_brevis_001.md",
-    "chapter": 48,
-    "title_zh": "非洲四地"
+    "path": "Cap5/Cap4_Quattuor_aquae_brevis_02.md",
+    "chapter": 5,
+    "title_la": "Quattuor aquae",
+    "length_tier": "短篇"
   },
   {
-    "path": "realitates/Cap48/Cap48_Quattuor_terrae_Africae_brevis_002.md",
-    "chapter": 48,
-    "title_zh": "非洲四地"
+    "path": "Cap5/Cap4_Quattuor_familiae_medius_01.md",
+    "chapter": 5,
+    "title_la": "Quattuor familiae",
+    "length_tier": "中篇"
   },
   {
-    "path": "realitates/Cap48/Cap48_Āfrica_et_Asia_brevis_003.md",
-    "chapter": 48,
-    "title_zh": "非洲与亚洲"
+    "path": "Cap5/Cap4_Syra_ad_Aquam_brevis_08.md",
+    "chapter": 5,
+    "title_la": "Syra ad Aquam",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap5/Cap5_Fēmina_sōla_medius_05.md",
+    "chapter": 5,
+    "title_la": "Fēmina sōla",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap5/Cap5_Fīlius_in_Hortō_Discit_medius_06.md",
+    "chapter": 5,
+    "title_la": "Fīlius in Hortō Discit",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap5/Cap5_In_hortō_medius_03.md",
+    "chapter": 5,
+    "title_la": "In hortō",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap5/Cap5_Māter_et_fīlia_in_hortō_brevis_04.md",
+    "chapter": 5,
+    "title_la": "Māter et fīlia in hortō",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap5/Cap5_Vīlla_Rōmāna_medius_08.md",
+    "chapter": 5,
+    "title_la": "Vīlla Rōmāna",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap5/Cap6_Duae_īnsulae_magnae_brevis_078.md",
+    "chapter": 5,
+    "title_la": "Duae īnsulae magnae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap5/Cap6_Octō_flūmina_brevis_075.md",
+    "chapter": 5,
+    "title_la": "Octō flūmina",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap5/Cap6_Puella_in_Viā_Sōla_medius_079.md",
+    "chapter": 5,
+    "title_la": "Puella in Viā Sōla",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap5/Cap6_Sex_oppida_Rōmāna_brevis_072.md",
+    "chapter": 5,
+    "title_la": "Sex oppida Rōmāna",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap5/Cap6_Sicilia_et_Corsica_brevis_073.md",
+    "chapter": 5,
+    "title_la": "Sicilia et Corsica",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap10_duodecim_insulae_maris_brevis_001.md",
+    "chapter": 6,
+    "title_la": "Duodecim insulae maris",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap4_Discēde!_brevis_05.md",
+    "chapter": 6,
+    "title_la": "Discēde!",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap4_Puer_sōlus_medius_13.md",
+    "chapter": 6,
+    "title_la": "Puer sōlus",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap6/Cap4_Quattuor_oppida_Italiae_brevis_03.md",
+    "chapter": 6,
+    "title_la": "Quattuor oppida Italiae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap5_Ancilla_et_domina_medius_07.md",
+    "chapter": 6,
+    "title_la": "Ancilla et domina",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap6/Cap5_Quī_dormit?_brevis_01.md",
+    "chapter": 6,
+    "title_la": "Quī dormit?",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap5_Servus_et_rosa_medius_09.md",
+    "chapter": 6,
+    "title_la": "Servus et rosa",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap6/Cap5_Via_ad_oppidum_brevis_02.md",
+    "chapter": 6,
+    "title_la": "Via ad oppidum",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap6_Dominus_bonus_longus_082.md",
+    "chapter": 6,
+    "title_la": "Dominus bonus",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap6/Cap6_Dominus_et_Servus_in_Villa_medius_085.md",
+    "chapter": 6,
+    "title_la": "Dominus et Servus in Villa",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap6/Cap6_In_viā_longus_086.md",
+    "chapter": 6,
+    "title_la": "In viā",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap6/Cap6_Quattuor_oppida_brevis_074.md",
+    "chapter": 6,
+    "title_la": "Quattuor oppida",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap6_Quīnque_flūmina_Eurōpae_brevis_076.md",
+    "chapter": 6,
+    "title_la": "Quīnque flūmina Eurōpae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap6_Sicilia_et_Sardinia_brevis_070.md",
+    "chapter": 6,
+    "title_la": "Sicilia et Sardinia",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap6_Tria_oppida_magnae_brevis_071.md",
+    "chapter": 6,
+    "title_la": "Tria oppida magnae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap6_Trēs_viae_Rōmānae_brevis_077.md",
+    "chapter": 6,
+    "title_la": "Trēs viae Rōmānae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap6/Cap6_Via_ad_Graeciam_medius_083.md",
+    "chapter": 6,
+    "title_la": "Via ad Graeciam",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap6/Cap7_Puerī_in_viā_medius_010.md",
+    "chapter": 6,
+    "title_la": "Puerī in viā",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap6/Cap7_Vēritās_medius_006.md",
+    "chapter": 6,
+    "title_la": "Vēritās",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap6/Cap9_Duae_terrae_medius_037.md",
+    "chapter": 6,
+    "title_la": "Duae terrae",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap6/Cap9_Tria_oppida_brevis_036.md",
+    "chapter": 6,
+    "title_la": "Tria oppida",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap7/Cap10_quattuor_maria_brevis_001.md",
+    "chapter": 7,
+    "title_la": "Quattuor maria",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap7/Cap5_Pater_et_fīlius_in_hortō_medius_10.md",
+    "chapter": 7,
+    "title_la": "Pater et fīlius in hortō",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap7/Cap6_Oppidum_in_nocte_medius_081.md",
+    "chapter": 7,
+    "title_la": "Oppidum in nocte",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap7/Cap6_Pater_et_Fīlius_longus_084.md",
+    "chapter": 7,
+    "title_la": "Pater et Fīlius",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap7/Cap6_Sōlus_in_viā_medius_080.md",
+    "chapter": 7,
+    "title_la": "Sōlus in viā",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap7/Cap7_Fīlia_et_rosae_medius_017.md",
+    "chapter": 7,
+    "title_la": "Fīlia et rosae",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap7/Cap7_Puella_in_Viā_Mātrem_Quaerēns_medius_007.md",
+    "chapter": 7,
+    "title_la": "Puella in Viā Mātrem Quaerēns",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap7/Cap8_Puer_ad_portam_medius_011.md",
+    "chapter": 7,
+    "title_la": "Puer ad portam",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap8/Cap10_novem_insulae_brevis_001.md",
+    "chapter": 8,
+    "title_la": "Novem insulae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap8/Cap10_quid_est_bonum_brevis_001.md",
+    "chapter": 8,
+    "title_la": "Quid est bonum?",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap8/Cap10_somnus_brevis_medius_001.md",
+    "chapter": 8,
+    "title_la": "Somnus longus",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap8/Cap7_Duo_puerī_in_viā_medius_009.md",
+    "chapter": 8,
+    "title_la": "Duo puerī in viā",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap8/Cap7_Rosa_in_hortō_medius_008.md",
+    "chapter": 8,
+    "title_la": "Rosa in hortō",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap8/Cap7_Spēs_in_īnsulā_longus_019.md",
+    "chapter": 8,
+    "title_la": "Spēs in īnsulā",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap8/Cap8_Fīlia_ad_fenestram_medius_012.md",
+    "chapter": 8,
+    "title_la": "Fīlia ad fenestram",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap8/Cap8_Fīlius_in_Cubiculo_Discit_medius_015.md",
+    "chapter": 8,
+    "title_la": "Fīlius in Cubiculo Discit",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap8/Cap8_Pater_et_fīlius_in_viā_medius_018.md",
+    "chapter": 8,
+    "title_la": "Pater et fīlius in viā",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap10_duodecim_insulae_medius_001.md",
+    "chapter": 9,
+    "title_la": "Duodecim insulae",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap10_flumina_romana_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Flumina Romana",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_in_foro_brevis_001.md",
+    "chapter": 9,
+    "title_la": "In foro",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_in_via_brevis_001.md",
+    "chapter": 9,
+    "title_la": "In via",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_insula_parva_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Insula parva",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_mercator_vir_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Mercator vir",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_octo_insulae_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Octo insulae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_quattuor_insulae_graecae_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Quattuor insulae Graecae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_quattuor_terrae_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Quattuor terrae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_septem_insulae_parvae_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Septem insulae parvae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_servus_in_horto_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Servus in horto",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_sex_insulae_parvae_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Sex insulae parvae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap10_vir_ad_portam_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Vir ad portam",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap11_Amor_Servī_medius_001.md",
+    "chapter": 9,
+    "title_la": "Amor Servī",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap11_Equus_et_dominus_brevis_001.md",
+    "chapter": 9,
+    "title_la": "Equus et dominus",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap11_In_campō_brevis_001.md",
+    "chapter": 9,
+    "title_la": "In campō",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap7_Dominus_et_Servus_in_Animo_medius_018.md",
+    "chapter": 9,
+    "title_la": "Dominus et Servus in Animo",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap7_Servus_et_aqua_longus_020.md",
+    "chapter": 9,
+    "title_la": "Servus et aqua",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap9/Cap7_Servus_novus_medius_016.md",
+    "chapter": 9,
+    "title_la": "Servus novus",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap8_Māter_et_fīlius_malus_medius_013.md",
+    "chapter": 9,
+    "title_la": "Māter et fīlius malus",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap8_Puella_et_lūna_longus_019.md",
+    "chapter": 9,
+    "title_la": "Puella et lūna",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap9/Cap8_Puella_in_hortō_medius_014.md",
+    "chapter": 9,
+    "title_la": "Puella in hortō",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap8_Servus_bonus_longus_020.md",
+    "chapter": 9,
+    "title_la": "Servus bonus",
+    "length_tier": "长篇"
+  },
+  {
+    "path": "Cap9/Cap8_Tabernārius_et_vir_medius_017.md",
+    "chapter": 9,
+    "title_la": "Tabernārius et vir",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap8_Vir_in_Viā_medius_016.md",
+    "chapter": 9,
+    "title_la": "Vir in Viā",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap9_Magnum_et_parvum_brevis_039.md",
+    "chapter": 9,
+    "title_la": "Magnum et parvum",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap9_Octo_montes_brevis_038.md",
+    "chapter": 9,
+    "title_la": "Octo montes",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap9_Pastor_et_oves_brevis_042.md",
+    "chapter": 9,
+    "title_la": "Pastor et oves",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap9_Quinque_terrae_brevis_024.md",
+    "chapter": 9,
+    "title_la": "Quinque terrae",
+    "length_tier": "短篇"
+  },
+  {
+    "path": "Cap9/Cap9_Servus_et_canis_medius_043.md",
+    "chapter": 9,
+    "title_la": "Servus et canis",
+    "length_tier": "中篇"
+  },
+  {
+    "path": "Cap9/Cap9_Tres_in_horto_brevis_040.md",
+    "chapter": 9,
+    "title_la": "Tres in horto",
+    "length_tier": "短篇"
   }
 ]

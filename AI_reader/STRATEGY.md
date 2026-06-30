@@ -63,7 +63,7 @@
 
 - 全文拉丁语必须标注长音符号：ā, ē, ī, ō, ū, ȳ, ǣ, ō̄
 - 不允许出现无长音的拉丁语单词（专有名词首次出现需在元音上加长音）
-- 实施：AI 初稿可先写无长音版本 → `Latin Macronizer` 自动修正 → 人工抽查
+- 实施：AI 生成时**直接输出带长音版本**（不准偷懒）；抽查发现漏网之鱼时由 AI 补标修复
 - 反例（错误）：`Marcus dixit: "Venio."`
 - 正例（正确）：`Mārcus dīxit: "Vēniō."`
 
@@ -541,7 +541,7 @@ macrons_status: "generated"
 
 - `evaluate_v2.py` 评级符合目标章节（上下浮动 ±2 章）
 - 语法结构在文中至少自然出现 3 次（螺旋复现）
-- 经 Macronizer 修正长音后人工抽查
+- 全文长音经人工抽查无明显遗漏
 - 篇幅符合分级（详见 §2 表E）
 
 ### 3.8 题材方向全景
@@ -1411,11 +1411,10 @@ three_layers:
 # ============================================================
 macrons:
   ai_output_macron_rate: 0.72                       # AI 初稿长音覆盖率
-  macronizer_corrected: true                        # 是否经过 Macronizer 修正
-  post_correction_rate: 0.985                       # 修正后的预估准确率
+  generations_have_macrons: true                     # AI 生成时是否直接带长音（不应为 false）
   human_spot_checked: false                         # 是否人工抽查
   spot_check_sample_size: 0                         # 抽查词数
-  spot_check_error_count: 0
+  spot_check_error_count: 0                         # 抽查发现的零长音词数（理想为 0）
 
 style:
   llpsi_compliance: "good"                          # good | acceptable | needs_work
