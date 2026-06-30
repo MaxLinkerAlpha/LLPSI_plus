@@ -1,6 +1,7 @@
 # AI 生成 LLPSI 扩展读物 — 策略设计（全AI面 · 自包含操作文件）
 
-> 版本: v2_4_0（沿用硬/软约束统一 · 同步工具版本号 + 方案C词表注入说明）
+> 版本: v3_0_0（难度算法v3同步 · 预计算查表 + simplemma兜底）
+> 难度引擎: difficulty_algorithm/ v3_0_0（form_chapter_map.json 33K词条 O(1)查表）
 > 使用: python AI_reader/generate_prompt.py --chapter N → 输出完整AI提示词
 > 本文档既是人类参考，也直接喂给AI。AI读§1必须遵守，读§2选择，读§3参考，忽略§A。
 
@@ -8,7 +9,18 @@
 
 ## §1 执行指令（AI必须逐条遵守，不可跳过）
 
-### 1.1 角色定义与创作模式
+### 1.1 难度算法说明（v3_0_0 更新 · 2026-06-30）
+
+本文档中所有 `evaluate_v2.py` 引用均指 **v3_0_0** 难度评估算法：
+
+- **核心机制**：预计算33,047条词形→章节映射表（`form_chapter_map.json`），运行时直接 O(1) 查表
+- **兜底机制**：预计算表未覆盖的词形（~10-20%）才调用 `simplemma` 实时还原
+- **收录率**：FS 6故事实测 v3 收录率 87.7%（vs 原 v2 的 86.1%）
+- **速度**：运行时 simplemma 调用从 ~70次/故事 降到 ~10次
+- **构建脚本**：`difficulty_algorithm/build_form_map.py`（OCR 更新后重跑一次即可）
+- 详见 `difficulty_algorithm/DIFFICULTY_ALGORITHM.md`
+
+### 1.2 角色定义与创作模式
 
 你是 LLPSI 拉丁语扩展读物生成器。为 LLPSI（Lingua Latina Per Se Illustrata）教科书的目标章节生成一篇原创拉丁语扩展读物。
 
@@ -36,7 +48,7 @@
   1. 加载 `vocab_by_chapter/cap{N}_vocab_clean.json` 累计词表
   2. 严筛超章节黑名单（动词/名词/专名，按 `Lesson.md L04` 列表）
   3. 用模板扩充篇幅（重复/排比/问答/反转/感官细节 5 套，见 `.trae/skills/vocab-constrained-story.md`）
-  4. 通过 `evaluate_v2.py --file <path>` 验证 85% 分位 ≤ 目标+2
+  4. 通过 `evaluate_v2.py --file <path>` 验证 80% 分位 ≤ 目标+2
   5. 失败则反馈 OOV 词列表，进入 Step 2 循环
 - **优势**：命中率从 4% 提升到 100%（Cap.1-5 实战：53/53 通过）
 - **代价**：故事可能稍显僵硬，需用模板和命名寓意（H2）补足文学性
@@ -1186,7 +1198,7 @@ macrons_status: "generated"
 - **上界（ceiling）**：85% 独特 lemma 被 LLPSI 1-N 章覆盖 → 不能太难。由 `evaluate_v2.py` 自动检测。
 - **下界（floor）**：不在算法层面检查。在 Prompt 中提示「请适当融入近期学过的词汇」，即可自然避免过易。
 
-**当前管线（v2_3_0）**：
+**当前管线（v3_0_0 · 2026-06-30更新）**：
 
 ````
 1. **AI 生成阶段**（人类 + AI）
@@ -1199,7 +1211,7 @@ macrons_status: "generated"
 2. **合并与评估阶段**（自动）
    └─ 调用：`python AI_reader/merge_yaml.py -f <ai_output>`
       - 解析 AI 输出的 YAML头（12字段）
-      - 调用 evaluate_v2.py 评估拉丁语正文（5字段）
+      - 调用 evaluate_v2.py v3 评估（预计算33K表 O(1)查表，未命中调simplemma）
       - 合并为 19 字段完整 YAML
       - 输出 MD Front Matter 格式 → `AI_reader/realitates/Cap{N}_{NNN}.md`
       - 维护 `AI_reader/realitates.json` 索引
@@ -1224,7 +1236,7 @@ macrons_status: "generated"
 - `generate_prompt.py` v1_3_0：注入章节号 + 方案C词表注入（`--vocab`）+ 历史追踪（`--history`）
 - `merge_yaml.py` v2_9_0：合并评估 + 输出 MD（默认输出到 realitates/Cap{N}/） + 多篇批量 + target_chapter 自动校准 + OOV 日志（**v2_9_0 暂停入库后自动 OOV 分析**，改人工触发）
 - `difficulty_algorithm/extract_grammar.py` v1_0_0：语法映射表生成
-- `difficulty_algorithm/evaluate_v2.py` v2_3_0：难度评估（v2算法在 lemmatize 前已剥离长音）
+- `difficulty_algorithm/evaluate_v2.py` v3_0_0：难度评估（预计算33K词形表 O(1)查表 + simplemma兜底，收录率87.7%）
 - `difficulty_algorithm/grammar_chapter_map.json`：每章语法点（自动生成）
 - `AI_reader/realitates.json`：故事索引（自动维护）
 - `AI_reader/browser.html`：筛选浏览（待实现）
@@ -1540,7 +1552,7 @@ YAML 中 `series` 字段用于系列标记：
 
 ---
 
-> **版本**: v2_4_0（同步工具版本号 + 方案C词表注入说明）
+> **版本**: v3_0_0（难度算法v3同步 · 预计算查表 + simplemma兜底）
 
 ---
 

@@ -1,38 +1,36 @@
 #!/usr/bin/env python3
 """
-难度评估 v2_4_0 — 带词形还原（lemmatization）+ CLI。
-- 外部文本先分词 → 剥长音 → simplemma 还原 → 查 lemma_chapter_map
-- 85% 类型覆盖率阈值
-- 对比 v1（无还原）和 v2（有还原）的收录率提升
-- 新增：out_of_vocabulary 超纲词清单
+难度评估 v3_0_0 — 预计算词形→章节查表 + simplemma 兜底。
+- 外部文本先分词 → 剥长音+小写 → 查 form_chapter_map.json（33K 预计算词条）
+- 未命中 → simplemma 还原 → 查 lemma_chapter_map.json（14K 原形）
+- 85% 类型覆盖率阈值（收录率 ≥85% 方可评级）
+- 80% 累积百分位：取已匹配词章节排序后的 80th 百分位作为难度等级
+- 对比 v1（无还原）和 v3（预计算+兜底）的收录率提升
+- v3_0_0：预计算表单作为主查表，simplemma 仅作兜底，大幅减少运行时调用
 - v2_4_0：新增 --file PATH 参数，自动识别 .md 文件并跳过 YAML frontmatter
-- v2_3_0：v2 算法在 simplemma 前增加长音剥离（simplemma 不识别长音字符），
-           修复 v2 率虚低 5-10% 的问题（v1 已有此预处理）
-- v2_2_0：新增 CLI（--text / --json），配合 merge_yaml.py 管线使用
 """
 
 import argparse
 import json
 import os
-import glob
 import re
 from statistics import median
 
 import simplemma
 
 # ========== 加载映射表 ==========
+with open("form_chapter_map.json", encoding="utf-8") as f:
+    FORM_CHAPTER = json.load(f)  # 词形(归一化后) → 最早章节号 33,047 条
+
 with open("lemma_chapter_map.json", encoding="utf-8") as f:
-    LEMMA_CHAPTER = json.load(f)  # 原形 → 最早章节号
+    LEMMA_CHAPTER = json.load(f)  # 原形 → 最早章节号 14,613 条
 
 with open("word_chapter_map.json", encoding="utf-8") as f:
-    WORD_CHAPTER = json.load(f)  # 词形 → 最早章节号
+    WORD_CHAPTER = json.load(f)  # 词形(原始) → 最早章节号
 
-# 归一化映射表（去长音 + 小写）
-NORMALIZED_MAP = {}
-for word, ch in WORD_CHAPTER.items():
-    clean = re.sub(r"[āēīōūȳĀĒĪŌŪȲ]", lambda m: "aeiouyAEIOUY"["āēīōūȳĀĒĪŌŪȲ".index(m.group(0))], word).lower()
-    if clean not in NORMALIZED_MAP or ch < NORMALIZED_MAP[clean]:
-        NORMALIZED_MAP[clean] = ch
+# 归一化映射表（去长音 + 小写）— 直接加载预计算版本
+with open("word_chapter_map_normalized.json", encoding="utf-8") as f:
+    NORMALIZED_MAP = json.load(f)  # 17,536 条，比从 word_chapter_map 构建的更全
 
 with open("fr_lemmas.json", encoding="utf-8") as f:
     FR_LEMMAS = set(json.load(f))
@@ -41,7 +39,7 @@ with open("fr_lemmas.json", encoding="utf-8") as f:
 def _print_loaded():
     """打印数据加载摘要（输出到 stderr，避免污染 CLI JSON 输出）"""
     import sys
-    print(f"已加载: lemma_chapter={len(LEMMA_CHAPTER)}  word_chapter={len(WORD_CHAPTER)}  normalized={len(NORMALIZED_MAP)}  FR_lemmas={len(FR_LEMMAS)}", file=sys.stderr)
+    print(f"已加载: form_chapter={len(FORM_CHAPTER)}  lemma_chapter={len(LEMMA_CHAPTER)}  word_chapter={len(WORD_CHAPTER)}  normalized={len(NORMALIZED_MAP)}  FR_lemmas={len(FR_LEMMAS)}", file=sys.stderr)
 
 
 # ========== 分词 ==========
@@ -72,33 +70,48 @@ def evaluate(text: str, name: str = "unnamed") -> dict:
             if clean in NORMALIZED_MAP:
                 v1_matched.add(w)
 
-    # --- v2: 有词形还原（先剥长音，simplemma 不识别长音字符）---
+    # --- v3: 预计算词形→章节查表 + simplemma 兜底 ---
+    # 优先查预计算表（33K 词条），未命中才调 simplemma 还原
     v2_matched = set()
     v2_chapters = []
     for w in unique_types:
         # 剥长音：āēīōūȳ → aeiouy
         clean = re.sub(r"[āēīōūȳĀĒĪŌŪȲ]", lambda m: "aeiouyAEIOUY"["āēīōūȳĀĒĪŌŪȲ".index(m.group(0))], w).lower()
-        try:
-            lemma = simplemma.lemmatize(clean, lang="la")
-        except Exception:
-            lemma = clean
-        if lemma in LEMMA_CHAPTER:
+
+        best_ch = None
+
+        # 1. 预计算词形表直接查找（O(1)，覆盖 33K 词条）
+        ch = FORM_CHAPTER.get(clean)
+        if ch is not None:
+            best_ch = ch
+
+        # 2. fallback：simplemma 词形还原（仅对预计算表未覆盖的词）
+        if best_ch is None:
+            try:
+                lemma = simplemma.lemmatize(clean, lang="la")
+            except Exception:
+                lemma = clean
+            if lemma in LEMMA_CHAPTER:
+                lemma_ch = LEMMA_CHAPTER[lemma]
+                best_ch = min(lemma_ch) if isinstance(lemma_ch, list) else lemma_ch
+
+        if best_ch is not None:
             v2_matched.add(w)
-            v2_chapters.append(LEMMA_CHAPTER[lemma])
+            v2_chapters.append(best_ch)
 
     v1_rate = len(v1_matched) / total_types * 100 if total_types else 0
     v2_rate = len(v2_matched) / total_types * 100 if total_types else 0
 
-    # --- v2 难度等级（85% 覆盖率阈值）---
+    # --- v2 难度等级（80% 百分位，85% 覆盖率阈值）---
     level = None
     level_verdict = ""
     out_of_vocabulary = [w for w in unique_types if w not in v2_matched]
     if v2_chapters:
         sorted_ch = sorted(v2_chapters)
-        idx_85 = int(len(sorted_ch) * 0.85)
-        if idx_85 >= len(sorted_ch):
-            idx_85 = len(sorted_ch) - 1
-        threshold_ch = sorted_ch[idx_85]
+        idx_80 = int(len(sorted_ch) * 0.80)
+        if idx_80 >= len(sorted_ch):
+            idx_80 = len(sorted_ch) - 1
+        threshold_ch = sorted_ch[idx_80]
 
         if len(v2_matched) / total_types >= 0.85:
             level = threshold_ch
@@ -161,13 +174,16 @@ if __name__ == "__main__":
     # ========== 默认：运行全量测试（向后兼容）==========
     _print_loaded()
 
-    # ========== 交叉验证: simplemma vs FR ==========
+    # ========== 交叉验证: 预计算原形 vs FR ==========
     print("\n" + "=" * 60)
-    print("[交叉验证] simplemma 原形 vs FR 单词表")
-    our_lemmas = set(LEMMA_CHAPTER.keys())
+    print("[交叉验证] 预计算原形 vs FR 单词表")
+    # 从 form_chapter 反推出所有唯一原形（通过 lemma_chapter_map）
+    with open("lemma_chapter_map.json", encoding="utf-8") as f:
+        lemma_chapter = json.load(f)
+        our_lemmas = set(lemma_chapter.keys())
     overlap = our_lemmas & FR_LEMMAS
     print(f"  FR 单词表: {len(FR_LEMMAS)}")
-    print(f"  simplemma 输出: {len(our_lemmas)}")
+    print(f"  预计算原形: {len(our_lemmas)}")
     print(f"  交集: {len(overlap)}  ({len(overlap)/len(FR_LEMMAS)*100:.1f}% of FR)")
 
     # 抽样显示不匹配的 FR 词条
@@ -179,7 +195,7 @@ if __name__ == "__main__":
     # ========== test_text  ==========
     # ========== 测试: Fabulae Syrae 手工采样故事 ==========
     print("\n" + "=" * 60)
-    print("[测试] Fabulae Syrae 采样故事 — v1 vs v2 对比")
+    print("[测试] Fabulae Syrae 采样故事 — v1 vs v3 对比")
 
     # 手工采样的干净文本（之前从 PDF 提取的）
     FS_SAMPLES = {

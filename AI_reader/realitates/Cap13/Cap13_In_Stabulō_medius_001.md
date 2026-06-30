@@ -1,0 +1,21 @@
+---
+title_la: "In Stabulō"
+title_zh: "在马厩里"
+target_chapter: 13
+theme: "36 乡村"
+style: "白话"
+genre: "A LLPSI宇宙"
+character_type: "罗马人"
+length_tier: "中篇"
+narrative_mode: "第三人称"
+word_count: 235
+macrons_status: "generated"
+evaluated_chapter: 18
+v2_rate: 97.2
+v2_oov: ["stabul\u014d", "Stabulum", "stabulum"]
+created_at: "2026-06-30T10:52:21Z"
+updated_at: "2026-06-30T10:52:21Z"
+status: "active"
+rewritten_from: "brevis"
+---
+Servus in stabulō est. Stabulum est magnum. In stabulō, multī equī sunt. Equī sunt magnī et pulchrī. Servus equōs cūrat. Servus equīs cibum dat. Servus equōs lavat. Servus: 'Vōs estis pulchrī, equī. Vōs estis fortēs. Ego sum servus — sed vōs nōn estis servī. Vōs estis līberī.' Equus niger caput movet. Equus servum spectat. Servus equum tangit. Servus: 'Tū mē intellegis, amīce?' Dominus in stabulum intrat. Dominus: 'Servus, equī sunt parātī?' Servus: 'Ita, domine. Equī sunt parātī.' Dominus: 'Bene. Hodiē ad urbem ībō. Equum nigrum parā.' Servus equum nigrum parat. Servus equō aquam dat. Servus: 'Dominus ad urbem it. Tū eum portābis. Tū es bonus equus.' Equus nihil dīcit. Sed equus servum spectat. Dominus in equō ad urbem it. Servus in stabulō manet. Servus aliōs equōs cūrat. Servus stabulum lavat. Servus: 'Dominus abiit. Nunc stabulum est meum. Nunc equī sunt meī. Ego sum dominus hīc.' Servus in stabulō sedet. Servus equōs spectat. Servus: 'In stabulō, ego nōn sum servus. In stabulō, ego sum... ego.' Vesperī venit. Dominus ex urbe redit. Dominus: 'Servus, equum cape. Equus fessus est.' Servus equum capit. Servus equum lavat. Servus equō cibum dat. Servus: 'Bene vēnistī, amīce. Tū multum labōrāvistī hodiē.' Equus servum spectat. Equus caput ad servum movet. Servus rīdet. Servus: 'Nōs sumus similēs, tū et ego. Nōs ambō servī sumus. Sed nōs ambō... vīvimus.' Nox venit. Stabulum tacet. Equī dormiunt. Servus quoque dormit. Et in stabulō, omnia sunt bona.

@@ -1,6 +1,7 @@
 # AI_reader — LLPSI 拉丁语扩展读物 AI 生成与管线
 
-> 版本：v2_9_0 · 2026-06-28
+> 版本：v3_0_0 · 2026-06-30
+> 算法引擎：difficulty_algorithm/ v3_0_0（预计算33K词形表 + simplemma兜底）
 > 父项目：LLPSI_plus
 
 ## 这是什么
@@ -77,7 +78,8 @@ python AI_reader/merge_yaml.py -f <ai_output.txt>            # 合并+写入
    └─ generate_prompt.py --chapter N → AI 读取 → 输出 YAML头+拉丁语正文
 
 2. 合并与评估阶段
-   └─ merge_yaml.py -f <output> → 解析 → evaluate_v2.py 评估
+   └─ merge_yaml.py -f <output> → 解析 → evaluate_v2.py v3 评估
+      → 预计算33K词形表 O(1)查表 → 未命中才调 simplemma 兜底（减少86%调用）
       → 输出 realitates/Cap{N}/Cap{N}_{title_slug}_{length_la}_{NNN}.md → 维护 realitates.json
 
 3. 语法映射辅助（按需）
@@ -123,6 +125,7 @@ realitates/Cap{N}/{Cap{N}_{title_slug}_{length_la}_{NNN}.md}
 
 ## 版本历史
 
+- v3_0_0 (2026-06-30)：难度算法升级到 v3（预计算33K词形查表 + simplemma兜底，收录率87.7%）+ build_form_map.py 新合成脚本 + word_chapter_map 脏数据清理72条
 - v2_9_0 (2026-06-28)：方案C 启用（生成冗余 + 自动归到真实章节文件夹 + 人工从同章节择优）+ 暂停入库后自动 OOV 分析（准确率仅 50%，改人工触发）
 - v2_8_0 (2026-06-28)：入库后自动触发 OOV 增量分析（auto_supplement_map.py v1_0_0）+ 补全建议文件
 - v2_7_0 (2026-06-28)：target_chapter 自动校准（用算法实测覆盖 AI 声明）+ OOV 日志（oov_corrections.jsonl，方案D 雏形）+ 长音剥离修复（evaluate_v2 v2_3_0）

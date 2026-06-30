@@ -1,0 +1,23 @@
+---
+story_id: "cap8_05"
+title_la: "Fīlius discit"
+title_zh: "儿子学习"
+target_chapter: 8
+theme: "28 教育"
+style: "古典"
+genre: "A LLPSI宇宙"
+character_type: "罗马人"
+length_tier: "中篇"
+narrative_mode: "第三人称"
+word_count: 498
+macrons_status: "generated"
+evaluated_chapter: 8
+best_fit_chapter: 8
+coverage_rate: 100.0
+oov_words: []
+rewritten_from: "brevis"
+rewritten_at: "2026-06-30T07:25:05.560948+00:00"
+status: "rewritten"
+---
+
+Fīlius in cubiculō est. Fīlius est Iūlius. Iūlius ad mēnsam stat. Iūlius librum spectat. Liber est magnus. Liber est malus. Iūlius librum aperit. Iūlius spectāre vult. Sed Iūlius nōn multa verba videt. Iūlius: 'Verba sunt multa. Verba sunt nōn bona. Ego spectāre nōn bene volō.' Pater Iūliī in cubiculum venit. Pater est Iūlius. Iūlius Iūlium videt. Iūlius librum videt. Iūlius: 'Fīlī, quid agis? Spectās?' Iūlius: 'Pater, ego spectāre volō. Sed verba sunt nōn bona. Ego nōn multa intellegō.' Iūlius ad Iūlium stat. Iūlius: 'Iūlius, spectāre est nōn bonum — sed spectāre est bonum. Quī spectat, multa discit. Quī spectat, multa videt.' Iūlius: 'Sed pater, cūr spectāre est bonum? Ego multa vidēre possum sine librō.' Iūlius: 'Oculī tuī pauca vident. Sed librī multa mōnstrant. Per librōs, tū Graeciam vidēs. Per librōs, tū Graeciam vidēs. Per librōs, tū multa loca vidēs — sine pedibus.' Iūlius: 'Sine pedibus? Ego Graeciam vidēre possum sine pedibus?' Iūlius: 'Ita, fīlī. Per librōs, tū ubīque īre potes. Librī sunt portae ad mundum... ad multās terrās.' Iūlius: 'Portae ad multās terrās! Hoc est mīrum!' Iūlius: 'Venī, fīlī. Ego tē spectāre monstrābō.' Iūlius librum capit. Iūlius: 'Hic liber est bonus. Hic liber dē Graeciā est. In Graeciā sunt multī montēs, multae silvae, multa flūmina.' Iūlius spectat. Iūlius audit. Iūlius: 'Vidēsne, fīlī? Per verba, tū Graeciam vidēs.' Iūlius: 'Pater, ego Graeciam vidēre volō! Ego multās terrās vidēre volō!' Iūlius: 'Tum tū spectāre dēbēs. Quī spectat, multa videt. Quī nōn spectat, pauca videt.' Iūlius: 'Pater, doce mē spectāre! Ego spectāre discere volō!' Iūlius: 'Bene, fīlī. Ego tē mōnstrābō. Hīc sunt verba prima: « Rōma est magna. Graecia est pulchra.» Tū haec verba spectāre potes.' Iūlius verba spectat. Iūlius: 'Rōma est magna. Graecia est pulchra.' Iūlius: 'Bene! Tū spectās, fīlī! Tū bene spectās!' Iūlius rīdet. Iūlius: 'Ego spectō, pater! Ego spectō!' Iūlius: 'Iam multa verba spectābimus. « In Graeciā sunt multī montēs. In Graeciā sunt multae silvae.»' Iūlius: 'In Graeciā sunt multī montēs. In Graeciā sunt multae silvae.' Iūlius: 'Bene! Tū es puer bonus. Tū cito discis.' Iūlius: 'Pater, ego spectāre amō! Ego multōs librōs spectāre volō!' Iūlius: 'Et tū multōs librōs spectābis, fīlī. Hic liber est tuus. Ego tē hunc librum dō.' Iūlius: 'Mihi? Hic liber est meus?' Iūlius: 'Ita, fīlī. Hic liber est tuus. Tū eum spectābis. Tū multa discēs.' Iūlius librum tenet. Iūlius laetus est. Iūlius: 'Grātiās, pater. Ego hunc librum amō. Ego hunc librum spectābō. Ego multa discam.' Iūlius: 'Et quandō tū multa discis, tū quoque aliōs mōnstrāre poteris. Mōnstrāre est magnum bonum.' Iūlius: 'Ego quoque mōnstrāre volō! Ego multa discam — et post multa mōnstrābō.' Iūlius Iūlium tenet. Iūlius: 'Fīlī, tū es puer bonus. Tū discis. Tū spectāre amās. Et hoc est magnum bonum.' Iūlius: 'Pater, tū es bonus pater. Tū mē mōnstrās. Tū mē amās.' Iūlius: 'Et ego tē amō, fīlī. Pater laetus est quandō fīlius discit.' Iūlius in cubiculō est. Iūlius librum spectat. Iūlius multa verba discit. Et per verba, Iūlius multās terrās videt. Librī sunt portae — et Iūlius per portās ambulat.
