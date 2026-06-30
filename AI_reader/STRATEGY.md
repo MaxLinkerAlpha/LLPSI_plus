@@ -1570,3 +1570,15 @@ YAML 中 `series` 字段用于系列标记：
 - 1 个 Cap.4 备份目录已删除（`Cap4_backup_20260630/`）
 - 1 个重复 tierlist 文件已删除（`realitates/realitates_tierlist.jsonl`）
 
+### v2_5_1 (2026-06-30)
+
+**撤销**：
+- 配套工具 `.trae/scripts/archive_plan.sh` 已删除（用户决定：不做自动归档，避免打断工作心流）
+- `.trae/documents/archive/` 目录保留为空，作为未来手动归档的占位
+- 改动原则确认：用户明确"不自动清理/移动等需要批准的命令"已写入系统规则
+
+**实际清理**：
+- 之前在 commit `2f438ca` 中删除的 7 份过时计划书 → 已被 git 历史保留，可通过 `git log --diff-filter=D -- .trae/documents/` 找回
+- 不依赖任何自动脚本
+
+

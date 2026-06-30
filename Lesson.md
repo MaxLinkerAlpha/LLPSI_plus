@@ -52,14 +52,22 @@
 - 每个会话都会新建 `cleanup_*.md` / `continue_*.md` / `*_plan.md`
 - 完成后没人归档，全部堆在 documents 根目录
 
-**修复**:
-- 已归档 7 份过时计划书到 `.trae/documents/archive/`
-- 创建 `archive_plan.sh` 脚本，支持一键归档
+**手动清理**:
+- 之前已归档 7 份过时计划书（commit `2f438ca`）
+- 通过 `git log --diff-filter=D -- .trae/documents/` 可找回历史
+
+**用户决定（2026-06-30）**:
+- **不创建自动归档脚本**——会打断工作心流
+- 清理/移动等操作必须人工确认
+- 已删除 `.trae/scripts/archive_plan.sh`
+- `.trae/documents/archive/` 目录保留为空，仅作占位
 
 **预防**:
-- 任务型文档（一次性任务清单）完成后必须立即归档
+- 任务型文档（一次性任务清单）由用户在方便时手动归档或删除
+- AI 不得自动执行任何清理/移动/删除操作
 - 核心规划书（长期参考）保留在根目录，命名 `*_plan.md` 即可
 - 历史经验报告（如 `cap1_6_special_report.md`）保留，不要归档
+
 
 ---
 
