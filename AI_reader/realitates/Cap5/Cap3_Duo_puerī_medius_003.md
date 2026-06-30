@@ -1,0 +1,28 @@
+---
+
+story_id: "cap3_09"
+title_la: "Duo puerī"
+title_zh: "两个男孩"
+target_chapter: 3
+theme: "32 友谊与孤独"
+style: "抒情"
+genre: "A LLPSI宇宙"
+character_type: "罗马人"
+length_tier: "中篇"
+narrative_mode: "第三人称"
+word_count: 547
+macrons_status: "generated"
+evaluated_chapter: 5
+best_fit_chapter: 5
+coverage_rate: 95.8
+oov_words: ["Mārcus", "Mārcum", "Mārce", "Crētam", "Samum"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-06-29T16:20:39Z"
+updated_at: "2026-06-29T16:20:39Z"
+status: "rewritten"
+rewritten_from: "brevis"
+rewritten_at: "2026-06-29T16:20:39Z"
+
+---
+In oppidō duo puerī sunt. Puer prīmus est Mārcus. Puer secundus est Gāius. Mārcus et Gāius in oppidō sunt. Mārcus Gāium videt. Gāius Mārcum videt. Mārcus Gāium amat. Gāius Mārcum amat. Mārcus et Gāius in oppidō multa sunt. Mārcus et Gāius in oppidō rident. Mārcus et Gāius in oppidō vocant. Mārcus et Gāius in hortō sunt. Duo puerī — ūnā. Mārcus Gāiō librōs dat. Gāius Mārcō librōs dat. Mārcus Gāiō rosās dat. Gāius Mārcō līlia dat. Mārcus: "Gāī, tū bonus es. Tū mihi librōs dās. Tū mihi rosās dās." Gāius: "Mārce, tū bonus es. Tū mihi librōs dās. Tū mihi līlia dās." Mārcus et Gāius in oppidō sunt. Ūnā. Sed ūnus diēs Gāius in oppidō nōn est. Mārcus: "Ubi est Gāius? Gāius in oppidō nōn est. Ego Gāium nōn videō. Ubi est Gāius?" Mārcus in oppidō Gāium videt — sed Gāius nōn est. Mārcus in viīs Gāium videt — sed Gāius nōn est. Mārcus vocat: "Gāī! Gāī!" Nūllus respondet. Gāius nōn est. Mārcus ad vīllam Gāiī venit. Mārcus pulsat. Nūllus respondet. Mārcus: "Gāī, ubi es? Cūr nōn respondēs? Ego tē amō — cūr nōn respondēs?" Mārcus sōlus in oppidō est. Mārcus in oppidō sine Gāiō est. Mārcus: "Ego sōlus sum. Gāius nōn est. Ego in oppidō sōlus sum. Ego in oppidō multōs videō — sed nūllus est Gāius." Mārcus plōrat. Mārcus in oppidō sōlus plōrat. Iūlia Mārcum videt. Iūlia: "Mārce, cūr plōrās? Quid est?" Mārcus: "Gāius nōn est. Gāius in oppidō nōn est. Ego sōlus sum." Iūlia: "Gāius in oppidō nōn est? Ubi est Gāius?" Mārcus: "Ego Gāium nōn videō. Ego Gāium in oppidō nōn videō." Iūlia: "Ego Gāium quoque nōn videō. Sed nōlī plōrāre, Mārce. Tū nōn sōlus es. Ego hīc sum. Tū fīliam patris tuī habēs." Mārcus: "Tū es fīlia patris meī — sed tū nōn es Gāius. Fīlia nōn est puer." Iūlia: "Ego tē amō. Tū mē amās. Tū nōn sōlus es." Mārcus Iūliam videt. Mārcus: "Tū mē amās. Ego tē amō. Tū es fīlia patris meī." Sed Gāius nōn venit. Diēs multī — Gāius nōn venit. Mārcus in oppidō est. Mārcus Gāium videt — sed Gāius nōn est. Sed Gāius nōn est. Tum ūnus diēs — Gāius venit. Gāius in oppidum venit. Mārcus Gāium videt. Mārcus: "Gāī! Tū venīs! Tū in oppidō es! Ego tē videō!" Gāius: "Mārce! Ego tē videō! Ego in oppidum veniō! Ego tē amō!" Mārcus et Gāius — ūnā iterum. Mārcus: "Cūr nōn in oppidō fuistī? Cūr mē sōlum dedistī?" Gāius: "Ego in Graeciam vēnī. Pater meus mē in Graeciam vēnit. Ego in Graeciā fuī. Ego in Graeciā multās īnsulās vīdī. Crētam vīdī. Samum vīdī. Dēlon vīdī. Sed ego tē in oppidō nōn vīdī — sed ego tē amāvī. Ego tē in oppidō nōn vīdī — sed tū in mē fuistī." Mārcus: "Ego tē in oppidō nōn vīdī. Ego sōlus fuī — sed tū in mē fuistī." Gāius: "Nunc ego in oppidō sum. Tū in oppidō es. Duo puerī sumus — iterum." Mārcus Gāiō librum dat. Gāius Mārcō librum dat. Mārcus: "Hic liber est dē Graeciā. Ego hunc librum tibi dō — quia tū in Graeciā fuistī." Gāius: "Hic liber est dē oppidō. Ego hunc librum tibi dō — quia tū in oppidō fuistī." Duo puerī — iterum ūnā. Duo puerī in oppidō. Mārcus et Gāius. Duo puerī. Ūnā.

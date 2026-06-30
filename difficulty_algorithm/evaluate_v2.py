@@ -5,6 +5,7 @@
 - 未命中 → simplemma 还原 → 查 lemma_chapter_map.json（14K 原形）
 - 85% 类型覆盖率阈值（收录率 ≥85% 方可评级）
 - 80% 累积百分位：取已匹配词章节排序后的 80th 百分位作为难度等级
+- 专有名词豁免：LLPSI收录 + 首字母大写 + 非句首 → 章节号记为 1（不推高难度）
 - 对比 v1（无还原）和 v3（预计算+兜底）的收录率提升
 - v3_0_0：预计算表单作为主查表，simplemma 仅作兜底，大幅减少运行时调用
 - v2_4_0：新增 --file PATH 参数，自动识别 .md 文件并跳过 YAML frontmatter
@@ -60,6 +61,14 @@ def evaluate(text: str, name: str = "unnamed") -> dict:
     unique_types = list(dict.fromkeys(tokens))  # 保持顺序去重
     total_types = len(unique_types)
 
+    # --- 专有名词检测：句首词集合 ---
+    # 每个 .!? 之后的第一个词视为句首词（不应被当作专有名词）
+    sentence_initial = set()
+    for sent in re.split(r'(?<=[.!?])\s+', text):
+        s_tokens = tokenize(sent)
+        if s_tokens:
+            sentence_initial.add(s_tokens[0])
+
     # --- v1: 无词形还原 ---
     v1_matched = set()
     for w in unique_types:
@@ -97,7 +106,11 @@ def evaluate(text: str, name: str = "unnamed") -> dict:
 
         if best_ch is not None:
             v2_matched.add(w)
-            v2_chapters.append(best_ch)
+            # 专有名词豁免：LLPSI收录 + 首字母大写 + 非句首 → 视为基础词汇(ch=1)
+            if w not in sentence_initial and w[0].isupper():
+                v2_chapters.append(1)
+            else:
+                v2_chapters.append(best_ch)
 
     v1_rate = len(v1_matched) / total_types * 100 if total_types else 0
     v2_rate = len(v2_matched) / total_types * 100 if total_types else 0
