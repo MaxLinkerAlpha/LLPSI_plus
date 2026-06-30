@@ -2,13 +2,13 @@
   "project": "200_stories_Cap1_20",
   "version": "3.0",
   "started": "2026-06-29",
-  "last_updated": "2026-06-29T05:23:54Z",
+  "last_updated": "2026-06-30T04:13:46Z",
   "current_phase": 1,
   "chapters": {
     "1": {
-      "done": 0,
+      "done": 9,
       "target": 10,
-      "need": 10,
+      "need": 1,
       "strategy": "micro",
       "used_dimensions": {
         "themes": [
@@ -79,9 +79,9 @@
       }
     },
     "2": {
-      "done": 0,
+      "done": 10,
       "target": 10,
-      "need": 10,
+      "need": 0,
       "strategy": "micro",
       "used_dimensions": {
         "themes": [
@@ -147,9 +147,9 @@
       }
     },
     "3": {
-      "done": 0,
+      "done": 10,
       "target": 10,
-      "need": 10,
+      "need": 0,
       "strategy": "micro",
       "used_dimensions": {
         "themes": [
@@ -215,9 +215,9 @@
       }
     },
     "4": {
-      "done": 0,
+      "done": 14,
       "target": 10,
-      "need": 10,
+      "need": 0,
       "strategy": "micro",
       "used_dimensions": {
         "themes": [
@@ -303,9 +303,9 @@
       }
     },
     "5": {
-      "done": 0,
+      "done": 10,
       "target": 10,
-      "need": 10,
+      "need": 0,
       "strategy": "micro",
       "used_dimensions": {
         "themes": [
@@ -5045,5 +5045,18 @@
       }
     }
   },
-  "batches": []
+  "batches": [],
+  "rewrite_phase": {
+    "stage": 1,
+    "description": "Cap.1-5 短篇重写",
+    "started": "2026-06-29",
+    "completed_chapters": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "total_stories_rewritten": 539
+  }
 }
