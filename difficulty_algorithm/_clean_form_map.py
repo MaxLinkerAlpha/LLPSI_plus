@@ -169,27 +169,24 @@ def clean_form_chapter_map(data: dict) -> tuple[dict, dict, list]:
     return cleaned, rescued, deleted
 
 
-def apply_rescued(cleaned: dict, rescued: dict) -> dict:
-    """将抢救的词形合并到 cleaned 中（取最早章节号）"""
+def apply_rescued(cleaned: dict, rescued: dict) -> tuple[dict, int, int]:
+    """将抢救的词形合并到 cleaned 中。
+    v1_1_0 修复：不覆盖原值，只补缺（防止修改现有章节号）。
+    返回: (cleaned, added_new, merged_existing)
+    """
     added_count = 0
+    merged_count = 0
     for category, entries in rescued.items():
         for clean_word, chapter, source_key in entries:
-            # 小写标准化
             word_lower = clean_word.lower()
+            new_val = min(chapter) if isinstance(chapter, list) else chapter
             if word_lower in cleaned:
-                # 取更早的章节
-                existing = cleaned[word_lower]
-                if isinstance(existing, list):
-                    existing_val = min(existing)
-                else:
-                    existing_val = existing
-                new_val = min(chapter) if isinstance(chapter, list) else chapter
-                if new_val < existing_val:
-                    cleaned[word_lower] = new_val
+                # v1_1_0: 不修改原值，只记录（避免覆盖现有章节号）
+                merged_count += 1
             else:
-                cleaned[word_lower] = min(chapter) if isinstance(chapter, list) else chapter
+                cleaned[word_lower] = new_val
                 added_count += 1
-    return cleaned, added_count
+    return cleaned, added_count, merged_count
 
 
 def main():
@@ -213,8 +210,8 @@ def main():
     print(f"[清理] 保留 {len(cleaned):,} | 删除 {len(deleted):,} | 管道抢救 {len(rescued['pipe'])} | 斜杠抢救 {len(rescued['slash'])}")
 
     # ---- 合并抢救 ----
-    cleaned, added = apply_rescued(cleaned, rescued)
-    print(f"[抢救] 新增 {added} 条词形 → 最终 {len(cleaned):,} 条")
+    cleaned, added, merged = apply_rescued(cleaned, rescued)
+    print(f"[抢救] 新增 {added} 条词形 | 跳过 {merged} 条（已存在不覆盖）→ 最终 {len(cleaned):,} 条")
 
     # ---- 保存 ----
     with open(dst, "w", encoding="utf-8") as f:
@@ -228,7 +225,7 @@ def main():
             delete_reasons[r] += 1
 
     log = {
-        "version": "1_0_0",
+        "version": "1_1_0",
         "timestamp": ts,
         "source": str(src),
         "source_entries": len(data),
@@ -237,6 +234,7 @@ def main():
         "rescued_pipe": len(rescued["pipe"]),
         "rescued_slash": len(rescued["slash"]),
         "new_from_rescue": added,
+        "merged_skipped": merged,
         "delete_reasons": dict(delete_reasons.most_common()),
         "delete_samples": {
             reason: [k for k, _, rs in deleted if reason in rs][:5]

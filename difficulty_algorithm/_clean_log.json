@@ -1,0 +1,215 @@
+{
+  "version": "1_1_0",
+  "timestamp": "20260701_020218",
+  "source": "/Users/max/Downloads/Projects/LLPSI_plus/difficulty_algorithm/form_chapter_map.json",
+  "source_entries": 33047,
+  "cleaned_entries": 30670,
+  "deleted_count": 2595,
+  "rescued_pipe": 491,
+  "rescued_slash": 117,
+  "new_from_rescue": 218,
+  "merged_skipped": 390,
+  "delete_reasons": {
+    "non_latin_misc": 1050,
+    "hyphenated": 508,
+    "comma_join": 273,
+    "too_long": 219,
+    "number_prefix": 190,
+    "cross_sentence": 178,
+    "camel_joint": 74,
+    "short_consonant": 60,
+    "english": 17,
+    "suffix_fragment": 13,
+    "ellipsis": 9,
+    "quote_joined": 4
+  },
+  "delete_samples": {
+    "ellipsis": [
+      "Crēta...est",
+      "neque...neque",
+      "et...et",
+      "tantus...quantus",
+      "magnus...quam"
+    ],
+    "hyphenated": [
+      "est-ne",
+      "Iūlia-que",
+      "Mam-ma",
+      "Pa-ter",
+      "ne-que"
+    ],
+    "number_prefix": [
+      "80est",
+      "90Delia",
+      "1r",
+      "3/-o",
+      "45in"
+    ],
+    "cross_sentence": [
+      "centum.\"Cornelius",
+      "cantat.\"Aemilia",
+      "est.\"Iūlius",
+      "est!\"Aemilia",
+      "verbera!\"Quid"
+    ],
+    "suffix_fragment": [
+      "ōrum",
+      "ārum",
+      "antur",
+      "ētur",
+      "entur"
+    ],
+    "short_consonant": [
+      "St",
+      "QM",
+      "RR",
+      "Wf",
+      "nr"
+    ],
+    "comma_join": [
+      "Iūlius,quem",
+      "ven-,quia",
+      "Dāvum,Med",
+      "fessus,nam",
+      "saccum,Syre"
+    ],
+    "camel_joint": [
+      "MaterQuint",
+      "CūrRomam",
+      "RomāBrundisium",
+      "PluralisUt",
+      "CaesareAugusto"
+    ],
+    "non_latin_misc": [
+      "Iūlius:*Sūm",
+      "T[ūliam",
+      "A——D",
+      "ab/ā",
+      "am/-um"
+    ],
+    "english": [
+      "verb",
+      "line",
+      "for",
+      "adv",
+      "and"
+    ],
+    "quote_joined": [
+      "facimus!\"[1",
+      "magistro.\"*Ergo",
+      "decet!\"*Narrābo",
+      "ornātur.\"(Servus"
+    ],
+    "too_long": [
+      "reprehenduntur.\"Magister",
+      "quattuor...octo...duode",
+      "rēctissimē,*fortissimē",
+      "Mārcō...ductō/inclūsō",
+      "scripseramus,magistro"
+    ]
+  },
+  "rescued_samples_pipe": [
+    {
+      "src": "insul|a",
+      "dst": "insula",
+      "ch": 9
+    },
+    {
+      "src": "insul|ae",
+      "dst": "insulae",
+      "ch": 9
+    },
+    {
+      "src": "insul|ās",
+      "dst": "insulās",
+      "ch": 9
+    },
+    {
+      "src": "insul|ārum",
+      "dst": "insulārum",
+      "ch": 9
+    },
+    {
+      "src": "insul|is",
+      "dst": "insulis",
+      "ch": 9
+    },
+    {
+      "src": "serv|i",
+      "dst": "servi",
+      "ch": 9
+    },
+    {
+      "src": "verb|um",
+      "dst": "verbum",
+      "ch": 9
+    },
+    {
+      "src": "verb|a",
+      "dst": "verba",
+      "ch": 9
+    },
+    {
+      "src": "serv|um",
+      "dst": "servum",
+      "ch": 9
+    },
+    {
+      "src": "serv|ōs",
+      "dst": "servōs",
+      "ch": 9
+    }
+  ],
+  "rescued_samples_slash": [
+    {
+      "src": "Rōmam/Tūsculum",
+      "dst": "Rōmam",
+      "ch": 6
+    },
+    {
+      "src": "Rōmam/Tūsculum",
+      "dst": "Tūsculum",
+      "ch": 6
+    },
+    {
+      "src": "Romda/Tūsculō",
+      "dst": "Romda",
+      "ch": 6
+    },
+    {
+      "src": "Romda/Tūsculō",
+      "dst": "Tūsculō",
+      "ch": 6
+    },
+    {
+      "src": "Rōmae/Tūsculi",
+      "dst": "Rōmae",
+      "ch": 6
+    },
+    {
+      "src": "Rōmae/Tūsculi",
+      "dst": "Tūsculi",
+      "ch": 6
+    },
+    {
+      "src": "cuis/qui",
+      "dst": "cuis",
+      "ch": 8
+    },
+    {
+      "src": "cuis/qui",
+      "dst": "qui",
+      "ch": 8
+    },
+    {
+      "src": "Is/ille",
+      "dst": "ille",
+      "ch": 8
+    },
+    {
+      "src": "eum/illum",
+      "dst": "eum",
+      "ch": 8
+    }
+  ]
+}
