@@ -1223,3 +1223,16 @@
 {"ts": "2026-07-01T04:37:08Z", "path": "realitates/Cap24/Cap24_Vēritās_Quae_Sērō_Vēnit_longus_047.md", "target": 24, "oov": ["1985", "Iōsēphe", "Iōsēphum", "Iōsēphus", "Iōsēphī", "Iūstitia", "Polītia", "Thomae", "Thomam", "Thomas", "cōnfīsus", "cōnsōlātus", "damnābō", "damnāvērunt", "diūrnārius", "iūstitia", "occīsōrem", "paenituī", "probationēs", "pūniātur", "pūnītum", "scholā", "vēritātem", "vīverat"]}
 {"ts": "2026-07-01T04:37:08Z", "path": "realitates/Cap21/Cap21_Amīcus_Quī_Nōn_Crēdidit_longus_090.md", "target": 21, "oov": ["Lūcium", "Lūciō", "Mārcum", "Mārcus", "Sumne", "mūnīmentum", "paulātim", "prōdam", "prōdere", "prōdiderat", "scholā"]}
 {"ts": "2026-07-01T04:37:09Z", "path": "realitates/Cap21/Cap21_Mendācium_Quod_Mundum_Servāvit_longus_091.md", "target": 21, "oov": ["Doctor", "Silvānus", "Submīsā", "egēbat", "medicīnā", "mendācium", "mendāciō", "obtegit", "ordināria", "prōdere", "vēritāte", "vēritātem"]}
+{"ts": "2026-07-01T05:31:18Z", "path": "realitates/Cap6/Cap6_Insula_Nova_brevis_090.md", "target": 6, "oov": ["Cornēlia", "Mārcus"]}
+{"ts": "2026-07-01T05:31:19Z", "path": "realitates/Cap35/Cap35_sine_titulo_brevis_001.md", "target": 35, "oov": ["03", "203", "Cap3_iter_ad_cretam_brevis_002", "Crētam", "character_type", "genre", "length_tier", "narrative_mode", "story_id", "style", "target_chapter", "theme", "title_la", "title_zh", "topic_category", "word_count", "克里特之旅", "历史与人物", "史诗", "外邦人", "旅行", "短篇", "第三人称", "航海与地理"]}
+{"ts": "2026-07-01T05:31:20Z", "path": "realitates/Cap12/Cap12_Vōx_Maris_brevis_058.md", "target": 12, "oov": ["Somnia", "Ssshhh", "Undae", "caeruleum", "undārum"]}
+{"ts": "2026-07-01T05:31:21Z", "path": "realitates/Cap35/Cap35_sine_titulo_brevis_002.md", "target": 35, "oov": ["09", "198", "Cap3_cur_non_rides_brevis_004", "LLPSI宇宙", "character_type", "genre", "length_tier", "narrative_mode", "story_id", "style", "target_chapter", "theme", "title_la", "title_zh", "topic_category", "word_count", "你怎么不笑呢？", "对话与误解", "对话体", "希腊人", "幽默", "短篇"]}
+{"ts": "2026-07-01T05:31:22Z", "path": "realitates/Cap15/Cap15_Verba_Magistrī_brevis_013.md", "target": 15, "oov": ["Alexā", "Alexās", "Philōn", "Philōnem", "Undae", "doct", "doctr"]}
+{"ts": "2026-07-01T05:47:53Z", "path": "realitates/Cap3/Cap3_Puer_Laetus_brevis_020.md", "target": 3, "oov": ["Samus"]}
+{"ts": "2026-07-01T05:49:21Z", "path": "realitates/Cap2/Cap2_Medus_īnsulās_videt_brevis_028.md", "target": 2, "oov": ["Aegyptō", "Crētam", "Germāniā", "Naxos", "Nīlum", "Samus"]}
+{"ts": "2026-07-01T05:51:22Z", "path": "realitates/Cap5/Cap5_Amīcus_novus_brevis_080.md", "target": 5, "oov": ["Mārcum", "Mārcus"]}
+{"ts": "2026-07-01T05:52:41Z", "path": "realitates/Cap2/Cap2_Insulae_et_fluviī_brevis_029.md", "target": 2, "oov": ["Aegyptō", "Crētam", "Naxos", "Nīlum", "Samus"]}
+{"ts": "2026-07-01T05:53:27Z", "path": "realitates/Cap3/Cap3_Insulae_et_cantūs_brevis_022.md", "target": 3, "oov": ["Aegyptō"]}
+{"ts": "2026-07-01T05:53:59Z", "path": "realitates/Cap4/Cap4_Amīcus_ex_Crētā_brevis_026.md", "target": 4, "oov": ["Mārcum", "Mārcus"]}
+{"ts": "2026-07-01T05:54:59Z", "path": "realitates/Cap3/Cap3_Novus_in_oppidō_brevis_023.md", "target": 3, "oov": ["Mārcum", "Mārcus"]}
+{"ts": "2026-07-01T05:59:44Z", "path": "realitates/Cap4/Cap4_Puer_et_puella_brevis_028.md", "target": 4, "oov": ["Dēliam"]}

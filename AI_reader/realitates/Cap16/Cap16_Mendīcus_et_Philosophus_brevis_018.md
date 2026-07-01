@@ -1,0 +1,42 @@
+---
+story_id: "b4049a57-adba-401a-b0e4-c19a2edd964e"
+title_la: "Mendīcus et Philosophus"
+title_zh: "乞丐与哲人"
+target_chapter: 16
+theme: "10 牺牲"
+style: "古典"
+genre: "G 哲学寓言"
+character_type: "乞丐"
+length_tier: "短篇"
+narrative_mode: "问答式"
+word_count: 159
+macrons_status: "generated"
+evaluated_chapter: 16
+best_fit_chapter: 16
+coverage_rate: 94.3
+oov_words: ["disputābat", "Mendīcus", "mendīcum", "mendīcus", "mendīcī"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-06-30T14:48:07Z"
+updated_at: "2026-06-30T14:48:07Z"
+status: "evaluated"
+---
+
+Philosophus in forō sedēbat — ut semper.
+Nōn docēbat, nōn disputābat — sōlum sedēbat.
+Mendīcus ad eum vēnit. "Magister," inquit, "tū nihil facis — et tamen omnēs tē 'philosophum' vocant.
+Ego nihil faciō — et omnēs mē 'mendīcum' vocant.
+Quid interest?"
+
+Philosophus: "Tū nihil facis et nihil habēs.
+Ego nihil faciō et nihil habeō.
+Sed tū id quod nōn habēs — habēre vīs.
+Ego nōn volō." Mendīcus: "Tū nōn es mendīcus — tū habēs discipulōs quī tibi cibum dant." Philosophus: "Illī mihi cibum dant nōn quia ego rogō, sed quia ipsī volunt.
+Tū rogās — et accipis.
+Ego nōn rogō — et accipiō.
+Hoc est philosophia." Mendīcus rīsit. "Ergō," inquit, "sī tū nihil habēs — et ego nihil habeō — et ambo in forō sedēmus — fortasse tū mendīcus es quī sē philosophum vocat.
+Et ego philosophus sum quī sē mendīcum vocat." Philosophus tacuit.
+Deinde rīsit. "Hodiē," inquit, "tū mē docuistī.
+Sūme cibum meum." Mendīcus cibum sūmpsit.
+Et ambo in forō sēdērunt — duo philosophī, aut duo mendīcī.
+Nēmō iam sciēbat.

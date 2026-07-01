@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-merge_yaml.py v2_12_1 — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realitates.json索引。
+merge_yaml.py v2_15_0 — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realitates.json索引。
+
+v2_15_0: 修复"longus 骗局" — 篇幅标识不再信任AI声明，改为基于实际词数自动纠正（brevis<350, medius 350-699, longus>=700）。
 
 v2_12_1: 修复 Python 3.9 兼容性 (Path | None 语法) — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realitates.json索引。
 
@@ -857,9 +859,23 @@ def main():
             print(f"[merge_yaml] [{i}/{n}] 错误：无法确定难度章节（覆盖率过低），跳过。", file=sys.stderr)
             continue
 
-        # 提取当前故事的篇幅标识 + 拉丁语标题
-        length_tier_raw = ai_meta.get("length_tier", "短篇")
+        # 提取当前故事的拉丁语标题
         title_la = ai_meta.get("title_la", "sine_titulo")
+        
+        # ⚠️ v2_15_0 修复（防"longus 骗局"）：用实际词数决定篇幅，不信任AI声明
+        # 篇幅标准：brevis < 350, medius 350-699, longus >= 700
+        actual_wc = int(ai_meta.get("word_count", 0))
+        if actual_wc >= 700:
+            length_tier_corrected = "长篇"
+        elif actual_wc >= 350:
+            length_tier_corrected = "中篇"
+        else:
+            length_tier_corrected = "短篇"
+        length_tier_declared = ai_meta.get("length_tier", "短篇")
+        if length_tier_corrected != length_tier_declared:
+            print(f"[merge_yaml] [{i}/{n}] ⚠️ 篇幅修正: AI声称为'{length_tier_declared}'，"
+                  f"实际{actual_wc}词→'{length_tier_corrected}' ({title_la})", file=sys.stderr)
+            ai_meta["length_tier"] = length_tier_corrected
 
         if args.stdout and i == 1:
             sys.stdout.write(md_content)
@@ -873,7 +889,7 @@ def main():
             elif args.auto_number:
                 output_dir = (script_dir / args.output_dir).resolve()
                 output_path = next_story_filename(
-                    output_dir, effective_chapter, title_la, str(length_tier_raw)
+                    output_dir, effective_chapter, title_la, str(length_tier_corrected)
                 )
             else:
                 print(f"[merge_yaml] [{i}/{n}] 未指定 --output 且 --auto-number=false，回退到 stdout。",

@@ -1209,8 +1209,9 @@ macrons_status: "generated"
    └─ 调用：`python AI_reader/merge_yaml.py -f <ai_output>`
       - 解析 AI 输出的 YAML头（12字段）
       - 调用 evaluate_v2.py v3 评估（预计算33K表 O(1)查表，未命中调simplemma）
+      - ⚠️ v3_1_0 新增：基于实际词数自动纠正篇幅标识（不信任AI声明的 length_tier）
       - 合并为 19 字段完整 YAML
-      - 输出 MD Front Matter 格式 → `AI_reader/realitates/Cap{N}_{NNN}.md`
+      - 输出 MD Front Matter 格式 → `AI_reader/realitates/Cap{N}/Cap{N}_{title_slug}_{length_la}_{NNN}.md`
       - 维护 `AI_reader/realitates.json` 索引
 
 3. **语法映射辅助**（按需，预生成）
@@ -1231,7 +1232,7 @@ macrons_status: "generated"
 
 - `STRATEGY.md`：AI 操作提示词（核心，~1515行）
 - `generate_prompt.py` v1_3_0：注入章节号 + 方案C词表注入（`--vocab`）+ 历史追踪（`--history`）
-- `merge_yaml.py` v2_9_0：合并评估 + 输出 MD（默认输出到 realitates/Cap{N}/） + 多篇批量 + target_chapter 自动校准 + OOV 日志（**v2_9_0 暂停入库后自动 OOV 分析**，改人工触发）
+- `merge_yaml.py` v2_15_0：合并评估 + 输出 MD（默认输出到 realitates/Cap{N}/） + 多篇批量 + target_chapter 自动校准 + OOV 日志 + **篇幅自动纠正（基于实际词数，不信任AI声明）**（**v2_9_0 暂停入库后自动 OOV 分析**，改人工触发）
 - `difficulty_algorithm/extract_grammar.py` v1_0_0：语法映射表生成
 - `difficulty_algorithm/evaluate_v2.py` v3_0_0：难度评估（预计算33K词形表 O(1)查表 + simplemma兜底，收录率87.7%）
 - `difficulty_algorithm/grammar_chapter_map.json`：每章语法点（自动生成）

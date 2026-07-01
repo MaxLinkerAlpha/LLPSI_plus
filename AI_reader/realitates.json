@@ -84,6 +84,16 @@
     "length_tier": "brevis"
   },
   {
+    "path": "realitates/Cap2/Cap2_Insulae_et_fluviī_brevis_029.md",
+    "chapter": 2,
+    "title_zh": "岛屿与河流"
+  },
+  {
+    "path": "realitates/Cap2/Cap2_Medus_īnsulās_videt_brevis_028.md",
+    "chapter": 2,
+    "title_zh": "梅杜斯看见岛屿"
+  },
+  {
     "path": "realitates/Cap2/Cap2_Oppidum_novum_brevis_019.md",
     "chapter": 2,
     "title_la": "Oppidum novum",
@@ -112,6 +122,36 @@
     "chapter": 3,
     "title_la": "Pater et puer",
     "length_tier": "brevis"
+  },
+  {
+    "path": "realitates/Cap3/Cap3_Ego_et_rēs_meae_brevis_021.md",
+    "chapter": 3,
+    "title_zh": "我和我的东西"
+  },
+  {
+    "path": "realitates/Cap3/Cap3_Insulae_et_cantūs_brevis_022.md",
+    "chapter": 3,
+    "title_zh": "岛屿与歌声"
+  },
+  {
+    "path": "realitates/Cap3/Cap3_Novus_in_oppidō_brevis_023.md",
+    "chapter": 3,
+    "title_zh": "新来者在小镇"
+  },
+  {
+    "path": "realitates/Cap3/Cap3_Puer_Laetus_brevis_020.md",
+    "chapter": 3,
+    "title_zh": "快乐的男孩"
+  },
+  {
+    "path": "realitates/Cap3/Cap3_Puer_et_puella_brevis_024.md",
+    "chapter": 3,
+    "title_zh": "男孩与女孩"
+  },
+  {
+    "path": "realitates/Cap3/Cap3_Puer_et_puella_brevis_025.md",
+    "chapter": 3,
+    "title_zh": "男孩与女孩"
   },
   {
     "path": "realitates/Cap3/Cap3_Puer_quī_plōrat_brevis_010.md",
@@ -166,10 +206,30 @@
     "length_tier": "medius"
   },
   {
+    "path": "realitates/Cap4/Cap4_Amīcus_ex_Crētā_brevis_026.md",
+    "chapter": 4,
+    "title_zh": "来自克里特的朋友"
+  },
+  {
     "path": "realitates/Cap4/Cap4_Fīlius_improbus_medius_09.md",
     "chapter": 4,
     "title_la": "Fīlius improbus",
     "length_tier": "medius"
+  },
+  {
+    "path": "realitates/Cap4/Cap4_Puer_et_puella_brevis_027.md",
+    "chapter": 4,
+    "title_zh": "男孩与女孩"
+  },
+  {
+    "path": "realitates/Cap4/Cap4_Puer_et_puella_brevis_028.md",
+    "chapter": 4,
+    "title_zh": "男孩与女孩"
+  },
+  {
+    "path": "realitates/Cap4/Cap4_Puer_et_puella_brevis_029.md",
+    "chapter": 4,
+    "title_zh": "男孩与女孩"
   },
   {
     "path": "realitates/Cap5/Cap10_Quattuor_Insulae_Graecae_Parvae_brevis_001.md",
@@ -256,6 +316,11 @@
     "length_tier": "brevis"
   },
   {
+    "path": "realitates/Cap5/Cap5_Amīcus_novus_brevis_080.md",
+    "chapter": 5,
+    "title_zh": "新朋友"
+  },
+  {
     "path": "realitates/Cap5/Cap5_Dominus_et_servus_in_viā_brevis_012.md",
     "chapter": 5,
     "title_zh": "主仆在路上"
@@ -298,6 +363,11 @@
     "chapter": 5,
     "title_la": "Māter et fīlia in hortō",
     "length_tier": "brevis"
+  },
+  {
+    "path": "realitates/Cap5/Cap5_Servus_improbus_brevis_081.md",
+    "chapter": 5,
+    "title_zh": "顽皮的奴隶"
   },
   {
     "path": "realitates/Cap5/Cap5_Vīlla_Rōmāna_medius_08.md",
@@ -405,6 +475,11 @@
     "chapter": 6,
     "title_la": "In viā",
     "length_tier": "longus"
+  },
+  {
+    "path": "realitates/Cap6/Cap6_Insula_Nova_brevis_090.md",
+    "chapter": 6,
+    "title_zh": "新岛屿"
   },
   {
     "path": "realitates/Cap6/Cap6_Puerī_in_viā_brevis_087.md",
@@ -547,6 +622,11 @@
     "chapter": 7,
     "title_la": "Puella in Viā Mātrem Quaerēns",
     "length_tier": "medius"
+  },
+  {
+    "path": "realitates/Cap7/Cap7_Servus_improbus_brevis_083.md",
+    "chapter": 7,
+    "title_zh": "顽皮的奴隶"
   },
   {
     "path": "realitates/Cap7/Cap8_Puer_ad_portam_medius_011.md",
@@ -823,6 +903,11 @@
     "chapter": 9,
     "title_la": "Tres in horto",
     "length_tier": "brevis"
+  },
+  {
+    "path": "realitates/Cap10/Cap10_Avis_et_deus_brevis_066.md",
+    "chapter": 10,
+    "title_zh": "鸟与神"
   },
   {
     "path": "realitates/Cap10/Cap10_Duodecim_insulae_brevis_042.md",
@@ -1206,6 +1291,11 @@
     "path": "realitates/Cap12/Cap12_Puer_quī_nōn_pugnāvit_brevis_005.md",
     "chapter": 12,
     "title_zh": "没有打架的男孩"
+  },
+  {
+    "path": "realitates/Cap12/Cap12_Vōx_Maris_brevis_058.md",
+    "chapter": 12,
+    "title_zh": "海之声"
   },
   {
     "path": "realitates/Cap12/Cap14_Sapientis_Stultitia_brevis_003.md",
@@ -1684,6 +1774,11 @@
     "path": "realitates/Cap15/Cap15_Puer_quī_tacuit_brevis_006.md",
     "chapter": 15,
     "title_zh": "沉默的男孩"
+  },
+  {
+    "path": "realitates/Cap15/Cap15_Verba_Magistrī_brevis_013.md",
+    "chapter": 15,
+    "title_zh": "老师的话"
   },
   {
     "path": "realitates/Cap15/Cap16_Umbra_Orphei_brevis_044.md",
@@ -7165,5 +7260,15 @@
     "chapter": 33,
     "title_la": "Exercitus inānīs",
     "length_tier": "brevis"
+  },
+  {
+    "path": "realitates/Cap35/Cap35_sine_titulo_brevis_001.md",
+    "chapter": 35,
+    "title_zh": ""
+  },
+  {
+    "path": "realitates/Cap35/Cap35_sine_titulo_brevis_002.md",
+    "chapter": 35,
+    "title_zh": ""
   }
 ]

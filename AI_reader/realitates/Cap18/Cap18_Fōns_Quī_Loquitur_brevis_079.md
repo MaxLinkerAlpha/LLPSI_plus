@@ -1,0 +1,67 @@
+---
+story_id: "batch26_015"
+title_la: "Fōns Quī Loquitur"
+title_zh: "会说话的泉水"
+target_chapter: 18
+theme: "68 沉默与表达"
+style: "白话"
+genre: "K 宗教与灵性智慧"
+character_type: "商人"
+length_tier: "短篇"
+narrative_mode: "问答式"
+word_count: 317
+macrons_status: "generated"
+evaluated_chapter: 18
+best_fit_chapter: 18
+coverage_rate: 93.4
+oov_words: ["profundā", "different", "fontem", "fonte", "Dēlīrāmentum", "dubitāns", "reditus", "fontēs", "siccātur", "interrogātiōnēs", "dīvitior", "clārior"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T02:27:39Z"
+updated_at: "2026-07-01T02:27:39Z"
+status: "evaluated"
+---
+
+In silvā profundā, procul ab urbibus et vīcīs, erat fōns. Nōn fōns magnus — parvus fōns, cuius aqua clārē fluēbat inter lapidēs. Sed hic fōns erat... different. Fōns loquēbātur.
+
+Nōn verbīs hūmānīs. Nōn linguā quam hominēs intellegere possunt. Sed quī ad fontem veniēbant et aquam eius audiēbant... illī intellegēbant. Intellegēbant aliquid quod nōn erat verbum.
+
+Mercātor quīdam, nōmine Diodōrus, dē fonte audīvit. "Fōns quī loquitur?" inquit. "Dēlīrāmentum! Aqua nōn loquitur. Aqua fluit." Sed amīcus eius, quī ad fontem īverat, dīxit: "Ī et audī. Deinde iūdicā."
+
+Diodōrus, quamquam dubitāns, ad fontem īvit. Silvam intrāvit, fontem invēnit, sēdit. Et audīvit.
+
+Prīmō, nihil audīvit. Sōlum aquam. "Ecce," inquit, "nihil loquitur. Dēlīrāmentum, ut putāvī." Sed dum surgere parat, aliquid eum tenuit. Nōn manus — sed aliquid in animō. Iterum sēdit.
+
+Secundō, audīvit... nōn verba, sed quasi verba. Ut quandō aliquis in somnō loquitur — intellegis quod loquitur, sed nōn potes verba distinguere. Diodōrus attonitus mānsit.
+
+Tertiō, clārē audīvit. Et verba — sī verba erant — haec fuērunt:
+
+"Cūr vēnistī?"
+
+Diodōrus tremuit. "Ut... ut sciam an vēra sint quae dē tē dīcuntur."
+
+"Et nunc scīs?"
+
+"Sciō... sciō quod loqueris. Sed nesciō quid dīcis."
+
+"Quid vīs mē dīcere?"
+
+Diodōrus cōgitāvit. "Dīc mihi," inquit, "quid est vīta?"
+
+Fōns tacuit. Deinde: "Vīta est aqua. Fluit. Nōn manet. Nōn potes eam tenēre. Sed potes eam audīre."
+
+"Et quid est mors?"
+
+"Mors est quandō aqua ad mare pervenit. Nōn fīnis — sed reditus."
+
+"Et quid est amor?"
+
+"Amor est quandō duo fontēs in ūnum fluunt."
+
+"Et quid est dolor?"
+
+"Dolor est quandō fōns siccātur — sed nōndum ad mare pervenit."
+
+Diodōrus plūrēs interrogātiōnēs habēbat. Sed fōns tacēbat. Nōn iam loquēbātur. Et Diodōrus intellēxit: fōns nōn respondet omnibus. Fōns dat quod tū potes accipere — nōn plūs, nōn minus.
+
+Diodōrus ad urbem rediit. Nōn dīvitior factus est, nōn clārior. Sed quandō aliī eum interrogābant dē fonte, semper eadem dīcēbat: "Ī et audī. Deinde iūdicā." Et quī ībant, redībant mūtātī. Et quī nōn ībant... illī numquam sciēbant.

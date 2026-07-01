@@ -1,0 +1,31 @@
+---
+story_id: Cap2_flumina_multa_brevis_025
+target_chapter: 2
+language: la
+title_la: "Flūmina multa"
+title_zh: "众河流"
+length_tier: "短篇"
+word_count: 247
+theme: "08 自然"
+style: "史诗"
+genre: "G 哲理寓言"
+character_type: "希腊人"
+narrative_mode: "第一人称"
+topic_category: "自然与地理"
+---
+
+Ego Cleanthēs sum. Ego Graecus sum. Ego philosophus sum. Ego multās terrās videō. Ego multa flūmina videō. Flūmina sunt viae terrae. Flūmina sunt venae terrae. Flūmina multa docent.
+
+In Eurōpā multa flūmina sunt. Rhēnus est flūmen magnum. Rhēnus in Germāniā est. Rhēnus ad mare it. Rhēnus aquam multam habet. Rhēnus flūmen Germānum est. Sed Rhēnus in imperiō Rōmānō est.
+
+Dānuvius est flūmen magnum. Dānuvius in Eurōpā est. Dānuvius ad Pontum Euxīnum it. Dānuvius longus est. Dānuvius multās terrās videt. Dānuvius est ut serpēns magnus — in terrā serpit, ad mare it.
+
+Tiberis est flūmen Rōmānum. Tiberis in Italiā est. Tiberis nōn est magnus — sed Tiberis prīmus est. Cūr prīmus? Quia Tiberis Rōmam videt. Rōma ad Tiberim est. Rōma est caput imperiī. Tiberis est flūmen parvum — sed flūmen Rōmānum.
+
+Nīlus est flūmen magnum. Nīlus in Aegyptō est. Nīlus nōn in Eurōpā est. Nīlus in Āfricā est. Nīlus longus est. Nīlus aquam multam habet. Aegyptus terra Nīlī est. Sine Nīlō Aegyptus nōn est.
+
+Quot flūmina in orbe terrārum sunt? Multa. Mīlle flūmina? Plūs quam mīlle. Flūmina sunt innumerābilīa — ut stēllae in caelō. Sed ego quattuor flūmina nōminō: Rhēnum, Dānuvium, Tiberim, Nīlum. Quattuor flūmina — quattuor terrae — quattuor popūlī.
+
+Flūmen est magister. Flūmen docet: semper ī ad mare. Semper ī ad fīnem. Flūmen nōn manet. Flūmen nōn dormit. Flūmen semper it. Ego flūmina videō — et ego discō. Flūmen est magister meus. Flūmen est magister bonus.
+
+Et nunc — ego ad flūmen eō. Flūmen mē vocat. Flūmen semper vocat. Ego veniō, flūmen. Ego veniō.

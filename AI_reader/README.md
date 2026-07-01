@@ -55,7 +55,7 @@ python AI_reader/merge_yaml.py -f <ai_output.txt>            # 合并+写入
 |------|------|
 | `STRATEGY.md` v3_0_0 | **核心策略文档**，既是人类参考也是 AI 操作提示词。包含：5条硬约束+7条软约束、6张选择表（85主题/14风格/12题材/7主角/5篇幅+叙事模式）、参考手册、附录 |
 | `generate_prompt.py` v1_3_0 | 注入章节号 + 方案C词表注入（`--vocab`）→ 输出完整 AI 提示词；支持 `--history` 自动追踪已用维度 |
-| `merge_yaml.py` v2_9_0 | 解析 AI 输出 → 调用难度评估 → 输出 MD Front Matter → 维护 realitates.json；支持 `validate` 子命令预校验 + 多篇批量 + target_chapter 自动校准 + OOV 日志（自动分析已暂停，靠人工触发） |
+| `merge_yaml.py` v2_15_0 | 解析 AI 输出 → 调用难度评估 → 输出 MD Front Matter → 维护 realitates.json；支持 `validate` 子命令预校验 + 多篇批量 + target_chapter 自动校准 + **篇幅自动纠正（基于实际词数，不信任AI声明）** + OOV 日志（自动分析已暂停，靠人工触发） |
 | `difficulty_algorithm/evaluate_v2.py` v2_3_0 | 难度评估（v2算法已剥离长音再lemmatize） |
 | `difficulty_algorithm/auto_supplement_map.py` v1_0_0 | OOV 增量分析（手动触发）：读 oov_corrections.jsonl，生成补全建议到 supplement_suggestions.jsonl（不直接修改映射表） |
 | `logic.md` | 概念引擎的深层展开，供人类参考或选择引用 |
@@ -111,7 +111,7 @@ realitates/Cap{N}/{Cap{N}_{title_slug}_{length_la}_{NNN}.md}
 |------|------|------|------|
 | `Cap{N}` | 算法评估难度章节 | `Cap8` | `evaluate_v2.py` 的 `v2_level` / `v2_best_fit` |
 | `title_slug` | 拉丁语标题（空格→下划线） | `Taberna_Spei` | YAML 的 `title_la` 字段 |
-| `length_la` | 篇幅拉丁标识 | `brevis` | YAML 的 `length_tier` 字段 |
+| `length_la` | 篇幅拉丁标识（**v2_15_0起由实际词数决定，非AI声明**） | `brevis` | 实际词数：<350→brevis, 350-699→medius, ≥700→longus |
 | `NNN` | 三位递增序号 | `001` | 同目录自动编号 |
 
 **篇幅映射**：短篇→`brevis` / 中篇→`medius` / 长篇→`longus`

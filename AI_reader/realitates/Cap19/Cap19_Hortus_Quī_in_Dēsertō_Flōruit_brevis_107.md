@@ -1,0 +1,35 @@
+---
+story_id: "batch32_001"
+title_la: "Hortus Quī in Dēsertō Flōruit"
+title_zh: "在沙漠中开花的花园"
+target_chapter: 19
+theme: "19 希望"
+style: "抒情"
+genre: "G 哲学寓言"
+character_type: "非罗马的古代人"
+length_tier: "短篇"
+narrative_mode: "第三人称"
+word_count: 259
+macrons_status: "generated"
+evaluated_chapter: 19
+best_fit_chapter: 19
+coverage_rate: 89.9
+oov_words: ["Viātōrēs", "harēnae", "caeruleōs", "somniāre", "Hortulānum", "puteō", "profundō", "viātor", "harēnā", "Viātor", "remunerat", "remuneret", "remunerem", "testimōnium", "Testimōnium"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T03:08:14Z"
+updated_at: "2026-07-01T03:08:14Z"
+status: "evaluated"
+---
+
+In mediō dēsertō — ubi nūlla aqua, nūlla herba, nūlla vīta — erat hortus. Nōn hortus magnus. Nōn hortus pulcher. Sed hortus. Et in hortō, centum flōrēs.
+
+Nēmō sciēbat unde hortus vēnisset. Viātōrēs quī per dēsertum ambulābant, subitō — in mediō harēnae — flōrēs vidēbant. Rubrōs, caeruleōs, albōs. Prīmō putābant sē somniāre. Deinde — tangēbant. Vērī erant. Vīvī erant. Et in mediō hortō, senex quīdam sedēbat.
+
+Senex nōmen nōn habēbat — vel potius, nōmen eius nēmō sciēbat. Quīdam eum "Hortulānum" vocābant. Quīdam "Stultum." Quīdam "Sānctum." Sed senex nōn cūrābat. Quotīdiē, ante sōlis ortum, surgēbat. Aquam — quae in puteō profundō erat — hauriēbat. Flōrēs rigābat. Cum flōribus loquēbātur. Et flōrēs — mīrum dictū — crēscēbant.
+
+"Unde venit aqua?" interrogāvit viātor quīdam. "In dēsertō nōn est aqua." Senex rīsit. "Aqua," inquit, "nōn venit. Aqua manet. Ego eam invēnī — sub harēnā, in profundō. Sed aqua sōla nōn facit hortum. Amor facit hortum. Patientia facit hortum. Spēs facit hortum."
+
+Viātor nōn intellēxit. "Cūr," inquit, "in dēsertō hortum facis? Nēmō tē videt. Nēmō tē laudat. Nēmō tē remunerat." Senex eum spectāvit. "Fīlī," inquit, "nōn faciō ut nēmō mē videt. Faciō ut ego videam. Nōn faciō ut nēmō mē laudet. Faciō ut ego laudem. Nōn faciō ut nēmō mē remuneret. Faciō ut ego remunerem — mundum, terram, vītam."
+
+Viātor abiit — sed nōn oblītus est. Post multōs annōs, rediit. Senex mortuus erat. Sed hortus — hortus vīvēbat. Centum flōrēs factī erant mīlle. Et in hortō, novus senex sedēbat — discipulus antīquī. Viātor intellēxit. Amor nōn moritur. Patientia nōn moritur. Spēs nōn moritur. Hortus in dēsertō est testimōnium. Testimōnium quod, etiam in locō ubi nihil est, aliquid potest esse.

@@ -1,0 +1,39 @@
+---
+story_id: "batch28_011"
+title_la: "Duo Ventī in Ūnā Valle"
+title_zh: "同一山谷的两阵风"
+target_chapter: 25
+theme: "44 合作与对抗"
+style: "精炼"
+genre: "F 寓言与讽喻"
+character_type: "动物/非人视角"
+length_tier: "短篇"
+narrative_mode: "第三人称"
+word_count: 233
+macrons_status: "generated"
+evaluated_chapter: 25
+best_fit_chapter: 25
+coverage_rate: 94.0
+oov_words: ["profundā", "nūdō", "pluviam", "pulvis", "nāscerētur", "inquiēbant", "differentiā", "flāvērunt"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T02:37:34Z"
+updated_at: "2026-07-01T02:37:34Z"
+status: "evaluated"
+---
+
+In valle profundā, inter duōs montēs, duo ventī habitābant. Ventus Septentriōnālis et Ventus Austrālis. Ambo in eādem valle, sed numquam amīcī.
+
+Ventus Septentriōnālis erat frīgidus et fortis. "Ego," dīcēbat, "nivem portō. Ego hiemem faciō. Ego arborēs nūdō. Ego terram dūrō. Sine mē, nōn esset quiēs, nōn esset somnus, nōn esset mors quae ante vītam novam venit."
+
+Ventus Austrālis erat calidus et mollis. "Ego," dīcēbat, "pluviam portō. Ego vēr faciō. Ego flōrēs aperiō. Ego terram molliō. Sine mē, nōn esset crēscere, nōn esset flōrēre, nōn esset vīta quae post mortem venit."
+
+Per saecula, duo ventī pugnābant. Quandō Septentriōnālis flābat, Austrālis cēdēbat. Quandō Austrālis flābat, Septentriōnālis cēdēbat. Et in valle, inter duōs montēs, nihil crēscēbat. Nōn arborēs, nōn flōrēs, nōn herbae. Sōlum lapidēs et pulvis.
+
+Quōdam diē, senex quīdam in vallem vēnit. Duōs ventōs audīvit pugnantēs. "Stultī!" clāmāvit. "Vōs pugnātis, et nihil crēscit. Sī vōs simul flārētis — Septentriōnālis cum frīgore suō, Austrālis cum calōre suō — fortasse aliquid novum nāscerētur."
+
+Ventī attonitī fuērunt. Numquam hoc cōgitāverant. "Simul?" inquiēbant. "Quōmodo possumus simul flāre? Ego sum frīgidus, ille est calidus. Ego sum fortis, ille est mollis."
+
+"Fortasse," inquit senex, "in differentiā vestrā est potentia vestra. Nōn pugnāte — miscēte."
+
+Et ventī — prīmum in saeculīs — simul flāvērunt. Et in valle, ubi nihil crēscēbat, aliquid nātum est: ventus temperātus, neque frīgidus neque calidus, neque fortis neque mollis. Et in hōc ventō, semina nāta sunt. Et herbae crēvērunt. Et arborēs. Et flōrēs.
