@@ -1,0 +1,45 @@
+---
+story_id: "batch38_002"
+title_la: "Corpus Quod Nōn Erat Meum"
+title_zh: "不属于我的身体"
+target_chapter: 21
+theme: "59 身体与自我"
+style: "精炼"
+genre: "G 哲学寓言"
+character_type: "现代人"
+length_tier: "长篇"
+narrative_mode: "第一人称"
+word_count: 437
+macrons_status: "generated"
+evaluated_chapter: 21
+best_fit_chapter: 21
+coverage_rate: 93.0
+oov_words: ["sānātum", "adolēscēns", "Mācer", "mēnsūrābant", "proiectum", "satisfactiōnem", "alicubi", "somniīs", "vehiculum", "cogitatiōnēs", "Cutis", "rugās", "senēscit"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T04:19:31Z"
+updated_at: "2026-07-01T04:19:31Z"
+status: "evaluated"
+---
+
+Ego in speculō mē spectō. Quem videō? Nōn sciō. Nōn iam sciō.
+
+Nātus sum in hōc corpore. Duodētrīgintā annōs in hōc corpore vīxī. Hoc corpus ambulāvit, cucurrit, natāvit. Hoc corpus cibum sūmpsit, vīnum bibit, aliōs hominēs tetigit. Hoc corpus fessum fuit — et quiēvit. Hoc corpus aegrum fuit — et sānātum est. Hoc corpus — hoc corpus est ego. Vel erat.
+
+Quandō puer eram, corpus meum mihi nōn erat quaestiō. Erat — sīcut caelum est. Sīcut ventus est. Sīcut omnia quae sunt et nōn interrogantur. Sed quandō adolēscēns factus sum, aliquid mūtātum est. Aliī mē spectābant — et ego eōs spectābam. Et in oculīs eōrum — in oculīs eōrum aliquid vīdī quod nōn intellēxī.
+
+"Pulcher es," dīcēbant. "Nōn satis pulcher," dīcēbant aliī. "Mācer es." "Nōn satis longus." "Nōn satis..." Et semper "nōn satis." Corpus meum — quod mihi erat ego — subitō nōn erat mihi. Erat illīs. Erat spectāculum. Erat rēs quam iūdicābant, quam mēnsūrābant, quam cum aliīs corporibus comparābant.
+
+Coepī corpus meum mūtāre. Nōn quia volēbam — quia dēbēbam. Quia illī dīcēbant — et ego audiēbam. Plūs exercēbam. Minus edēbam. Plūs cūrābam. Minus dormiēbam. Corpus meum — nōn erat domus mea. Erat proiectum quod numquam perfectum erat.
+
+Et tamen — et tamen, quandō hominēs mē spectābant et dīcēbant "pulcher es," ego nihil sentiēbam. Nōn gaudium. Nōn satisfactiōnem. Vacuus. Quia corpus — corpus erat illōrum. Nōn meum. Quid gaudēre dē eō quod nōn est tuum?
+
+Quādam nocte — in speculō — mē spectāvī. Et quem vīdī? Vīdī corpus. Corpus pulchrum. Corpus quod hominēs laudābant. Sed corpus erat — vacua domus. Ego — ego ipse — nōn ibi eram. Ego alicubi alibī eram — in memoriīs, in somniīs, in librīs, in amōre, in dolōre. Ego nōn eram in hōc corpore. Ego eram in omnibus praeter hoc corpus.
+
+Et intellēxī: corpus nōn est ego. Corpus est vehiculum. Corpus est domus — sed domus nōn est quī in domō habitat. Ego — ego sum aliquid quod nōn vidētur. Ego sum cogitatiōnēs meae, memōriae meae, amōrēs meī, odia mea. Ego sum quod fēcī et quod nōn fēcī. Ego sum quod amāvī et quod perdidī. Ego sum — ego sum plūs quam hoc corpus.
+
+Nunc in speculō mē spectō. Corpus meum — nōn iam pulchrum est. Annī trānsiērunt. Capillī — albī sunt. Cutis — rugās habet. Oculī — nōn iam clārī sunt. Corpus meum senēscit. Sed ego — ego sum ego. Plūs quam umquam. Quia nunc — nunc corpus meum est meum. Nōn est illōrum. Nōn est spectāculum. Est domus — domus in quā ego habitō.
+
+Et quandō domus cadet — ego manēbō. Nōn in hōc corpore. Nōn in hāc fōrmā. Sed in hīs verbīs. In hīs cogitatiōnibus. In hōc quod scrīpsī. In hīs quī mē amāvērunt — et quōs ego amāvī.
+
+Hoc est corpus. Hoc est ego. Et hoc — hoc est satis.

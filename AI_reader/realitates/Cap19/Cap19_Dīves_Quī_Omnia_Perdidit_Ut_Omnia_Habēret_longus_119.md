@@ -1,0 +1,45 @@
+---
+story_id: "batch34_018"
+title_la: "Dīves Quī Omnia Perdidit Ut Omnia Habēret"
+title_zh: "为拥有一切而失去一切的富人"
+target_chapter: 19
+theme: "41 财富与贫困"
+style: "夸张"
+genre: "G 哲学寓言"
+character_type: "非罗马的古代人"
+length_tier: "长篇"
+narrative_mode: "第三人称"
+word_count: 356
+macrons_status: "generated"
+evaluated_chapter: 19
+best_fit_chapter: 19
+coverage_rate: 94.2
+oov_words: ["Parthīs", "dīvissimus", "vīnāriō", "statuae", "somnium", "Mercurius", "Somnium", "habēns", "Īnsānus", "īnsānus"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T03:34:29Z"
+updated_at: "2026-07-01T03:34:29Z"
+status: "evaluated"
+---
+
+Crassus — nōn ille Crassus Rōmānus quī in Parthīs mortuus est, sed alius Crassus, Crassus mercātor — dīvissimus homō in urbe suā erat. Domum habēbat cum centum fenestrīs. Hortum cum mīlle rosīs. Servōs cum — nēmō numerāre poterat. In mēnsā eius, cibus ex omnibus terrīs. In vīnāriō eius, vīnum ex omnibus vīneīs. In ātriō eius, statuae ex omnibus templīs. Crassus omnia habēbat — et nihil.
+
+Quādam nocte, Crassus somnium vīdit. In somniō, deus Mercurius ad eum vēnit. "Crasse," inquit Mercurius, "tū omnia habēs. Sed tū nihil habēs. Tū possidēs — sed nōn es. Tū tenēs — sed nōn tangis. Tū emis — sed nōn amās. Tū vīvis — sed nōn es."
+
+Crassus attonitus est. "Deus," inquit, "quid dēbeō facere? Quōmodo possum 'esse'?"
+
+"Tū," inquit Mercurius, "dēbēs omnia perdere. Dēbēs omnia dare. Dēbēs omnia relinquere. Sōlum quandō nihil habēs — sōlum quandō nihil tenēs — sōlum quandō nihil possidēs — tū eris."
+
+Crassus māne surrēxit. Somnium memoriā tenēbat. Et — quod nēmō exspectābat — Crassus deō oboedīvit. Domum suam pauperibus dedit. Hortum suum puerīs dedit. Servōs suōs līberāvit. Pecūniam suam in forum tulit et in terram sparsit. Hominēs — attonitī — pecūniam colligēbant. Crassus — nihil habēns — in viā stetit.
+
+"Īnsānus est," dīcēbant hominēs. "Crassus īnsānus est. Quis omnia dat? Quis omnia perdit? Quis — quis nihil vult?"
+
+Sed Crassus — Crassus nōn īnsānus erat. Crassus — prīmum in vītā — vidēbat. Sōlem vidēbat — nōn per fenestrās suās, sed in caelō. Hominēs vidēbat — nōn ut servōs, sed ut hominēs. Ventum in capillīs sentiēbat — nōn in hortō suō, sed in viā. Crassus — prīmum in vītā — erat.
+
+Post multōs annōs, iuvenis quīdam — quī dē Crassō audīverat — eum invēnit. Senex erat, in viā sedēns, nihil habēns. "Tū," inquit iuvenis, "es Crassus? Tū quī omnia habuistī et omnia perdidistī?"
+
+Crassus rīsit. "Ego," inquit, "nōn omnia perdidī. Ego omnia invēnī. Ego divitiās perdidī — sed invēnī mē. Ego domum perdidī — sed invēnī mundum. Ego servōs perdidī — sed invēnī amīcōs. Ego — omnia perdidī — et omnia invēnī."
+
+Iuvenis nōn intellēxit. "Sed tū," inquit, "nihil habēs. Nūllam domum. Nūllam pecūniam. Nūllōs servōs. Tū es pauper."
+
+"Pauper," inquit Crassus, "est quī nihil habet quod amat. Ego — ego omnia amō. Sōlem amō. Ventum amō. Hominēs amō. Vītam amō. Ego nōn sum pauper. Ego sum dīvissimus homō in mundō."

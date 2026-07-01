@@ -1,0 +1,41 @@
+---
+story_id: "batch40_010"
+title_la: "Mūrus Quī Nōn Dīvīsit"
+title_zh: "没有分隔开来的墙"
+target_chapter: 21
+theme: "43 边界与归属"
+style: "精炼"
+genre: "E 跨文明与跨国"
+character_type: "非罗马的古代人"
+length_tier: "长篇"
+narrative_mode: "第三人称"
+word_count: 426
+macrons_status: "generated"
+evaluated_chapter: 21
+best_fit_chapter: 21
+coverage_rate: 94.1
+oov_words: ["orientālī", "Elara", "occidentālī", "Thōmas", "Elarae", "Thōmae", "sōlitūdine", "dēscrībēbat", "sōlitūdinem", "paulātim", "forāmen", "forāmine"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T04:37:03Z"
+updated_at: "2026-07-01T04:37:03Z"
+status: "evaluated"
+---
+
+Inter duo regna, mūrus stābat. Mūrus antīquus, mūrus altus, mūrus quem avī aedificāverant et nepōtēs servābant. Ab oriente, regnum Sōlis. Ab occidente, regnum Lūnae. Duo regna, duo populī, duae linguae, duae lēgēs — et ūnus mūrus.
+
+In orientālī parte mūrī, villa parva erat. In hāc villā, fēmina habitābat — nōmine Elara. In occidentālī parte mūrī, alia villa parva erat. In hāc villā, vir habitābat — nōmine Thōmas. Elara et Thōmas nōn sē cognōscēbant. Nōn sē vīderant. Nōn dē sē audīverant. Sed — mūrus nōn erat tam altus quam avī putāverant.
+
+Quōdam māne, Elara in hortō suō cantābat. Cantus eius — cantus trīstis, dē amōre perditō, dē marī mortuō, dē fīliō quī longē abiit — trāns mūrum audītus est. Thōmas, quī in hortō suō sedēbat, cantum audīvit. Nōn intellēxit verba — lingua Elarae nōn erat lingua Thōmae. Sed intellēxit trīstitiam. Trīstitia — trīstitia nōn eget verbīs.
+
+Thōmas respondit. Nōn verbīs — cantū. Cantus eius — cantus trīstis, dē uxōre mortuā, dē fīliā quae longē abiit, dē sōlitūdine — trāns mūrum audītus est. Elara eum audīvit. Nōn intellēxit verba — sed intellēxit trīstitiam. Et in illō momentō — in illō cantū — duo hominēs, quī nōn sē cognōscēbant, sē cognōvērunt.
+
+Per multōs diēs, Elara et Thōmas sē nōn vīdērunt. Sed cotīdiē — māne et vesperī — cantābant. Cantus Elarae montēs et flūmina et amōrem dēscrībēbat. Cantus Thōmae campōs et arborēs et sōlitūdinem dēscrībēbat. Et paulātim — per cantum — duo hominēs didicērunt. Didicērunt quod trīstitia eadem est in omnibus linguīs. Quod amor idem est in omnibus cordibus. Quod mūrus — mūrus nōn potest animam dīvidere.
+
+Quōdam diē, Elara ad mūrum accessit. In mūrō, lapidem parvum invēnit — lapidem quī movērī poterat. Lentē — per multōs diēs — lapidem mōvit. Nōn ut mūrum dēlēret. Ut parvum forāmen faceret — per quod manum extendere posset.
+
+Thōmas, ex alterā parte, idem fēcit. Et quādam vesperī — quandō sōl occidēbat et lūna surgēbat et duo regna in pace erant — manūs eōrum in forāmine convēnērunt. Nōn sē vīdērunt. Sed sē tētigērunt. Manus Elarae — parva, calida. Manus Thōmae — magna, aspera. Duae manūs in mūrō — in mūrō quī dīvidēbat — sed nōn dīvidēbat.
+
+Post hunc diem, Elara et Thōmas nōn iam sōlī erant. Nōn convēnērunt — nōn potuērunt. Mūrus adhūc stābat. Lēgēs adhūc prohibēbant. Sed manūs — manūs eōrum cotīdiē in forāmine conveniēbant. Et in illō parvō forāmine — in illō parvō spatiō — duo regna ūnum facta sunt.
+
+Post multōs annōs, mūrus cecidit. Nōn propter bellum. Nōn propter rēgēs. Propter duōs hominēs — quī per parvum forāmen sē invēnērunt. Et quandō mūrus cecidit, Elara et Thōmas — tandem — sē vīdērunt. Nōn iam iuvenēs. Nōn iam pulchrī. Sed — in oculīs eōrum — amor. Amor quī nōn eget verbīs. Amor quī nōn eget mūrō. Amor quī omnia vincit.

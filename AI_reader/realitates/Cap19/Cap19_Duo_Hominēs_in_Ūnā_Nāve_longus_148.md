@@ -1,0 +1,47 @@
+---
+story_id: "batch40_002"
+title_la: "Duo Hominēs in Ūnā Nāve"
+title_zh: "同一条船上的两个人"
+target_chapter: 19
+theme: "20 善与恶"
+style: "冷峻"
+genre: "G 哲学寓言"
+character_type: "现代人"
+length_tier: "长篇"
+narrative_mode: "第三人称"
+word_count: 452
+macrons_status: "generated"
+evaluated_chapter: 19
+best_fit_chapter: 19
+coverage_rate: 96.4
+oov_words: ["vīsitaverat", "örāverat", "bonitātem", "custōdīverat", "bonitās", "paulātim", "Bonitās", "örābat"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T04:36:58Z"
+updated_at: "2026-07-01T04:36:58Z"
+status: "evaluated"
+---
+
+Nāvis in marī magnō iactābātur. Tempestās magna erat — fluctūs tam magnī quam montēs, ventus tam fortis quam deus īrātus. In nāve, duo hominēs erant. Ūnus in dextrā parte, ūnus in sinistrā. Nōn loquēbantur. Nōn sē spectābant. Nōn sē nōverant.
+
+Ūnus — vir nōmine Paulus — bonus erat. Sīc dīcēbat. Sīc crēdēbat. Tōtā vītā, bonus fuerat. Pauperibus dederat. Aegrōs vīsitaverat. Nēminem laeserat. In templō örāverat. In librīs lēgerat. In corde suō — bonitātem custōdīverat. Paulus bonus erat — et sciēbat sē bonum esse.
+
+Alter — vir nōmine Titus — malus erat. Sīc dīcēbant. Sīc crēdēbat. Tōtā vītā, malus fuerat. Dīvitēs factus erat — ex pauperibus. Potēns factus erat — ex īnfirmīs. Multōs laeserat. Multōs perdiderat. In corde suō — nihil custōdīverat nisi sē ipsum. Titus malus erat — et sciēbat sē malum esse.
+
+Tempestās crēscēbat. Nāvis perīculō mortis appropinquābat. Paulus in genua cecidit. "Deus," ōrāvit, "ego bonus sum. Servā mē. Servā mē — quia bonitātem meruī. Servā mē — et dēlē malum, quī in eādem nāve est." Paulus bonus erat — et bonitās eius, in perīculō, hoc sōlum voluit: salvārī, et malum occidī.
+
+Titus quoque in genua cecidit. "Deus," ōrāvit, "ego malus sum. Sciō. Nōn rogō ut mē servēs — nōn mereō. Sed rogō ut nāvem servēs. In nāve, homō bonus est — Paulus. Servā illum. Servā nāvem propter illum. Ego — ego sī pereō, iūstum est. Sed ille — ille bonus est."
+
+Deus — sī deus erat — nihil dīxit. Sed tempestās, paulātim, quiēvit. Nāvis salva erat. Duo hominēs — Paulus et Titus — in nāve mānsērunt. Vīvī.
+
+Paulus surrēxit. Titum spectāvit. "Tū," inquit, "prō mē ōrāvistī. Tū, malus, prō bonō ōrāvistī. Ego, bonus, prō malō mortem petīvī. Quis nostrum — vērē — bonus est?"
+
+Titus nihil dīxit. Nōn quia nōn intellēxit. Quia intellēxit — et intellēxit quod Paulus nōndum intellēxerat. Bonitās nōn est quod dīcis. Bonitās nōn est quod crēdis. Bonitās est quod facis — quandō nēmō videt, quandō nihil accipis, quandō ipse perīs.
+
+Nāvis ad portum pervēnit. Paulus et Titus in terram dēscendērunt. Paulus ad templum īvit — grātiās agere. Titus ad viam īvit — incertus quō īret. In viā, pauperem vīdit — hominem quī nihil habēbat. Titus, quī semper tulerat, aliquid dedit. Paucōs nummōs. Parvum. Sed dedit. Prīmum in vītā — nihil accēpit, sed dedit.
+
+Paulus in templō örābat. "Grātiās tibi agō," dīcēbat, "quod mē servāvistī. Bonus sum. Bonus semper fuī." Sed in corde eius — aliquid mūtātum erat. Vōx parva — vōx quam numquam audīverat — dīcēbat: "Tū, bonus, prō malō mortem petīvistī. Tū, bonus, tē meliōrem putāvistī. Tū, bonus, bonus nōn es."
+
+Paulus intellēxit. Bonitās nōn est status. Bonitās nōn est possessiō. Bonitās est iter. Et in itinere — etiam bonus errāre potest. Etiam malus rēctē facere potest.
+
+Duo hominēs — quī in eādem nāve fuerant — numquam iterum sē vīdērunt. Sed uterque mūtātus erat. Paulus dēsiit dīcere sē bonum esse. Titus dēsiit crēdere sē malum esse. Uterque — simpliciter — homō factus est.

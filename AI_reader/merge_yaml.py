@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-merge_yaml.py v2_12_0 — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realitates.json索引。
+merge_yaml.py v2_12_1 — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realitates.json索引。
+
+v2_12_1: 修复 Python 3.9 兼容性 (Path | None 语法) — 合并AI输出的12字段YAML与evaluate_v2.py评估结果 + AI 审查，输出MD Front Matter格式 + 维护realitates.json索引。
 
 管线位置：Step 4 — AI生成后 → evaluate_v2.py评估 → ai_review.py审查（可选） → merge_yaml.py合并 → 入库
 
@@ -76,6 +78,8 @@ v2_0_0 变更（相对 v1_0_0）：
 依赖：Python 3.9+（无外部pip依赖）。需要 ../difficulty_algorithm/evaluate_v2.py 及其数据文件。
 """
 
+from __future__ import annotations
+
 import sys
 import json
 import re
@@ -120,7 +124,7 @@ def _body_hash(latin_text: str) -> str:
     return hashlib.sha256(norm.encode('utf-8')).hexdigest()[:16]
 
 
-def check_duplicate(latin_text: str, output_dir: Path) -> Path | None:
+def check_duplicate(latin_text: str, output_dir: Path) -> "Path | None":
     """检查拉丁正文是否与已有故事重复。
     
     扫描 output_dir 下所有 Cap*/ 目录的 .md 文件，

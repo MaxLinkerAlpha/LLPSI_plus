@@ -1,0 +1,43 @@
+---
+story_id: "batch34_003"
+title_la: "Fēmina Quae Nōlēbat Esse Māter"
+title_zh: "不愿成为母亲的女人"
+target_chapter: 19
+theme: "29 母性与自我"
+style: "精炼"
+genre: "C 历史与人物"
+character_type: "罗马人"
+length_tier: "长篇"
+narrative_mode: "第一人称"
+word_count: 429
+macrons_status: "generated"
+evaluated_chapter: 19
+best_fit_chapter: 19
+coverage_rate: 96.9
+oov_words: ["ēgoista", "generōsa", "absentia", "ēgoistae", "imperāta", "errōris"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T03:34:20Z"
+updated_at: "2026-07-01T03:34:20Z"
+status: "evaluated"
+---
+
+Ego māter esse nōluī. Nōn dīcō "nōn potuī" — potuī. Nōn dīcō "nōn dēbuī" — fortasse dēbuī. Dīcō "nōluī." Et hoc — hoc est quod nēmō intellegit.
+
+In urbe Rōmā, fēmina quae māter esse nōn vult, mōnstrum est. Nōn in lēgibus — in lēgibus nihil est dē hāc rē. Sed in oculīs. In verbīs. In silentiō quod fēminam circumdat quandō dīcit: "Līberōs nōn habeō." Nōn est "nōndum." Nōn est "nōn possum." Est "nōlō." Et hoc — hoc est peius quam mortem.
+
+Māter mea mē numquam intellēxit. "Fīlia," dīcēbat, "tū es ego. Ego tē peperī. Tū mē perges. Hoc est quod fēminae faciunt. Hoc est quod semper fēcērunt. Hoc est quod semper facient." Ego eam audiēbam — et nihil dīcēbam. Quid dīcere possem? Quod nōn sum ego? Quod nōlō esse ego? Quod via mātrum nōn est via mea?
+
+Marītus meus — vir bonus, vir iūstus, vir quī mē amābat — mē quoque nōn intellēxit. "Uxor," inquit, "sine līberīs, domus est vacua. Sine līberīs, nōmen nostrum moriētur. Sine līberīs, amor noster nōn habet testem." Ego eum spectābam. "Amor," inquam, "nōn eget teste. Amor est — vel nōn est. Testis nōn facit amōrem. Testis facit spectāculum."
+
+Sed marītus meus trīstis erat. Et trīstitia eius — trīstitia eius erat in mē. Cotīdiē vidēbam. Cotīdiē sentiēbam. In mēnsā, quandō tacēbat. In lectō, quandō mē nōn tangēbat. In oculīs, quandō mē nōn spectābat. Trīstitia eius erat pondus — et pondus in mē crēscēbat.
+
+Amīcae meae — fēminae quae mē amābant — mē quoque nōn intellēxērunt. "Tū," dīcēbant, "es ēgoista. Tū nōn vīs dare vītam. Tū nōn vīs esse generōsa." Ego eās audiēbam. "Estne," interrogābam, "generōsus quī dat quod nōn habet? Estne bonus quī facit quod nōn vult? Ego nōn habeō in mē mātrem. Ego nōn habeō in mē illud quod vōs habētis. Nōn est vitium — est absentia. Sīcut quīdam nōn habent ōrātōris ingenium, quīdam nōn habent mātris ingenium."
+
+Sed amīcae meae mē nōn audīvērunt. Audīvērunt "ēgoista." Audīvērunt "nōn generōsa." Audīvērunt quod audīre volēbant.
+
+Nunc annī trānsiērunt. Marītus meus mortuus est. Amīcae meae longē sunt. Ego sōla sum — in domō vacuā. Et hominēs dīcunt: "Ecce fēmina quae līberōs nōn habuit. Ecce fēmina quae sōla est. Ecce poena ēgoistae."
+
+Sed ego — ego nōn sum sōla. Ego habeō mē. Ego habeō vītam quam ego ēlēgī. Nōn vītam quam mihi data est. Nōn vītam quam mihi imperāta est. Vītam quam ego — ego ipsa — ēlēgī. Et hoc — hoc est magnum. Hoc est plūs quam māter. Hoc est plūs quam uxor. Hoc est — ego.
+
+Fortasse errāvī. Fortasse vōs — quī līberōs habētis — rēctē fēcistis. Fortasse via mea est via errōris. Sed via mea est via mea. Et in viā meā — in viā meā — ego sum.

@@ -1,0 +1,49 @@
+---
+story_id: "batch40_007"
+title_la: "Frātrēs Quī Nōn Erant Frātrēs"
+title_zh: "不是兄弟的兄弟"
+target_chapter: 23
+theme: "31 手足与对手"
+style: "古典"
+genre: "N 历史缩影"
+character_type: "非罗马的古代人"
+length_tier: "长篇"
+narrative_mode: "第三人称"
+word_count: 426
+macrons_status: "generated"
+evaluated_chapter: 23
+best_fit_chapter: 23
+coverage_rate: 97.5
+oov_words: ["grammaticam", "Maharbalī", "somniīs", "lībertus", "prōdidī"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T04:37:01Z"
+updated_at: "2026-07-01T04:37:01Z"
+status: "evaluated"
+---
+
+In urbe Carthāgine, duo puerī in eādem domō crēscēbant. Ūnus — Hannibal — fīlius ducis Hamilcaris erat. Alter — Maharbal — fīlius servī erat. Hannibal in ātriō lūdēbat, grammaticam discēbat, ā patre bellum docēbātur. Maharbal in culīnā labōrābat, aquam portābat, ā nēmine docēbātur. Sed puerī — puerī nōn cūrābant dē hīs rēbus. Puerī sē amābant. Nōn ut dominus et servus. Ut frātrēs.
+
+Quamquam Hannibal erat fīlius ducis, et Maharbal erat fīlius servī, quandō sōlī erant — in hortō, post culīnam, ubi nēmō vidēbat — nōn erat dominus, nōn erat servus. Erant duo puerī, quī currēbant, quī rīdēbant, quī fābulās sibi narrābant. Hannibal Maharbalī fābulās dē bellō narrābat — dē patre, dē glōriā, dē Rōmānīs quī Carthāginem timēbant. Maharbal Hannibalī fābulās dē servīs narrābat — dē mātre, dē labōre, dē somniīs quae numquam vēra fierent.
+
+"Quandō ego dux erō," dīcēbat Hannibal, "tū mihi lēgātus eris. Tū iūxtā mē pugnābis. Nōs frātrēs erimus — nōn sanguine, sed animō."
+
+"Ego," respondēbat Maharbal, "nōn sum līber. Ego servus sum. Servus nōn potest lēgātus esse."
+
+"Quandō ego dux erō," dīcēbat Hannibal, "ego tē līberābō. Tū nōn iam servus eris. Tū frāter meus eris — vērē."
+
+Annī trānsiērunt. Hannibal dux factus est — post mortem patris. Maharbal adhūc servus erat. Hannibal eum līberāvit — ut prōmīserat. Maharbal līber erat. Sed Hannibal nōn eum lēgātum fēcit. Lēgātī erant virī nōbilēs, virī dīvitēs, virī quī in senātū Carthāginis potēns erant. Maharbal — lībertus, fīlius servī — nōn poterat lēgātus esse. Hannibal eum in exercitū posuit — mīlitem simplicem. Maharbal pugnābat, sed nōn iūxtā Hannibalem. Hannibal eum nōn vidēbat. Nōn eum vocābat. Nōn eum frātrem vocābat.
+
+Maharbal intellēxit. Prōmissum Hannibalis — prōmissum puerī — nōn erat prōmissum ducis. Puerī possunt prōmittere. Ducēs nōn possunt. Puerī possunt frātrēs esse. Ducēs — ducēs sōlī sunt.
+
+In proeliō Cannēnsī, Maharbal fortiter pugnāvit. Hannibal vīcit. Post victōriam, Maharbal ad Hannibalem vēnit — nōn ut servus, nōn ut mīles, sed ut vir quī aliquid dīcere volēbat.
+
+"Hannibal," inquit Maharbal, "ego tēcum pugnāvī. Nōn iūxtā tē — sed prō tē. Nōn quia tū mē līberāvistī. Quia tū frāter meus es. Et frātrēs — frātrēs nōn relinquunt."
+
+Hannibal eum spectāvit. In oculīs Maharbalis, Hannibal puerum vīdit — puerum quī in hortō lūdēbat, quī fābulās audiēbat, quī crēdēbat. Hannibal lacrimāvit.
+
+"Maharbal," inquit, "ego tē prōdidī. Ego tē frātrem vocāvī — sed nōn ut frātrem tractāvī. Ego — ego mē pudet."
+
+"Nōn," inquit Maharbal. "Tū mē līberāvistī. Tū mihi vītam dedistī. Tū mihi — quod maius est — spem dedistī. Spem quod servus potest frāter esse. Spem quod fīlius servī potest iūxtā ducem stāre. Ego nōn īrātus sum. Ego — ego grātus sum."
+
+Hannibal et Maharbal — dux et lībertus, dominus et servus, frātrēs animō — in castrīs stetērunt. Nōn iam puerī. Sed frātrēs. Semper frātrēs.

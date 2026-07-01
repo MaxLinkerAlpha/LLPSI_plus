@@ -1,0 +1,45 @@
+---
+story_id: "batch35_003"
+title_la: "Mīles Quī Nōn Pugnāvit"
+title_zh: "没有战斗的士兵"
+target_chapter: 20
+theme: "9 勇气"
+style: "精炼"
+genre: "C 历史与人物"
+character_type: "非罗马的古代人"
+length_tier: "长篇"
+narrative_mode: "倒叙"
+word_count: 333
+macrons_status: "generated"
+evaluated_chapter: 20
+best_fit_chapter: 20
+coverage_rate: 96.2
+oov_words: ["herōēs", "Stentor", "herōs", "Herōēs", "herōica", "sapientia", "lūdentēs"]
+top_10_lemmas: null
+grammar_features: null
+created_at: "2026-07-01T03:45:37Z"
+updated_at: "2026-07-01T03:45:37Z"
+status: "evaluated"
+---
+
+Post bellum, quandō omnēs aliī herōēs narrābant, ego tacēbam. Nōn quia nihil fēceram. Quia nōn pugnāveram.
+
+Nōs trīgintā erāmus. Trīgintā mīlitēs in castellō parvō, in monte altō, longē ab exercitū. Nōs castellum custōdīre dēbēbāmus. Sī hostēs venīrent, nōs pugnāre dēbēbāmus. Sī hostēs nōn venīrent, nōs exspectāre dēbēbāmus. Hostēs vēnērunt.
+
+Nōn centum. Nōn quīngentī. Mīlle. Mīlle hostēs contrā trīgintā. Dux noster, vir nōmine Stentor, nōs convocāvit. "Mīlitēs," inquit, "hostēs sunt mīlle. Nōs sumus trīgintā. Nōn possumus vincere. Sed possumus morī. Possumus morī ut herōēs — et nostrī fīliī dīcent: 'Pater meus herōs fuit.' Possumus morī ut nihil — et nostrī fīliī dīcent: 'Pater meus mortuus est. Nesciō cūr.' Quid vultis?"
+
+Trīgintā mīlitēs — vigintī novem clāmāvērunt: "Herōēs!" Ego sōlus tacēbam. Stentor mē spectāvit. "Tū," inquit, "nōn vīs morī ut herōs?"
+
+"Nōn," inquam. "Nōlō morī. Volō vīvere. Volō fīliōs meōs vidēre. Volō uxōrem meam vidēre. Volō domum redīre. Mors nōn est herōica. Mors est mors."
+
+Stentor mē diū spectāvit. Deinde rīsit. Nōn rīsus crūdēlis. Rīsus trīstis. "Tū," inquit, "es sapientior nōbīs. Sed sapientia nōn vincit bella. Vāde. Fuge. Nēmō tē iūdicābit."
+
+Ego fūgī. Per silvās, per montēs, per noctem — fūgī. Post tergum, clāmōrēs audīvī. Ferrum contrā ferrum. Mortem contrā mortem. Vigintī novem herōēs — mortuī. Ego sōlus vīvēbam.
+
+Post bellum, domum rediī. Uxor mē amplexa est. Fīliī mē amplexī sunt. "Pater," inquiunt, "tū vīvus es! Nōs tē mortuum putābāmus. Omnēs aliī patrēs mortuī sunt. Tū sōlus — tū sōlus vīvus es!"
+
+"Ego," inquam, "nōn sum herōs. Ego fūgī. Ego nōn pugnāvī."
+
+Fīliī mē spectāvērunt. Diū tacēbant. Deinde fīlius meus maximus, puer decem annōrum, dīxit: "Pater, herōēs mortuī sunt. Tū vīvus es. Quis est melius?"
+
+Nōn respondī. Neque hodiē respondēre possum. Herōēs mortuī sunt. Ego vīvus sum. Fīliī eōrum patrēs nōn habent. Fīliī meī patrem habent. Quis est melius? Nesciō. Sed quandō fīliōs meōs in viā lūdentēs videō, quandō uxōrem meam rīdentem videō, quandō sōlem in caelō videō — sciō. Sciō cūr nōn pugnāverim. Nōn quia timēbam. Quia amābam. Et amor — amor est plūs quam glōria. Plūs quam mors. Plūs quam herōs.
